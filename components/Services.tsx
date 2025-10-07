@@ -1,80 +1,76 @@
 import React from "react";
+import Image, { StaticImageData } from "next/image";
+import service2 from "../public/assets/luyleun (2).png";
+import service1 from "../public/assets/Bomnin.png";
 
-interface Service {
-  title: string;
-  subtitle: string;
+interface BusinessUnit {
+  id: number;
+  name: string;
   description: string;
-  cost: string;
-  image: string;
-  button1: string;
+  image: StaticImageData;
 }
 
-const services: Service[] = [
+const businessUnits: BusinessUnit[] = [
   {
-    title: "Redefining Wealth Management for UHNWI",
-    subtitle: "Private Wealth Systems",
+    id: 1,
+    name: "LUYLEUN Mobile App",
     description:
-      "A unique gem in the industry that smooths friction and makes managing complex wealth delightful. A premium experience that is a must-have for any ultra-high net worth individual.",
-    cost: "Cost of this type of UI/UX from 450,000 €",
-    image:
-      "https://reubenteo.com/wp-content/uploads/2014/05/Sunrise-Angkor-Wat.jpg",
-    button1: "Explore more",
+      "Our manufacturing unit is a cornerstone of our success, producing top-quality products with modern technology and sustainability at the core. From cement and building materials to beverages, we ensure the highest production standards.",
+    image: service2,
   },
   {
-    title: "Changing the Perception of Digital Banking in Albania",
-    subtitle: "KLT Bank App",
+    id: 2,
+    name: "BOM NIN",
     description:
-      "We have removed the friction from everyday banking making it easy, without design clutter. Users can now complete tasks digitally without any assistance, enhancing their experience.",
-    cost: "Cost of this type of UI/UX from 450,000 €",
-    image:
-      "https://res.klook.com/image/upload/w_750,h_469,c_fill,q_85/w_80,x_15,y_15,g_south_west,l_Klook_water_br_trans_yhcmh3/activities/rmvd1stwo92slbkb5zyw.jpg",
-    button1: "Explore more",
-  },
-  {
-    title: "Redefining Wealth Management for UHNWI",
-    subtitle: "Private Wealth Systems",
-    description:
-      "A unique gem in the industry that smooths friction and makes managing complex wealth delightful. A premium experience that is a must-have for any ultra-high net worth individual.",
-    cost: "Cost of this type of UI/UX from 450,000 €",
-    image:
-      "https://reubenteo.com/wp-content/uploads/2014/05/Sunrise-Angkor-Wat.jpg",
-    button1: "Explore more",
-  },
-  {
-    title: "Changing the Perception of Digital Banking in Albania",
-    subtitle: "KLT Bank App",
-    description:
-      "We have removed the friction from everyday banking making it easy, without design clutter. Users can now complete tasks digitally without any assistance, enhancing their experience.",
-    cost: "Cost of this type of UI/UX from 450,000 €",
-    image:
-      "https://res.klook.com/image/upload/w_750,h_469,c_fill,q_85/w_80,x_15,y_15,g_south_west,l_Klook_water_br_trans_yhcmh3/activities/rmvd1stwo92slbkb5zyw.jpg",
-    button1: "Explore more",
+      "Delivering high-value infrastructure and engineering projects that meet international standards. Our construction unit focuses on innovation, precision, and long-term structural integrity for every development.",
+    image: service1,
   },
 ];
 
-export const Services: React.FC = () => (
-  <section className=" py-20 px-6 md:px-20 text-white">
-    <div className="max-w-9xl mx-auto grid md:grid-cols-2 gap-12">
-      {services.map((s, i) => (
-        <div
-          key={i}
-          className="relative group glass-p-6 rounded-3xl overflow-hidden h-[450px] cursor-pointer"
-        >
-          <img
-            src={s.image}
-            alt={s.title}
-            className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:scale-105 transition duration-700"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/40 to-black/90 opacity-0 group-hover:opacity-100 transition duration-700" />
-          <div className="absolute bottom-0 p-8 opacity-0 group-hover:opacity-100 transition duration-700">
-            <h3 className="text-2xl font-semibold mb-2">{s.title}</h3>
-            <p className="text-gray-400 mb-3">{s.description}</p>
-            <button className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-full text-sm font-medium">
-              {s.button1}
-            </button>
-          </div>
+const BusinessUnit: React.FC = () => {
+  return (
+    <section className=" text-white py-20 px-6 md:px-20">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold uppercase">
+            OUR BUSINESS UNIT
+          </h2>
+          <p className="text-gray-300 mt-4 max-w-3xl mx-auto">
+            Our diversified business units work together to deliver sustainable
+            growth, innovation, and value across multiple industries.
+          </p>
         </div>
-      ))}
-    </div>
-  </section>
-);
+
+        <div className="flex flex-col space-y-20">
+          {businessUnits.map((unit, index) => (
+            <div
+              key={unit.id}
+              className={`flex flex-col md:flex-row items-center gap-10 ${
+                index % 2 === 1 ? "md:flex-row-reverse" : ""
+              }`}
+            >
+              <div className="relative w-full md:w-1/2 h-72 md:h-80 rounded-2xl overflow-hidden shadow-lg group">
+                <Image
+                  src={unit.image}
+                  alt={unit.name}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div className="md:w-1/2 text-center md:text-left">
+                <h3 className="text-2xl font-bold text-blue-700 mb-4">
+                  {unit.name}
+                </h3>
+                <p className="text-gray-300 leading-relaxed">
+                  {unit.description}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default BusinessUnit;

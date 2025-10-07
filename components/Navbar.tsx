@@ -1,5 +1,3 @@
-"use client";
-
 import { FC } from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -8,7 +6,7 @@ import logo from "../public/assets/DLT.png";
 
 const Navbar: FC = () => {
   return (
-    <nav className="w-full  glass bg-black">
+    <nav className="w-full glass">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
         <div className="flex items-center gap-10">
           <Link href="/">
@@ -24,7 +22,7 @@ const Navbar: FC = () => {
           <ul className="hidden md:flex items-center gap-6 text-sm font-semibold tracking-wide text-gray-200">
             <li>
               <Link
-                href="/menu"
+                href="services"
                 className="hover:text-blue-700 transition-colors"
               >
                 SERVICES
@@ -32,7 +30,7 @@ const Navbar: FC = () => {
             </li>
             <li>
               <Link
-                href="/rewards"
+                href="portfolio"
                 className="hover:text-blue-700 transition-colors"
               >
                 PORTFOLIO
@@ -40,7 +38,7 @@ const Navbar: FC = () => {
             </li>
             <li>
               <Link
-                href="/gift-cards"
+                href="careers"
                 className="hover:text-blue-700 transition-colors"
               >
                 CAREERS

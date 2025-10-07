@@ -1,33 +1,82 @@
+import React from "react";
+import Image, { StaticImageData } from "next/image";
+import service2 from "../public/assets/luyleun (2).png";
+import service1 from "../public/assets/Bomnin.png";
 import Layout from "../components/Layout";
 
-export default function ServicesPage() {
+interface BusinessUnit {
+  id: number;
+  name: string;
+  description: string;
+  image: StaticImageData;
+}
+
+const businessUnits: BusinessUnit[] = [
+  {
+    id: 1,
+    name: "LUYLEUN Mobile App",
+    description:
+      "Our manufacturing unit is a cornerstone of our success, producing top-quality products with modern technology and sustainability at the core. From cement and building materials to beverages, we ensure the highest production standards.",
+    image: service2,
+  },
+  {
+    id: 2,
+    name: "BOM NIN",
+    description:
+      "Delivering high-value infrastructure and engineering projects that meet international standards. Our construction unit focuses on innovation, precision, and long-term structural integrity for every development.",
+    image: service1,
+  },
+];
+
+const BusinessUnit: React.FC = () => {
   return (
     <Layout>
-      <h1 className="text-4xl font-light mb-8">Our Services</h1>
-      <p className="text-gray-400 mb-6">
-        We specialize in fintech UX, digital product strategy, and UI systems that drive business growth.
-      </p>
+      <div className="max-w-7xl mx-auto">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold uppercase">
+            OUR BUSINESS UNIT
+          </h2>
+          <p className="text-gray-300 mt-4 max-w-3xl mx-auto">
+            Our diversified business units work together to deliver sustainable
+            growth, innovation, and value across multiple industries.
+          </p>
+        </div>
 
-      <div className="grid md:grid-cols-3 gap-6">
-        <div className="glass p-6">
-          <h3 className="font-semibold mb-2 text-lg">Product Strategy</h3>
-          <p className="text-gray-400 text-sm">
-            Aligning your digital experience with market leadership.
-          </p>
-        </div>
-        <div className="glass p-6">
-          <h3 className="font-semibold mb-2 text-lg">UX Design</h3>
-          <p className="text-gray-400 text-sm">
-            Creating human-centered designs for finance and banking.
-          </p>
-        </div>
-        <div className="glass p-6">
-          <h3 className="font-semibold mb-2 text-lg">Design Systems</h3>
-          <p className="text-gray-400 text-sm">
-            Scalable components for consistent experiences.
-          </p>
+        {/* Units */}
+        <div className="flex flex-col space-y-20">
+          {businessUnits.map((unit, index) => (
+            <div
+              key={unit.id}
+              className={`flex flex-col md:flex-row items-center gap-10 ${
+                index % 2 === 1 ? "md:flex-row-reverse" : ""
+              }`}
+            >
+              {/* Image */}
+              <div className="relative w-full md:w-1/2 h-72 md:h-80 rounded-2xl overflow-hidden shadow-lg group">
+                <Image
+                  src={unit.image}
+                  alt={unit.name}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+
+              {/* Text */}
+              <div className="md:w-1/2 text-center md:text-left">
+                <h3 className="text-2xl font-bold text-blue-700 mb-4">
+                  {unit.name}
+                </h3>
+                <p className="text-gray-300 leading-relaxed">
+                  {unit.description}
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </Layout>
   );
-}
+};
+
+export default BusinessUnit;

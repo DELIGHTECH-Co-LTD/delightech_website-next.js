@@ -1,6 +1,5 @@
 import Image from "next/image";
 import mockup from "../public/assets/DLT.png";
-
 export default function Hero() {
   return (
     <section className="relative min-h-screen hero-gradient flex flex-col lg:flex-row items-center justify-center lg:px-20 overflow-hidden gap-20">

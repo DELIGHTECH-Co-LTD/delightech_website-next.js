@@ -1,27 +1,36 @@
 import React from "react";
 
-export default function About() {
+const About: React.FC = () => {
   return (
-    <section id="about" className="py-20">
-      <h3 className="text-5xl text-blue-500 md:text-4xl mb-16">About</h3>
-      <div className="glass p-6">
-        <p className="text-dark-300 leading-relaxed mb-6  dark:text-gray-300">
-          At{" "}
-          <span className="text-blue-400  font-semibold">
-            Delightech Co,.Ltd
-          </span>
-          , we are passionate about crafting digital experiences that blend
-          creativity, technology, and innovation. Our mission is to help
-          businesses grow by delivering high-quality design, development, and
-          strategy services that leave a lasting impact.
-        </p>
-        <p className="text-gray-300 leading-relaxed text-gray-600 dark:text-gray-300">
-          With a team of designers, developers, and strategists, we work
-          together to create meaningful solutions that connect brands with their
-          audiences in powerful ways. We believe in pushing boundaries,
-          embracing challenges, and turning ideas into reality.
-        </p>
+    <section
+      className="relative z-10 w-screen h-screen max-w-9xl mx-auto bg-cover bg-no-repeat flex items-center justify-center "
+      style={{
+        backgroundImage: "url('/assets/Angkor-Wat.webp')",
+      }}
+    >
+      <div className="absolute inset-0 bg-black/50" />
+
+      <div className="relative z-10 text-center px-6 max-w-3xl">
+        <h2 className="text-4xl font-bold mb-10 text-center text-white">
+          ABOUT US
+        </h2>
+
+        <h1 className="text-white text-2xl md:text-4xl font-bold leading-relaxed">
+          “AS WE LOOK TO THE YEARS AHEAD, WE MUST REMAIN COMMITTED TO
+          EXCELLENCE, KEEP ABREAST OF CHANGES AND INNOVATIONS, ADOPT BETTER
+          MANAGEMENT PRACTICES AND SUCCESSFULLY OVERCOME ALL CHALLENGES BEFORE
+          US.”
+        </h1>
+
+        <a
+          href="#about"
+          className="mt-6 inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-3xl transition"
+        >
+          FIND OUT MORE ABOUT US
+        </a>
       </div>
     </section>
   );
-}
+};
+
+export default About;
