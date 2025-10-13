@@ -47,7 +47,7 @@ const Navbar: FC = () => {
             </li>
             <li>
               <Link
-                href="careers"
+                href="career"
                 className="hover:text-blue-700 transition-colors"
               >
                 CAREERS
