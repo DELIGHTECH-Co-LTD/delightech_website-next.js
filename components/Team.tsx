@@ -76,7 +76,7 @@ const Teams: React.FC = () => {
                     rel="noopener noreferrer"
                     className="absolute bottom-4 right-4 bg-white text-blue-300 p-2 rounded-full opacity-0 group-hover:opacity-100 transition duration-300 hover:scale-110"
                   >
-                    <Linkedin size={22} />
+                    <Linkedin size={18} />
                   </a>
                 )}
               </div>
@@ -84,8 +84,8 @@ const Teams: React.FC = () => {
                 <h3 className="text-xl font-semibold text-white mb-1">
                   {member.name}
                 </h3>
-                <p className="text-gray-300 text-sm">{member.position}</p>
-                <div className="mt-4 w-12 h-[2px] bg-blue-300 mx-auto group-hover:w-20 transition-all duration-300"></div>
+                <p className="text-white text-sm">{member.position}</p>
+                <div className="mt-4 w-12 h-[2px] bg-blue-600 mx-auto group-hover:w-20 transition-all duration-300"></div>
               </div>
 
               <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 bg-gradient-to-r from-blue-400/10 via-white/5 to-blue-400/10 blur-2xl transition"></div>

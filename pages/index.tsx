@@ -13,7 +13,7 @@ export default function Home() {
     <>
       <Head>
         <title>DLT WEB</title>
-        <meta name="description" content="Glassy dark/light Delightech" />
+        <meta name="description" content="Delightech" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -23,11 +23,9 @@ export default function Home() {
         <main className="flex-1">
           <Hero />
           <About />
-          <div className="max-w-6xl mx-auto px-6">
-            <Services />
-            <OurCorporate />
-            <Showreel />
-          </div>
+          <Services />
+          <OurCorporate />
+          <Showreel />
           <Team />
         </main>
         <Footer />

@@ -32,7 +32,6 @@ const BusinessUnit: React.FC = () => {
   return (
     <Layout>
       <div className="max-w-7xl mx-auto">
-        {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold uppercase">
             OUR BUSINESS UNIT
@@ -58,7 +57,7 @@ const BusinessUnit: React.FC = () => {
                   src={unit.image}
                   alt={unit.name}
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="object-contain group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
 
