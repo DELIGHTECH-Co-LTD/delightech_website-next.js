@@ -1,7 +1,7 @@
 import React from "react";
 import Image, { StaticImageData } from "next/image";
 import service2 from "../public/assets/luyleun (2).png";
-import service1 from "../public/assets/Bomnin.png";
+import service1 from "../public/assets/bomnin_1.png";
 
 interface BusinessUnit {
   id: number;

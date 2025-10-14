@@ -4,14 +4,14 @@ import image from "../public/assets/angkorwat.png";
 
 const ShowReel: React.FC = () => {
   return (
-    <section className="relative  text-white py-24 px-6 md:px-20 overflow-hidden">
+    <section className="relative  bg-black dark:bg-white text-white py-24 px-6 md:px-20 overflow-hidden">
       <div className="absolute inset-0 opacity-90"></div>
 
       <div className="relative max-w-6xl mx-auto text-center z-10">
-        <h2 className="text-3xl md:text-4xl font-bold uppercase tracking-wide">
+        <h2 className="text-3xl md:text-4xl dark:text-black font-bold uppercase tracking-wide">
           Our Showreel
         </h2>
-        <p className="text-gray-200 mt-4 max-w-2xl mx-auto leading-relaxed">
+        <p className="text-gray-200 mt-4 dark:text-black max-w-2xl mx-auto leading-relaxed">
           Experience our journey, our people, and our vision — captured in
           motion. A glimpse into what drives us forward every day.
         </p>
@@ -26,7 +26,7 @@ const ShowReel: React.FC = () => {
               playsInline
               autoPlay
             />
-            <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition duration-500"></div>
+            <div className="absolute inset-0  bg-black/30 group-hover:bg-black/50 transition duration-500"></div>
             <button
               className="absolute inset-0 flex items-center justify-center"
               onClick={() => {
@@ -42,7 +42,7 @@ const ShowReel: React.FC = () => {
               </div>
             </button>
           </div>
-          <p className="mt-6 text-gray-300 text-sm uppercase tracking-wider">
+          <p className="mt-6 dark:text-black text-sm uppercase tracking-wider">
             Corporate Video 2025 — Royal Vision in Motion
           </p>
         </div>

@@ -1,12 +1,16 @@
 import Layout from "../components/Layout";
 import Image from "next/image";
 import React from "react";
-import careerImg from "../public/assets/1.png"; // replace with your image
 
 export default function Career() {
   return (
     <Layout>
-      <section className="min-h-screen bg-[#0a0a0a] text-white py-20 px-6 md:px-20 flex flex-col lg:flex-row items-center justify-between gap-12">
+      <section
+        className="relative z-10 w-screen h-screen max-w-9xl mx-auto bg-cover bg-no-repeat flex items-center justify-center"
+        style={{
+          backgroundImage: "url('/assets/code c event.png')",
+        }}
+      >
         {/* Text Section */}
         <div className="max-w-3xl">
           <h1 className="text-4xl md:text-5xl font-bold mb-6 uppercase bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-300">
@@ -30,19 +34,6 @@ export default function Career() {
           >
             Apply Now
           </a>
-        </div>
-
-        {/* Image Section */}
-        <div className="flex justify-center">
-          <div className="relative w-[320px] h-[420px] lg:w-[400px] lg:h-[520px]">
-            <Image
-              src={careerImg}
-              alt="Career at Delightech"
-              fill
-              className="rounded-2xl object-cover shadow-xl shadow-blue-500/30"
-              priority
-            />
-          </div>
         </div>
       </section>
 

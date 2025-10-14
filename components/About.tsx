@@ -23,7 +23,7 @@ const About: React.FC = () => {
         </h1>
 
         <a
-          href="#about"
+          href="/about"
           className="mt-6 inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-3xl transition"
         >
           FIND OUT MORE ABOUT US

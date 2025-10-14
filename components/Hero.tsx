@@ -1,5 +1,7 @@
 import Image from "next/image";
 import mockup from "../public/assets/DLT.png";
+import Link from "next/link";
+
 export default function Hero() {
   return (
     <section className="relative min-h-screen hero-gradient flex flex-col lg:flex-row items-center justify-center lg:px-20 overflow-hidden gap-20">
@@ -16,9 +18,11 @@ export default function Hero() {
             <span style={{ color: "var(--accent)" }}>Finances</span>.
           </h1>
           <div className="flex items-center gap-4">
-            <button className="btn btn-accent glass hover:bg-blue-700">
-              Contact Us →
-            </button>
+            <Link href="/contact">
+              <button className="btn btn-accent glass hover:bg-blue-700">
+                Contact Us →
+              </button>
+            </Link>
           </div>
           <p className="mt-12 text-gray-500">Trusted of Customer 10000000+</p>
         </div>

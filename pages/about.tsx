@@ -1,25 +1,26 @@
 import Image from "next/image";
 import founderImg from "../public/assets/bng vila.png";
 import Layout from "../components/Layout";
-import History from "../components/history";
+import History from "../components/History";
 export default function AboutPage() {
   return (
     <Layout>
       <section
         className="relative z-10 w-screen h-screen max-w-9xl mx-auto bg-cover bg-no-repeat flex items-center justify-center "
         style={{
-          backgroundImage: "url('/assets/Angkor-Wat.webp')",
+          backgroundImage: "url('/assets/Angkorwat.png')",
         }}
       >
         {/* Text overlay */}
         <div className="absolute inset-0 flex flex-col items-start justify-center px-8 md:px-24">
-          <div className="bg-black bg-opacity-80 p-4 md:p-6 rounded-lg max-w-2xl">
+          <div className="bg-black/40   p-4 md:p-6 rounded-lg max-w-2xl">
             <h2 className="text-white text-2xl md:text-3xl font-bold mb-2">
               OUR VISION:
             </h2>
             <p className="text-white text-lg md:text-2xl font-semibold leading-relaxed">
-              TO BE THE MOST ADMIRED AND RESPECTED <br />
-              CORPORATION IN THE REGION.
+              To revolutionize financial solutions through technology and to
+              empower individuals and businesses worldwide to achieve financial
+              freedom and stability.
             </p>
           </div>
         </div>
