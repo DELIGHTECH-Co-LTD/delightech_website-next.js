@@ -1,73 +1,63 @@
 import Layout from "../components/Layout";
-import Image from "next/image";
-import React from "react";
 
 export default function Career() {
+  const jobs = [
+    {
+      title: "Senior UX Designer",
+      desc: "Lead design strategy for next-generation fintech platforms. Work with top global financial brands.",
+    },
+    {
+      title: "Frontend Developer (React)",
+      desc: "Implement pixel-perfect user interfaces and animations using modern frameworks and best practices.",
+    },
+    {
+      title: "Product Strategist",
+      desc: "Define user and business goals for financial products that impact millions of customers worldwide.",
+    },
+  ];
+
   return (
     <Layout>
-      <section
-        className="relative z-10 w-screen h-screen max-w-9xl mx-auto bg-cover bg-no-repeat flex items-center justify-center"
-        style={{
-          backgroundImage: "url('/assets/code c event.png')",
-        }}
-      >
-        {/* Text Section */}
-        <div className="max-w-3xl">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 uppercase bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-300">
-            Join Our Team
-          </h1>
-          <p className="text-lg mb-6 text-gray-300">
-            At Delightech, we’re driven by innovation, creativity, and teamwork.
-            We believe that great ideas come from passionate people working
-            together to create meaningful solutions.
-          </p>
+      <section className="flex flex-col bg-white dark:bg-gray-900 py-24 items-center text-center mt-24 px-6">
+        <h1 className="text-3xl md:text-5xl text-gray-900 dark:text-white font-bold mb-4">
+          Build Your Career With Us with Us
+        </h1>
+        <p className="text-gray-900 dark:text-white max-w-2xl mb-12">
+          At delightech, we design experiences that redefine how people interact
+          with financial technology. Join a team where innovation, empathy, and
+          precision meet.
+        </p>
 
-          <p className="text-gray-400 mb-8">
-            Whether you’re a developer, designer, marketer, or strategist — we
-            value your unique skills and fresh perspectives. Together, we can
-            shape the future of digital experiences.
-          </p>
+        <button className="px-10 py-3 mb-16 border border-black dark:border-white rounded-full text-lg text-black dark:text-white hover:bg-blue-600/20 hover:border-blue-600 transition-all duration-300">
+          View Open Positions →
+        </button>
 
-          <a
-            href="mailto:hr@delightech.com"
-            className="inline-block bg-blue-600 hover:bg-blue -500 transition-all px-6 py-3 rounded-2xl font-semibold shadow-lg shadow-blue-500/30"
-          >
-            Apply Now
-          </a>
-        </div>
-      </section>
-
-      <section className="bg-[#111111] py-16 px-6 md:px-20">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-          Why Work With Us
-        </h2>
-
-        <div className="grid md:grid-cols-3 gap-8">
-          {[
-            {
-              title: "Creative Environment",
-              desc: "Work with passionate people who inspire creativity every day.",
-            },
-            {
-              title: "Career Growth",
-              desc: "Opportunities to learn, grow, and advance within the company.",
-            },
-            {
-              title: "Flexible Culture",
-              desc: "Balance work and life with our supportive and open environment.",
-            },
-          ].map((perk, index) => (
+        <div className="grid md:grid-cols-3 gap-8 max-w-6xl w-full">
+          {jobs.map((job, i) => (
             <div
-              key={index}
-              className="bg-[#1a1a1a]/80 backdrop-blur-lg rounded-2xl p-8 text-center border border-white/10 hover:border-blue-500/40 transition-all"
+              key={i}
+              className="backdrop-blur-lg text-gray-900 dark:text-white bg-white/5 border border-gray-800 hover:border-neon transition-all duration-300 rounded-2xl p-8 text-left"
             >
-              <h3 className="text-xl font-semibold mb-3 text-blue-600">
-                {perk.title}
-              </h3>
-              <p className="text-gray-400">{perk.desc}</p>
+              <h2 className="text-2xl font-semibold mb-3">{job.title}</h2>
+              <p className="text-gray-900 dark:text-white mb-6">{job.desc}</p>
+              <button className="px-6 py-2 border border-white rounded-full hover:bg-white hover:text-blue-700 transition">
+                Apply Now
+              </button>
             </div>
           ))}
         </div>
+      </section>
+
+      <section className="mt-32 mb-20 text-center">
+        <h3 className="text-3xl text-gray-900 dark:text-white font-semibold mb-4">
+          Don’t see your dream role?
+        </h3>
+        <p className="text-gray-900 dark:text-white mb-6">
+          We’re always looking for creative minds who think beyond the ordinary.
+        </p>
+        <button className="px-8 py-3 border border-neon rounded-full hover:bg-neon hover:text-blue-700 transition">
+          Send Your Portfolio →
+        </button>
       </section>
     </Layout>
   );

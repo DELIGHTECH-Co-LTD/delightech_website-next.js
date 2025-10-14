@@ -31,7 +31,7 @@ const businessUnits: BusinessUnit[] = [
 const BusinessUnit: React.FC = () => {
   return (
     <Layout>
-      <section className="relative py-16  w-screen h-screen bg-black dark:bg-white    justify-center">
+      <section className="relative w-screen h-screen bg-black dark:bg-white  ">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl dark:text-black  font-bold uppercase">

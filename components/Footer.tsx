@@ -4,7 +4,7 @@ import Link from "next/link";
 import logo from "../public/assets/DLT.png";
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-blue-700/20 text-white py-16 px-6 md:px-20 relative overflow-hidden">
+    <footer className="bg-blue-700/20 footer-gradient text-white py-16 px-6 md:px-20 relative overflow-hidden">
       <div className="absolute inset-0 opacity-90"></div>
       <div className="relative z-10 max-w-7xl mx-auto grid md:grid-cols-4 gap-10">
         <div className="md:col-span-1 flex flex-col items-start">
@@ -29,19 +29,19 @@ const Footer: React.FC = () => {
           </h3>
           <Link
             href="/services"
-            className="text-gray-300 hover:text-blue-300 transition"
+            className="text-gray-300 hover:text-blue-600 transition"
           >
             Services
           </Link>
           <Link
             href="/portfolio"
-            className="text-gray-300 hover:text-blue-300 transition"
+            className="text-gray-300 hover:text-blue-600 transition"
           >
             Portfolio
           </Link>
           <Link
             href="/careers"
-            className="text-gray-300 hover:text-blue-300 transition"
+            className="text-gray-300 hover:text-blue-600 transition"
           >
             Careers
           </Link>
@@ -52,19 +52,19 @@ const Footer: React.FC = () => {
           </h3>
           <Link
             href="/store"
-            className="text-gray-300 hover:text-blue-300 transition"
+            className="text-gray-300 hover:text-blue-600 transition"
           >
             Find a Store
           </Link>
           <Link
             href="/signin"
-            className="text-gray-300 hover:text-blue-300 transition"
+            className="text-gray-300 hover:text-blue-600 transition"
           >
             Sign In
           </Link>
           <Link
             href="/join"
-            className="text-gray-300 hover:text-blue-300 transition"
+            className="text-gray-300 hover:text-blue-600 transition"
           >
             Join Now
           </Link>
@@ -81,11 +81,11 @@ const Footer: React.FC = () => {
             <input
               type="email"
               placeholder="Your email"
-              className="px-3 py-2 rounded-3xl w-full bg-white/10 text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-300"
+              className="px-3 py-2 rounded-3xl w-full bg-white/10 text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-600"
             />
             <button
               type="submit"
-              className="bg-blue-400 hover:bg-blue-500 text-blue-800 font-semibold px-4 py-2 rounded-3xl transition"
+              className="bg-blue-600 hover:bg-blue-500 text-white font-semibold px-4 py-2 rounded-3xl transition"
             >
               Join
             </button>

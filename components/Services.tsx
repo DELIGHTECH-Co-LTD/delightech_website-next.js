@@ -29,13 +29,13 @@ const businessUnits: BusinessUnit[] = [
 
 const BusinessUnit: React.FC = () => {
   return (
-    <section className="relative min-h-screen bg-black dark:bg-white  items-center justify-center py-20 lg:px-20 overflow-hidden gap-20">
+    <section className="relative min-h-screen items-center justify-center py-24 px-6 lg:px-20 overflow-hidden bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl dark:text-black font-bold uppercase">
+          <h2 className="text-3xl md:text-4xl text-gray-900 dark:text-white font-bold uppercase">
             OUR BUSINESS UNIT
           </h2>
-          <p className="text-black dark:text-black  mt-4 max-w-3xl mx-auto">
+          <p className="text-gray-600 dark:text-gray-300 mt-4 max-w-3xl mx-auto">
             Our diversified business units work together to deliver sustainable
             growth, innovation, and value across multiple industries.
           </p>
@@ -58,10 +58,10 @@ const BusinessUnit: React.FC = () => {
                 />
               </div>
               <div className="md:w-1/2 text-center md:text-left">
-                <h3 className="text-2xl font-bold text-blue-700 mb-4">
+                <h3 className="text-2xl font-bold text-blue-600 dark:text-blue-400 mb-4">
                   {unit.name}
                 </h3>
-                <p className=" text-white dark:text-black leading-relaxed">
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
                   {unit.description}
                 </p>
               </div>

@@ -1,35 +1,37 @@
 import Image from "next/image";
 import React from "react";
 import luyleun from "../public/assets/luyleun (2).png";
+import bomnin from "../public/assets/Bomnin_1.png";
+
 const timeline = [
   {
-    year: "2020",
-    title: "LUYLEUN Moblie App",
-    desc: "LUIYLEUN",
+    year: "2025",
+    title: "BOMNIN",
+    desc: "LUY kak",
     details:
       "Our diversified business units work together to deliver sustainable growth, innovation, and value across multiple industries.",
-    logo: luyleun,
+    logo: bomnin,
   },
   {
     year: "2019",
-    title: "BOMNIN",
-    desc: "live learn lacru",
+    title: "LUYLEUN",
+    desc: "Moblie app",
     details:
       "Capacity: 260 hectares of land featuring residential areas, golf course and water park",
-    logo: "/assets/grandphnompenh.png",
+    logo: luyleun,
   },
 ];
 
 export default function History() {
   return (
-    <section className="bg-[#0b0b0b] text-white py-20 px-6 md:px-16">
-      <h1 className="text-4xl md:text-5xl font-bold text-center mb-16 uppercase text-white">
+    <section className="relative bg-white dark:bg-gray-900 py-24 px-6 md:px-20 overflow-hidden">
+      <h1 className="text-4xl md:text-4xl text-gray-900 dark:text-white font-bold text-center mb-16 uppercase">
         Our Journey
       </h1>
 
       <div className="relative max-w-6xl mx-auto">
         {/* Center line */}
-        <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-blue-800/30 transform -translate-x-1/2" />
+        <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-blue-200 dark:bg-blue-800/30 transform -translate-x-1/2" />
 
         <div className="space-y-16">
           {timeline.map((item, index) => {
@@ -43,22 +45,24 @@ export default function History() {
               >
                 {/* Card */}
                 <div
-                  className={`bg-[#141414]/80 backdrop-blur-lg border border-white/10 rounded-2xl shadow-lg w-full md:w-[45%] p-6 transition-transform duration-300 hover:-translate-y-2 ${
+                  className={`bg-white dark:bg-gray-800 backdrop-blur-lg border border-gray-200 dark:border-gray-700 rounded-2xl shadow-lg hover:shadow-blue-500/30 dark:hover:shadow-blue-600/50 w-full md:w-[45%] p-6 transition-all duration-300 hover:-translate-y-2 ${
                     isLeft ? "md:mr-10" : "md:ml-10"
                   }`}
                 >
                   <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-4">
                     {/* Text */}
                     <div>
-                      <h2 className="text-2xl font-bold text-blue-600">
+                      <h2 className="text-2xl font-bold text-blue-600 dark:text-blue-400">
                         {item.year}
                       </h2>
-                      <h3 className="text-xl font-semibold mt-1 mb-1">
+                      <h3 className="text-xl text-gray-900 dark:text-white font-semibold mt-1 mb-1">
                         {item.title}
                       </h3>
-                      <p className="text-gray-300">{item.desc}</p>
+                      <p className="text-gray-700 dark:text-gray-300">
+                        {item.desc}
+                      </p>
                       {item.details && (
-                        <p className="text-gray-400 text-sm mt-2">
+                        <p className="text-gray-600 dark:text-gray-400 text-sm mt-2">
                           {item.details}
                         </p>
                       )}
@@ -79,7 +83,7 @@ export default function History() {
                 </div>
 
                 {/* Dot */}
-                <span className="absolute left-1/2 top-8 w-5 h-5 bg-blue-600 rounded-full border-4 border-[#0b0b0b] transform -translate-x-1/2" />
+                <span className="absolute left-1/2 top-8 w-5 h-5 bg-blue-600 dark:bg-blue-500 rounded-full border-4 border-white dark:border-gray-900 transform -translate-x-1/2" />
               </div>
             );
           })}

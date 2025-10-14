@@ -7,7 +7,7 @@ import { useTheme } from "../hooks/UseTheme";
 const Navbar: FC = () => {
   const { theme, toggleTheme, mounted } = useTheme();
   return (
-    <nav className="w-full glass">
+    <nav className="w-full  fixed nav-gradient top-0 left-0  z-50">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
         <div className="flex items-center gap-10">
           <Link href="/">
@@ -20,7 +20,7 @@ const Navbar: FC = () => {
             />
           </Link>
 
-          <ul className="hidden md:flex items-center gap-6 text-sm font-semibold tracking-wide text-gray-200">
+          <ul className="hidden md:flex space-x-4 items-center gap-6 text-sm font-semibold tracking-wide text-gray-200">
             <li>
               <Link
                 href="about"
@@ -60,29 +60,24 @@ const Navbar: FC = () => {
           {mounted && (
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-lg bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
+              className="p-2 rounded-3xl bg-white dark:bg-black hover:bg-gray-300 dark:hover:bg-gray-800 transition-colors"
               aria-label="Toggle theme"
             >
-              {theme === "light" ? (
-                <Moon className="w-5 h-5 text-gray-800" />
+              {theme === "dark" ? (
+                <Moon className="w-5 h-5 text-white" />
               ) : (
-                <Sun className="w-5 h-5 text-yellow-400" />
+                <Sun className="w-5 h-5 text-blue-600" />
               )}
             </button>
           )}
           <Link
             href="/stores"
-            className="flex items-center gap-2 text-sm text-gray-700 cursor-pointer hover:text-blue-700"
+            className="flex items-center gap-2 text-sm text-white cursor-pointer hover:text-gray-300"
           >
             <MapPin size={18} />
-            <span className="font-semibold">Find a store</span>
-          </Link>
-
-          <Link
-            href="/signin"
-            className="border border-gray-800 rounded-full px-4 py-1 text-sm font-semibold hover:bg-blue-700 transition"
-          >
-            Sign in
+            <span className="text-white hover:text-gray-300 font-semibold">
+              Find Us
+            </span>
           </Link>
 
           <Link
