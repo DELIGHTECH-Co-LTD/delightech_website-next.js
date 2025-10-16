@@ -120,21 +120,19 @@ const QA: React.FC = () => {
       <div className="relative max-w-6xl mx-auto z-10 w-full">
         {/* Hero Title Section - Theme Responsive */}
         <div className="text-center mb-20">
-          <div className="inline-block bg-white/80 dark:bg-white/10 backdrop-blur-lg border border-gray-200/50 dark:border-white/20 rounded-3xl px-12 py-8 mb-8 shadow-xl dark:shadow-2xl transition-all duration-500">
-            <span className="inline-block bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-green-400 text-transparent bg-clip-text text-sm font-semibold uppercase tracking-wider mb-3">
-              Support Center
+          <span className="inline-block bg-gradient-to-r from-blue-600 to-green-600 dark:from-blue-400 dark:to-green-400 text-transparent bg-clip-text text-sm font-semibold uppercase tracking-wider mb-3">
+            Support Center
+          </span>
+          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6 leading-tight transition-colors duration-300 uppercase">
+            Frequently Asked{" "}
+            <span className="bg-gradient-to-r from-blue-600 to-green-600 dark:from-blue-300 dark:to-green-300 text-transparent bg-clip-text uppercase">
+              Questions
             </span>
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6 leading-tight transition-colors duration-300 uppercase">
-              Frequently Asked{" "}
-              <span className="bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-300 dark:to-green-300 text-transparent bg-clip-text uppercase">
-                Questions
-              </span>
-            </h1>
-            <p className="text-gray-700 dark:text-white/80 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed transition-colors duration-300">
-              Find answers to common questions about LUYLEUN, Delightech, and
-              our financial services. Expert support is just a click away.
-            </p>
-          </div>
+          </h1>
+          <p className="text-gray-700 dark:text-white/80 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed transition-colors duration-300">
+            Find answers to common questions about LUYLEUN, Delightech, and our
+            financial services. Expert support is just a click away.
+          </p>
         </div>
 
         {/* Category Filter - Theme Responsive */}
@@ -164,7 +162,7 @@ const QA: React.FC = () => {
           {filteredQAs.map((item, index) => (
             <div
               key={item.id}
-              className="group bg-white/80 dark:bg-white/10 backdrop-blur-lg border border-gray-200/50 dark:border-white/20 rounded-3xl overflow-hidden transition-all duration-500 hover:bg-white/90 dark:hover:bg-white/15 hover:border-gray-300 dark:hover:border-white/30 hover:shadow-2xl dark:hover:shadow-blue-500/10 transform hover:-translate-y-2 shadow-lg dark:shadow-xl"
+              className="group bg-white/80 dark:bg-white/10 backdrop-blur-lg border border-gray-200/50 dark:border-white/20 rounded-3xl overflow-hidden transition-all duration-500 hover:bg-white/90 dark:hover:bg-white/15 hover:border-gray-300 dark:hover:border-white/30 hover:shadow-2xl dark:hover:shadow-blue-500/10 transform hover:-translate-y-2 "
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <button
@@ -205,84 +203,6 @@ const QA: React.FC = () => {
               )}
             </div>
           ))}
-        </div>
-
-        {/* Call to Action - Theme Responsive Pattern */}
-        <div className="mt-20 text-center">
-          <div className="bg-white/80 dark:bg-white/10 backdrop-blur-lg border border-gray-200/50 dark:border-white/20 rounded-3xl p-12 md:p-16 transition-all duration-500 hover:bg-white/90 dark:hover:bg-white/15 hover:border-gray-300 dark:hover:border-white/30 hover:shadow-2xl dark:hover:shadow-blue-500/20 transform hover:scale-105 shadow-xl dark:shadow-2xl">
-            <div className="mb-8">
-              <div className="inline-block bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-500/20 dark:to-purple-500/20 backdrop-blur-lg border border-blue-200 dark:border-white/30 rounded-full p-6 mb-6">
-                <svg
-                  className="w-12 h-12 text-blue-600 dark:text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={1.5}
-                    d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
-              </div>
-              <span className="inline-block bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 text-transparent bg-clip-text text-sm font-semibold uppercase tracking-wider mb-4">
-                Need More Help?
-              </span>
-            </div>
-
-            <h3 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6 leading-tight uppercase transition-colors duration-300">
-              Still Have{" "}
-              <span className="block bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-300 dark:to-purple-300 text-transparent bg-clip-text uppercase">
-                Questions?
-              </span>
-            </h3>
-            <p className="text-gray-700 dark:text-white/80 mb-10 text-xl leading-relaxed max-w-3xl mx-auto transition-colors duration-300">
-              Our customer support team is available 24/7 to help you with any
-              questions or concerns. We're here to make your experience seamless
-              and enjoyable.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <button className="group relative bg-blue-600 dark:bg-white/20 backdrop-blur-lg border border-blue-600 dark:border-white/30 hover:bg-blue-700 dark:hover:bg-white/30 hover:border-blue-700 dark:hover:border-white/40 text-white dark:text-white font-bold py-5 px-10 rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl overflow-hidden">
-                <span className="relative z-10 flex items-center justify-center gap-3 text-lg">
-                  <svg
-                    className="w-6 h-6 group-hover:rotate-12 transition-transform duration-300"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
-                    />
-                  </svg>
-                  Contact Support
-                </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </button>
-              <button className="group relative bg-gradient-to-r from-blue-500/80 to-purple-500/80 dark:from-blue-500/20 dark:to-purple-500/20 backdrop-blur-lg border border-blue-500 dark:border-white/30 hover:from-blue-600 hover:to-purple-600 dark:hover:from-blue-500/30 dark:hover:to-purple-500/30 hover:border-blue-600 dark:hover:border-white/40 text-white dark:text-white font-bold py-5 px-10 rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl overflow-hidden">
-                <span className="relative z-10 flex items-center justify-center gap-3 text-lg">
-                  <svg
-                    className="w-6 h-6 group-hover:scale-110 transition-transform duration-300"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
-                    />
-                  </svg>
-                  Download LUYLEUN
-                </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-purple-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </button>
-            </div>
-          </div>
         </div>
       </div>
     </section>
