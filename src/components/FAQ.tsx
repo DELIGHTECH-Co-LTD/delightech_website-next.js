@@ -8,6 +8,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
+import { useTranslations } from "next-intl";
 import { Badge } from "@/components/ui/badge";
 import {
   Card,
@@ -91,18 +92,82 @@ const qaData = [
 ];
 
 export default function FAQ() {
+  const t = useTranslations("FAQ");
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
 
   const categories = [
-    { value: "all", label: "All Questions" },
-    { value: "general", label: "General" },
-    { value: "security", label: "Security" },
-    { value: "pricing", label: "Pricing" },
-    { value: "business", label: "Business" },
-    { value: "lending", label: "Lending" },
-    { value: "support", label: "Support" },
-    { value: "compliance", label: "Compliance" },
-    { value: "future", label: "Future Plans" },
+    { value: "all", label: t("categories.all") },
+    { value: "general", label: t("categories.general") },
+    { value: "security", label: t("categories.security") },
+    { value: "pricing", label: t("categories.pricing") },
+    { value: "business", label: t("categories.business") },
+    { value: "lending", label: t("categories.lending") },
+    { value: "support", label: t("categories.support") },
+    { value: "compliance", label: t("categories.compliance") },
+    { value: "future", label: t("categories.future") },
+  ];
+
+  const qaData = [
+    {
+      id: 1,
+      question: t("questions.q1.question"),
+      answer: t("questions.q1.answer"),
+      category: "general",
+    },
+    {
+      id: 2,
+      question: t("questions.q2.question"),
+      answer: t("questions.q2.answer"),
+      category: "security",
+    },
+    {
+      id: 3,
+      question: t("questions.q3.question"),
+      answer: t("questions.q3.answer"),
+      category: "general",
+    },
+    {
+      id: 4,
+      question: t("questions.q4.question"),
+      answer: t("questions.q4.answer"),
+      category: "pricing",
+    },
+    {
+      id: 5,
+      question: t("questions.q5.question"),
+      answer: t("questions.q5.answer"),
+      category: "business",
+    },
+    {
+      id: 6,
+      question: t("questions.q6.question"),
+      answer: t("questions.q6.answer"),
+      category: "general",
+    },
+    {
+      id: 7,
+      question: t("questions.q7.question"),
+      answer: t("questions.q7.answer"),
+      category: "lending",
+    },
+    {
+      id: 8,
+      question: t("questions.q8.question"),
+      answer: t("questions.q8.answer"),
+      category: "support",
+    },
+    {
+      id: 9,
+      question: t("questions.q9.question"),
+      answer: t("questions.q9.answer"),
+      category: "compliance",
+    },
+    {
+      id: 10,
+      question: t("questions.q10.question"),
+      answer: t("questions.q10.answer"),
+      category: "future",
+    },
   ];
 
   const filteredQAs =
@@ -125,15 +190,16 @@ export default function FAQ() {
             variant="secondary"
             className="mb-4 text-sm uppercase tracking-wider"
           >
-            Support Center
+            {t("badge")}
           </Badge>
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4 uppercase">
-            Frequently Asked{" "}
-            <span className="text-blue-600 dark:text-blue-400">Questions</span>
+            {t("title")}{" "}
+            <span className="text-blue-600 dark:text-blue-400">
+              {t("title_highlight")}
+            </span>
           </h1>
           <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-            Find answers to common questions about LUYLEUN, Delightech, and our
-            financial services.
+            {t("description")}
           </p>
         </div>
 
@@ -201,14 +267,13 @@ export default function FAQ() {
               </svg>
             </div>
             <CardTitle className="text-3xl md:text-4xl uppercase">
-              Still Have{" "}
+              {t("cta.title")}{" "}
               <span className="text-blue-600 dark:text-blue-400">
-                Questions?
+                {t("cta.title_highlight")}
               </span>
             </CardTitle>
             <CardDescription className="text-lg">
-              Our customer support team is available 24/7 to help you with any
-              questions or concerns.
+              {t("cta.description")}
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -227,7 +292,7 @@ export default function FAQ() {
                     d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
                   />
                 </svg>
-                Contact Support
+                {t("cta.contact_support")}
               </Button>
               <Button size="lg" variant="outline" className="text-base">
                 <svg
@@ -243,7 +308,7 @@ export default function FAQ() {
                     d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
                   />
                 </svg>
-                Download LUYLEUN
+                {t("cta.download_app")}
               </Button>
             </div>
           </CardContent>

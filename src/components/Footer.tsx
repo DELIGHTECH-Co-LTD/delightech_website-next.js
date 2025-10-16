@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -12,8 +12,10 @@ import {
   Instagram,
 } from "lucide-react";
 import { ModeToggle } from "./DarkModeToggle";
+import { useTranslations } from "next-intl";
 
 const Footer: React.FC = () => {
+  const t = useTranslations("Footer");
   const [email, setEmail] = useState("");
   const [isSubscribed, setIsSubscribed] = useState(false);
   const currentYear = new Date().getFullYear();
@@ -28,16 +30,16 @@ const Footer: React.FC = () => {
   };
 
   const navigationLinks = [
-    { href: "/about", label: "About Us" },
-    { href: "/services", label: "Services" },
-    { href: "/careers", label: "Careers" },
+    { href: "/about", label: t("Navbar.about") },
+    { href: "/services", label: t("Navbar.service") },
+    { href: "/careers", label: t("Navbar.careers") },
   ];
 
   const supportLinks = [
-    { href: "/store", label: "Find a Store" },
-    { href: "/signin", label: "Sign In" },
-    { href: "/join", label: "Join Now" },
-    { href: "/contact", label: "Contact Support" },
+    { href: "/store", label: t("links.store") },
+    { href: "/signin", label: t("links.signin") },
+    { href: "/join", label: t("links.join") },
+    { href: "/contact", label: t("links.contact") },
   ];
 
   const socialLinks = [
@@ -71,9 +73,7 @@ const Footer: React.FC = () => {
             </Link>
 
             <p className="text-white/90 text-sm sm:text-base leading-relaxed">
-              Building sustainable growth through innovation, leadership, and
-              excellence across industries. Transforming lives through
-              technology.
+              {t("description")}
             </p>
 
             {/* Contact Info */}
@@ -100,7 +100,7 @@ const Footer: React.FC = () => {
           {/* Company Links */}
           <div className="space-y-6">
             <h3 className="font-medium text-sm uppercase tracking-wide text-white">
-              Company
+              {t("company")}
             </h3>
             <div className="space-y-3">
               {navigationLinks.map((link) => (
@@ -119,7 +119,7 @@ const Footer: React.FC = () => {
           {/* Support Links */}
           <div className="space-y-6">
             <h3 className="font-medium text-sm uppercase tracking-wide text-white">
-              Support
+              {t("support")}
             </h3>
             <div className="space-y-3">
               {supportLinks.map((link) => (
@@ -138,12 +138,11 @@ const Footer: React.FC = () => {
           {/* Newsletter & Social */}
           <div className="space-y-6">
             <h3 className="font-medium text-sm uppercase tracking-wide text-white">
-              Stay Connected
+              {t("stay_connected")}
             </h3>
 
             <p className="text-white/90 text-sm leading-relaxed">
-              Subscribe to receive updates and insights from our latest
-              projects.
+              {t("subscribe_description")}
             </p>
 
             {/* Newsletter Form */}
@@ -152,7 +151,7 @@ const Footer: React.FC = () => {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="Enter your email"
+                placeholder={t("email_placeholder")}
                 className="w-full px-4 py-2 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50 transition-all duration-300"
                 required
               />
@@ -165,7 +164,7 @@ const Footer: React.FC = () => {
                     : "bg-gradient-to-r from-green-600 to-blue-600 hover:from-blue-700 hover:to-blue-700 text-white"
                 }`}
               >
-                {isSubscribed ? "Subscribed!" : "Subscribe"}
+                {isSubscribed ? t("subscribed") : t("subscribe")}
               </button>
             </form>
 
@@ -204,24 +203,26 @@ const Footer: React.FC = () => {
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
             <div className="text-center sm:text-left">
               <p className="text-white/70 text-sm">
-                © {currentYear} Delightech Co., Ltd. All rights reserved.
+                © {currentYear} {t("copyright")}
               </p>
             </div>
 
             {/* Legal Links */}
             <div className="flex flex-wrap justify-center sm:justify-end gap-6 text-sm">
-              {["Privacy Policy", "Terms of Service", "Cookie Policy"].map(
-                (item) => (
-                  <Link
-                    key={item}
-                    href={`/${item.toLowerCase().replace(/\s+/g, "-")}`}
-                    className="relative font-medium text-sm transition-all duration-300 group text-white/70 hover:text-white"
-                  >
-                    {item}
-                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
-                  </Link>
-                )
-              )}
+              {[
+                t("privacy_policy"),
+                t("terms_of_service"),
+                t("cookie_policy"),
+              ].map((item) => (
+                <Link
+                  key={item}
+                  href={`/${item.toLowerCase().replace(/\s+/g, "-")}`}
+                  className="relative font-medium text-sm transition-all duration-300 group text-white/70 hover:text-white"
+                >
+                  {item}
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
+                </Link>
+              ))}
             </div>
           </div>
 
@@ -230,7 +231,7 @@ const Footer: React.FC = () => {
             <div className="inline-flex items-center gap-2 px-6 py-2 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full transition-all duration-300">
               <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
               <span className="text-white/90 text-sm font-medium">
-                Proudly serving customers across Southeast Asia
+                {t("status")}
               </span>
             </div>
           </div>

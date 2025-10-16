@@ -3,35 +3,34 @@ import React from "react";
 import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
+import { useTranslations } from "next-intl";
 
 export default function OurCorporate() {
+  const t = useTranslations("Corporate");
+
   const features = [
     {
       icon: Building2,
-      title: "Diversified Business",
-      description:
-        "From manufacturing and construction to beverages and real estate, we operate across multiple sectors with excellence.",
+      title: t("features.diversified.title"),
+      description: t("features.diversified.description"),
       color: "text-yellow-500 dark:text-yellow-400",
     },
     {
       icon: Globe,
-      title: "Global Vision",
-      description:
-        "Driven by innovation and sustainability, we aim to create a global presence while remaining true to our local roots.",
+      title: t("features.global.title"),
+      description: t("features.global.description"),
       color: "text-green-500 dark:text-green-400",
     },
     {
       icon: Users,
-      title: "People First",
-      description:
-        "Our employees and communities are at the heart of everything we do, fostering collaboration and shared success.",
+      title: t("features.people.title"),
+      description: t("features.people.description"),
       color: "text-blue-600 dark:text-blue-400",
     },
     {
       icon: TrendingUp,
-      title: "Sustainable Growth",
-      description:
-        "We are committed to long-term growth through responsible business practices and innovation-driven performance.",
+      title: t("features.growth.title"),
+      description: t("features.growth.description"),
       color: "text-red-500 dark:text-red-400",
     },
   ];
@@ -54,16 +53,16 @@ export default function OurCorporate() {
             variant="secondary"
             className="mb-4 text-sm uppercase tracking-wider"
           >
-            About Us
+            {t("badge")}
           </Badge>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 uppercase">
-            Our{" "}
-            <span className="text-blue-600 dark:text-blue-400">Corporate</span>
+            {t("title")}{" "}
+            <span className="text-blue-600 dark:text-blue-400">
+              {t("title_highlight")}
+            </span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-            We are a dynamic and diversified organization committed to
-            excellence, innovation, and sustainability — shaping industries and
-            empowering communities through responsible growth.
+            {t("description")}
           </p>
         </div>
 
@@ -114,28 +113,19 @@ export default function OurCorporate() {
               {/* Content */}
               <div className="w-full md:w-1/2 p-8 md:p-12">
                 <Badge variant="secondary" className="mb-4">
-                  Corporate Overview
+                  {t("overview.badge")}
                 </Badge>
                 <h3 className="text-2xl md:text-3xl font-bold text-blue-600 dark:text-blue-400 mb-6 uppercase">
-                  Building Tomorrow, Today
+                  {t("overview.title")}
                 </h3>
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
-                  <p>
-                    Our corporate philosophy is built on integrity, excellence,
-                    and innovation. We aim to make a lasting impact through
-                    sustainable development, customer satisfaction, and
-                    community empowerment.
-                  </p>
-                  <p>
-                    With a diversified portfolio and a forward-thinking vision,
-                    we continue to lead the way in transforming industries and
-                    improving lives across the region.
-                  </p>
+                  <p>{t("overview.description1")}</p>
+                  <p>{t("overview.description2")}</p>
                 </div>
                 <div className="mt-6 flex items-center gap-4">
                   <div className="flex-1 h-1 bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 rounded-full"></div>
                   <span className="text-xs uppercase tracking-wider text-muted-foreground font-medium">
-                    Excellence in Action
+                    {t("overview.excellence")}
                   </span>
                 </div>
               </div>

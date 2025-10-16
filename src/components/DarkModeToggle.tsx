@@ -35,7 +35,7 @@ export function ModeToggle() {
       variant="ghost"
       size="icon"
       onClick={toggleTheme}
-      className="relative bg-transparent hover:bg-white/10 border-none transition-colors text-white"
+      className="relative bg-transparent hover:bg-white/10 border-none transition-colors"
       aria-label="Toggle theme"
     >
       <Sun className="h-[1.2rem] w-[1.2rem] scale-100 rotate-0 transition-all duration-300 dark:scale-0 dark:-rotate-90" />

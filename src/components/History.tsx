@@ -1,33 +1,32 @@
 import React from "react";
 import Image from "next/image";
-
-const timeline = [
-  {
-    year: "2025",
-    title: "Bomnin",
-    desc: "Bomnin",
-    details:
-      "Our diversified business units work together to deliver sustainable growth, innovation, and value across multiple industries.",
-    logo: "/assets/bomnin_1.png",
-  },
-  {
-    year: "2019",
-    title: "LUYLEUN",
-    desc: "Mobile app",
-    details:
-      "Capacity: 260 hectares of land featuring residential areas, golf course and water park",
-    logo: "/assets/luyleun2.png",
-  },
-];
+import { useTranslations } from "next-intl";
 
 export default function History() {
+  const t = useTranslations("History");
+  const timeline = [
+    {
+      year: t("timeline.2025.year"),
+      title: t("timeline.2025.title"),
+      desc: t("timeline.2025.desc"),
+      details: t("timeline.2025.details"),
+      logo: "/assets/bomnin_1.png",
+    },
+    {
+      year: t("timeline.2019.year"),
+      title: t("timeline.2019.title"),
+      desc: t("timeline.2019.desc"),
+      details: t("timeline.2019.details"),
+      logo: "/assets/luyleun2.png",
+    },
+  ];
   return (
     <section
       id="history"
       className="relative bg-white dark:bg-gray-900 py-24 px-6 md:px-20 overflow-hidden"
     >
       <h1 className="text-4xl md:text-4xl text-gray-900 dark:text-white font-bold text-center mb-16 uppercase">
-        Our Journey
+        {t("title")}
       </h1>
 
       <div className="relative max-w-6xl mx-auto">

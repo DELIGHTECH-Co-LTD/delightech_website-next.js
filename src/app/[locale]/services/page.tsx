@@ -1,35 +1,29 @@
 import React from "react";
 import Image from "next/image";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge";
-
-const businessUnits = [
-  {
-    id: 1,
-    name: "LUYLEUN Mobile App",
-    description:
-      "Our manufacturing unit is a cornerstone of our success, producing top-quality products with modern technology and sustainability at the core. From cement and building materials to beverages, we ensure the highest production standards.",
-    image: "/assets/luyleun2.png",
-    badge: "Fintech",
-  },
-  {
-    id: 2,
-    name: "BOM NIN",
-    description:
-      "Delivering high-value infrastructure and engineering projects that meet international standards. Our construction unit focuses on innovation, precision, and long-term structural integrity for every development.",
-    image: "/assets/bomnin_1.png",
-    badge: "E-Commerce",
-  },
-];
+import { useTranslations } from "next-intl";
 
 export default function Services() {
+  const t = useTranslations("Services")
+  const businessUnits = [
+    {
+      id: 1,
+      name: t("luyleun.name"),
+      description:
+        t("luyleun.description"),
+      image: "/assets/luyleun2.png",
+      badge: t("luyleun.badge"),
+    },
+    {
+      id: 2,
+      name: t("bomnin.name"),
+      description:
+        t("bomnin.description"),
+      image: "/assets/bomnin_1.png",
+      badge: t("bomnin.badge"),
+    },
+  ];
+
   return (
     <section
       id="services"
@@ -39,11 +33,10 @@ export default function Services() {
         {/* Header */}
         <div className="text-center mb-16 space-y-4">
           <h2 className="text-3xl md:text-4xl text-gray-900 dark:text-white font-bold uppercase">
-            OUR BUSINESS UNIT
+            {t("title_highlight")}
           </h2>
           <p className="text-gray-600 dark:text-gray-300 mt-4 max-w-3xl mx-auto text-lg">
-            Our diversified business units work together to deliver sustainable
-            growth, innovation, and value across multiple industries.
+            {t("description")}
           </p>
         </div>
 

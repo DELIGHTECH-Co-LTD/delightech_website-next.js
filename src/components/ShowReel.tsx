@@ -3,8 +3,11 @@
 import { Play, Pause } from "lucide-react";
 import React, { useState, useRef } from "react";
 import { Badge } from "@/components/ui/badge";
+import { useTranslations } from "next-intl";
+
 
 export default function ShowReel() {
+  const t = useTranslations("Showreel");
   const [isPlaying, setIsPlaying] = useState(false);
   const iframeRef = useRef<HTMLIFrameElement>(null);
 
@@ -37,15 +40,16 @@ export default function ShowReel() {
             variant="secondary"
             className="mb-4 text-sm uppercase tracking-wider"
           >
-            Showreel
+            {t("badge")}
           </Badge>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 uppercase">
-            Our{" "}
-            <span className="text-blue-600 dark:text-blue-400">Showreel</span>
+            {t("title")}{" "}
+            <span className="text-blue-600 dark:text-blue-400">
+              {t("title_highlight")}
+            </span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-            Experience our journey, our people, and our vision — captured in
-            motion. A glimpse into what drives us forward every day.
+            {t("description")}
           </p>
         </div>
 
@@ -94,7 +98,7 @@ export default function ShowReel() {
           {/* Caption */}
           <div className="mt-6 text-center">
             <p className="text-muted-foreground text-sm uppercase tracking-wider font-medium">
-              Corporate Video 2025 — Royal Vision in Motion
+              {t("caption")}
             </p>
           </div>
 

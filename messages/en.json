@@ -1,0 +1,358 @@
+{
+  "Navbar": {
+    "about": "About Us",
+    "service": "Services",
+    "investor": "Investors",
+    "careers": "Careers",
+    "find_us": "Find Us",
+    "language": "Language"
+  },
+  "Hero": {
+    "subtitle": "At DelighTech Co., Ltd., we specialize in creating technology-driven financial solutions that make life easier, faster, and more secure. Our flagship product, LUYLEUN, is redefining access to instant loans in Cambodia.",
+    "title": "Everyone can Access",
+    "title_highlight": "Finances",
+    "contact_us": "Contact Us",
+    "trusted_customers": "Trusted of Customer 10000000+"
+  },
+  "About": {
+    "title": "ABOUT US",
+    "quote": "AS WE LOOK TO THE YEARS AHEAD, WE MUST REMAIN COMMITTED TO EXCELLENCE, KEEP ABREAST OF CHANGES AND INNOVATIONS, ADOPT BETTER MANAGEMENT PRACTICES AND SUCCESSFULLY OVERCOME ALL CHALLENGES BEFORE US.",
+    "find_more": "FIND OUT MORE ABOUT US"
+  },
+  "Services": {
+    "badge": "Our Services",
+    "title": "Our",
+    "title_highlight": "Business Unit",
+    "description": "Our diversified business units work together to deliver sustainable growth, innovation, and value across multiple industries.",
+    "luyleun": {
+      "name": "LUYLEUN Mobile App",
+      "description": "Our manufacturing unit is a cornerstone of our success, producing top-quality products with modern technology and sustainability at the core. From cement and building materials to beverages, we ensure the highest production standards.",
+      "badge": "Fintech"
+    },
+    "bomnin": {
+      "name": "BOM NIN",
+      "description": "Delivering high-value infrastructure and engineering projects that meet international standards. Our construction unit focuses on innovation, precision, and long-term structural integrity for every development.",
+      "badge": "E-Commerce"
+    },
+    "learn_more": "Learn More",
+    "innovation_driven": "Innovation Driven"
+  },
+  "Corporate": {
+    "badge": "About Us",
+    "title": "Our",
+    "title_highlight": "Corporate",
+    "description": "We are a dynamic and diversified organization committed to excellence, innovation, and sustainability — shaping industries and empowering communities through responsible growth.",
+    "features": {
+      "diversified": {
+        "title": "Diversified Business",
+        "description": "From manufacturing and construction to beverages and real estate, we operate across multiple sectors with excellence."
+      },
+      "global": {
+        "title": "Global Vision",
+        "description": "Driven by innovation and sustainability, we aim to create a global presence while remaining true to our local roots."
+      },
+      "people": {
+        "title": "People First",
+        "description": "Our employees and communities are at the heart of everything we do, fostering collaboration and shared success."
+      },
+      "growth": {
+        "title": "Sustainable Growth",
+        "description": "We are committed to long-term growth through responsible business practices and innovation-driven performance."
+      }
+    },
+    "overview": {
+      "badge": "Corporate Overview",
+      "title": "Building Tomorrow, Today",
+      "description1": "Our corporate philosophy is built on integrity, excellence, and innovation. We aim to make a lasting impact through sustainable development, customer satisfaction, and community empowerment.",
+      "description2": "With a diversified portfolio and a forward-thinking vision, we continue to lead the way in transforming industries and improving lives across the region.",
+      "excellence": "Excellence in Action"
+    }
+  },
+  "Showreel": {
+    "badge": "Showreel",
+    "title": "Our",
+    "title_highlight": "Showreel",
+    "description": "Experience our journey, our people, and our vision — captured in motion. A glimpse into what drives us forward every day.",
+    "caption": "Corporate Video 2025 — Royal Vision in Motion"
+  },
+  "Team": {
+    "badge": "Leadership Team",
+    "title": "Meet Our",
+    "title_highlight": "Leadership Team",
+    "description": "Our team of visionary leaders brings together decades of experience, innovation, and passion — driving our company to new heights.",
+    "members": {
+      "vila": {
+        "name": "Lay Vila",
+        "position": "CEO & Founder"
+      },
+      "krisna": {
+        "name": "Ke Chankrisna",
+        "position": "CTO"
+      },
+      "reaksa": {
+        "name": "Pheng Reaksa",
+        "position": "Business Advisor"
+      },
+      "chenda": {
+        "name": "Ly Chenda",
+        "position": "Credit Assessment Supervisor"
+      },
+      "pengsea": {
+        "name": "Ly Pengsea",
+        "position": "Account Supervisor"
+      },
+      "kimsrun": {
+        "name": "Chun Kimsrun",
+        "position": "Marketing Supervisor"
+      },
+      "leabheng": {
+        "name": "Meth Leabheng",
+        "position": "Human Resource"
+      },
+      "kimsrorng": {
+        "name": "Taing Kimsrorng",
+        "position": "Collection Supervisor"
+      }
+    }
+  },
+  "FAQ": {
+    "badge": "Support Center",
+    "title": "Frequently Asked",
+    "title_highlight": "Questions",
+    "description": "Find answers to common questions about LUYLEUN, Delightech, and our financial services.",
+    "categories": {
+      "all": "All Questions",
+      "general": "General",
+      "security": "Security",
+      "pricing": "Pricing",
+      "business": "Business",
+      "lending": "Lending",
+      "support": "Support",
+      "compliance": "Compliance",
+      "future": "Future Plans"
+    },
+    "questions": {
+      "q1": {
+        "question": "What is LUYLEUN and how does it work?",
+        "answer": "LUYLEUN is Cambodia's leading digital financial platform that provides secure, fast, and accessible financial services. It allows users to transfer money instantly, pay bills, access micro-lending services, and manage their digital wallet with multi-currency support. The app uses advanced security features including biometric authentication to ensure safe transactions."
+      },
+      "q2": {
+        "question": "Is LUYLEUN safe and secure to use?",
+        "answer": "Yes, LUYLEUN employs bank-grade security measures including end-to-end encryption, multi-factor authentication, and biometric security. We maintain 99.9% uptime with real-time fraud detection and prevention systems. All transactions are protected by international banking security standards."
+      },
+      "q3": {
+        "question": "How can I download and start using LUYLEUN?",
+        "answer": "You can download LUYLEUN from both the App Store and Google Play Store. After installation, simply create your account using your phone number, verify your identity, and you can start using all our financial services immediately. The registration process takes less than 5 minutes."
+      },
+      "q4": {
+        "question": "What are the fees for using LUYLEUN services?",
+        "answer": "LUYLEUN offers competitive and transparent pricing. Basic money transfers within Cambodia are free for amounts under $100. For larger amounts and international transfers, we charge minimal fees starting from 0.5%. Bill payments and wallet top-ups are completely free."
+      },
+      "q5": {
+        "question": "Can I use LUYLEUN for business transactions?",
+        "answer": "Absolutely! LUYLEUN offers comprehensive business solutions including merchant payment integration, bulk payment processing, invoice management, and business analytics. We support both small businesses and large enterprises with customized solutions."
+      },
+      "q6": {
+        "question": "What currencies does LUYLEUN support?",
+        "answer": "LUYLEUN supports multiple currencies including Cambodian Riel (KHR), US Dollar (USD), and other major currencies. Our multi-currency wallet allows you to hold, exchange, and transact in different currencies seamlessly."
+      },
+      "q7": {
+        "question": "How does the micro-lending feature work?",
+        "answer": "Our AI-powered micro-lending service provides quick access to credit based on your transaction history and financial behavior. Loan amounts range from $50 to $5,000 with flexible repayment terms. The approval process is instant for eligible users with competitive interest rates."
+      },
+      "q8": {
+        "question": "What customer support options are available?",
+        "answer": "We provide 24/7 customer support through multiple channels including in-app chat, phone support, email, and our help center. Our dedicated support team is available in Khmer and English to assist with any questions or issues."
+      },
+      "q9": {
+        "question": "How does Delightech ensure regulatory compliance?",
+        "answer": "Delightech works closely with the National Bank of Cambodia and other regulatory bodies to ensure full compliance with all financial regulations. We maintain proper licensing, follow KYC/AML procedures, and regularly undergo security audits."
+      },
+      "q10": {
+        "question": "What are Delightech's future expansion plans?",
+        "answer": "We're planning regional expansion into Vietnam and Thailand by 2025, introducing new products like digital banking services, enhanced AI features, and strategic partnerships with regional financial institutions. We're also developing SME financing solutions and blockchain integration."
+      }
+    },
+    "cta": {
+      "title": "Still Have",
+      "title_highlight": "Questions?",
+      "description": "Our customer support team is available 24/7 to help you with any questions or concerns.",
+      "contact_support": "Contact Support",
+      "download_app": "Download LUYLEUN"
+    }
+  },
+  "Footer": {
+    "description": "Building sustainable growth through innovation, leadership, and excellence across industries. Transforming lives through technology.",
+    "company": "Company",
+    "support": "Support",
+    "stay_connected": "Stay Connected",
+    "subscribe_description": "Subscribe to receive updates and insights from our latest projects.",
+    "email_placeholder": "Enter your email",
+    "subscribe": "Subscribe",
+    "subscribed": "Subscribed!",
+    "theme": "Theme",
+    "follow_us": "Follow Us",
+    "copyright": "Delightech Co., Ltd. All rights reserved.",
+    "privacy_policy": "Privacy Policy",
+    "terms_of_service": "Terms of Service",
+    "cookie_policy": "Cookie Policy",
+    "status": "Proudly serving customers across Southeast Asia",
+    "links": {
+      "store": "Find a Store",
+      "signin": "Sign In",
+      "join": "Join Now",
+      "contact": "Contact Support"
+    },
+    "Navbar":{
+        "about":"About Us",
+        "service":"Services",
+        "careers":"Careers"
+    }
+  },
+  "History": {
+    "title": "Our Journey",
+    "timeline": {
+      "2025": {
+        "year": "2025",
+        "title": "Bomnin",
+        "desc": "Bomnin",
+        "details": "Our diversified business units work together to deliver sustainable growth, innovation, and value across multiple industries."
+      },
+      "2019": {
+        "year": "2019",
+        "title": "LUYLEUN",
+        "desc": "Mobile app",
+        "details": "Capacity: 260 hectares of land featuring residential areas, golf course and water park"
+      }
+    }
+  },
+  "Careers": {
+    "title": "Build Your Career With Us",
+    "description": "At DelighTech, we design experiences that redefine how people interact with financial technology. Join a team where innovation, empathy, and precision meet.",
+    "view_positions": "View Open Positions",
+    "apply_now": "Apply Now",
+    "cta": {
+      "title": "Don't see your dream role?",
+      "description": "We're always looking for creative minds who think beyond the ordinary.",
+      "send_portfolio": "Send Your Portfolio"
+    }
+  },
+  "AboutPage": {
+    "vision_title": "OUR VISION:",
+    "vision_description": "To revolutionize financial solutions through technology and to empower individuals and businesses worldwide to achieve financial freedom and stability.",
+    "founder_message": {
+      "title": "Message from Founder",
+      "subtitle": "Mr. Lay Vila, Founder of Delightech",
+      "paragraph1": "When I started DelighTech, I had one clear belief — that technology should serve people, not the other way around. Our goal has always been to build digital products that don't just work, but truly make life better, simpler, and smarter.",
+      "paragraph2": "With our flagship project LUYLEUN, we're redefining how Cambodians experience finance — offering fast, transparent, and reliable access to opportunities that help them grow. We believe financial technology should be empowering, inclusive, and built for everyone.",
+      "paragraph3": "At DelighTech, we are driven by passion and purpose. Every idea, every line of code, and every user experience is guided by our vision to create meaningful impact through innovation.",
+      "paragraph4": "This great success is owed to our visionary leadership and We're not just building apps — we're building the future of how people connect with technology. Thank you for being part of this journey. Together, we'll continue to dream bigger, innovate smarter, and grow stronger."
+    }
+  },
+  "InvestorPage": {
+    "hero": {
+      "title": "INVESTOR RELATIONS",
+      "description": "Join us in building the future of financial technology in Southeast Asia. Discover investment opportunities with Delightech's innovative solutions."
+    },
+    "opportunity": {
+      "title": "Investment Opportunity",
+      "why_invest": {
+        "title": "Why Invest in Delightech?",
+        "points": {
+          "point1": "Leading fintech innovation in Cambodia and Southeast Asia",
+          "point2": "LUYLEUN app with growing user base and market penetration",
+          "point3": "High-growth industry with strong demand",
+          "point4": "Experienced leadership team with proven track record",
+          "point5": "Strong partnerships and regulatory compliance",
+          "point6": "Scalable technology platform with expansion potential"
+        }
+      }
+    },
+    "financial_highlights": {
+      "title": "Financial Highlights",
+      "active_users": {
+        "value": "500K+",
+        "label": "Active Users",
+        "description": "Growing monthly user base"
+      },
+      "transaction_volume": {
+        "value": "$50M+",
+        "label": "Transaction Volume",
+        "description": "Annual processed amount"
+      },
+      "growth": {
+        "value": "150%",
+        "label": "Year-over-Year Growth",
+        "description": "Revenue increase"
+      }
+    },
+    "market_position": {
+      "title": "Market Position & Growth Strategy",
+      "current_position": {
+        "title": "Current Market Position",
+        "description1": "Delightech has established itself as a leading fintech company in Cambodia, with LUYLEUN becoming one of the most trusted digital financial platforms in the country.",
+        "description2": "Our innovative approach to financial inclusion has positioned us uniquely to capture the growing digital payment market in Southeast Asia."
+      },
+      "expansion_strategy": {
+        "title": "Expansion Strategy",
+        "points": {
+          "point1": "Regional expansion into Vietnam and Thailand",
+          "point2": "New product lines including digital banking services",
+          "point3": "Strategic partnerships with regional financial institutions",
+          "point4": "Enhanced AI and blockchain technology integration",
+          "point5": "SME financing and business solutions"
+        }
+      }
+    },
+    "investment_process": {
+      "title": "Investment Process",
+      "steps": {
+        "step1": {
+          "title": "Initial Contact",
+          "description": "Reach out to our investor relations team to express your interest"
+        },
+        "step2": {
+          "title": "Due Diligence",
+          "description": "Review our business model, financials, and growth projections"
+        },
+        "step3": {
+          "title": "Term Sheet",
+          "description": "Negotiate investment terms and conditions that work for both parties"
+        },
+        "step4": {
+          "title": "Closing",
+          "description": "Complete legal documentation and finalize the investment"
+        }
+      }
+    },
+    "leadership": {
+      "title": "Leadership Team",
+      "vila": {
+        "name": "Mr. Lay Vila",
+        "position": "Founder & CEO",
+        "description1": "Visionary leader with over 10 years of experience in fintech and technology innovation. Under his leadership, Delightech has grown from a startup to Cambodia's leading fintech company.",
+        "description2": "His strategic vision and deep understanding of the Southeast Asian market make him uniquely positioned to drive the company's continued growth and expansion."
+      }
+    },
+    "contact": {
+      "title": "Get In Touch",
+      "description": "Interested in learning more about investment opportunities with Delightech? We'd love to hear from you.",
+      "investor_relations": {
+        "title": "Investor Relations",
+        "email": "investors@delightech.com",
+        "phone": "+855 (0) 23 123 456",
+        "address": "Phnom Penh, Cambodia"
+      },
+      "investment_range": {
+        "title": "Investment Range",
+        "minimum": "Minimum Investment:",
+        "minimum_value": "$100,000",
+        "target": "Target Funding:",
+        "target_value": "$10M Series A",
+        "use_of_funds": "Use of Funds:",
+        "use_of_funds_value": "Regional expansion & product development"
+      },
+      "request_deck": "Request Investment Deck"
+    }
+  }
+}

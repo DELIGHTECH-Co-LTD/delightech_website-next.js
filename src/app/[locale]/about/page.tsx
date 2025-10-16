@@ -3,8 +3,10 @@ import Image from "next/image";
 import History from "@/components/History";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
+import { useTranslations } from "next-intl";
 
 export default function AboutPage() {
+  const t = useTranslations("AboutPage");
   return (
     <>
       {/* Hero Section with Vision */}
@@ -18,12 +20,10 @@ export default function AboutPage() {
           <Card className="bg-black/40 dark:bg-black/60 border-none backdrop-blur-sm max-w-2xl">
             <CardContent className="p-6 md:p-8">
               <h2 className="text-white text-2xl md:text-3xl font-bold mb-4">
-                OUR VISION:
+                {t("vision_title")}
               </h2>
               <p className="text-white text-lg md:text-2xl font-semibold leading-relaxed">
-                To revolutionize financial solutions through technology and to
-                empower individuals and businesses worldwide to achieve
-                financial freedom and stability.
+                {t("vision_description")}
               </p>
             </CardContent>
           </Card>
@@ -36,40 +36,19 @@ export default function AboutPage() {
           <CardContent className="p-0 text-white space-y-6">
             <div>
               <h1 className="text-3xl md:text-4xl font-bold mb-2 uppercase">
-                Message from Founder
+                {t("founder_message.title")}
               </h1>
               <Separator className="bg-white/20 mb-4" />
               <p className="text-lg mb-6 text-white/90">
-                Mr. Lay Vila, Founder of Delightech
+                {t("founder_message.subtitle")}
               </p>
             </div>
 
             <div className="space-y-4 text-justify leading-relaxed text-white/95">
-              <p>
-                When I started DelighTech, I had one clear belief — that
-                technology should serve people, not the other way around. Our
-                goal has always been to build digital products that don't just
-                work, but truly make life better, simpler, and smarter.
-              </p>
-              <p>
-                With our flagship project LUYLEUN, we're redefining how
-                Cambodians experience finance — offering fast, transparent, and
-                reliable access to opportunities that help them grow. We believe
-                financial technology should be empowering, inclusive, and built
-                for everyone.
-              </p>
-              <p>
-                At DelighTech, we are driven by passion and purpose. Every idea,
-                every line of code, and every user experience is guided by our
-                vision to create meaningful impact through innovation.
-              </p>
-              <p>
-                This great success is owed to our visionary leadership and We're
-                not just building apps — we're building the future of how people
-                connect with technology. Thank you for being part of this
-                journey. Together, we'll continue to dream bigger, innovate
-                smarter, and grow stronger.
-              </p>
+              <p>{t("founder_message.paragraph1")}</p>
+              <p>{t("founder_message.paragraph2")}</p>
+              <p>{t("founder_message.paragraph3")}</p>
+              <p>{t("founder_message.paragraph4")}</p>
             </div>
           </CardContent>
         </Card>
@@ -87,7 +66,6 @@ export default function AboutPage() {
           </CardContent>
         </Card>
       </section>
-
       <History />
     </>
   );

@@ -9,6 +9,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { ArrowRight, Send } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 const jobs = [
   {
@@ -26,6 +27,8 @@ const jobs = [
 ];
 
 export default function CareerPage() {
+  const t = useTranslations("Careers");
+
   return (
     <section
       id="careers"
@@ -35,15 +38,13 @@ export default function CareerPage() {
         {/* Header Section */}
         <div className="text-center mb-16">
           <h1 className="text-3xl md:text-5xl text-foreground font-bold mb-4">
-            Build Your Career With Us
+            {t("title")}
           </h1>
           <p className="text-muted-foreground max-w-2xl mx-auto mb-8 text-lg">
-            At DelighTech, we design experiences that redefine how people
-            interact with financial technology. Join a team where innovation,
-            empathy, and precision meet.
+            {t("description")}
           </p>
           <Button size="lg" className="rounded-full text-base">
-            View Open Positions
+            {t("view_positions")}
             <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
         </div>
@@ -65,7 +66,7 @@ export default function CareerPage() {
               </CardContent>
               <CardFooter>
                 <Button variant="outline" className="rounded-full w-full">
-                  Apply Now
+                  {t("apply_now")}
                 </Button>
               </CardFooter>
             </Card>
@@ -75,18 +76,17 @@ export default function CareerPage() {
         {/* CTA Section */}
         <div className="text-center pt-12 border-t border-border">
           <h3 className="text-3xl text-foreground font-semibold mb-4">
-            Don't see your dream role?
+            {t("cta.title")}
           </h3>
           <p className="text-muted-foreground mb-6 max-w-2xl mx-auto text-lg">
-            We're always looking for creative minds who think beyond the
-            ordinary.
+            {t("cta.description")}
           </p>
           <Button
             size="lg"
             variant="outline"
             className="rounded-full text-base"
           >
-            Send Your Portfolio
+            {t("cta.send_portfolio")}
             <Send className="ml-2 h-4 w-4" />
           </Button>
         </div>
