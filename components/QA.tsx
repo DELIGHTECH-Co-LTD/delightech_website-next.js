@@ -109,7 +109,7 @@ const QA: React.FC = () => {
       : qaData.filter((item) => item.category === selectedCategory);
 
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-900 dark:to-blue-900 flex flex-col items-center justify-center py-24 px-8 md:px-24 overflow-hidden transition-colors duration-500">
+    <section className="relative min-h-screen bg-white dark:bg-gray-900 flex flex-col items-center justify-center py-24 px-8 md:px-24 overflow-hidden transition-colors duration-500">
       {/* Background Pattern - Responsive to theme */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 left-10 w-96 h-96 bg-blue-500/5 dark:bg-blue-500/10 rounded-full filter blur-3xl animate-pulse"></div>

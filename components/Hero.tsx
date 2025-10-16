@@ -1,5 +1,5 @@
 import Image from "next/image";
-import mockup from "../public/assets/DLT.png";
+import mockup from "../public/assets/DLT B.png";
 import Link from "next/link";
 
 export default function Hero() {
@@ -31,8 +31,8 @@ export default function Hero() {
           <Image
             src={mockup}
             alt="Mockup"
-            width={800}
-            height={800}
+            width={900}
+            height={900}
             className="max-w-full drop-shadow-2xl"
           />
         </div>

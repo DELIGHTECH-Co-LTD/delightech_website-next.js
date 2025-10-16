@@ -2,7 +2,7 @@ import { FC } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { MapPin, Moon, Sun } from "lucide-react";
-import logo from "../public/assets/DLT (2).png";
+import logo from "../public/assets/DLT B.png";
 import { useTheme } from "../hooks/UseTheme";
 const Navbar: FC = () => {
   const { theme, toggleTheme, mounted } = useTheme();
@@ -14,8 +14,8 @@ const Navbar: FC = () => {
             <Image
               src={logo}
               alt="Logo"
-              width={40}
-              height={40}
+              width={60}
+              height={60}
               className="cursor-pointer transition-transform duration-300 hover:scale-110"
             />
           </Link>
