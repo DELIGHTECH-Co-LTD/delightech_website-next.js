@@ -7,6 +7,7 @@ import Team from "../components/Team";
 import Showreel from "../components/Showreel";
 import Footer from "../components/Footer";
 import OurCorporate from "../components/OurCorporate";
+import QA from "../components/QA";
 
 export default function Home() {
   return (
@@ -17,7 +18,6 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
       <div className="min-h-screen">
         <Navbar />
         <main className="flex-1">
@@ -27,6 +27,7 @@ export default function Home() {
           <OurCorporate />
           <Showreel />
           <Team />
+          <QA />
         </main>
         <Footer />
       </div>

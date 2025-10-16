@@ -54,14 +54,9 @@ const Footer: React.FC = () => {
             href="/store"
             className="text-gray-300 hover:text-blue-600 transition"
           >
-            Find a Store
+            Find Us
           </Link>
-          <Link
-            href="/signin"
-            className="text-gray-300 hover:text-blue-600 transition"
-          >
-            Sign In
-          </Link>
+
           <Link
             href="/join"
             className="text-gray-300 hover:text-blue-600 transition"
@@ -81,11 +76,11 @@ const Footer: React.FC = () => {
             <input
               type="email"
               placeholder="Your email"
-              className="px-3 py-2 rounded-3xl w-full bg-white/10 text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-600"
+              className="px-3 py-2 rounded-lg w-full bg-white/10 text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-600"
             />
             <button
               type="submit"
-              className="bg-blue-600 hover:bg-blue-500 text-white font-semibold px-4 py-2 rounded-3xl transition"
+              className="bg-blue-600 hover:bg-blue-500 text-white font-semibold px-4 py-2 rounded-lg transition"
             >
               Join
             </button>

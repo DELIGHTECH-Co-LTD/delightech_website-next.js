@@ -18,9 +18,9 @@ export default function Career() {
 
   return (
     <Layout>
-      <section className="flex flex-col bg-white dark:bg-gray-900 py-24 items-center text-center mt-24 px-6">
+      <section className="flex flex-col bg-white dark:bg-gray-900 py-20 items-center text-center mt-24 px-6">
         <h1 className="text-3xl md:text-5xl text-gray-900 dark:text-white font-bold mb-4">
-          Build Your Career With Us with Us
+          Build Your Career With Us
         </h1>
         <p className="text-gray-900 dark:text-white max-w-2xl mb-12">
           At delightech, we design experiences that redefine how people interact
@@ -55,7 +55,7 @@ export default function Career() {
         <p className="text-gray-900 dark:text-white mb-6">
           We’re always looking for creative minds who think beyond the ordinary.
         </p>
-        <button className="px-8 py-3 border border-neon rounded-full hover:bg-neon hover:text-blue-700 transition">
+        <button className="px-10 py-3 mb-16 border border-black dark:border-white rounded-full text-lg text-black dark:text-white hover:bg-blue-600/20 hover:border-blue-600 transition-all duration-300">
           Send Your Portfolio →
         </button>
       </section>

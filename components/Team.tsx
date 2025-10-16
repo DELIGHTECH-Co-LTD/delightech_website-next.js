@@ -2,6 +2,13 @@ import React from "react";
 import Image, { StaticImageData } from "next/image";
 import { Linkedin } from "lucide-react";
 import team1 from "../public/assets/3.png";
+import team2 from "../public/assets/9.png";
+import team3 from "../public/assets/10.png";
+import team4 from "../public/assets/4.png";
+import team5 from "../public/assets/5.png";
+import team6 from "../public/assets/6.png";
+import team7 from "../public/assets/7.png";
+import team8 from "../public/assets/8.png";
 
 interface TeamMember {
   id: number;
@@ -21,51 +28,51 @@ const teamMembers: TeamMember[] = [
   },
   {
     id: 2,
-    name: "Chan Dara",
-    position: "CEO & FOUNDER",
-    image: team1,
+    name: "KE CHANKRISNA",
+    position: "CTO",
+    image: team2,
     linkedin: "#",
   },
   {
     id: 3,
-    name: "Ly Sophea",
-    position: "Chief Financial Officer",
-    image: team1,
+    name: "PHENG REAKSA",
+    position: "Business Advisor",
+    image: team3,
     linkedin: "#",
   },
   {
     id: 4,
-    name: "Kim Serey",
-    position: "Head of Marketing",
-    image: team1,
+    name: "LY CHENDA",
+    position: "Credit Assessment Supervisor",
+    image: team4,
     linkedin: "#",
   },
   {
     id: 1,
-    name: "LAY VILA",
-    position: "CEO & FOUNDER",
-    image: team1,
+    name: "LY PENGSEA",
+    position: "Finance & Accounting Supervisor",
+    image: team5,
     linkedin: "/#",
   },
   {
     id: 2,
-    name: "Chan Dara",
-    position: "CEO & FOUNDER",
-    image: team1,
+    name: "CHUM KIMSRUN",
+    position: "Marketing Supervisor",
+    image: team6,
     linkedin: "#",
   },
   {
     id: 3,
-    name: "Ly Sophea",
-    position: "Chief Financial Officer",
-    image: team1,
+    name: "METH LEABHENG",
+    position: "HR Supervisor",
+    image: team7,
     linkedin: "#",
   },
   {
     id: 4,
-    name: "Kim Serey",
-    position: "Head of Marketing",
-    image: team1,
+    name: "TIANG KIMSRONG",
+    position: "Collection Supervisor",
+    image: team8,
     linkedin: "#",
   },
 ];

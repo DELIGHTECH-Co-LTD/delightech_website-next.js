@@ -28,6 +28,66 @@ body,
   background-size: 300% 300%;
   animation: gradientMove 12s ease infinite;
 }
+
+/* Custom animations for consistent component styling */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.animate-slideInUp {
+  animation: slideInUp 0.6s ease-out forwards;
+}
+
+.animate-scaleIn {
+  animation: scaleIn 0.4s ease-out forwards;
+}
+
+/* Glassmorphism utilities for consistent styling */
+.glass-card {
+  @apply bg-white/10 backdrop-blur-lg border border-white/20 rounded-3xl;
+}
+
+.glass-button {
+  @apply bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl transition-all duration-300 hover:bg-white/20 hover:border-white/30;
+}
+
+.glass-input {
+  @apply bg-white/5 backdrop-blur-sm border border-white/20 rounded-xl;
+}
+
 body {
   @apply bg-gray-50 dark:bg-gray-900 text-gray-200 antialiased;
   font-family: "Inter", "Roboto";

@@ -2,7 +2,7 @@ import { FC } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { MapPin, Moon, Sun } from "lucide-react";
-import logo from "../public/assets/DLT.png";
+import logo from "../public/assets/DLT (2).png";
 import { useTheme } from "../hooks/UseTheme";
 const Navbar: FC = () => {
   const { theme, toggleTheme, mounted } = useTheme();
@@ -37,12 +37,13 @@ const Navbar: FC = () => {
                 SERVICES
               </Link>
             </li>
+
             <li>
               <Link
-                href="portfolio"
+                href="investor"
                 className="hover:text-blue-700 transition-colors"
               >
-                PORTFOLIO
+                INVESTORS
               </Link>
             </li>
             <li>

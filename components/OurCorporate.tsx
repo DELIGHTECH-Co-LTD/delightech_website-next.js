@@ -8,6 +8,9 @@ const OurCorporate: React.FC = () => {
     <section className="relative min-h-screen bg-white dark:bg-gray-900 items-center justify-center py-20 px-6 lg:px-20 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
+          <span className="inline-block bg-gradient-to-r from-blue-500 to-green-400 text-transparent bg-clip-text text-sm font-semibold uppercase tracking-wider mb-3">
+            Our Corporate
+          </span>
           <h2 className="text-3xl md:text-4xl text-gray-900 dark:text-white font-bold uppercase">
             Our Corporate
           </h2>
