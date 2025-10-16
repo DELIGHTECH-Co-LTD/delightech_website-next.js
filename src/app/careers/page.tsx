@@ -1,0 +1,96 @@
+import React from "react";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { ArrowRight, Send } from "lucide-react";
+
+const jobs = [
+  {
+    title: "Senior UX Designer",
+    desc: "Lead design strategy for next-generation fintech platforms. Work with top global financial brands.",
+  },
+  {
+    title: "Frontend Developer (React)",
+    desc: "Implement pixel-perfect user interfaces and animations using modern frameworks and best practices.",
+  },
+  {
+    title: "Product Strategist",
+    desc: "Define user and business goals for financial products that impact millions of customers worldwide.",
+  },
+];
+
+export default function CareerPage() {
+  return (
+    <section
+      id="careers"
+      className="relative min-h-screen pt-32 pb-24 px-6 lg:px-20 overflow-hidden bg-background"
+    >
+      <div className="max-w-7xl mx-auto">
+        {/* Header Section */}
+        <div className="text-center mb-16">
+          <h1 className="text-3xl md:text-5xl text-foreground font-bold mb-4">
+            Build Your Career With Us
+          </h1>
+          <p className="text-muted-foreground max-w-2xl mx-auto mb-8 text-lg">
+            At DelighTech, we design experiences that redefine how people
+            interact with financial technology. Join a team where innovation,
+            empathy, and precision meet.
+          </p>
+          <Button size="lg" className="rounded-full text-base">
+            View Open Positions
+            <ArrowRight className="ml-2 h-4 w-4" />
+          </Button>
+        </div>
+
+        {/* Jobs Grid */}
+        <div className="grid md:grid-cols-3 gap-8 mb-20">
+          {jobs.map((job, i) => (
+            <Card
+              key={i}
+              className="hover:border-blue-600 dark:hover:border-blue-500 transition-all duration-300 hover:shadow-lg flex flex-col"
+            >
+              <CardHeader>
+                <CardTitle className="text-2xl">{job.title}</CardTitle>
+              </CardHeader>
+              <CardContent className="flex-grow">
+                <CardDescription className="text-base">
+                  {job.desc}
+                </CardDescription>
+              </CardContent>
+              <CardFooter>
+                <Button variant="outline" className="rounded-full w-full">
+                  Apply Now
+                </Button>
+              </CardFooter>
+            </Card>
+          ))}
+        </div>
+
+        {/* CTA Section */}
+        <div className="text-center pt-12 border-t border-border">
+          <h3 className="text-3xl text-foreground font-semibold mb-4">
+            Don't see your dream role?
+          </h3>
+          <p className="text-muted-foreground mb-6 max-w-2xl mx-auto text-lg">
+            We're always looking for creative minds who think beyond the
+            ordinary.
+          </p>
+          <Button
+            size="lg"
+            variant="outline"
+            className="rounded-full text-base"
+          >
+            Send Your Portfolio
+            <Send className="ml-2 h-4 w-4" />
+          </Button>
+        </div>
+      </div>
+    </section>
+  );
+}
