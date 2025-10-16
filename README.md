@@ -1,21 +1,36 @@
-# Next.js Glassy Dark Landing (TypeScript + Tailwind)
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## What's included
-- Next.js + TypeScript skeleton
-- TailwindCSS + PostCSS config
-- Components: Navbar, Hero, Services, About, Team, Showreel, Footer
-- Glassy dark styles in `styles/globals.css`
-- A sample hero image placed at `public/hero-sample.png`
+## Getting Started
 
-## How to run
-1. `npm install`
-2. `npm run dev`
-3. Open http://localhost:3000
+First, run the development server:
 
-Replace assets and tweak styles as needed.
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-## Troubleshooting
-- Make sure you have **Node.js v18+** or newer and `npm` (or `pnpm`/`yarn`) installed.
-- Run `npm install` (or `pnpm install` / `yarn`) before `npm run dev`.
-- If TypeScript complains about missing types, run `npm i -D @types/react @types/react-dom @types/node`.
-- If you see an error about `next/types/global`, this project includes a fixed `next-env.d.ts` — try removing `node_modules` and reinstalling.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
