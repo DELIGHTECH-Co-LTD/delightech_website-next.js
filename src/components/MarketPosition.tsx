@@ -6,16 +6,16 @@ export default function MarketPosition() {
   const t = useTranslations("InvestorPage");
 
   return (
-    <section className="py-24 px-6 lg:px-20 hero-gradient">
+    <section className="py-24 px-6 lg:px-20 bg-background">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-white uppercase">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-foreground uppercase">
           {t("market_position.title")}
         </h2>
 
         <div className="grid md:grid-cols-2 gap-12">
-          <Card className="bg-card/80 backdrop-blur-sm">
+          <Card className="border shadow-sm">
             <CardHeader>
-              <CardTitle className="text-xl text-blue-600 dark:text-blue-400">
+              <CardTitle className="text-xl text-foreground">
                 {t("market_position.current_position.title")}
               </CardTitle>
             </CardHeader>
@@ -25,9 +25,9 @@ export default function MarketPosition() {
             </CardContent>
           </Card>
 
-          <Card className="bg-card/80 backdrop-blur-sm">
+          <Card className="border shadow-sm">
             <CardHeader>
-              <CardTitle className="text-xl text-blue-600 dark:text-blue-400">
+              <CardTitle className="text-xl text-foreground">
                 {t("market_position.expansion_strategy.title")}
               </CardTitle>
             </CardHeader>

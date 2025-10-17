@@ -7,7 +7,7 @@ export default function InvestorContact() {
   const t = useTranslations("InvestorPage");
 
   return (
-    <section className="py-24 px-6 lg:px-20 bg-muted/50">
+    <section className="py-24 px-6 lg:px-20 bg-muted/30">
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-8 text-foreground uppercase">
           {t("contact.title")}

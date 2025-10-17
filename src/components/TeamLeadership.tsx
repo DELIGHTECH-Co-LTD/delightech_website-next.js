@@ -8,16 +8,16 @@ export default function TeamLeadership() {
   const t = useTranslations("InvestorPage");
 
   return (
-    <section className="px-6 lg:px-20 hero-gradient">
+    <section className="py-24 px-6 lg:px-20 bg-background">
       <div className="max-w-7xl mx-auto">
-        <h2 className="pt-10 text-3xl md:text-4xl font-bold text-center text-white uppercase">
+        <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground uppercase mb-12">
           {t("leadership.title")}
         </h2>
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <Card className="bg-card/80 backdrop-blur-sm">
+          <Card className="border shadow-sm">
             <CardHeader>
-              <CardTitle className="text-2xl text-blue-600 dark:text-blue-400">
+              <CardTitle className="text-2xl text-foreground">
                 {t("leadership.vila.name")}
               </CardTitle>
               <Badge variant="secondary" className="w-fit">
