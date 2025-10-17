@@ -23,7 +23,7 @@ export default function History() {
   return (
     <section
       id="history"
-      className="relative bg-white dark:bg-gray-900 py-24 px-6 md:px-20 overflow-hidden"
+      className="relative min-h-screen items-center justify-center pt-32 pb-24 px-6 lg:px-20 overflow-hidden bg-background"
     >
       <h1 className="text-4xl md:text-4xl text-gray-900 dark:text-white font-bold text-center mb-16 uppercase">
         {t("title")}

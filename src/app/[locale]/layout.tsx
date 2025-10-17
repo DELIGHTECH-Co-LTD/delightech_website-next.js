@@ -4,6 +4,7 @@ import "../globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { FixedModeToggle } from "@/components/FixedModeToggle";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 
@@ -51,6 +52,7 @@ export default async function RootLayout({
             <Navbar />
             {children}
             <Footer />
+            <FixedModeToggle />
           </NextIntlClientProvider>
         </ThemeProvider>
       </body>

@@ -52,10 +52,10 @@ const Footer: React.FC = () => {
 
   return (
     <footer className="bg-blue-700/20 footer-gradient text-white overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 lg:py-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {/* Company Info */}
-          <div className="lg:col-span-1 space-y-6">
+          <div className="lg:col-span-1 space-y-4">
             <Link href="/" className="flex items-center group">
               <div className="relative">
                 <Image
@@ -78,7 +78,7 @@ const Footer: React.FC = () => {
             </p>
 
             {/* Contact Info */}
-            <div className="space-y-3">
+            <div className="space-y-2">
               <div className="flex items-center gap-2 text-white/90 hover:text-white transition-all duration-300 group">
                 <MapPin className="w-4 h-4 group-hover:scale-110 transition-transform" />
                 <span className="font-medium text-sm">
@@ -99,11 +99,11 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Company Links */}
-          <div className="space-y-6">
+          <div className="space-y-4">
             <h3 className="font-medium text-sm uppercase tracking-wide text-white">
               {t("company")}
             </h3>
-            <div className="space-y-3">
+            <div className="space-y-2">
               {navigationLinks.map((link) => (
                 <Link
                   key={link.href}
@@ -118,11 +118,11 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Support Links */}
-          <div className="space-y-6">
+          <div className="space-y-4">
             <h3 className="font-medium text-sm uppercase tracking-wide text-white">
               {t("support")}
             </h3>
-            <div className="space-y-3">
+            <div className="space-y-2">
               {supportLinks.map((link) => (
                 <Link
                   key={link.href}
@@ -137,7 +137,7 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Newsletter & Social */}
-          <div className="space-y-6">
+          <div className="space-y-4">
             <h3 className="font-medium text-sm uppercase tracking-wide text-white">
               {t("stay_connected")}
             </h3>
@@ -147,7 +147,7 @@ const Footer: React.FC = () => {
             </p>
 
             {/* Newsletter Form */}
-            <form onSubmit={handleSubscribe} className="space-y-4">
+            <form onSubmit={handleSubscribe} className="space-y-3">
               <input
                 type="email"
                 value={email}
@@ -176,11 +176,11 @@ const Footer: React.FC = () => {
             </div>
 
             {/* Social Links */}
-            <div className="space-y-4">
+            <div className="space-y-3">
               <h4 className="font-medium text-sm uppercase tracking-wide text-white">
                 Follow Us
               </h4>
-              <div className="flex gap-3">
+              <div className="flex gap-2">
                 {socialLinks.map((social, index) => {
                   const IconComponent = social.icon;
                   return (
@@ -200,7 +200,7 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Section */}
-        <div className="mt-12 sm:mt-16 pt-8 border-t border-white/20">
+        <div className="mt-8 sm:mt-10 pt-6 border-t border-white/20">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
             <div className="text-center sm:text-left">
               <p className="text-white/70 text-sm">

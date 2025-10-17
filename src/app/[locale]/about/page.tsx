@@ -1,10 +1,11 @@
 import React from "react";
 import Image from "next/image";
 import History from "@/components/History";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { useTranslations } from "next-intl";
-
+import MessageFrom from "@/components/MassageFrom";
 export default function AboutPage() {
   const t = useTranslations("AboutPage");
   return (
@@ -13,7 +14,7 @@ export default function AboutPage() {
       <section
         className="relative z-10 w-screen h-screen max-w-9xl mx-auto bg-cover bg-no-repeat flex items-center justify-center"
         style={{
-          backgroundImage: "url('/assets/angkorWat.png')",
+          backgroundImage: "url('/assets/angkor.jpg')",
         }}
       >
         <div className="absolute inset-0 flex flex-col items-start justify-center px-8 md:px-24">
@@ -30,39 +31,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Founder Message Section */}
-      <section className="relative min-h-screen hero-gradient flex flex-col lg:flex-row items-center justify-center px-6 lg:px-20 py-16 overflow-hidden gap-12 lg:gap-20">
-        <Card className="max-w-3xl bg-transparent border-none shadow-none">
-          <CardContent className="p-0 text-white space-y-6">
-            <div>
-              <h1 className="text-3xl md:text-4xl font-bold mb-2 uppercase">
-                {t("founder_message.title")}
-              </h1>
-              <Separator className="bg-white/20 mb-4" />
-              <p className="text-lg mb-6 text-white/90">
-                {t("founder_message.subtitle")}
-              </p>
-            </div>
-
-            <div className="space-y-4 text-justify leading-relaxed text-white/95">
-              <p>{t("founder_message.paragraph1")}</p>
-              <p>{t("founder_message.paragraph2")}</p>
-              <p>{t("founder_message.paragraph3")}</p>
-              <p>{t("founder_message.paragraph4")}</p>
-            </div>
-          </CardContent>
-        </Card>
-        <div className="flex justify-center">
-          <Image
-            src="/assets/bVila.png"
-            alt="Mr. Lay Vila - Founder & CEO"
-            width={700}
-            height={500}
-            className="max-w-full drop-shadow-2xl rounded-lg"
-            priority
-          />
-        </div>
-      </section>
+      <MessageFrom />
       <History />
     </>
   );

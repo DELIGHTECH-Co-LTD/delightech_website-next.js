@@ -104,10 +104,11 @@ export default function Navbar() {
                         href={link.href}
                         className={cn(
                           navigationMenuTriggerStyle(),
-                          "font-medium text-sm uppercase tracking-wide transition-all duration-300 bg-transparent hover:bg-transparent",
+                          "font-medium text-sm uppercase tracking-wider transition-colors duration-200 bg-transparent hover:bg-transparent focus:bg-transparent active:bg-transparent relative px-4 py-2",
+                          "before:absolute before:bottom-0 before:left-0 before:w-0 before:h-px before:bg-current before:transition-all before:duration-200 before:ease-out hover:before:w-full",
                           isScrolled
-                            ? "text-gray-700 dark:text-gray-300 hover:text-primary"
-                            : "text-white/90 hover:text-white hover:bg-white/10"
+                            ? "text-gray-700 dark:text-gray-300"
+                            : "text-white/80"
                         )}
                       >
                         {link.label}
@@ -127,10 +128,10 @@ export default function Navbar() {
                 size="sm"
                 asChild
                 className={cn(
-                  "gap-2 rounded-full transition-all duration-300 hover:scale-105",
+                  "gap-2 rounded-full transition-all duration-300 hover:scale-105 hover:bg-transparent focus:bg-transparent active:bg-transparent",
                   isScrolled
                     ? "text-gray-700 dark:text-gray-300"
-                    : "text-white/90 hover:bg-white/20"
+                    : "text-white/90"
                 )}
               >
                 <a href="https://maps.app.goo.gl/2Rgf7xrg5aDfTzAR8">
@@ -152,10 +153,10 @@ export default function Navbar() {
                     variant="ghost"
                     size="icon"
                     className={cn(
-                      "rounded-lg transition-all duration-300",
+                      "rounded-lg transition-all duration-300 hover:bg-transparent focus:bg-transparent active:bg-transparent",
                       isScrolled
                         ? "text-gray-700 dark:text-gray-300"
-                        : "text-white hover:bg-white/20"
+                        : "text-white"
                     )}
                     aria-label={isMenuOpen ? "Close menu" : "Open menu"}
                   >
@@ -190,10 +191,10 @@ export default function Navbar() {
                           <Link
                             href={link.href}
                             className={cn(
-                              "flex items-center justify-between py-4 px-4 rounded-xl transition-all duration-300 group",
+                              "flex items-center justify-between py-4 px-4 rounded-xl transition-colors duration-200 relative hover:bg-transparent focus:bg-transparent active:bg-transparent",
                               "text-gray-700 dark:text-gray-300",
-                              "hover:bg-gray-100 dark:hover:bg-gray-800",
-                              "hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                              "before:absolute before:bottom-2 before:left-4 before:w-0 before:h-px before:bg-current before:transition-all before:duration-200 before:ease-out hover:before:w-[calc(100%-2rem)]",
+                              "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                             )}
                             style={{
                               animation: `fadeInUp 0.3s ease-out ${
@@ -201,11 +202,11 @@ export default function Navbar() {
                               }s both`,
                             }}
                           >
-                            <span className="font-medium text-lg">
+                            <span className="font-medium text-lg relative z-10">
                               {link.label}
                             </span>
                             <ChevronRight
-                              className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity"
+                              className="w-4 h-4 transition-transform duration-200 hover:translate-x-1 relative z-10"
                               aria-hidden="true"
                             />
                           </Link>
@@ -221,7 +222,7 @@ export default function Navbar() {
                           className={cn(
                             "flex items-center justify-between w-full py-4 px-4 rounded-xl transition-colors",
                             "text-gray-700 dark:text-gray-300",
-                            "hover:bg-gray-100 dark:hover:bg-gray-800",
+                            "hover:bg-transparent focus:bg-transparent active:bg-transparent",
                             "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                           )}
                         >
@@ -232,10 +233,7 @@ export default function Navbar() {
                         </a>
                       </SheetClose>
 
-                      <div className="flex items-center justify-between w-full py-4 px-4 rounded-xl">
-                        <span className="font-medium text-lg text-gray-700 dark:text-gray-300">
-                          {t("language")}
-                        </span>
+                      <div className="flex items-center justify-center w-full py-4 px-4 rounded-xl">
                         <LanguageSwitcher />
                       </div>
                     </div>
