@@ -1,7 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&display=swap");
 @import "tailwindcss";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
+
+/* Font utility classes */
+.font-roboto {
+  font-family: var(--font-family-roboto);
+}
+
+.font-kantumruy {
+  font-family: var(--font-family-kantumruy);
+}
+
+.font-geist-sans {
+  font-family: var(--font-family-geist-sans);
+}
+
+.font-geist-mono {
+  font-family: var(--font-family-geist-mono);
+}
+
+.font-kantumruy-pro {
+  font-family: var(--font-family-kantumruy-pro);
+}
+
+/* Language-specific font application */
+:lang(en) {
+  font-family: var(--font-family-roboto);
+}
+
+:lang(kh) {
+  font-family: var(--font-family-kantumruy);
+}
+
+/* Enhanced Khmer typography */
+:lang(kh) h1,
+:lang(kh) h2,
+:lang(kh) h3,
+:lang(kh) h4,
+:lang(kh) h5,
+:lang(kh) h6 {
+  font-family: var(--font-family-kantumruy);
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+  font-weight: 500;
+}
+
+:lang(kh) p,
+:lang(kh) span,
+:lang(kh) div {
+  font-family: var(--font-family-kantumruy);
+  line-height: 1.8;
+  word-spacing: 0.03em;
+}
+
+:lang(kh) button {
+  font-family: var(--font-family-kantumruy);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+@theme {
+  --font-family-roboto: "Roboto", system-ui, sans-serif;
+  --font-family-kantumruy: "Kantumruy Pro", system-ui, sans-serif;
+  --font-family-geist-sans: var(--font-geist-sans);
+  --font-family-geist-mono: var(--font-geist-mono);
+  --font-family-kantumruy-pro: var(--font-kantumruy-pro);
+}
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
@@ -145,4 +212,320 @@
   backdrop-filter: blur(8px) saturate(120%);
   -webkit-backdrop-filter: blur(8px) saturate(120%);
   border-radius: 14px;
+}
+
+/* Logo Animation Styles */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes logoGlow {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 20px rgba(59, 130, 246, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 0 30px rgba(59, 130, 246, 0.6));
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-fadeInScale {
+  animation: fadeInScale 1s ease-out;
+}
+
+.animate-logoGlow {
+  animation: logoGlow 2s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+/* Additional Hero Animations */
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes gradientShift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 0%;
+    transform: rotate(0deg) scale(1);
+  }
+  25% {
+    background-position: 100% 50%;
+    transform: rotate(1deg) scale(1.02);
+  }
+  50% {
+    background-position: 50% 100%;
+    transform: rotate(0deg) scale(1);
+  }
+  75% {
+    background-position: 0% 50%;
+    transform: rotate(-1deg) scale(0.98);
+  }
+  100% {
+    background-position: 0% 0%;
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+@keyframes gradientFlowReverse {
+  0% {
+    background-position: 100% 100%;
+    transform: rotate(0deg) scale(1.01);
+  }
+  25% {
+    background-position: 0% 50%;
+    transform: rotate(-1deg) scale(0.99);
+  }
+  50% {
+    background-position: 50% 0%;
+    transform: rotate(0deg) scale(1);
+  }
+  75% {
+    background-position: 100% 50%;
+    transform: rotate(1deg) scale(1.01);
+  }
+  100% {
+    background-position: 100% 100%;
+    transform: rotate(0deg) scale(1.01);
+  }
+}
+
+@keyframes spin-reverse {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fadeInLeft {
+  animation: fadeInLeft 0.8s ease-out;
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.animate-gradientShift {
+  background-size: 200% 200%;
+  animation: gradientShift 3s ease-in-out infinite;
+}
+
+.animate-gradientFlow {
+  background-size: 400% 400%;
+  animation: gradientFlow 15s ease-in-out infinite;
+}
+
+.animate-gradientFlowReverse {
+  background-size: 400% 400%;
+  animation: gradientFlowReverse 20s ease-in-out infinite;
+}
+
+.animate-spin-reverse {
+  animation: spin-reverse 30s linear infinite;
+}
+
+.animate-slideInRight {
+  animation: slideInRight 0.8s ease-out;
+}
+
+/* Staggered Animation Delays */
+.delay-300 {
+  animation-delay: 0.3s;
+}
+
+.delay-500 {
+  animation-delay: 0.5s;
+}
+
+.delay-700 {
+  animation-delay: 0.7s;
+}
+
+.delay-1000 {
+  animation-delay: 1s;
+}
+
+.delay-1500 {
+  animation-delay: 1.5s;
+}
+
+/* Shape-specific Animations */
+@keyframes shapeFloat {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-8px) rotate(5deg);
+  }
+  66% {
+    transform: translateY(-4px) rotate(-3deg);
+  }
+}
+
+@keyframes shapeBounce {
+  0%,
+  100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-12px) scale(1.1);
+  }
+}
+
+@keyframes shapeGlow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px currentColor;
+    opacity: 0.3;
+  }
+  50% {
+    box-shadow: 0 0 30px currentColor;
+    opacity: 0.6;
+  }
+}
+
+@keyframes morphShape {
+  0%,
+  100% {
+    border-radius: 0%;
+  }
+  25% {
+    border-radius: 50% 0% 50% 0%;
+  }
+  50% {
+    border-radius: 50%;
+  }
+  75% {
+    border-radius: 0% 50% 0% 50%;
+  }
+}
+
+.animate-shapeFloat {
+  animation: shapeFloat 4s ease-in-out infinite;
+}
+
+.animate-shapeBounce {
+  animation: shapeBounce 3s ease-in-out infinite;
+}
+
+.animate-shapeGlow {
+  animation: shapeGlow 2s ease-in-out infinite;
+}
+
+.animate-morphShape {
+  animation: morphShape 6s ease-in-out infinite;
+}
+
+/* Clip Path Utilities */
+.clip-path-polygon {
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.clip-path-star {
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+}
+
+.clip-path-hexagon {
+  clip-path: polygon(30% 0%, 70% 0%, 100% 50%, 70% 100%, 30% 100%, 0% 50%);
+}
+
+.clip-path-arrow {
+  clip-path: polygon(
+    40% 0%,
+    40% 20%,
+    100% 20%,
+    100% 80%,
+    40% 80%,
+    40% 100%,
+    0% 50%
+  );
+}
+
+.clip-path-diamond {
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
 }
