@@ -8,19 +8,29 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useEffect, useState } from "react";
+import { useRouter, usePathname } from "@/i18n/navigation";
+import { useLocale } from "next-intl";
 
 const languages = [
   { code: "en", label: "English" },
-  { code: "km", label: "ខ្មែរ" },
+  { code: "kh", label: "ខ្មែរ" },
 ];
 
 export default function LanguageSwitcher() {
-  const [language, setLanguage] = useState("en");
+  const locale = useLocale(); // Get current locale
+  const router = useRouter();
+  const pathname = usePathname();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  const switchLanguage = (newLocale: string) => {
+    if (newLocale !== locale) {
+      router.replace(pathname, { locale: newLocale });
+    }
+  };
 
   if (!mounted) {
     return (
@@ -34,8 +44,6 @@ export default function LanguageSwitcher() {
       </Button>
     );
   }
-
-  const currentLanguage = languages.find((lang) => lang.code === language);
 
   return (
     <DropdownMenu>
@@ -54,11 +62,11 @@ export default function LanguageSwitcher() {
         {languages.map((lang) => (
           <DropdownMenuItem
             key={lang.code}
-            onClick={() => setLanguage(lang.code)}
+            onClick={() => switchLanguage(lang.code)}
             className="cursor-pointer"
           >
             <span>{lang.label}</span>
-            {language === lang.code && <Check className="ml-auto h-4 w-4" />}
+            {locale === lang.code && <Check className="ml-auto h-4 w-4" />}
           </DropdownMenuItem>
         ))}
       </DropdownMenuContent>

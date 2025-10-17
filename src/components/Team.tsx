@@ -2,67 +2,69 @@ import React from "react";
 import Image from "next/image";
 import { Linkedin } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-
-const teamMembers = [
-  {
-    id: 1,
-    name: "Lay Vila",
-    position: "CEO & Founder",
-    image: "/assets/teams/vila.png",
-    linkedin: "#",
-  },
-  {
-    id: 2,
-    name: "Ke Chankrisna",
-    position: "CTO",
-    image: "/assets/teams/krisna.png",
-    linkedin: "#",
-  },
-  {
-    id: 3,
-    name: "Pheng Reaksa",
-    position: "Business Advisor",
-    image: "/assets/teams/reaksa.png",
-    linkedin: "/#",
-  },
-  {
-    id: 4,
-    name: "Ly Chenda",
-    position: "Credit Assessment Supervisor",
-    image: "/assets/teams/chenda.png",
-    linkedin: "#",
-  },
-  {
-    id: 5,
-    name: "Ly Pengsea",
-    position: "Account Supervisor",
-    image: "/assets/teams/pengsea.png",
-    linkedin: "/#",
-  },
-  {
-    id: 6,
-    name: "Chun Kimsrun",
-    position: "Marketing Supervisor",
-    image: "/assets/teams/kimsrun.png",
-    linkedin: "#",
-  },
-  {
-    id: 7,
-    name: "Meth Leabheng",
-    position: "Human Resource",
-    image: "/assets/teams/leabheng.png",
-    linkedin: "#",
-  },
-  {
-    id: 8,
-    name: "Taing Kimsrorng",
-    position: "Collection Supervisor",
-    image: "/assets/teams/kimsrorng.png",
-    linkedin: "#",
-  },
-];
+import { useTranslations } from "next-intl";
 
 export default function Team() {
+  const t = useTranslations("Team");
+
+  const teamMembers = [
+    {
+      id: 1,
+      name: t("members.vila.name"),
+      position: t("members.vila.position"),
+      image: "/assets/teams/vila.png",
+      linkedin: "#",
+    },
+    {
+      id: 2,
+      name: t("members.krisna.name"),
+      position: t("members.krisna.position"),
+      image: "/assets/teams/krisna.png",
+      linkedin: "#",
+    },
+    {
+      id: 3,
+      name: t("members.reaksa.name"),
+      position: t("members.reaksa.position"),
+      image: "/assets/teams/reaksa.png",
+      linkedin: "/#",
+    },
+    {
+      id: 4,
+      name: t("members.chenda.name"),
+      position: t("members.chenda.position"),
+      image: "/assets/teams/chenda.png",
+      linkedin: "#",
+    },
+    {
+      id: 5,
+      name: t("members.pengsea.name"),
+      position: t("members.pengsea.position"),
+      image: "/assets/teams/pengsea.png",
+      linkedin: "/#",
+    },
+    {
+      id: 6,
+      name: t("members.kimsrun.name"),
+      position: t("members.kimsrun.position"),
+      image: "/assets/teams/kimsrun.png",
+      linkedin: "#",
+    },
+    {
+      id: 7,
+      name: t("members.leabheng.name"),
+      position: t("members.leabheng.position"),
+      image: "/assets/teams/leabheng.png",
+      linkedin: "#",
+    },
+    {
+      id: 8,
+      name: t("members.kimsrorng.name"),
+      position: t("members.kimsrorng.position"),
+      image: "/assets/teams/kimsrorng.png",
+      linkedin: "#",
+    },
+  ];
   return (
     <section className="relative min-h-screen bg-background pt-32 pb-24 px-6 lg:px-20 overflow-hidden">
       {/* Background Pattern - Same as FAQ */}
@@ -78,17 +80,16 @@ export default function Team() {
             variant="secondary"
             className="mb-4 text-sm uppercase tracking-wider"
           >
-            Leadership Team
+            {t("badge")}
           </Badge>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 uppercase">
-            Meet Our{" "}
+            {t("title")}{" "}
             <span className="text-blue-600 dark:text-blue-400">
-              Leadership Team
+              {t("title_highlight")}
             </span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-            Our team of visionary leaders brings together decades of experience,
-            innovation, and passion — driving our company to new heights.
+            {t("description")}
           </p>
         </div>
 
@@ -108,7 +109,7 @@ export default function Team() {
                   className="object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div>
-                
+
                 {/* LinkedIn Button */}
                 {member.linkedin && (
                   <a
