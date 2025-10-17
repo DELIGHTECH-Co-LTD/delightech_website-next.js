@@ -3,7 +3,6 @@ import InvestorHero from "@/components/InvestorHero";
 import InvestmentOpportunity from "@/components/InvestmentOpportunity";
 import MarketPosition from "@/components/MarketPosition";
 import InvestmentProcess from "@/components/InvestmentProcess";
-import InvestorContact from "@/components/InvestorContact";
 
 export default function InvestorPage() {
   return (
@@ -11,8 +10,6 @@ export default function InvestorPage() {
       <InvestorHero />
       <InvestmentOpportunity />
       <MarketPosition />
-      <InvestmentProcess />
-      <InvestorContact />
     </div>
   );
 }
