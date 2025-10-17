@@ -4,6 +4,7 @@ import { Play, Pause } from "lucide-react";
 import React, { useState, useRef } from "react";
 import { Badge } from "@/components/ui/badge";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 
 export default function ShowReel() {
   const t = useTranslations("Showreel");
@@ -11,38 +12,47 @@ export default function ShowReel() {
   const [activeVideoIndex, setActiveVideoIndex] = useState(0);
   const iframeRef = useRef<HTMLIFrameElement>(null);
 
+  // Function to extract YouTube video ID from embed URL
+  const getYouTubeVideoId = (embedUrl: string) => {
+    const match = embedUrl.match(/\/embed\/([^?]+)/);
+    return match ? match[1] : null;
+  };
+
+  // Function to get YouTube thumbnail URL
+  const getYouTubeThumbnail = (
+    embedUrl: string,
+    quality: "maxresdefault" | "hqdefault" = "maxresdefault"
+  ) => {
+    const videoId = getYouTubeVideoId(embedUrl);
+    return videoId
+      ? `https://img.youtube.com/vi/${videoId}/${quality}.jpg`
+      : null;
+  };
+
   const videos = [
     {
       title: "Company Showreel",
       description:
         "Our main company showcase featuring all our achievements and milestones.",
-      thumbnail: "/assets/thumbnails/showreel.jpg",
-      embedUrl:
-        "https://www.youtube.com/embed/s7KYcm6FM2s?enablejsapi=1&controls=1&rel=0",
+      embedUrl: "https://www.youtube.com/embed/s7KYcm6FM2s?si=AR62As_8yzdNOso3",
     },
     {
       title: "Company Culture",
       description:
         "See how we work together to create amazing products and foster innovation.",
-      thumbnail: "/assets/thumbnails/culture.jpg",
-      embedUrl:
-        "https://www.youtube.com/embed/dQw4w9WgXcQ?enablejsapi=1&controls=1&rel=0",
+      embedUrl: "https://www.youtube.com/embed/WnVpIVK_3Sc?si=-itkEIYTU7RYJpAE",
     },
     {
       title: "Product Demo",
       description:
         "Watch our latest product demonstrations and feature highlights.",
-      thumbnail: "/assets/thumbnails/demo.jpg",
-      embedUrl:
-        "https://www.youtube.com/embed/dQw4w9WgXcQ?enablejsapi=1&controls=1&rel=0",
+      embedUrl: "https://www.youtube.com/embed/q2hlBgGKDzM?si=pN3_FLcaMURW0I_M",
     },
     {
       title: "Behind the Scenes",
       description:
         "Get an exclusive look at our development process and team collaboration.",
-      thumbnail: "/assets/thumbnails/behind.jpg",
-      embedUrl:
-        "https://www.youtube.com/embed/dQw4w9WgXcQ?enablejsapi=1&controls=1&rel=0",
+      embedUrl: "https://www.youtube.com/embed/Yw6aF_YGlFo?si=_J6AIxcyETZtMNI2",
     },
   ];
 
@@ -161,14 +171,27 @@ export default function ShowReel() {
               >
                 {/* Thumbnail Container */}
                 <div className="relative w-full h-32 overflow-hidden bg-muted">
-                  <div
-                    className="w-full h-full bg-cover bg-center bg-gray-400"
-                    style={{
-                      backgroundImage: video.thumbnail
-                        ? `url(${video.thumbnail})`
-                        : "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
-                    }}
-                  />
+                  {getYouTubeThumbnail(video.embedUrl) ? (
+                    <Image
+                      src={getYouTubeThumbnail(video.embedUrl)!}
+                      alt={`${video.title} thumbnail`}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 50vw, 25vw"
+                      onError={(e) => {
+                        // Fallback to lower quality thumbnail
+                        const fallbackSrc = getYouTubeThumbnail(
+                          video.embedUrl,
+                          "hqdefault"
+                        );
+                        if (fallbackSrc) {
+                          e.currentTarget.src = fallbackSrc;
+                        }
+                      }}
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-gradient-to-br from-blue-400 to-purple-500" />
+                  )}
 
                   {/* Play Icon */}
                   <div className="absolute inset-0 flex items-center justify-center">
