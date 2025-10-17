@@ -67,12 +67,6 @@ export default function Team() {
   ];
   return (
     <section className="relative min-h-screen bg-background pt-32 pb-24 px-6 lg:px-20 overflow-hidden">
-      {/* Background Pattern - Same as FAQ */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-10 w-96 h-96 bg-blue-500/5 dark:bg-blue-500/10 rounded-full filter blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-10 w-80 h-80 bg-purple-500/5 dark:bg-purple-500/10 rounded-full filter blur-3xl animate-pulse"></div>
-      </div>
-
       <div className="relative max-w-7xl mx-auto z-10">
         {/* Header */}
         <div className="text-center mb-16">
@@ -98,7 +92,7 @@ export default function Team() {
           {teamMembers.map((member) => (
             <div
               key={member.id}
-              className="group relative rounded-2xl overflow-hidden bg-card border border-border hover:border-blue-600/50 dark:hover:border-blue-400/50 hover:shadow-2xl transition-all duration-500"
+              className="group relative rounded-2xl overflow-hidden bg-card border border-border hover:border-blue-600/50 dark:hover:border-blue-400/50 hover:shadow-2xl hover:shadow-blue-500/25 transition-all duration-500"
             >
               {/* Image Container */}
               <div className="relative w-full h-80 overflow-hidden bg-muted">
@@ -108,7 +102,6 @@ export default function Team() {
                   fill
                   className="object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div>
 
                 {/* LinkedIn Button */}
                 {member.linkedin && (
@@ -116,7 +109,7 @@ export default function Team() {
                     href={member.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="absolute bottom-4 right-4 bg-blue-600 dark:bg-blue-500 text-white p-2.5 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 hover:scale-110 hover:bg-blue-700 dark:hover:bg-blue-600 shadow-lg"
+                    className="absolute bottom-4 right-4 bg-blue-600 dark:bg-blue-500 text-white p-2.5 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 hover:scale-110 hover:bg-blue-700 dark:hover:bg-blue-600 shadow-lg shadow-blue-500/50"
                     aria-label={`${member.name}'s LinkedIn`}
                   >
                     <Linkedin size={18} />
@@ -134,9 +127,6 @@ export default function Team() {
                 </p>
                 <div className="mt-4 w-12 h-[2px] bg-blue-600 dark:bg-blue-400 mx-auto group-hover:w-20 transition-all duration-300"></div>
               </div>
-
-              {/* Hover Glow Effect */}
-              <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 bg-gradient-to-r from-blue-600/5 via-purple-600/5 to-blue-600/5 pointer-events-none transition-opacity duration-500"></div>
             </div>
           ))}
         </div>
