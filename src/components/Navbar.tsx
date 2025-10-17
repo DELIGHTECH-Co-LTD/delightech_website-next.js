@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import { FC, useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -57,7 +57,6 @@ const Navbar: FC = () => {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 lg:h-20">
-            {/* Logo */}
             <div className="flex items-center">
               <Link href="/" className="flex items-center group">
                 <div className="relative">
@@ -73,8 +72,6 @@ const Navbar: FC = () => {
                 </div>
               </Link>
             </div>
-
-            {/* Desktop Navigation Links */}
             <div className="hidden lg:flex items-center space-x-8">
               {navigationLinks.map((link) => (
                 <Link
@@ -95,13 +92,8 @@ const Navbar: FC = () => {
                 </Link>
               ))}
             </div>
-
-            {/* Desktop Actions */}
             <div className="hidden lg:flex items-center space-x-4">
-              {/* Theme Toggle */}
               <ModeToggle />
-
-              {/* Find Us Link */}
               <Link
                 href="/stores"
                 className={`flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-300 hover:scale-105 ${
@@ -113,17 +105,10 @@ const Navbar: FC = () => {
                 <MapPin size={18} />
                 <span className="font-medium text-sm">Find Us</span>
               </Link>
-
-              {/* Language Switcher */}
               <LanguageSwitcher />
             </div>
-
-            {/* Mobile Menu Button */}
             <div className="lg:hidden flex items-center space-x-3">
-              {/* Mobile Theme Toggle */}
               <ModeToggle />
-
-              {/* Hamburger Menu */}
               <button
                 onClick={(e) => {
                   e.stopPropagation();
@@ -146,20 +131,15 @@ const Navbar: FC = () => {
           </div>
         </div>
       </nav>
-
-      {/* Mobile Menu Overlay */}
       <div
         className={`fixed inset-0 z-40 lg:hidden transition-all duration-300 ${
           isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
         }`}
       >
-        {/* Backdrop */}
         <div
           className="absolute inset-0 bg-black/50 backdrop-blur-sm"
           onClick={() => setIsMenuOpen(false)}
         ></div>
-
-        {/* Mobile Menu */}
         <div
           className={`absolute top-0 right-0 h-full w-full max-w-sm bg-white/95 dark:bg-gray-900/95 backdrop-blur-lg border-l border-gray-200/50 dark:border-white/10 shadow-2xl transform transition-transform duration-300 ${
             isMenuOpen ? "translate-x-0" : "translate-x-full"
@@ -167,7 +147,6 @@ const Navbar: FC = () => {
           onClick={(e) => e.stopPropagation()}
         >
           <div className="flex flex-col h-full">
-            {/* Mobile Menu Header */}
             <div className="flex items-center justify-between p-6 border-b border-gray-200/50 dark:border-white/10">
               <div className="flex items-center">
                 <Image
@@ -185,8 +164,6 @@ const Navbar: FC = () => {
                 <X className="w-5 h-5" />
               </button>
             </div>
-
-            {/* Mobile Navigation Links */}
             <div className="flex-1 py-6">
               <div className="space-y-2 px-6">
                 {navigationLinks.map((link, index) => (
@@ -202,10 +179,7 @@ const Navbar: FC = () => {
                   </Link>
                 ))}
               </div>
-
-              {/* Mobile Actions */}
               <div className="mt-8 px-6 space-y-4">
-                {/* Find Us */}
                 <Link
                   href="/stores"
                   onClick={() => setIsMenuOpen(false)}
@@ -214,8 +188,6 @@ const Navbar: FC = () => {
                   <span className="font-medium text-lg">Find Us</span>
                   <MapPin className="w-5 h-5" />
                 </Link>
-
-                {/* Language Switcher */}
                 <div className="flex items-center justify-between w-full py-4 px-4 rounded-xl">
                   <span className="font-medium text-lg text-gray-700 dark:text-gray-300">
                     Language
@@ -224,8 +196,6 @@ const Navbar: FC = () => {
                 </div>
               </div>
             </div>
-
-            {/* Mobile Menu Footer */}
             <div className="p-6 border-t border-gray-200/50 dark:border-white/10">
               <p className="text-center text-sm text-gray-500 dark:text-gray-400">
                 © 2025 Delightech. All rights reserved.

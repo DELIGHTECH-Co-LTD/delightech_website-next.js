@@ -125,12 +125,12 @@
   animation: gradientMove 12s ease infinite;
 }
 .nav-gradient {
-  background: linear-gradient(-45deg, #000000, #570000, #053cc7, #005e08);
+  background: linear-gradient(-45deg, #000000, #001c68, #0039ca, #053cc7);
   background-size: 300% 300%;
   animation: gradientMove 12s ease infinite;
 }
 .footer-gradient {
-  background: linear-gradient(-45deg, #00852c, #009620, #005e08, #053cc7);
+  background: linear-gradient(#000000, #001c68, #0039ca, #053cc7);
   background-size: 300% 300%;
   animation: gradientMove 12s ease infinite;
 }

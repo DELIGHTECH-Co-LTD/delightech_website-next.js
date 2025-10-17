@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -34,9 +34,8 @@ const Footer: React.FC = () => {
   ];
 
   const supportLinks = [
-    { href: "/store", label: "Find a Store" },
+    { href: "/store", label: "Find Us" },
     { href: "/signin", label: "Sign In" },
-    { href: "/join", label: "Join Now" },
     { href: "/contact", label: "Contact Support" },
   ];
 

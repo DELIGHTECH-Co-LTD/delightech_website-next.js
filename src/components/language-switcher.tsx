@@ -43,7 +43,7 @@ export default function LanguageSwitcher() {
         <Button
           variant="ghost"
           size="icon"
-          className="relative bg-transparent hover:bg-white/10 border-none transition-colors text-white"
+          className="relative bg-transparent hover:bg-white/10 border-none transition-colors "
           aria-label="Switch language"
         >
           <Globe className="h-[1.2rem] w-[1.2rem]" />
