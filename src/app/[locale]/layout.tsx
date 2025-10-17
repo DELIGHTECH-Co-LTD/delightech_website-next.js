@@ -31,13 +31,8 @@ export default async function RootLayout({
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
 }>) {
-  // Await params before accessing locale
   const { locale } = await params;
-
-  // Fetch messages for the current locale
   const messages = await getMessages();
-
-  // Select font based on locale
   const fontClass = locale === "kh" ? kantumruy.className : roboto.className;
 
   return (
