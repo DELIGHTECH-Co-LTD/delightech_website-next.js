@@ -56,6 +56,20 @@ export default function Services() {
               className="group overflow-hidden hover:border-blue-600/50 dark:hover:border-blue-400/50 hover:shadow-2xl transition-all duration-500 bg-transparent rounded-lg"
               // Removed border classes here
             >
+              <div
+                className={`flex flex-col md:flex-row items-center gap-0 ${
+                  index % 2 === 1 ? "md:flex-row-reverse" : ""
+                }`}
+              >
+                {/* Image */}
+                <div className="relative w-full md:w-1/2 h-80 md:h-96 overflow-hidden bg-muted">
+                  <Image
+                    src={unit.image}
+                    alt={unit.name}
+                    fill
+                    className="object-contain p-8 group-hover:scale-105 transition-transform duration-700"
+                  />
+                </div>
               <div className="p-0">
                 <div
                   className={`flex flex-col md:flex-row items-center gap-0 ${

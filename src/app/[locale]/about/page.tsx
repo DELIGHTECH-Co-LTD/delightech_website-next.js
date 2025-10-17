@@ -52,19 +52,16 @@ export default function AboutPage() {
             </div>
           </CardContent>
         </Card>
-
-        <Card className="flex-shrink-0 bg-transparent border-none shadow-2xl overflow-hidden">
-          <CardContent className="p-0">
-            <Image
-              src="/assets/bVila.png"
-              alt="Founder of Chip Mong"
-              width={400}
-              height={600}
-              className="rounded-lg object-contain"
-              priority
-            />
-          </CardContent>
-        </Card>
+        <div className="flex justify-center">
+          <Image
+            src="/assets/bVila.png"
+            alt="Mr. Lay Vila - Founder & CEO"
+            width={700}
+            height={500}
+            className="max-w-full drop-shadow-2xl rounded-lg"
+            priority
+          />
+        </div>
       </section>
       <History />
     </>
