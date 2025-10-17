@@ -1,6 +1,5 @@
-// src/app/[locale]/layout.tsx
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Roboto, Kantumruy_Pro } from "next/font/google";
 import "../globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import Navbar from "@/components/Navbar";
@@ -8,14 +7,16 @@ import Footer from "@/components/Footer";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const roboto = Roboto({
+  weight: ["100", "300", "400", "500", "700", "900"],
   subsets: ["latin"],
+  variable: "--font-roboto",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const kantumruy = Kantumruy_Pro({
+  weight: ["100", "200", "300", "400", "500", "600", "700"],
   subsets: ["latin"],
+  variable: "--font-kantumruy",
 });
 
 export const metadata: Metadata = {
@@ -36,11 +37,14 @@ export default async function RootLayout({
   // Fetch messages for the current locale
   const messages = await getMessages();
 
+  // Select font based on locale
+  const fontClass = locale === "kh" ? kantumruy.className : roboto.className;
+
   return (
     <html lang={locale} suppressHydrationWarning>
       <head />
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${roboto.variable} ${kantumruy.variable} ${fontClass} antialiased`}
       >
         <ThemeProvider
           attribute="class"
