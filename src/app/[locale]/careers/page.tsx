@@ -11,7 +11,6 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Send } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { Send } from "@/components/animate-ui/icons/send";
 
 const jobs = [
   {
