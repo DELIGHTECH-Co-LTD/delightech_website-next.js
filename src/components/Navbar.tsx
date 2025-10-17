@@ -56,6 +56,7 @@ export default function Navbar() {
     { href: "/services", label: t("service") },
     { href: "/investors", label: t("investor") },
     { href: "/careers", label: t("careers") },
+    { href: "/contact", label: t("contact") },
   ];
 
   return (

@@ -12,6 +12,7 @@ import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Send } from "lucide-react";
 import { useTranslations } from "next-intl";
 
+
 const jobs = [
   {
     title: "Senior UX Designer",
@@ -100,7 +101,7 @@ export default function CareerPage() {
             className="rounded-full text-base"
           >
             {t("cta.send_portfolio")}
-            <Send animateOnHover />
+            <Send />
           </Button>
         </div>
       </div>
