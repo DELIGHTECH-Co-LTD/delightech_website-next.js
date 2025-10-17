@@ -169,12 +169,6 @@ const Footer: React.FC = () => {
               </button>
             </form>
 
-            {/* Theme Toggle */}
-            <div className="flex items-center justify-between">
-              <span className="text-white/90 font-medium text-sm">Theme</span>
-              <ModeToggle />
-            </div>
-
             {/* Social Links */}
             <div className="space-y-3">
               <h4 className="font-medium text-sm uppercase tracking-wide text-white">
