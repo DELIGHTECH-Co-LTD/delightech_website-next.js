@@ -1,16 +1,31 @@
 import React from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { useTranslations } from "next-intl";
 
 export default function MarketPosition() {
   const t = useTranslations("InvestorPage");
 
   return (
-    <section className="py-24 px-6 lg:px-20 bg-background">
+    <section className="relative min-h-screen items-center justify-center pt-32 pb-24 px-6 lg:px-20 overflow-hidden bg-background">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-foreground uppercase">
-          {t("market_position.title")}
-        </h2>
+        <div className="text-center mb-16">
+          <Badge
+            variant="secondary"
+            className="mb-4 text-sm uppercase tracking-wider"
+          >
+            {t("market_position.badge")}
+          </Badge>
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 uppercase">
+            {t("market_position.title")}{" "}
+            <span className="text-blue-600 dark:text-blue-400">
+              {t("market_position.title_highlight")}
+            </span>
+          </h2>
+          <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
+            {t("market_position.description")}
+          </p>
+        </div>
 
         <div className="grid md:grid-cols-2 gap-12">
           <Card className="border shadow-sm">
