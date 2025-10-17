@@ -8,7 +8,8 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { ArrowRight } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { ArrowRight, Send } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Send } from "@/components/animate-ui/icons/send";
 
@@ -38,10 +39,19 @@ export default function CareerPage() {
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-16">
-          <h1 className="text-3xl md:text-5xl text-foreground font-bold mb-4">
-            {t("title")}
+          <Badge
+            variant="secondary"
+            className="mb-4 text-sm uppercase tracking-wider"
+          >
+            {t("badge")}
+          </Badge>
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4 uppercase">
+            {t("title")}{" "}
+            <span className="text-blue-600 dark:text-blue-400">
+              {t("title_highlight")}
+            </span>
           </h1>
-          <p className="text-muted-foreground max-w-2xl mx-auto mb-8 text-lg">
+          <p className="text-muted-foreground text-lg max-w-3xl mx-auto mb-8">
             {t("description")}
           </p>
           <Button size="lg" className="rounded-full text-base">
@@ -76,10 +86,13 @@ export default function CareerPage() {
 
         {/* CTA Section */}
         <div className="text-center pt-12 border-t border-border">
-          <h3 className="text-3xl text-foreground font-semibold mb-4">
-            {t("cta.title")}
+          <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-4 uppercase">
+            {t("cta.title")}{" "}
+            <span className="text-blue-600 dark:text-blue-400">
+              {t("cta.title_highlight")}
+            </span>
           </h3>
-          <p className="text-muted-foreground mb-6 max-w-2xl mx-auto text-lg">
+          <p className="text-muted-foreground mb-6 max-w-3xl mx-auto text-lg">
             {t("cta.description")}
           </p>
           <Button

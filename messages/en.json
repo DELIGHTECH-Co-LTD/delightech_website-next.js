@@ -203,14 +203,17 @@
       "join": "Join Now",
       "contact": "Contact Support"
     },
-    "Navbar":{
-        "about":"About Us",
-        "service":"Services",
-        "careers":"Careers"
+    "Navbar": {
+      "about": "About Us",
+      "service": "Services",
+      "careers": "Careers"
     }
   },
   "History": {
-    "title": "Our Journey",
+    "badge": "Our Story",
+    "title": "Our",
+    "title_highlight": "Journey",
+    "description": "Discover the milestones and achievements that have shaped DelighTech into Cambodia's leading fintech company.",
     "timeline": {
       "2025": {
         "year": "2025",
@@ -227,12 +230,15 @@
     }
   },
   "Careers": {
-    "title": "Build Your Career With Us",
+    "badge": "Join Our Team",
+    "title": "Build Your Career",
+    "title_highlight": "With Us",
     "description": "At DelighTech, we design experiences that redefine how people interact with financial technology. Join a team where innovation, empathy, and precision meet.",
     "view_positions": "View Open Positions",
     "apply_now": "Apply Now",
     "cta": {
-      "title": "Don't see your dream role?",
+      "title": "Don't see your",
+      "title_highlight": "dream role?",
       "description": "We're always looking for creative minds who think beyond the ordinary.",
       "send_portfolio": "Send Your Portfolio"
     }
@@ -251,11 +257,16 @@
   },
   "InvestorPage": {
     "hero": {
-      "title": "INVESTOR RELATIONS",
+      "badge": "Investment Opportunity",
+      "title": "INVESTOR",
+      "title_highlight": "RELATIONS",
       "description": "Join us in building the future of financial technology in Southeast Asia. Discover investment opportunities with Delightech's innovative solutions."
     },
     "opportunity": {
-      "title": "Investment Opportunity",
+      "badge": "Investment",
+      "title": "Investment",
+      "title_highlight": "Opportunity",
+      "description": "Discover why Delightech represents a compelling investment opportunity in Southeast Asia's rapidly growing fintech sector.",
       "why_invest": {
         "title": "Why Invest in Delightech?",
         "points": {
@@ -287,7 +298,10 @@
       }
     },
     "market_position": {
-      "title": "Market Position & Growth Strategy",
+      "badge": "Market Analysis",
+      "title": "Market Position &",
+      "title_highlight": "Growth Strategy",
+      "description": "Learn about our strategic market position and comprehensive growth plan for regional expansion and market dominance.",
       "current_position": {
         "title": "Current Market Position",
         "description1": "Delightech has established itself as a leading fintech company in Cambodia, with LUYLEUN becoming one of the most trusted digital financial platforms in the country.",
@@ -296,7 +310,7 @@
       "expansion_strategy": {
         "title": "Expansion Strategy",
         "points": {
-          "point1": "Regional expansion into Vietnam and Thailand",
+          "point1": "Regional expansion into Vietnam and Singapore",
           "point2": "New product lines including digital banking services",
           "point3": "Strategic partnerships with regional financial institutions",
           "point4": "Enhanced AI and blockchain technology integration",
@@ -305,7 +319,10 @@
       }
     },
     "investment_process": {
-      "title": "Investment Process",
+      "badge": "Process",
+      "title": "Investment",
+      "title_highlight": "Process",
+      "description": "Our streamlined investment process ensures transparency and efficiency from initial contact to final closing.",
       "steps": {
         "step1": {
           "title": "Initial Contact",
@@ -335,7 +352,9 @@
       }
     },
     "contact": {
-      "title": "Get In Touch",
+      "badge": "Contact Us",
+      "title": "Get In",
+      "title_highlight": "Touch",
       "description": "Interested in learning more about investment opportunities with Delightech? We'd love to hear from you.",
       "investor_relations": {
         "title": "Investor Relations",

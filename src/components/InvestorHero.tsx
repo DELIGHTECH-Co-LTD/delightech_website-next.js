@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 export default function InvestorHero() {
   const t = useTranslations("InvestorPage");
@@ -10,7 +11,7 @@ export default function InvestorHero() {
         <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">
           {t("hero.title")}
         </h1>
-        <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
+        <p className="text-xl md:text-2xl text-blue-100 leading-relaxed">
           {t("hero.description")}
         </p>
       </div>

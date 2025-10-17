@@ -7,7 +7,7 @@ import { BackgroundCircles } from "@/components/ui/shadcn-io/background-circles"
 import { useTranslations } from "next-intl";
 
 export default function InvestorPage() {
-  const t = useTranslations("InvestorPage")
+  const t = useTranslations("InvestorPage");
   return (
     <div>
       <BackgroundCircles
@@ -17,8 +17,6 @@ export default function InvestorPage() {
       />
       <InvestmentOpportunity />
       <MarketPosition />
-      <InvestmentProcess />
-      <InvestorContact />
     </div>
   );
 }
