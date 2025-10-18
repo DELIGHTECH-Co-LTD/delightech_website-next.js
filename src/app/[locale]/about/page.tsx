@@ -3,6 +3,11 @@ import Image from "next/image";
 import History from "@/components/History";
 import { useTranslations } from "next-intl";
 import MessageFrom from "@/components/MessageFrom";
+import { Metadata } from "next";
+
+export const metadata:Metadata = {
+  title: "About Us"
+}
 
 export default function AboutPage() {
   const t = useTranslations("AboutPage");

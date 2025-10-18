@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from "react";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
@@ -88,7 +89,7 @@ export default function ContactForm() {
       <div className="h-full">
         <div className="flex flex-col lg:flex-row h-full">
           {/* Form Content */}
-          <div className="w-full lg:w-2/3 p-8 lg:p-12">
+          <div className="w-full lg:w-2/3 p-8 lg:p-12 bg-accent">
             <Badge variant="secondary" className="mb-4">
               Contact Form
             </Badge>
@@ -198,7 +199,7 @@ export default function ContactForm() {
             </div>
 
             {/* Hover Indicator */}
-            <div className="mt-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+            <div className="mt-6 opacity-100 group-hover:opacity-100 transition-opacity duration-500">
               <div className="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 text-sm font-medium">
                 <span>24/7 Support</span>
                 <svg

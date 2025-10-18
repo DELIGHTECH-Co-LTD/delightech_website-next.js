@@ -1,9 +1,11 @@
-﻿"use client";
-
-import React, { useState } from "react";
+﻿import React from "react";
 import { Badge } from "@/components/ui/badge";
-import { Card, CardContent } from "@/components/ui/card";
 import ContactForm from "@/components/ContactForm";
+import { Metadata } from "next";
+
+export const metadata:Metadata = {
+  title: "Contact"
+}
 
 export default function ContactPage() {
 

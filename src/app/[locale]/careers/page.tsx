@@ -11,7 +11,11 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Send } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { Metadata } from "next";
 
+export const metadata:Metadata = {
+  title: "Careers"
+}
 
 const jobs = [
   {
