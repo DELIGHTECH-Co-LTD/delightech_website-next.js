@@ -75,7 +75,7 @@ export default function ShowReel() {
   return (
     <section
       id="showreel"
-      className="relative min-h-screen bg-background pt-32 pb-24 px-6 lg:px-20 overflow-hidden"
+      className="relative min-h-screen bg-background py-24 px-6 lg:px-20 overflow-hidden"
     >
       <div className="relative max-w-6xl mx-auto z-10">
         {/* Header */}

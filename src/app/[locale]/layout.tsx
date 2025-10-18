@@ -12,18 +12,20 @@ const roboto = Roboto({
   weight: ["100", "300", "400", "500", "700", "900"],
   subsets: ["latin"],
   variable: "--font-roboto",
+  display: "swap",
+  preload: true,
 });
 
 const kantumruy = Kantumruy_Pro({
   weight: ["100", "200", "300", "400", "500", "600", "700"],
-  subsets: ["latin"],
+  subsets: ["latin", "khmer"],
   variable: "--font-kantumruy",
+  display: "swap",
+  preload: true,
 });
 
 export const metadata: Metadata = {
-  title: {default: "Delightech",
-    template: "%s - Delightech"
-  },
+  title: { default: "Delightech", template: "%s - Delightech" },
   description: "Everyone can access finances.",
 };
 
@@ -40,9 +42,26 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} suppressHydrationWarning>
-      <head />
+      <head>
+        <link
+          rel="alternate"
+          hrefLang="en"
+          href={`https://delightech.asia/en`}
+        />
+        <link
+          rel="alternate"
+          hrefLang="kh"
+          href={`https://delightech.asia/kh`}
+        />
+        <link
+          rel="alternate"
+          hrefLang="x-default"
+          href={`https://delightech.asia/en`}
+        />
+      </head>
       <body
         className={`${roboto.variable} ${kantumruy.variable} ${fontClass} antialiased`}
+        suppressHydrationWarning
       >
         <ThemeProvider
           attribute="class"

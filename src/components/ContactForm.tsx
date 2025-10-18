@@ -10,9 +10,9 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "./ui/button";
 import { Mail, Phone, MapPin, Clock, CheckCircle } from "lucide-react";
+import Image from "next/image";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -61,7 +61,7 @@ export default function ContactForm() {
     {
       icon: MapPin,
       title: "Address",
-      details: ["Phnom Penh, Cambodia"],
+      details: ["Chamkar Mon Tonle Bassac, 206 D Preah Norodom Blvd, Phnom Penh, Cambodia"],
       color: "text-blue-600",
     },
     {
@@ -90,11 +90,11 @@ export default function ContactForm() {
         <div className="flex flex-col lg:flex-row h-full">
           {/* Form Content */}
           <div className="w-full lg:w-2/3 p-8 lg:p-12 bg-accent">
-            <Badge variant="secondary" className="mb-4">
+            {/* <Badge variant="secondary" className="mb-4">
               Contact Form
-            </Badge>
+            </Badge> */}
             <h3 className="text-2xl md:text-3xl font-bold text-blue-600 dark:text-blue-400 mb-6 uppercase">
-              Send Message
+              Contact Us
             </h3>
 
             {!isSubmitted ? (
@@ -229,7 +229,7 @@ export default function ContactForm() {
                 const IconComponent = info.icon;
                 return (
                   <div key={index} className="flex items-start gap-3">
-                    <div className="p-2 rounded-lg bg-white/20 backdrop-blur-sm">
+                    <div className="p-2 rounded-lg bg-white/20 backdrop-blur-sm items-center justify-center">
                       <IconComponent className="w-5 h-5 text-white" />
                     </div>
                     <div>
@@ -248,10 +248,11 @@ export default function ContactForm() {
             </div>
 
             {/* Company Info */}
-            <div className="mt-auto pt-8 border-t border-white/20">
-              <h5 className="font-bold text-white mb-2 uppercase">
+            <div className="border-t border-white/20">
+              {/* <h5 className="font-bold text-white mb-2 uppercase">
                 Delightech Company
-              </h5>
+              </h5> */}
+              <Image src={"/assets/tagline.png"} width={250} height={250} alt={"tagline"} className="py-2" />
               <p className="text-white/80 text-sm leading-relaxed">
                 Leading technology solutions provider committed to innovation
                 and excellence in digital transformation.

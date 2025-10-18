@@ -19,9 +19,9 @@ export default function About() {
           {t("title")}
         </h2>
 
-        <h1 className="text-white text-2xl md:text-4xl font-bold leading-relaxed">
+        <h3 className="text-white text-2xl md:text-4xl font-bold leading-relaxed">
           "{t("quote")}"
-        </h1>
+        </h3>
 
         <a
           href="/about"

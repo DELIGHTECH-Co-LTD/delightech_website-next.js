@@ -18,79 +18,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Particles } from "./ui/shadcn-io/particles";
-
-const qaData = [
-  {
-    id: 1,
-    question: "What is LUYLEUN and how does it work?",
-    answer:
-      "LUYLEUN is Cambodia's leading digital financial platform that provides secure, fast, and accessible financial services. It allows users to transfer money instantly, pay bills, access micro-lending services, and manage their digital wallet with multi-currency support. The app uses advanced security features including biometric authentication to ensure safe transactions.",
-    category: "general",
-  },
-  {
-    id: 2,
-    question: "Is LUYLEUN safe and secure to use?",
-    answer:
-      "Yes, LUYLEUN employs bank-grade security measures including end-to-end encryption, multi-factor authentication, and biometric security. We maintain 99.9% uptime with real-time fraud detection and prevention systems. All transactions are protected by international banking security standards.",
-    category: "security",
-  },
-  {
-    id: 3,
-    question: "How can I download and start using LUYLEUN?",
-    answer:
-      "You can download LUYLEUN from both the App Store and Google Play Store. After installation, simply create your account using your phone number, verify your identity, and you can start using all our financial services immediately. The registration process takes less than 5 minutes.",
-    category: "general",
-  },
-  {
-    id: 4,
-    question: "What are the fees for using LUYLEUN services?",
-    answer:
-      "LUYLEUN offers competitive and transparent pricing. Basic money transfers within Cambodia are free for amounts under $100. For larger amounts and international transfers, we charge minimal fees starting from 0.5%. Bill payments and wallet top-ups are completely free.",
-    category: "pricing",
-  },
-  {
-    id: 5,
-    question: "Can I use LUYLEUN for business transactions?",
-    answer:
-      "Absolutely! LUYLEUN offers comprehensive business solutions including merchant payment integration, bulk payment processing, invoice management, and business analytics. We support both small businesses and large enterprises with customized solutions.",
-    category: "business",
-  },
-  {
-    id: 6,
-    question: "What currencies does LUYLEUN support?",
-    answer:
-      "LUYLEUN supports multiple currencies including Cambodian Riel (KHR), US Dollar (USD), and other major currencies. Our multi-currency wallet allows you to hold, exchange, and transact in different currencies seamlessly.",
-    category: "general",
-  },
-  {
-    id: 7,
-    question: "How does the micro-lending feature work?",
-    answer:
-      "Our AI-powered micro-lending service provides quick access to credit based on your transaction history and financial behavior. Loan amounts range from $50 to $5,000 with flexible repayment terms. The approval process is instant for eligible users with competitive interest rates.",
-    category: "lending",
-  },
-  {
-    id: 8,
-    question: "What customer support options are available?",
-    answer:
-      "We provide 24/7 customer support through multiple channels including in-app chat, phone support, email, and our help center. Our dedicated support team is available in Khmer and English to assist with any questions or issues.",
-    category: "support",
-  },
-  {
-    id: 9,
-    question: "How does Delightech ensure regulatory compliance?",
-    answer:
-      "Delightech works closely with the National Bank of Cambodia and other regulatory bodies to ensure full compliance with all financial regulations. We maintain proper licensing, follow KYC/AML procedures, and regularly undergo security audits.",
-    category: "compliance",
-  },
-  {
-    id: 10,
-    question: "What are Delightech's future expansion plans?",
-    answer:
-      "We're planning regional expansion into Vietnam and Thailand by 2025, introducing new products like digital banking services, enhanced AI features, and strategic partnerships with regional financial institutions. We're also developing SME financing solutions and blockchain integration.",
-    category: "future",
-  },
-];
+import Link from "next/link";
 
 export default function FAQ() {
   const t = useTranslations("FAQ");
@@ -177,13 +105,13 @@ export default function FAQ() {
       : qaData.filter((item) => item.category === selectedCategory);
 
   return (
-    <section className="relative min-h-screen bg-background pt-32 pb-24 px-6 lg:px-20 overflow-hidden">
+    <section className="relative min-h-screen bg-background py-24 px-6 lg:px-20 overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 left-10 w-96 h-96 bg-blue-500/5 dark:bg-blue-500/10 rounded-full filter blur-3xl animate-pulse"></div>
         <div className="absolute bottom-20 right-10 w-80 h-80 bg-purple-500/5 dark:bg-purple-500/10 rounded-full filter blur-3xl animate-pulse"></div>
       </div>
-      
+
       <Particles
         className="absolute inset-0"
         quantity={100}
@@ -304,22 +232,26 @@ export default function FAQ() {
                 </svg>
                 {t("cta.contact_support")}
               </Button>
-              <Button size="lg" variant="outline" className="text-base">
-                <svg
-                  className="w-5 h-5 mr-2"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
-                  />
-                </svg>
-                {t("cta.download_app")}
-              </Button>
+
+              {/* TODO: add download link here */}
+              <a href="">
+                <Button size="lg" variant="outline" className="text-base">
+                  <svg
+                    className="w-5 h-5 mr-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
+                    />
+                  </svg>
+                  {t("cta.download_app")}
+                </Button>
+              </a>
             </div>
           </CardContent>
         </Card>
