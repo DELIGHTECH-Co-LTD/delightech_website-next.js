@@ -2,9 +2,9 @@ import { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
     return {
-        name: 'DelighTech',
+        name: 'Delightech',
         short_name: 'DLT',
-        description: 'DelighTech: Everyone Can Access to Finance',
+        description: 'Delightech: Everyone Can Access to Finance',
         start_url: '/',
         display: 'standalone',
         background_color: '#ffffff',

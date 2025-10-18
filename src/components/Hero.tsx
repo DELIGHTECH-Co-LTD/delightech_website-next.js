@@ -32,7 +32,6 @@ export default function Hero() {
           <div className="absolute bottom-1/3 left-1/2 w-40 h-20 bg-blue-800/20 rounded-full blur-xl animate-pulse delay-900 opacity-30"></div>
         </div>
 
-        {/* Light Mode Exclusive Effects - Blue Theme */}
         <div className="absolute inset-0 block dark:hidden pointer-events-none">
           {/* Subtle Light Spots */}
           <div className="absolute top-10 left-1/4 w-1 h-1 bg-blue-200/40 rounded-full animate-pulse delay-200"></div>
@@ -102,8 +101,10 @@ export default function Hero() {
             <span className="inline-block transform hover:scale-105 transition-transform duration-300">
               {t("title")}
             </span>{" "}
+            
             <span className="bg-gradient-to-r from-yellow-400 via-white to-yellow-400 dark:from-slate-300 dark:via-blue-400 dark:to-slate-300 bg-clip-text text-transparent animate-gradientShift bg-[length:300%_300%]">
-              {t("title_highlight")}
+              {/* TODO: in khmer does not work it missed the ុ */}
+              {t("title_highlight")} 
             </span>
             <span className="inline-block animate-bounce text-blue-200 dark:text-blue-400">
               .

@@ -15,7 +15,7 @@ export default function About() {
       <div className="absolute inset-0 bg-black/50" />
 
       <div className="relative z-10 text-center px-6 max-w-3xl">
-        <h2 className="text-4xl font-bold mb-10 text-center text-white">
+        <h2 className="text-4xl font-bold mb-5 text-center text-white">
           {t("title")}
         </h2>
 

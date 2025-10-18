@@ -3,17 +3,9 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  Mail,
-  Phone,
-  MapPin,
-  Facebook,
-  Twitter,
-  Linkedin,
-  Instagram,
-} from "lucide-react";
-import { ModeToggle } from "./DarkModeToggle";
+import { Mail, Phone, MapPin } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { Icon } from "@iconify-icon/react";
 
 const Footer: React.FC = () => {
   const t = useTranslations("Footer");
@@ -33,6 +25,7 @@ const Footer: React.FC = () => {
   const navigationLinks = [
     { href: "/about", label: t("Navbar.about") },
     { href: "/services", label: t("Navbar.service") },
+    { href: "/investors", label: t("Navbar.investor") },
     { href: "/careers", label: t("Navbar.careers") },
   ];
 
@@ -44,10 +37,18 @@ const Footer: React.FC = () => {
   ];
 
   const socialLinks = [
-    { icon: Facebook, href: "#", label: "Facebook" },
-    { icon: Twitter, href: "#", label: "Twitter" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
-    { icon: Instagram, href: "#", label: "Instagram" },
+    {
+      icon: "fa7-brands:facebook",
+      href: "https://www.facebook.com/delightechasia",
+      label: "Facebook",
+    },
+    {
+      icon: "fa7-brands:linkedin",
+      href: "https://www.linkedin.com/company/delightech-asia/",
+      label: "LinkedIn",
+    },
+    { icon: "fa7-brands:instagram", href: "#", label: "Instagram" },
+    { icon: "fa7-brands:x-twitter", href: "#", label: "Twitter" },
   ];
 
   return (
@@ -79,10 +80,11 @@ const Footer: React.FC = () => {
 
             {/* Contact Info */}
             <div className="space-y-2">
-              <div className="flex items-center gap-2 text-white/90 hover:text-white transition-all duration-300 group">
-                <MapPin className="w-4 h-4 group-hover:scale-110 transition-transform" />
+              <div className="flex items-start gap-2 text-white/90 hover:text-white transition-all duration-300 group">
+                <MapPin className="w-4 h-4 flex-shrink-0 group-hover:scale-110 transition-transform mt-0.5" />
                 <span className="font-medium text-sm">
-                  Phnom Penh, Cambodia
+                  Chamkar Mon Tonle Bassac, 206 D Preah Norodom Blvd, Phnom
+                  Penh, Cambodia
                 </span>
               </div>
               <div className="flex items-center gap-2 text-white/90 hover:text-white transition-all duration-300 group">
@@ -182,9 +184,14 @@ const Footer: React.FC = () => {
                       key={index}
                       href={social.href}
                       aria-label={social.label}
-                      className="p-2 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-sm transition-all duration-300 hover:scale-110"
+                      className="p-2 rounded-md transition-all duration-300 hover:scale-110 hover:bg-white/10 flex items-center justify-center"
                     >
-                      <IconComponent className="w-4 h-4 text-white" />
+                      <Icon
+                        icon={IconComponent}
+                        width={20}
+                        height={20}
+                        className="text-white"
+                      />
                     </a>
                   );
                 })}

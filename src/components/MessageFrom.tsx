@@ -13,12 +13,15 @@ export default function MessageFrom() {
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <Card className="bg-glass backdrop-blur-sm">
+          <Card className="bg-glass backdrop-blur-sm border-none">
             <CardHeader>
               <CardTitle className="text-2xl text-blue-500">
                 {t("founder_message.subtitle")}
               </CardTitle>
-              <Badge variant="secondary" className="w-fit">
+              <Badge
+                variant="secondary"
+                className="w-fit bg-blue-500 text-white dark:bg-blue-600"
+              >
                 Founder & CEO
               </Badge>
             </CardHeader>

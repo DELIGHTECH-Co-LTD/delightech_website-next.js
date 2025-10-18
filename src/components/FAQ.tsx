@@ -17,6 +17,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { Particles } from "./ui/shadcn-io/particles";
 
 const qaData = [
   {
@@ -182,6 +183,15 @@ export default function FAQ() {
         <div className="absolute top-20 left-10 w-96 h-96 bg-blue-500/5 dark:bg-blue-500/10 rounded-full filter blur-3xl animate-pulse"></div>
         <div className="absolute bottom-20 right-10 w-80 h-80 bg-purple-500/5 dark:bg-purple-500/10 rounded-full filter blur-3xl animate-pulse"></div>
       </div>
+      
+      <Particles
+        className="absolute inset-0"
+        quantity={100}
+        ease={80}
+        staticity={50}
+        color="#ffffff"
+        size={0.8}
+      />
 
       <div className="relative max-w-6xl mx-auto z-10">
         {/* Header */}

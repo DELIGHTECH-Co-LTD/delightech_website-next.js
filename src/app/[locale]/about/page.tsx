@@ -1,9 +1,9 @@
 import React from "react";
 import Image from "next/image";
 import History from "@/components/History";
-import { Card, CardContent } from "@/components/ui/card";
 import { useTranslations } from "next-intl";
-import MessageFrom from "@/components/MassageFrom";
+import MessageFrom from "@/components/MessageFrom";
+
 export default function AboutPage() {
   const t = useTranslations("AboutPage");
   return (
@@ -44,7 +44,6 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-
       <MessageFrom />
       <History />
     </>
