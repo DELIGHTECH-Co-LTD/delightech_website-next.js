@@ -18,7 +18,6 @@ export default function ShowReel() {
     return match ? match[1] : null;
   };
 
-  // Function to get YouTube thumbnail URL
   const getYouTubeThumbnail = (
     embedUrl: string,
     quality: "maxresdefault" | "hqdefault" = "maxresdefault"

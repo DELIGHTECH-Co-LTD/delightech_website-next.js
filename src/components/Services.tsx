@@ -15,7 +15,7 @@ export default function Services() {
       description: t("luyleun.description"),
       image: "/assets/luyleun2.png",
       badge: t("luyleun.badge"),
-      type: "app", // App with store downloads
+      type: "app",
       playStoreUrl:
         "https://play.google.com/store/apps/details?id=com.delightech.luyleun",
       appStoreUrl: "https://apps.apple.com/kh/app/luyleun/id1570756469LuyLeun",
