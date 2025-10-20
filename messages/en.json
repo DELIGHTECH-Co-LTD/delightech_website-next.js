@@ -1,4 +1,45 @@
 {
+  "MissionAndValues": {
+    "mission": {
+      "badge": "Our Mission",
+      "description": "Our mission is to revolutionize financial services through innovative technology, making them accessible, secure, and efficient for everyone. We strive to create positive impact in people's lives by providing smart financial solutions that empower economic growth and financial inclusion.",
+      "vision": "To transform financial solutions through technology and make individuals and businesses worldwide financially free and stable.",
+      "keyPoint1": "Creating innovative solutions that meet real needs",
+      "keyPoint2": "Building trust through transparency and security",
+      "our_mission": "Our Mission",
+      "our_vision": "Our Vision",
+      "our_approach": "Our Approach"
+    },
+    "values": {
+      "badge": "Core Values",
+      "title": "STRIDE",
+      "description": "Our core values shape everything we do and guide us in creating lasting positive impact.",
+      "passion": {
+        "title": "Stewardship ",
+        "description": "We take responsibility for our resources, decisions, and actions, ensuring sustainable growth and positive impact for our stakeholders and community."
+      },
+      "collaboration": {
+        "title": "Transparentcy",
+        "description": "We provide clear terms, fair policies, and honest communication—so our users always know exactly what they’re getting."
+      },
+      "innovation": {
+        "title": "Respect",
+        "description": "We treat every customer with dignity and fairness, supporting them in their financial journey with care and trust."
+      },
+      "integrity": {
+        "title": "Innovation",
+        "description": "We harness technology to make lending smarter, faster, and more convenient—keeping financial services within everyone’s reach."
+      },
+      "excellence": {
+        "title": "Diversity",
+        "description": "We serve people from all walks of life, embracing inclusivity to empower communities across Cambodia."
+      },
+      "excellent": {
+        "title": "Excellence",
+        "description": "We strive for excellence in everything we do, maintaining the highest standards of quality and professionalism."
+      }
+    }
+  },
   "Navbar": {
     "about": "About Us",
     "service": "Services",

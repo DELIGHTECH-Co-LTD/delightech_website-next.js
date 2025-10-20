@@ -101,10 +101,9 @@ export default function Hero() {
             <span className="inline-block transform hover:scale-105 transition-transform duration-300">
               {t("title")}
             </span>{" "}
-            
             <span className="bg-gradient-to-r from-yellow-400 via-white to-yellow-400 dark:from-slate-300 dark:via-blue-400 dark:to-slate-300 bg-clip-text text-transparent animate-gradientShift bg-[length:300%_300%]">
               {/* TODO: in khmer does not work it missed the ុ */}
-              {t("title_highlight")} 
+              {t("title_highlight")}
             </span>
             <span className="inline-block animate-bounce text-blue-200 dark:text-blue-400">
               .
@@ -139,9 +138,9 @@ export default function Hero() {
           {/* Clean Logo Container */}
           <div className="relative flex items-center justify-center">
             <Image
-              src="/assets/DLT.png"
+              src="/assets/DLT_B.png"
               alt="Delightech Logo"
-              width={800}
+              width={1000}
               height={700}
               className="object-contain transition-transform duration-500 hover:scale-105"
               priority

@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { useTranslations } from "next-intl";
 import { Bell } from "lucide-react";
 import { Button } from "./ui/button";
+import { Particles } from "./ui/shadcn-io/particles";
 
 export default function Services() {
   const t = useTranslations("Services");
@@ -36,6 +37,15 @@ export default function Services() {
       id="services"
       className="relative min-h-screen items-center justify-center py-24 px-6 lg:px-20 overflow-hidden bg-background"
     >
+      <Particles
+        className="absolute inset-0"
+        quantity={100}
+        ease={80}
+        staticity={50}
+        color="#ffffff"
+        size={0.8}
+      />
+
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12 sm:mb-16 lg:mb-20">
@@ -66,7 +76,7 @@ export default function Services() {
               }`}
             >
               {/* Image Section */}
-              <div className="relative w-full md:w-1/2 h-64 sm:h-80 lg:h-96 group overflow-hidden rounded-lg bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-800 dark:to-gray-900">
+              <div className="relative w-full md:w-1/2 h-64 sm:h-80 lg:h-96 group overflow-hidden rounded-lg ">
                 <Image
                   src={unit.image}
                   alt={unit.name}
