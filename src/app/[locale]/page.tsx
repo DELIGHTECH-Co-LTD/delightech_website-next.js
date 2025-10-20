@@ -13,7 +13,7 @@ export default function Home() {
       <Hero />
       <About />
       <Services />
-      <OurCorporate />
+      {/* <OurCorporate /> */}
       <ShowReel />
       <Team />
       <Blog posts={[]} /> {/* Empty array - just UI, no data */}

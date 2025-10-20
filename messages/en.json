@@ -61,6 +61,7 @@
   },
   "Hero": {
     "subtitle": "At Delightech Co., Ltd., we specialize in creating technology-driven financial solutions that make life easier, faster, and more secure. Our flagship product, LUYLEUN, is redefining access to instant loans in Cambodia.",
+    "description": "Transforming ideas into digital reality with cutting-edge technology and innovative solutions.",
     "title": "Everyone can Access",
     "title_highlight": "Finances",
     "contact_us": "Contact Us",
@@ -125,7 +126,15 @@
     "title": "Our",
     "title_highlight": "Showreel",
     "description": "Experience our journey, our people, and our vision — captured in motion. A glimpse into what drives us forward every day.",
-    "caption": "Corporate Video 2025 — Royal Vision in Motion"
+    "caption": "Corporate Video 2025 — Royal Vision in Motion",
+    "video1_title": "LUYLEUN iOS App Guide",
+    "video1_description": "Step-by-step guide to download and install LUYLEUN from the App Store on your iPhone.",
+    "video2_title": "LUYLEUN Android Setup",
+    "video2_description": "Complete tutorial for downloading LUYLEUN from Google Play Store on Android devices.",
+    "video3_title": "Digital Lending Revolution",
+    "video3_description": "Discover how LUYLEUN is transforming digital lending and financial accessibility in Cambodia.",
+    "video4_title": "Zero Interest Loan Process",
+    "video4_description": "Learn how to apply for your first interest-free loan through LUYLEUN's innovative platform."
   },
   "Team": {
     "badge": "Leadership Team",
@@ -426,5 +435,47 @@
       },
       "request_deck": "Request Investment Deck"
     }
+  },
+  "ContactForm": {
+    "title": "Contact Us",
+    "name": "Name",
+    "email": "Email",
+    "subject": "Subject",
+    "message": "Message",
+    "yourName": "Your name",
+    "yourEmail": "Your email",
+    "selectSubject": "Select subject",
+    "yourMessage": "Your message...",
+    "sendMessage": "Send Message",
+    "sending": "Sending...",
+    "successTitle": "Message Sent Successfully!",
+    "successMessage": "We'll get back to you within 24 hours.",
+    "quickResponse": "Quick Response",
+    "support24": "24/7 Support",
+    "contactInformation": "Contact Information",
+    "address": "Address",
+    "phone": "Phone",
+    "hours": "Hours",
+    "companyDescription": "Leading technology solutions provider committed to innovation and excellence in digital transformation.",
+    "subjects": {
+      "general": "General Inquiry",
+      "business": "Business Partnership",
+      "technical": "Technical Support",
+      "investment": "Investment Opportunities",
+      "career": "Career Opportunities",
+      "other": "Other"
+    },
+    "contactInfo": {
+      "address": "Chamkar Mon Tonle Bassac, 206 D Preah Norodom Blvd, Phnom Penh, Cambodia",
+      "phone": "+855 (0) 123 456 789",
+      "email": "info@delightech.com",
+      "hours": "Mon - Fri: 8AM - 6PM"
+    }
+  },
+  "ContactPage": {
+    "badge": "Contact Us",
+    "title": "Get",
+    "title_highlight": "In Touch",
+    "description": "We're here to help and answer any question you might have. We look forward to hearing from you."
   }
 }

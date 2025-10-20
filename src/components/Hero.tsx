@@ -101,19 +101,17 @@ export default function Hero() {
             <span className="inline-block transform hover:scale-105 transition-transform duration-300">
               {t("title")}
             </span>{" "}
-            <span className="bg-gradient-to-r from-yellow-400 via-white to-yellow-400 dark:from-slate-300 dark:via-blue-400 dark:to-slate-300 bg-clip-text text-transparent animate-gradientShift bg-[length:300%_300%]">
-              {/* TODO: in khmer does not work it missed the ុ */}
+            <span className="text-yellow-400 dark:text-blue-400">
               {t("title_highlight")}
             </span>
-            <span className="inline-block animate-bounce text-blue-200 dark:text-blue-400">
+            <span className="inline-block animate-bounce bg-gradient-to-r from-red-200 via-green-500 to-red-400 dark:from-blue-400 dark:via-red-400 dark:to-blue-400 bg-clip-text text-transparent">
               .
             </span>
           </h1>
 
           {/* Enhanced Description */}
           <p className="text-lg text-blue-100 dark:text-slate-300 leading-relaxed max-w-lg animate-fadeInUp delay-300 transition-colors duration-700">
-            Transforming ideas into digital reality with cutting-edge technology
-            and innovative solutions.
+            {t("description")}
           </p>
 
           {/* Enhanced Button Group */}
@@ -135,16 +133,54 @@ export default function Hero() {
         </div>
 
         <div className="w-1/2 relative">
-          {/* Clean Logo Container */}
-          <div className="relative flex items-center justify-center">
-            <Image
-              src="/assets/DLT_B.png"
-              alt="Delightech Logo"
-              width={1000}
-              height={700}
-              className="object-contain transition-transform duration-500 hover:scale-105"
-              priority
-            />
+          {/* Animated Logo Container */}
+          <div className="relative flex items-center justify-center group">
+            {/* Logo Glow Effect */}
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 via-purple-500/10 to-cyan-500/20 dark:from-purple-500/20 dark:via-blue-500/10 dark:to-indigo-500/20 rounded-full blur-3xl animate-pulse opacity-0 group-hover:opacity-60 transition-opacity duration-700"></div>
+
+            {/* Floating Ring Animation */}
+            <div className="absolute inset-0 w-full h-full">
+              <div
+                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 border border-blue-300/20 dark:border-purple-400/20 rounded-full animate-spin opacity-30"
+                style={{ animationDuration: "20s" }}
+              ></div>
+              <div
+                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 border border-cyan-300/15 dark:border-indigo-400/15 rounded-full animate-spin opacity-20"
+                style={{
+                  animationDuration: "15s",
+                  animationDirection: "reverse",
+                }}
+              ></div>
+            </div>
+
+            {/* Main Logo with Enhanced Animations */}
+            <div className="relative z-10 animate-fadeInUp delay-700">
+              <Image
+                src="/assets/DLT_B.png"
+                alt="Delightech Logo"
+                width={1000}
+                height={700}
+                className="object-contain transition-all duration-700 hover:scale-110 hover:rotate-2 drop-shadow-2xl hover:drop-shadow-[0_20px_35px_rgba(59,130,246,0.3)] dark:hover:drop-shadow-[0_20px_35px_rgba(147,51,234,0.3)] animate-float"
+                priority
+              />
+            </div>
+
+            {/* Orbiting Particles */}
+            <div
+              className="absolute inset-0 w-full h-full animate-spin"
+              style={{ animationDuration: "30s" }}
+            >
+              <div className="absolute top-10 left-1/2 w-2 h-2 bg-blue-400/60 dark:bg-purple-400/60 rounded-full animate-pulse"></div>
+              <div className="absolute bottom-10 left-1/2 w-1.5 h-1.5 bg-cyan-400/50 dark:bg-indigo-400/50 rounded-full animate-pulse delay-500"></div>
+              <div className="absolute top-1/2 left-10 w-1 h-1 bg-blue-300/40 dark:bg-violet-300/40 rounded-full animate-pulse delay-1000"></div>
+              <div className="absolute top-1/2 right-10 w-1 h-1 bg-indigo-400/40 dark:bg-blue-400/40 rounded-full animate-pulse delay-1500"></div>
+            </div>
+
+            {/* Gradient Border Animation */}
+            <div
+              className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-500 dark:from-purple-500 dark:via-blue-500 dark:to-indigo-500 opacity-0 group-hover:opacity-20 transition-opacity duration-500 animate-gradientSpin blur-sm"
+              style={{ padding: "2px" }}
+            ></div>
           </div>
         </div>
       </div>

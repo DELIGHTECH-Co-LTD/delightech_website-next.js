@@ -32,27 +32,23 @@ export default function ShowReel() {
 
   const videos = [
     {
-      title: "Company Showreel",
-      description:
-        "Our main company showcase featuring all our achievements and milestones.",
+      title: t("video1_title"),
+      description: t("video1_description"),
       embedUrl: "https://www.youtube.com/embed/s7KYcm6FM2s?si=AR62As_8yzdNOso3",
     },
     {
-      title: "Company Culture",
-      description:
-        "See how we work together to create amazing products and foster innovation.",
+      title: t("video2_title"),
+      description: t("video2_description"),
       embedUrl: "https://www.youtube.com/embed/WnVpIVK_3Sc?si=-itkEIYTU7RYJpAE",
     },
     {
-      title: "Product Demo",
-      description:
-        "Watch our latest product demonstrations and feature highlights.",
+      title: t("video3_title"),
+      description: t("video3_description"),
       embedUrl: "https://www.youtube.com/embed/q2hlBgGKDzM?si=pN3_FLcaMURW0I_M",
     },
     {
-      title: "Behind the Scenes",
-      description:
-        "Get an exclusive look at our development process and team collaboration.",
+      title: t("video4_title"),
+      description: t("video4_description"),
       embedUrl: "https://www.youtube.com/embed/Yw6aF_YGlFo?si=_J6AIxcyETZtMNI2",
     },
   ];

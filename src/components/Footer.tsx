@@ -1,5 +1,4 @@
 "use client";
-"use client";
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -60,7 +59,7 @@ const Footer: React.FC = () => {
             <Link href="/" className="flex items-center group">
               <div className="relative">
                 <Image
-                  src="/assets/DLT.png"
+                  src="/assets/tagline.png"
                   alt="Delightech Logo"
                   width={50}
                   height={50}
@@ -69,9 +68,6 @@ const Footer: React.FC = () => {
                 />
                 <div className="absolute inset-0 bg-blue-500/20 rounded-full scale-0 group-hover:scale-100 transition-transform duration-300 -z-10"></div>
               </div>
-              <span className="ml-3 text-xl font-bold transition-colors duration-300">
-                Delightech
-              </span>
             </Link>
 
             <p className="text-white/90 text-sm sm:text-base leading-relaxed">
