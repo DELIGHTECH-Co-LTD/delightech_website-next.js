@@ -4,17 +4,22 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { useTranslations } from "next-intl";
 import { MessageCircle, ArrowRight } from "lucide-react";
+import { Particles } from "./ui/shadcn-io/particles";
 
 export default function MessageFrom() {
   const t = useTranslations("AboutPage");
 
   return (
     <section className="relative min-h-screen items-center justify-center px-4 sm:px-6 lg:px-20 py-16 sm:py-20 lg:py-24 bg-background overflow-hidden">
-      {/* Clean Minimal Background */}
       <div className="absolute inset-0">
-        {/* Subtle grid pattern */}
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.02)_1px,transparent_1px)] dark:bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:60px_60px]"></div>
-
+        <Particles
+          className="absolute inset-0"
+          quantity={100}
+          ease={80}
+          staticity={50}
+          color="#ffffff"
+          size={0.8}
+        />
         {/* Soft accent shapes */}
         <div className="absolute top-20 right-20 w-80 h-80 bg-blue-50 dark:bg-blue-950/20 rounded-full blur-3xl opacity-40"></div>
         <div className="absolute bottom-20 left-20 w-60 h-60 bg-slate-50 dark:bg-slate-800/20 rounded-full blur-3xl opacity-40"></div>
@@ -87,12 +92,12 @@ export default function MessageFrom() {
                 <div className="absolute -inset-6 bg-gradient-to-r from-blue-100 via-indigo-50 to-purple-100 dark:from-blue-900/20 dark:via-indigo-900/20 dark:to-purple-900/20 rounded-[2rem] opacity-0 group-hover:opacity-100 transition-all duration-700 blur-xl"></div>
 
                 {/* Floating decorative elements */}
-                <div className="absolute -top-4 -left-4 w-8 h-8 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-2xl rotate-45 opacity-80 animate-pulse shadow-lg"></div>
-                <div className="absolute -bottom-6 -right-6 w-12 h-12 bg-gradient-to-bl from-indigo-400 to-purple-500 rounded-full opacity-60 animate-pulse delay-500 shadow-lg"></div>
-                <div className="absolute top-1/4 -right-2 w-6 h-6 bg-gradient-to-tr from-purple-400 to-pink-400 rounded-lg rotate-12 opacity-70 animate-bounce delay-1000 shadow-lg"></div>
+                <div className="absolute -top-4 -left-4 w-8 h-8 bg-glass backdrop-blur-sm border border-blue-300/30 rounded-2xl rotate-45 opacity-80 animate-pulse shadow-lg"></div>
+                <div className="absolute -bottom-6 -right-6 w-12 h-12 bg-blue-400/20 backdrop-blur-sm border border-blue-300/30 rounded-full opacity-60 animate-pulse delay-500 shadow-lg"></div>
+                <div className="absolute top-1/4 -right-2 w-6 h-6 bg-blue-300/20 backdrop-blur-sm border border-blue-200/30 rounded-lg rotate-12 opacity-70 animate-bounce delay-1000 shadow-lg"></div>
 
                 {/* Main image frame with modern styling */}
-                <div className="relative p-1 bg-gradient-to-br from-blue-200 via-indigo-200 to-purple-200 dark:from-blue-800 dark:via-indigo-800 dark:to-purple-800 rounded-[1.5rem] shadow-2xl group-hover:shadow-blue-500/25 transition-shadow duration-500">
+                <div className="relative p-1 bg-gradient-to-br from-blue-200 via-indigo-200 to-purple-200 dark:from-blue-800 dark:via-green-800 dark:to-blue-800 rounded-[1.5rem] shadow-2xl group-hover:shadow-blue-500/25 transition-shadow duration-500">
                   <div className="relative p-3 bg-white dark:bg-slate-900 rounded-[1.25rem]">
                     <div className="relative overflow-hidden rounded-[1rem]">
                       <Image
@@ -116,7 +121,7 @@ export default function MessageFrom() {
                   <div className="relative">
                     {/* Badge glow */}
                     <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-2xl blur opacity-50"></div>
-                    <div className="relative bg-gradient-to-r from-blue-600 to-indigo-600 px-6 py-3 rounded-2xl shadow-xl border border-blue-400/30">
+                    <div className="relative bg-gradient-to-r from-blue-600 to-green-600 px-6 py-3 rounded-2xl shadow-xl border border-blue-400/30">
                       <div className="flex items-center gap-3">
                         <div className="relative">
                           <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
