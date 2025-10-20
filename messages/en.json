@@ -1,4 +1,14 @@
 {
+  "Blog": {
+    "badge": "Latest Insights",
+    "title": "Our Latest",
+    "title_highlight": "Blog Posts",
+    "description": "Discover our latest insights, news, and updates from industry experts",
+    "read_article": "Read Article",
+    "no_posts": "No blog posts yet",
+    "check_back": "Check back soon for our latest insights and updates",
+    "view_all": "View All Posts"
+  },
   "MissionAndValues": {
     "mission": {
       "badge": "Our Mission",
