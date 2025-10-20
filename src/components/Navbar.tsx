@@ -56,16 +56,15 @@ export default function Navbar() {
     { href: "/services", label: t("service") },
     { href: "/investors", label: t("investor") },
     { href: "/careers", label: t("careers") },
+    { href: "/contact", label: t("contact") },
   ];
 
   return (
     <>
       <nav
         className={cn(
-          "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
-          isScrolled
-            ? "bg-white/90 dark:bg-gray-900/90 backdrop-blur-lg border-b border-gray-200/50 dark:border-white/10 shadow-lg"
-            : "nav-gradient backdrop-blur-sm"
+          "fixed top-0 left-0 right-0 z-50 navbar",
+          isScrolled && "scrolled"
         )}
         role="navigation"
         aria-label="Main navigation"
@@ -104,11 +103,8 @@ export default function Navbar() {
                         href={link.href}
                         className={cn(
                           navigationMenuTriggerStyle(),
-                          "font-medium text-sm uppercase tracking-wider transition-colors duration-200 bg-transparent hover:bg-transparent focus:bg-transparent active:bg-transparent relative px-4 py-2",
-                          "before:absolute before:bottom-0 before:left-0 before:w-0 before:h-px before:bg-current before:transition-all before:duration-200 before:ease-out hover:before:w-full",
-                          isScrolled
-                            ? "text-gray-700 dark:text-gray-300"
-                            : "text-white/80"
+                          "nav-link font-medium text-sm uppercase tracking-wider bg-transparent hover:bg-transparent focus:bg-transparent active:bg-transparent relative px-4 py-2",
+                          "before:absolute before:bottom-0 before:left-0 before:w-0 before:h-px before:bg-current before:transition-all before:duration-200 before:ease-out hover:before:w-full"
                         )}
                       >
                         {link.label}
@@ -128,10 +124,7 @@ export default function Navbar() {
                 size="sm"
                 asChild
                 className={cn(
-                  "gap-2 rounded-full transition-all duration-300 hover:scale-105 hover:bg-transparent focus:bg-transparent active:bg-transparent",
-                  isScrolled
-                    ? "text-gray-700 dark:text-gray-300"
-                    : "text-white/90"
+                  "nav-button gap-2 rounded-full hover:scale-105 hover:bg-transparent focus:bg-transparent active:bg-transparent"
                 )}
               >
                 <a href="https://maps.app.goo.gl/2Rgf7xrg5aDfTzAR8">
@@ -153,10 +146,7 @@ export default function Navbar() {
                     variant="ghost"
                     size="icon"
                     className={cn(
-                      "rounded-lg transition-all duration-300 hover:bg-transparent focus:bg-transparent active:bg-transparent",
-                      isScrolled
-                        ? "text-gray-700 dark:text-gray-300"
-                        : "text-white"
+                      "nav-mobile-button rounded-lg hover:bg-transparent focus:bg-transparent active:bg-transparent"
                     )}
                     aria-label={isMenuOpen ? "Close menu" : "Open menu"}
                   >

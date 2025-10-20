@@ -4,11 +4,12 @@
     "service": "Services",
     "investor": "Investors",
     "careers": "Careers",
+    "contact": "Contact Us",
     "find_us": "Find Us",
     "language": "Language"
   },
   "Hero": {
-    "subtitle": "At DelighTech Co., Ltd., we specialize in creating technology-driven financial solutions that make life easier, faster, and more secure. Our flagship product, LUYLEUN, is redefining access to instant loans in Cambodia.",
+    "subtitle": "At Delightech Co., Ltd., we specialize in creating technology-driven financial solutions that make life easier, faster, and more secure. Our flagship product, LUYLEUN, is redefining access to instant loans in Cambodia.",
     "title": "Everyone can Access",
     "title_highlight": "Finances",
     "contact_us": "Contact Us",
@@ -32,7 +33,7 @@
     "bomnin": {
       "name": "BOM NIN",
       "description": "Delivering high-value infrastructure and engineering projects that meet international standards. Our construction unit focuses on innovation, precision, and long-term structural integrity for every development.",
-      "badge": "E-Commerce"
+      "badge": "E-commerce"
     },
     "learn_more": "Learn More",
     "innovation_driven": "Innovation Driven"
@@ -206,14 +207,15 @@
     "Navbar": {
       "about": "About Us",
       "service": "Services",
-      "careers": "Careers"
+      "careers": "Careers",
+      "investor": "Investors"
     }
   },
   "History": {
     "badge": "Our Story",
     "title": "Our",
     "title_highlight": "Journey",
-    "description": "Discover the milestones and achievements that have shaped DelighTech into Cambodia's leading fintech company.",
+    "description": "Discover the milestones and achievements that have shaped Delightech into Cambodia's leading fintech company.",
     "timeline": {
       "2025": {
         "year": "2025",
@@ -233,7 +235,7 @@
     "badge": "Join Our Team",
     "title": "Build Your Career",
     "title_highlight": "With Us",
-    "description": "At DelighTech, we design experiences that redefine how people interact with financial technology. Join a team where innovation, empathy, and precision meet.",
+    "description": "At Delightech, we design experiences that redefine how people interact with financial technology. Join a team where innovation, empathy, and precision meet.",
     "view_positions": "View Open Positions",
     "apply_now": "Apply Now",
     "cta": {
@@ -244,14 +246,14 @@
     }
   },
   "AboutPage": {
-    "vision_title": "OUR VISION:",
+    "vision_title": "OUR VISION",
     "vision_description": "To revolutionize financial solutions through technology and to empower individuals and businesses worldwide to achieve financial freedom and stability.",
     "founder_message": {
       "title": "Message from Founder",
       "subtitle": "Mr. Lay Vila, Founder of Delightech",
-      "paragraph1": "When I started DelighTech, I had one clear belief — that technology should serve people, not the other way around. Our goal has always been to build digital products that don't just work, but truly make life better, simpler, and smarter.",
+      "paragraph1": "When I started Delightech, I had one clear belief — that technology should serve people, not the other way around. Our goal has always been to build digital products that don't just work, but truly make life better, simpler, and smarter.",
       "paragraph2": "With our flagship project LUYLEUN, we're redefining how Cambodians experience finance — offering fast, transparent, and reliable access to opportunities that help them grow. We believe financial technology should be empowering, inclusive, and built for everyone.",
-      "paragraph3": "At DelighTech, we are driven by passion and purpose. Every idea, every line of code, and every user experience is guided by our vision to create meaningful impact through innovation.",
+      "paragraph3": "At Delightech, we are driven by passion and purpose. Every idea, every line of code, and every user experience is guided by our vision to create meaningful impact through innovation.",
       "paragraph4": "This great success is owed to our visionary leadership and We're not just building apps — we're building the future of how people connect with technology. Thank you for being part of this journey. Together, we'll continue to dream bigger, innovate smarter, and grow stronger."
     }
   },
@@ -358,7 +360,7 @@
       "description": "Interested in learning more about investment opportunities with Delightech? We'd love to hear from you.",
       "investor_relations": {
         "title": "Investor Relations",
-        "email": "investors@delightech.com",
+        "email": "investors@Delightech.com",
         "phone": "+855 (0) 23 123 456",
         "address": "Phnom Penh, Cambodia"
       },
