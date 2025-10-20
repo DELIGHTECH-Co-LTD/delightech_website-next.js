@@ -11,6 +11,11 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Send } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { Metadata } from "next";
+
+export const metadata:Metadata = {
+  title: "Careers"
+}
 
 const jobs = [
   {
@@ -100,7 +105,7 @@ export default function CareerPage() {
             className="rounded-full text-base"
           >
             {t("cta.send_portfolio")}
-            <Send className="ml-2 h-4 w-4" />
+            <Send />
           </Button>
         </div>
       </div>

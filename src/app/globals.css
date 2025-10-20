@@ -1,51 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&display=swap");
 @import "tailwindcss";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
-/* Font utility classes */
-.font-roboto {
-  font-family: var(--font-family-roboto);
-}
-
-.font-kantumruy {
-  font-family: var(--font-family-kantumruy);
-}
-
-.font-geist-sans {
-  font-family: var(--font-family-geist-sans);
-}
-
-.font-geist-mono {
-  font-family: var(--font-family-geist-mono);
-}
-
-.font-kantumruy-pro {
-  font-family: var(--font-family-kantumruy-pro);
-}
-
-/* Language-specific font application */
-:lang(en) {
-  font-family: var(--font-family-roboto);
-}
-
-:lang(kh) {
-  font-family: var(--font-family-kantumruy);
-}
-
-/* Enhanced Khmer typography */
-:lang(kh) h1,
-:lang(kh) h2,
-:lang(kh) h3,
-:lang(kh) h4,
-:lang(kh) h5,
-:lang(kh) h6 {
-  font-family: var(--font-family-kantumruy);
-  line-height: 1.6;
-  letter-spacing: 0.01em;
-  font-weight: 500;
+/* Font family definitions for Tailwind CSS v4 */
+@theme {
+  --font-family-roboto: var(--font-roboto);
+  --font-family-kantumruy: var(--font-kantumruy);
 }
 
 :lang(kh) p,
@@ -106,6 +67,15 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  --animate-aurora: aurora 60s linear infinite;
+  @keyframes aurora {
+    from {
+      backgroundposition: 50% 50%, 50% 50%;
+    }
+    to {
+      backgroundposition: 350% 50%, 350% 50%;
+    }
+  }
 }
 
 :root {
@@ -195,6 +165,81 @@
   background: linear-gradient(-45deg, #000000, #001c68, #0039ca, #053cc7);
   background-size: 300% 300%;
   animation: gradientMove 12s ease infinite;
+}
+
+/* Navbar smooth color transitions */
+.navbar {
+  background: linear-gradient(-45deg, #000000, #001c68, #0039ca, #053cc7);
+  background-size: 300% 300%;
+  animation: gradientMove 12s ease infinite;
+  backdrop-filter: blur(4px);
+  transition: all 0.5s ease-in-out;
+}
+
+.navbar.scrolled {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(229, 231, 235, 0.5);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  animation: none;
+}
+
+/* Dark mode navbar - base state (not scrolled) */
+.dark .navbar {
+  background: linear-gradient(-45deg, #1f2937, #111827, #000000, #1e3a8a);
+  background-size: 300% 300%;
+  animation: gradientMove 12s ease infinite;
+  backdrop-filter: blur(4px);
+}
+
+/* Dark mode navbar - scrolled state */
+.dark .navbar.scrolled {
+  background: rgba(17, 24, 39, 0.9); /* gray-900/90 */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(16px);
+  animation: none;
+}
+
+/* Navigation link styles with smooth transitions */
+.nav-link {
+  color: rgba(255, 255, 255, 0.8);
+  transition: color 0.5s ease-in-out;
+}
+
+.navbar.scrolled .nav-link {
+  color: rgb(55, 65, 81); /* gray-700 */
+}
+
+.nav-button {
+  color: rgba(255, 255, 255, 0.9);
+  transition: color 0.5s ease-in-out, transform 0.3s ease;
+}
+
+.navbar.scrolled .nav-button {
+  color: rgb(55, 65, 81); /* gray-700 */
+}
+
+.nav-mobile-button {
+  color: rgb(255, 255, 255);
+  transition: color 0.5s ease-in-out;
+}
+
+.navbar.scrolled .nav-mobile-button {
+  color: rgb(55, 65, 81); /* gray-700 */
+}
+
+/* Dark mode navbar colors - keep white in dark mode when scrolled */
+.dark .navbar.scrolled .nav-link {
+  color: rgb(255, 255, 255); /* white in dark mode when scrolled */
+}
+
+.dark .navbar.scrolled .nav-button {
+  color: rgb(255, 255, 255); /* white in dark mode when scrolled */
+}
+
+.dark .navbar.scrolled .nav-mobile-button {
+  color: rgb(255, 255, 255); /* white in dark mode when scrolled */
 }
 .footer-gradient {
   background: linear-gradient(#000000, #001c68, #0039ca, #053cc7);
