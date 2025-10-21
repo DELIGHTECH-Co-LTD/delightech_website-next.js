@@ -14,47 +14,120 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 import { useTranslations } from "next-intl";
 import {
   Calculator as CalculatorIcon,
-  TrendingUp,
-  PiggyBank,
   CreditCard,
   BarChart3,
-  DollarSign,
+  PiggyBank,
 } from "lucide-react";
 import { Particles } from "@/components/ui/shadcn-io/particles";
+
+// Senior Logic Interfaces
+interface RepaymentEntry {
+  month: number;
+  monthlyPayment: string;
+  interest: string;
+  principalPayment: string;
+  remainingBalance: string;
+  dueDate: string;
+}
+
+interface RepaymentResult {
+  totalInterest: number;
+  schedule: RepaymentEntry[];
+}
+
+// Senior Logic Functions
+function calculateRepayment(
+  principal: number,
+  days: number,
+  monthlyRatePercent: number,
+  depositDate: string
+): RepaymentResult {
+  const months = days <= 30 ? 1 : Math.floor(days / 30);
+  return generateRepaymentSchedule(
+    days,
+    principal,
+    months,
+    monthlyRatePercent,
+    depositDate
+  );
+}
+
+function generateRepaymentSchedule(
+  days: number,
+  principal: number,
+  months: number,
+  monthlyRatePercent: number,
+  depositDate: string
+): RepaymentResult {
+  const schedule: RepaymentEntry[] = [];
+  let remainingPrincipal = principal;
+  const monthlyRate = monthlyRatePercent / 100;
+  const startDate = new Date(depositDate);
+  const monthlyPayment =
+    Math.round(
+      ((principal * monthlyRate * Math.pow(1 + monthlyRate, months)) /
+        (Math.pow(1 + monthlyRate, months) - 1)) *
+        100
+    ) / 100;
+  let totalInterest = 0;
+
+  for (let month = 1; month <= months; month++) {
+    const interest = Math.round(remainingPrincipal * monthlyRate * 100) / 100;
+    let principalPayment = Math.round((monthlyPayment - interest) * 100) / 100;
+    const dueDate = new Date(
+      startDate.getTime() + (30 * month - 1) * 24 * 60 * 60 * 1000
+    );
+
+    if (month === months) {
+      principalPayment = Math.round(remainingPrincipal * 100) / 100;
+    }
+
+    const finalMonthlyPayment =
+      month === months
+        ? Math.round((principalPayment + interest) * 100) / 100
+        : monthlyPayment;
+
+    schedule.push({
+      month,
+      monthlyPayment: `$${finalMonthlyPayment.toFixed(2)}`,
+      interest: `$${interest.toFixed(2)}`,
+      principalPayment: `$${principalPayment.toFixed(2)}`,
+      remainingBalance: `$${Math.round((remainingPrincipal - principalPayment) * 100) / 100}`,
+      dueDate: dueDate.toISOString().split("T")[0],
+    });
+
+    remainingPrincipal -= principalPayment;
+    totalInterest += interest;
+  }
+
+  return {
+    totalInterest: Math.round(totalInterest * 100) / 100,
+    schedule,
+  };
+}
 
 export default function Calculator() {
   const t = useTranslations("Calculator");
 
-  // Loan Calculator State
-  const [loanAmount, setLoanAmount] = useState("");
-  const [interestRate, setInterestRate] = useState("");
-  const [loanTerm, setLoanTerm] = useState("");
-  const [loanResult, setLoanResult] = useState<{
-    monthlyPayment: number;
-    totalPayment: number;
-    totalInterest: number;
-    amortizationSchedule: Array<{
-      month: number;
-      payment: number;
-      principal: number;
-      interest: number;
-      remainingBalance: number;
-    }>;
-  } | null>(null);
-
-  // Investment Calculator State
-  const [principal, setPrincipal] = useState("");
-  const [monthlyContribution, setMonthlyContribution] = useState("");
-  const [investmentRate, setInvestmentRate] = useState("");
-  const [investmentTime, setInvestmentTime] = useState("");
-  const [investmentResult, setInvestmentResult] = useState<{
-    finalAmount: number;
-    totalContributions: number;
-    totalEarnings: number;
-  } | null>(null);
+  // Senior Logic State - Advanced Loan Calculator
+  const [submitted, setSubmitted] = useState(false);
+  const [loanPrincipal, setLoanPrincipal] = useState(100);
+  const [loanMonths, setLoanMonths] = useState(1);
+  const [loanRate, setLoanRate] = useState(5.0);
+  const [repaymentData, setRepaymentData] = useState<RepaymentResult | null>(
+    null
+  );
 
   // Savings Calculator State
   const [savingsGoal, setSavingsGoal] = useState("");
@@ -67,74 +140,25 @@ export default function Calculator() {
     interestEarned: number;
   } | null>(null);
 
-  // Loan Calculator Functions - Amortization Formula
-  const calculateLoan = () => {
-    const P = parseFloat(loanAmount); // Principal
-    const r = parseFloat(interestRate) / 100 / 12; // Monthly interest rate
-    const n = parseFloat(loanTerm) * 12; // Total number of payments
-
-    if (P && r && n) {
-      // Amortization Formula: M = P * [r(1+r)^n] / [(1+r)^n - 1]
-      const monthlyPayment =
-        (P * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
-      const totalPayment = monthlyPayment * n;
-      const totalInterest = totalPayment - P;
-
-      // Generate Amortization Schedule
-      const amortizationSchedule = [];
-      let remainingBalance = P;
-
-      for (let month = 1; month <= n; month++) {
-        // Interest payment for current month
-        const interestPayment = remainingBalance * r;
-
-        // Principal payment for current month
-        const principalPayment = monthlyPayment - interestPayment;
-
-        // Update remaining balance
-        remainingBalance = remainingBalance - principalPayment;
-
-        // Ensure remaining balance doesn't go negative due to rounding
-        if (remainingBalance < 0.01) remainingBalance = 0;
-
-        amortizationSchedule.push({
-          month,
-          payment: monthlyPayment,
-          principal: principalPayment,
-          interest: interestPayment,
-          remainingBalance,
-        });
-      }
-
-      setLoanResult({
-        monthlyPayment,
-        totalPayment,
-        totalInterest,
-        amortizationSchedule,
-      });
-    }
+  // Senior Logic Functions
+  const handleCalculate = () => {
+    const days = loanMonths * 30;
+    const depositDate = new Date().toISOString().split("T")[0];
+    const result = calculateRepayment(
+      loanPrincipal,
+      days,
+      loanRate,
+      depositDate
+    );
+    setRepaymentData(result);
   };
 
-  // Investment Calculator Functions
-  const calculateInvestment = () => {
-    const P = parseFloat(principal) || 0;
-    const PMT = parseFloat(monthlyContribution) || 0;
-    const r = parseFloat(investmentRate) / 100 / 12;
-    const t = parseFloat(investmentTime) * 12;
+  const handleSubmit = () => {
+    setSubmitted(true);
+  };
 
-    if (r && t) {
-      const futureValuePrincipal = P * Math.pow(1 + r, t);
-      const futureValueAnnuity = (PMT * (Math.pow(1 + r, t) - 1)) / r;
-      const finalAmount = futureValuePrincipal + futureValueAnnuity;
-      const totalContributions = P + PMT * t;
-      const totalEarnings = finalAmount - totalContributions;
-
-      setInvestmentResult({
-        finalAmount,
-        totalContributions,
-        totalEarnings,
-      });
-    }
+  const handleTrackLoan = () => {
+    setSubmitted(false);
   };
 
   // Savings Calculator Functions
@@ -213,14 +237,10 @@ export default function Calculator() {
 
         {/* Calculator Tabs */}
         <Tabs defaultValue="loan" className="w-full">
-          <TabsList className="grid w-full grid-cols-3 max-w-2xl mx-auto mb-12">
+          <TabsList className="grid w-full grid-cols-2 max-w-xl mx-auto mb-12">
             <TabsTrigger value="loan" className="flex items-center gap-2">
               <CreditCard className="w-4 h-4" />
               {t("tabs.loan")}
-            </TabsTrigger>
-            <TabsTrigger value="investment" className="flex items-center gap-2">
-              <TrendingUp className="w-4 h-4" />
-              {t("tabs.investment")}
             </TabsTrigger>
             <TabsTrigger value="savings" className="flex items-center gap-2">
               <PiggyBank className="w-4 h-4" />
@@ -231,68 +251,77 @@ export default function Calculator() {
           {/* Loan Calculator */}
           <TabsContent value="loan">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              {/* Input Card */}
-              <Card className="group bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border border-blue-200/30 dark:border-blue-800/30 shadow-xl hover:shadow-2xl transition-all duration-500">
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-3">
-                    <CreditCard className="w-6 h-6 text-blue-600 dark:text-blue-400" />
-                    {t("loan.title")}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-6">
-                  <div className="space-y-2">
-                    <Label htmlFor="loanAmount">{t("loan.amount")} ($)</Label>
-                    <Input
-                      id="loanAmount"
-                      type="number"
-                      placeholder="100000"
-                      value={loanAmount}
-                      onChange={(e) => setLoanAmount(e.target.value)}
-                      className="focus:ring-blue-500"
-                    />
-                  </div>
+              {/* Input Card - Fixed Position */}
+              <div className="lg:sticky lg:top-8 lg:self-start">
+                <Card className="group bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border border-blue-200/30 dark:border-blue-800/30 shadow-xl hover:shadow-2xl transition-all duration-500">
+                  <CardHeader>
+                    <CardTitle className="flex items-center gap-3">
+                      <CreditCard className="w-6 h-6 text-blue-600 dark:text-blue-400" />
+                      {t("loan.title")}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-6">
+                    {/* Senior Logic Implementation */}
+                    <div className="space-y-2">
+                      <Label htmlFor="loanPrincipal">Loan Amount ($)</Label>
+                      <Input
+                        id="loanPrincipal"
+                        type="number"
+                        placeholder="Enter loan amount (50-500)"
+                        value={loanPrincipal}
+                        onChange={(e) =>
+                          setLoanPrincipal(Number(e.target.value) || 0)
+                        }
+                        min="50"
+                        max="500"
+                        className="focus:ring-blue-500"
+                      />
+                    </div>
 
-                  <div className="space-y-2">
-                    <Label htmlFor="interestRate">
-                      {t("loan.interestRate")} (%)
-                    </Label>
-                    <Input
-                      id="interestRate"
-                      type="number"
-                      step="0.01"
-                      placeholder="5.5"
-                      value={interestRate}
-                      onChange={(e) => setInterestRate(e.target.value)}
-                      className="focus:ring-blue-500"
-                    />
-                  </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="loanMonths">Loan Term (Months)</Label>
+                      <Input
+                        id="loanMonths"
+                        type="number"
+                        placeholder="Enter term in months (1-24)"
+                        value={loanMonths}
+                        onChange={(e) =>
+                          setLoanMonths(Number(e.target.value) || 1)
+                        }
+                        min="1"
+                        max="24"
+                        className="focus:ring-blue-500"
+                      />
+                    </div>
 
-                  <div className="space-y-2">
-                    <Label htmlFor="loanTerm">{t("loan.term")}</Label>
-                    <Select value={loanTerm} onValueChange={setLoanTerm}>
-                      <SelectTrigger className="focus:ring-blue-500">
-                        <SelectValue placeholder={t("loan.selectTerm")} />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="0.25">3 {t("months")}</SelectItem>
-                        <SelectItem value="0.5">6 {t("months")}</SelectItem>
-                        <SelectItem value="0.75">9 {t("months")}</SelectItem>
-                        <SelectItem value="1">
-                          12 {t("months")} (1 {t("years")})
-                        </SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="loanRate">
+                        Monthly Interest Rate (%)
+                      </Label>
+                      <Input
+                        id="loanRate"
+                        type="number"
+                        step="0.1"
+                        placeholder="Enter rate (1.0-5.0)"
+                        value={loanRate}
+                        onChange={(e) =>
+                          setLoanRate(Number(e.target.value) || 1.0)
+                        }
+                        min="1"
+                        max="5"
+                        className="focus:ring-blue-500"
+                      />
+                    </div>
 
-                  <Button
-                    onClick={calculateLoan}
-                    className="w-full bg-blue-600 hover:bg-blue-700"
-                    disabled={!loanAmount || !interestRate || !loanTerm}
-                  >
-                    {t("calculate")}
-                  </Button>
-                </CardContent>
-              </Card>
+                    <Button
+                      onClick={handleCalculate}
+                      className="w-full bg-blue-600 hover:bg-blue-700"
+                    >
+                      Calculate Loan
+                    </Button>
+                  </CardContent>
+                </Card>
+              </div>
 
               {/* Results Card */}
               <Card className="group bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border border-green-200/30 dark:border-green-800/30 shadow-xl">
@@ -303,274 +332,136 @@ export default function Calculator() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  {loanResult ? (
+                  {repaymentData ? (
                     <div className="space-y-6">
-                      {/* Main Results */}
+                      {/* Senior Logic Results */}
                       <div className="space-y-4">
                         <div className="p-4 bg-blue-50 dark:bg-blue-950/30 rounded-lg">
                           <div className="text-sm text-blue-600 dark:text-blue-400 font-medium">
-                            {t("loan.monthlyPayment")}
+                            Total Interest
                           </div>
                           <div className="text-2xl font-bold text-blue-700 dark:text-blue-300">
-                            {formatCurrency(loanResult.monthlyPayment)}
+                            ${repaymentData.totalInterest.toFixed(2)}
                           </div>
                         </div>
 
                         <div className="grid grid-cols-2 gap-4">
                           <div className="p-4 bg-slate-50 dark:bg-slate-800 rounded-lg">
                             <div className="text-sm text-slate-600 dark:text-slate-400 font-medium">
-                              {t("loan.totalPayment")}
+                              Total Cost
                             </div>
                             <div className="text-lg font-bold text-slate-700 dark:text-slate-300">
-                              {formatCurrency(loanResult.totalPayment)}
+                              $
+                              {(
+                                loanPrincipal + repaymentData.totalInterest
+                              ).toFixed(2)}
                             </div>
                           </div>
 
                           <div className="p-4 bg-slate-50 dark:bg-slate-800 rounded-lg">
                             <div className="text-sm text-slate-600 dark:text-slate-400 font-medium">
-                              {t("loan.totalInterest")}
+                              Payment Count
                             </div>
                             <div className="text-lg font-bold text-slate-700 dark:text-slate-300">
-                              {formatCurrency(loanResult.totalInterest)}
+                              {repaymentData.schedule.length} payments
                             </div>
                           </div>
                         </div>
                       </div>
 
-                      {/* Amortization Summary */}
+                      {/* Loan Summary */}
                       <div className="border-t border-slate-200 dark:border-slate-700 pt-4">
                         <h4 className="text-lg font-semibold mb-3">
-                          {t("loan.amortizationSummary")}
+                          Loan Summary
                         </h4>
                         <div className="grid grid-cols-2 gap-4 text-sm">
                           <div>
                             <span className="text-slate-600 dark:text-slate-400">
-                              First Year Interest:
+                              Principal Amount:
                             </span>
                             <div className="font-semibold">
-                              {formatCurrency(
-                                loanResult.amortizationSchedule
-                                  .slice(0, 12)
-                                  .reduce(
-                                    (sum, payment) => sum + payment.interest,
-                                    0
-                                  )
-                              )}
+                              ${loanPrincipal}
                             </div>
                           </div>
                           <div>
                             <span className="text-slate-600 dark:text-slate-400">
-                              First Year Principal:
+                              Monthly Rate:
+                            </span>
+                            <div className="font-semibold">{loanRate}%</div>
+                          </div>
+                          <div>
+                            <span className="text-slate-600 dark:text-slate-400">
+                              Term:
                             </span>
                             <div className="font-semibold">
-                              {formatCurrency(
-                                loanResult.amortizationSchedule
-                                  .slice(0, 12)
-                                  .reduce(
-                                    (sum, payment) => sum + payment.principal,
-                                    0
-                                  )
-                              )}
+                              {loanMonths}{" "}
+                              {loanMonths === 1 ? "Month" : "Months"}
+                            </div>
+                          </div>
+                          <div>
+                            <span className="text-slate-600 dark:text-slate-400">
+                              First Payment:
+                            </span>
+                            <div className="font-semibold">
+                              {repaymentData.schedule[0]?.dueDate || "N/A"}
                             </div>
                           </div>
                         </div>
                       </div>
 
-                      {/* Amortization Schedule Preview */}
+                      {/* Amortization Schedule Preview - Updated for Senior Logic */}
                       <div className="border-t border-slate-200 dark:border-slate-700 pt-4">
                         <h4 className="text-lg font-semibold mb-3">
-                          {t("loan.paymentSchedule")}
+                          Advanced Repayment Schedule
                         </h4>
-                        <div className="max-h-60 overflow-y-auto">
-                          <table className="w-full text-sm">
-                            <thead className="sticky top-0 bg-slate-50 dark:bg-slate-800">
-                              <tr>
-                                <th className="text-left p-2 font-medium">
-                                  Month
-                                </th>
-                                <th className="text-right p-2 font-medium">
-                                  Payment
-                                </th>
-                                <th className="text-right p-2 font-medium">
-                                  Principal
-                                </th>
-                                <th className="text-right p-2 font-medium">
-                                  Interest
-                                </th>
-                                <th className="text-right p-2 font-medium">
-                                  Balance
-                                </th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              {loanResult.amortizationSchedule
-                                .slice(0, 12)
-                                .map((payment) => (
-                                  <tr
-                                    key={payment.month}
-                                    className="border-t border-slate-200 dark:border-slate-700"
-                                  >
-                                    <td className="p-2">{payment.month}</td>
-                                    <td className="p-2 text-right">
-                                      {formatCurrency(payment.payment)}
-                                    </td>
-                                    <td className="p-2 text-right text-green-600 dark:text-green-400">
-                                      {formatCurrency(payment.principal)}
-                                    </td>
-                                    <td className="p-2 text-right text-red-600 dark:text-red-400">
-                                      {formatCurrency(payment.interest)}
-                                    </td>
-                                    <td className="p-2 text-right">
-                                      {formatCurrency(payment.remainingBalance)}
-                                    </td>
-                                  </tr>
+                        {repaymentData && (
+                          <div className="max-h-60 overflow-y-auto">
+                            <Table>
+                              <TableHeader>
+                                <TableRow>
+                                  <TableHead>Month</TableHead>
+                                  <TableHead>Payment</TableHead>
+                                  <TableHead>Interest</TableHead>
+                                  <TableHead>Principal</TableHead>
+                                  <TableHead>Balance</TableHead>
+                                  <TableHead>Due Date</TableHead>
+                                </TableRow>
+                              </TableHeader>
+                              <TableBody>
+                                {repaymentData.schedule.map((entry) => (
+                                  <TableRow key={entry.month}>
+                                    <TableCell>{entry.month}</TableCell>
+                                    <TableCell className="font-semibold text-blue-600">
+                                      {entry.monthlyPayment}
+                                    </TableCell>
+                                    <TableCell className="text-red-600">
+                                      {entry.interest}
+                                    </TableCell>
+                                    <TableCell className="text-green-600">
+                                      {entry.principalPayment}
+                                    </TableCell>
+                                    <TableCell>
+                                      {entry.remainingBalance}
+                                    </TableCell>
+                                    <TableCell className="text-sm">
+                                      {entry.dueDate}
+                                    </TableCell>
+                                  </TableRow>
                                 ))}
-                            </tbody>
-                          </table>
-                          {loanResult.amortizationSchedule.length > 12 && (
-                            <div className="text-center py-2 text-xs text-slate-500 dark:text-slate-400">
-                              Showing first 12 months of{" "}
-                              {loanResult.amortizationSchedule.length} total
-                              payments
-                            </div>
-                          )}
-                        </div>
+                              </TableBody>
+                            </Table>
+                          </div>
+                        )}
                       </div>
                     </div>
                   ) : (
-                    <div className="text-center py-8 text-muted-foreground">
-                      {t("enterValues")}
-                    </div>
-                  )}
-                </CardContent>
-              </Card>
-            </div>
-          </TabsContent>
-
-          {/* Investment Calculator */}
-          <TabsContent value="investment">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              {/* Input Card */}
-              <Card className="group bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border border-blue-200/30 dark:border-blue-800/30 shadow-xl hover:shadow-2xl transition-all duration-500">
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-3">
-                    <TrendingUp className="w-6 h-6 text-blue-600 dark:text-blue-400" />
-                    {t("investment.title")}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-6">
-                  <div className="space-y-2">
-                    <Label htmlFor="principal">
-                      {t("investment.initialAmount")} ($)
-                    </Label>
-                    <Input
-                      id="principal"
-                      type="number"
-                      placeholder="10000"
-                      value={principal}
-                      onChange={(e) => setPrincipal(e.target.value)}
-                      className="focus:ring-blue-500"
-                    />
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="monthlyContribution">
-                      {t("investment.monthlyContribution")} ($)
-                    </Label>
-                    <Input
-                      id="monthlyContribution"
-                      type="number"
-                      placeholder="500"
-                      value={monthlyContribution}
-                      onChange={(e) => setMonthlyContribution(e.target.value)}
-                      className="focus:ring-blue-500"
-                    />
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="investmentRate">
-                      {t("investment.expectedReturn")} (%)
-                    </Label>
-                    <Input
-                      id="investmentRate"
-                      type="number"
-                      step="0.01"
-                      placeholder="7"
-                      value={investmentRate}
-                      onChange={(e) => setInvestmentRate(e.target.value)}
-                      className="focus:ring-blue-500"
-                    />
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="investmentTime">
-                      {t("investment.timeHorizon")} ({t("years")})
-                    </Label>
-                    <Input
-                      id="investmentTime"
-                      type="number"
-                      placeholder="20"
-                      value={investmentTime}
-                      onChange={(e) => setInvestmentTime(e.target.value)}
-                      className="focus:ring-blue-500"
-                    />
-                  </div>
-
-                  <Button
-                    onClick={calculateInvestment}
-                    className="w-full bg-blue-600 hover:bg-blue-700"
-                    disabled={!investmentRate || !investmentTime}
-                  >
-                    {t("calculate")}
-                  </Button>
-                </CardContent>
-              </Card>
-
-              {/* Results Card */}
-              <Card className="group bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border border-green-200/30 dark:border-green-800/30 shadow-xl">
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-3">
-                    <DollarSign className="w-6 h-6 text-green-600 dark:text-green-400" />
-                    {t("results")}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  {investmentResult ? (
-                    <div className="space-y-4">
-                      <div className="p-4 bg-green-50 dark:bg-green-950/30 rounded-lg">
-                        <div className="text-sm text-green-600 dark:text-green-400 font-medium">
-                          {t("investment.finalAmount")}
-                        </div>
-                        <div className="text-2xl font-bold text-green-700 dark:text-green-300">
-                          {formatCurrency(investmentResult.finalAmount)}
-                        </div>
-                      </div>
-
-                      <div className="grid grid-cols-2 gap-4">
-                        <div className="p-4 bg-slate-50 dark:bg-slate-800 rounded-lg">
-                          <div className="text-sm text-slate-600 dark:text-slate-400 font-medium">
-                            {t("investment.totalContributions")}
-                          </div>
-                          <div className="text-lg font-bold text-slate-700 dark:text-slate-300">
-                            {formatCurrency(
-                              investmentResult.totalContributions
-                            )}
-                          </div>
-                        </div>
-
-                        <div className="p-4 bg-slate-50 dark:bg-slate-800 rounded-lg">
-                          <div className="text-sm text-slate-600 dark:text-slate-400 font-medium">
-                            {t("investment.totalEarnings")}
-                          </div>
-                          <div className="text-lg font-bold text-slate-700 dark:text-slate-300">
-                            {formatCurrency(investmentResult.totalEarnings)}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  ) : (
-                    <div className="text-center py-8 text-muted-foreground">
-                      {t("enterValues")}
+                    <div className="text-center py-12">
+                      <CreditCard className="w-12 h-12 text-slate-400 mx-auto mb-4" />
+                      <p className="text-slate-500 dark:text-slate-400">
+                        Configure your loan parameters and click "Calculate
+                        Loan" to see detailed repayment schedule with senior
+                        logic.
+                      </p>
                     </div>
                   )}
                 </CardContent>
@@ -582,78 +473,82 @@ export default function Calculator() {
           <TabsContent value="savings">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {/* Input Card */}
-              <Card className="group bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border border-blue-200/30 dark:border-blue-800/30 shadow-xl hover:shadow-2xl transition-all duration-500">
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-3">
-                    <PiggyBank className="w-6 h-6 text-blue-600 dark:text-blue-400" />
-                    {t("savings.title")}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-6">
-                  <div className="space-y-2">
-                    <Label htmlFor="savingsGoal">{t("savings.goal")} ($)</Label>
-                    <Input
-                      id="savingsGoal"
-                      type="number"
-                      placeholder="50000"
-                      value={savingsGoal}
-                      onChange={(e) => setSavingsGoal(e.target.value)}
-                      className="focus:ring-blue-500"
-                    />
-                  </div>
+              <div className="lg:sticky lg:top-8 lg:self-start">
+                <Card className="group bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border border-blue-200/30 dark:border-blue-800/30 shadow-xl hover:shadow-2xl transition-all duration-500">
+                  <CardHeader>
+                    <CardTitle className="flex items-center gap-3">
+                      <PiggyBank className="w-6 h-6 text-blue-600 dark:text-blue-400" />
+                      {t("savings.title")}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-6">
+                    <div className="space-y-2">
+                      <Label htmlFor="savingsGoal">
+                        {t("savings.goal")} ($)
+                      </Label>
+                      <Input
+                        id="savingsGoal"
+                        type="number"
+                        placeholder="50000"
+                        value={savingsGoal}
+                        onChange={(e) => setSavingsGoal(e.target.value)}
+                        className="focus:ring-blue-500"
+                      />
+                    </div>
 
-                  <div className="space-y-2">
-                    <Label htmlFor="currentSavings">
-                      {t("savings.currentAmount")} ($)
-                    </Label>
-                    <Input
-                      id="currentSavings"
-                      type="number"
-                      placeholder="5000"
-                      value={currentSavings}
-                      onChange={(e) => setCurrentSavings(e.target.value)}
-                      className="focus:ring-blue-500"
-                    />
-                  </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="currentSavings">
+                        {t("savings.currentAmount")} ($)
+                      </Label>
+                      <Input
+                        id="currentSavings"
+                        type="number"
+                        placeholder="5000"
+                        value={currentSavings}
+                        onChange={(e) => setCurrentSavings(e.target.value)}
+                        className="focus:ring-blue-500"
+                      />
+                    </div>
 
-                  <div className="space-y-2">
-                    <Label htmlFor="monthlySavings">
-                      {t("savings.monthlyDeposit")} ($)
-                    </Label>
-                    <Input
-                      id="monthlySavings"
-                      type="number"
-                      placeholder="1000"
-                      value={monthlySavings}
-                      onChange={(e) => setMonthlySavings(e.target.value)}
-                      className="focus:ring-blue-500"
-                    />
-                  </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="monthlySavings">
+                        {t("savings.monthlyDeposit")} ($)
+                      </Label>
+                      <Input
+                        id="monthlySavings"
+                        type="number"
+                        placeholder="1000"
+                        value={monthlySavings}
+                        onChange={(e) => setMonthlySavings(e.target.value)}
+                        className="focus:ring-blue-500"
+                      />
+                    </div>
 
-                  <div className="space-y-2">
-                    <Label htmlFor="savingsRate">
-                      {t("savings.interestRate")} (%)
-                    </Label>
-                    <Input
-                      id="savingsRate"
-                      type="number"
-                      step="0.01"
-                      placeholder="3"
-                      value={savingsRate}
-                      onChange={(e) => setSavingsRate(e.target.value)}
-                      className="focus:ring-blue-500"
-                    />
-                  </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="savingsRate">
+                        {t("savings.interestRate")} (%)
+                      </Label>
+                      <Input
+                        id="savingsRate"
+                        type="number"
+                        step="0.01"
+                        placeholder="3"
+                        value={savingsRate}
+                        onChange={(e) => setSavingsRate(e.target.value)}
+                        className="focus:ring-blue-500"
+                      />
+                    </div>
 
-                  <Button
-                    onClick={calculateSavings}
-                    className="w-full bg-blue-600 hover:bg-blue-700"
-                    disabled={!savingsGoal || !monthlySavings || !savingsRate}
-                  >
-                    {t("calculate")}
-                  </Button>
-                </CardContent>
-              </Card>
+                    <Button
+                      onClick={calculateSavings}
+                      className="w-full bg-blue-600 hover:bg-blue-700"
+                      disabled={!savingsGoal || !monthlySavings || !savingsRate}
+                    >
+                      {t("calculate")}
+                    </Button>
+                  </CardContent>
+                </Card>
+              </div>
 
               {/* Results Card */}
               <Card className="group bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border border-green-200/30 dark:border-green-800/30 shadow-xl">
@@ -709,7 +604,7 @@ export default function Calculator() {
         </Tabs>
 
         {/* Features Section */}
-        <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="mt-20 grid grid-cols-1 md:grid-cols-2 gap-8">
           <Card className="group bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm border border-blue-200/30 dark:border-blue-800/30 hover:shadow-lg transition-all duration-300">
             <CardContent className="p-6 text-center">
               <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center mx-auto mb-4">
@@ -720,20 +615,6 @@ export default function Calculator() {
               </h3>
               <p className="text-sm text-muted-foreground">
                 {t("features.accurate.description")}
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card className="group bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm border border-green-200/30 dark:border-green-800/30 hover:shadow-lg transition-all duration-300">
-            <CardContent className="p-6 text-center">
-              <div className="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <TrendingUp className="w-6 h-6 text-green-600 dark:text-green-400" />
-              </div>
-              <h3 className="text-lg font-semibold mb-2">
-                {t("features.planning.title")}
-              </h3>
-              <p className="text-sm text-muted-foreground">
-                {t("features.planning.description")}
               </p>
             </CardContent>
           </Card>
