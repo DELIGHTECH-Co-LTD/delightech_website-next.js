@@ -1,6 +1,6 @@
 const config = {
   plugins: {
-    "tailwindcss": {},
+    "@tailwindcss/postcss": {},
     "autoprefixer": {},
     "cssnano": {
       preset: ["default", {

@@ -23,7 +23,6 @@ const nextConfig: NextConfig = {
     poweredByHeader: false,
     generateEtags: false,
     // Enable production optimizations
-    swcMinify: true,
     reactStrictMode: true,
     experimental: {
         optimizeCss: true
