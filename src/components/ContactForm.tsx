@@ -13,8 +13,11 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "./ui/button";
 import { Mail, Phone, MapPin, Clock, CheckCircle } from "lucide-react";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 export default function ContactForm() {
+  const t = useTranslations("ContactForm");
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -49,37 +52,37 @@ export default function ContactForm() {
   };
 
   const subjectOptions = [
-    "General Inquiry",
-    "Business Partnership",
-    "Technical Support",
-    "Investment Opportunities",
-    "Career Opportunities",
-    "Other",
+    { key: "general", label: t("subjects.general") },
+    { key: "business", label: t("subjects.business") },
+    { key: "technical", label: t("subjects.technical") },
+    { key: "investment", label: t("subjects.investment") },
+    { key: "career", label: t("subjects.career") },
+    { key: "other", label: t("subjects.other") },
   ];
 
   const contactInfo = [
     {
       icon: MapPin,
-      title: "Address",
-      details: ["Chamkar Mon Tonle Bassac, 206 D Preah Norodom Blvd, Phnom Penh, Cambodia"],
+      title: t("address"),
+      details: [t("contactInfo.address")],
       color: "text-blue-600",
     },
     {
       icon: Phone,
-      title: "Phone",
-      details: ["+855 (0) 123 456 789"],
+      title: t("phone"),
+      details: [t("contactInfo.phone")],
       color: "text-green-600",
     },
     {
       icon: Mail,
-      title: "Email",
-      details: ["info@delightech.com"],
+      title: t("email"),
+      details: [t("contactInfo.email")],
       color: "text-purple-600",
     },
     {
       icon: Clock,
-      title: "Hours",
-      details: ["Mon - Fri: 8AM - 6PM"],
+      title: t("hours"),
+      details: [t("contactInfo.hours")],
       color: "text-orange-600",
     },
   ];
@@ -94,34 +97,34 @@ export default function ContactForm() {
               Contact Form
             </Badge> */}
             <h3 className="text-2xl md:text-3xl font-bold text-blue-600 dark:text-blue-400 mb-6 uppercase">
-              Contact Us
+              {t("title")}
             </h3>
 
             {!isSubmitted ? (
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="space-y-2">
-                    <Label htmlFor="name">Name *</Label>
+                    <Label htmlFor="name">{t("name")} *</Label>
                     <Input
                       id="name"
                       type="text"
                       name="name"
                       value={formData.name}
                       onChange={handleInputChange}
-                      placeholder="Your name"
+                      placeholder={t("yourName")}
                       required
                       className="focus-visible:ring-blue-600"
                     />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="email">Email *</Label>
+                    <Label htmlFor="email">{t("email")} *</Label>
                     <Input
                       id="email"
                       type="email"
                       name="email"
                       value={formData.email}
                       onChange={handleInputChange}
-                      placeholder="Your email"
+                      placeholder={t("yourEmail")}
                       required
                       className="focus-visible:ring-blue-600"
                     />
@@ -129,7 +132,7 @@ export default function ContactForm() {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="subject">Subject *</Label>
+                  <Label htmlFor="subject">{t("subject")} *</Label>
                   <Select
                     name="subject"
                     value={formData.subject}
@@ -141,12 +144,12 @@ export default function ContactForm() {
                     required
                   >
                     <SelectTrigger className="focus:ring-blue-600">
-                      <SelectValue placeholder="Select subject" />
+                      <SelectValue placeholder={t("selectSubject")} />
                     </SelectTrigger>
                     <SelectContent>
                       {subjectOptions.map((option) => (
-                        <SelectItem key={option} value={option}>
-                          {option}
+                        <SelectItem key={option.key} value={option.label}>
+                          {option.label}
                         </SelectItem>
                       ))}
                     </SelectContent>
@@ -154,14 +157,14 @@ export default function ContactForm() {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="message">Message *</Label>
+                  <Label htmlFor="message">{t("message")} *</Label>
                   <Textarea
                     id="message"
                     name="message"
                     value={formData.message}
                     onChange={handleInputChange}
                     rows={5}
-                    placeholder="Your message..."
+                    placeholder={t("yourMessage")}
                     required
                     className="resize-none focus-visible:ring-blue-600"
                   />
@@ -173,7 +176,7 @@ export default function ContactForm() {
                   size="lg"
                   className="w-full text-base"
                 >
-                  {isLoading ? "Sending..." : "Send Message"}
+                  {isLoading ? t("sending") : t("sendMessage")}
                 </Button>
               </form>
             ) : (
@@ -182,26 +185,24 @@ export default function ContactForm() {
                   <CheckCircle className="w-8 h-8 text-green-600 dark:text-green-400" />
                 </div>
                 <h3 className="text-2xl font-bold text-foreground mb-4">
-                  Message Sent Successfully!
+                  {t("successTitle")}
                 </h3>
-                <p className="text-muted-foreground">
-                  We'll get back to you within 24 hours.
-                </p>
+                <p className="text-muted-foreground">{t("successMessage")}</p>
               </div>
             )}
 
             {/* Decorative Line */}
             <div className="mt-8 flex items-center gap-4">
-              <div className="flex-1 h-1 bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 rounded-full group-hover:from-purple-600 group-hover:to-blue-600 transition-all duration-500"></div>
+              <div className="flex-1 h-1 bg-gradient-to-r from-blue-600 to-blue-500 dark:from-blue-400 dark:to-blue-300 rounded-full group-hover:from-blue-500 group-hover:to-blue-700 transition-all duration-500"></div>
               <span className="text-xs uppercase tracking-wider text-muted-foreground font-medium">
-                Quick Response
+                {t("quickResponse")}
               </span>
             </div>
 
             {/* Hover Indicator */}
             <div className="mt-6 opacity-100 group-hover:opacity-100 transition-opacity duration-500">
               <div className="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 text-sm font-medium">
-                <span>24/7 Support</span>
+                <span>{t("support24")}</span>
                 <svg
                   className="w-4 h-4 animate-bounce"
                   fill="none"
@@ -222,7 +223,7 @@ export default function ContactForm() {
           {/* Contact Information Side Panel */}
           <div className="w-full lg:w-1/3 bg-gradient-to-br from-blue-600 to-blue-500 dark:from-blue-700 dark:to-blue-900 p-8 lg:p-12 text-white flex flex-col">
             <h4 className="text-xl font-bold mb-6 uppercase">
-              Contact Information
+              {t("contactInformation")}
             </h4>
             <div className="space-y-6 flex-grow">
               {contactInfo.map((info, index) => {
@@ -248,14 +249,19 @@ export default function ContactForm() {
             </div>
 
             {/* Company Info */}
-            <div className="border-t border-white/20">
+            <div className="border-t border-blue-400/30">
               {/* <h5 className="font-bold text-white mb-2 uppercase">
                 Delightech Company
               </h5> */}
-              <Image src={"/assets/tagline.png"} width={250} height={250} alt={"tagline"} className="py-2" />
+              <Image
+                src={"/assets/tagline.png"}
+                width={250}
+                height={250}
+                alt={"tagline"}
+                className="py-2"
+              />
               <p className="text-white/80 text-sm leading-relaxed">
-                Leading technology solutions provider committed to innovation
-                and excellence in digital transformation.
+                {t("companyDescription")}
               </p>
             </div>
           </div>
@@ -263,7 +269,7 @@ export default function ContactForm() {
       </div>
 
       {/* Hover Glow Effect */}
-      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-r from-blue-600/5 via-purple-600/5 to-blue-600/5 pointer-events-none transition-opacity duration-500"></div>
+      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-r from-blue-500/5 via-blue-600/5 to-blue-700/5 pointer-events-none transition-opacity duration-500"></div>
     </div>
   );
 }

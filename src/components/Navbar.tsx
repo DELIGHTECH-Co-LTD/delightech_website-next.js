@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect, useCallback, useRef } from "react";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import { MapPin, Menu, X, ChevronRight } from "lucide-react";
 import { ModeToggle } from "./DarkModeToggle";

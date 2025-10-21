@@ -1,4 +1,55 @@
 {
+  "Blog": {
+    "badge": "Latest Insights",
+    "title": "Our Latest",
+    "title_highlight": "Blog Posts",
+    "description": "Discover our latest insights, news, and updates from industry experts",
+    "read_article": "Read Article",
+    "no_posts": "No blog posts yet",
+    "check_back": "Check back soon for our latest insights and updates",
+    "view_all": "View All Posts"
+  },
+  "MissionAndValues": {
+    "mission": {
+      "badge": "Our Mission",
+      "description": "Our mission is to revolutionize financial services through innovative technology, making them accessible, secure, and efficient for everyone. We strive to create positive impact in people's lives by providing smart financial solutions that empower economic growth and financial inclusion.",
+      "vision": "To transform financial solutions through technology and make individuals and businesses worldwide financially free and stable.",
+      "keyPoint1": "Creating innovative solutions that meet real needs",
+      "keyPoint2": "Building trust through transparency and security",
+      "our_mission": "Our Mission",
+      "our_vision": "Our Vision",
+      "our_approach": "Our Approach"
+    },
+    "values": {
+      "badge": "Core Values",
+      "title": "STRIDE",
+      "description": "Our core values shape everything we do and guide us in creating lasting positive impact.",
+      "passion": {
+        "title": "Stewardship ",
+        "description": "We take responsibility for our resources, decisions, and actions, ensuring sustainable growth and positive impact for our stakeholders and community."
+      },
+      "collaboration": {
+        "title": "Transparentcy",
+        "description": "We provide clear terms, fair policies, and honest communication—so our users always know exactly what they’re getting."
+      },
+      "innovation": {
+        "title": "Respect",
+        "description": "We treat every customer with dignity and fairness, supporting them in their financial journey with care and trust."
+      },
+      "integrity": {
+        "title": "Innovation",
+        "description": "We harness technology to make lending smarter, faster, and more convenient—keeping financial services within everyone’s reach."
+      },
+      "excellence": {
+        "title": "Diversity",
+        "description": "We serve people from all walks of life, embracing inclusivity to empower communities across Cambodia."
+      },
+      "excellent": {
+        "title": "Excellence",
+        "description": "We strive for excellence in everything we do, maintaining the highest standards of quality and professionalism."
+      }
+    }
+  },
   "Navbar": {
     "about": "About Us",
     "service": "Services",
@@ -10,6 +61,7 @@
   },
   "Hero": {
     "subtitle": "At Delightech Co., Ltd., we specialize in creating technology-driven financial solutions that make life easier, faster, and more secure. Our flagship product, LUYLEUN, is redefining access to instant loans in Cambodia.",
+    "description": "Transforming ideas into digital reality with cutting-edge technology and innovative solutions.",
     "title": "Everyone can Access",
     "title_highlight": "Finances",
     "contact_us": "Contact Us",
@@ -74,7 +126,15 @@
     "title": "Our",
     "title_highlight": "Showreel",
     "description": "Experience our journey, our people, and our vision — captured in motion. A glimpse into what drives us forward every day.",
-    "caption": "Corporate Video 2025 — Royal Vision in Motion"
+    "caption": "Corporate Video 2025 — Royal Vision in Motion",
+    "video1_title": "LUYLEUN iOS App Guide",
+    "video1_description": "Step-by-step guide to download and install LUYLEUN from the App Store on your iPhone.",
+    "video2_title": "LUYLEUN Android Setup",
+    "video2_description": "Complete tutorial for downloading LUYLEUN from Google Play Store on Android devices.",
+    "video3_title": "Digital Lending Revolution",
+    "video3_description": "Discover how LUYLEUN is transforming digital lending and financial accessibility in Cambodia.",
+    "video4_title": "Zero Interest Loan Process",
+    "video4_description": "Learn how to apply for your first interest-free loan through LUYLEUN's innovative platform."
   },
   "Team": {
     "badge": "Leadership Team",
@@ -184,6 +244,9 @@
   },
   "Footer": {
     "description": "Building sustainable growth through innovation, leadership, and excellence across industries. Transforming lives through technology.",
+    "location": "Chamkar Mon Tonle Bassac, 206 D Preah Norodom Blvd, Phnom Penh, Cambodia",
+    "phone": "+855 (0) 123 456 789",
+    "email": "info@delightech.com",
     "company": "Company",
     "support": "Support",
     "stay_connected": "Stay Connected",
@@ -375,5 +438,47 @@
       },
       "request_deck": "Request Investment Deck"
     }
+  },
+  "ContactForm": {
+    "title": "Contact Us",
+    "name": "Name",
+    "email": "Email",
+    "subject": "Subject",
+    "message": "Message",
+    "yourName": "Your name",
+    "yourEmail": "Your email",
+    "selectSubject": "Select subject",
+    "yourMessage": "Your message...",
+    "sendMessage": "Send Message",
+    "sending": "Sending...",
+    "successTitle": "Message Sent Successfully!",
+    "successMessage": "We'll get back to you within 24 hours.",
+    "quickResponse": "Quick Response",
+    "support24": "24/7 Support",
+    "contactInformation": "Contact Information",
+    "address": "Address",
+    "phone": "Phone",
+    "hours": "Hours",
+    "companyDescription": "Leading technology solutions provider committed to innovation and excellence in digital transformation.",
+    "subjects": {
+      "general": "General Inquiry",
+      "business": "Business Partnership",
+      "technical": "Technical Support",
+      "investment": "Investment Opportunities",
+      "career": "Career Opportunities",
+      "other": "Other"
+    },
+    "contactInfo": {
+      "address": "Chamkar Mon Tonle Bassac, 206 D Preah Norodom Blvd, Phnom Penh, Cambodia",
+      "phone": "+855 (0) 123 456 789",
+      "email": "info@delightech.com",
+      "hours": "Mon - Sun: 8AM - 6PM"
+    }
+  },
+  "ContactPage": {
+    "badge": "Contact Us",
+    "title": "Get",
+    "title_highlight": "In Touch",
+    "description": "We're here to help and answer any question you might have. We look forward to hearing from you."
   }
 }

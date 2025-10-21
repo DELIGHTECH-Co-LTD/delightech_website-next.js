@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import { useTranslations } from "next-intl";
+import { Particles } from "./ui/shadcn-io/particles";
 
 export default function History() {
   const t = useTranslations("History");
@@ -26,6 +27,14 @@ export default function History() {
       id="history"
       className="relative min-h-screen items-center justify-center pt-32 pb-24 px-6 lg:px-20 overflow-hidden bg-background"
     >
+      <Particles
+        className="absolute inset-0"
+        quantity={100}
+        ease={80}
+        staticity={50}
+        color="#ffffff"
+        size={0.8}
+      />
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <Badge

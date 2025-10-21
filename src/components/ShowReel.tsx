@@ -5,6 +5,7 @@ import React, { useState, useRef } from "react";
 import { Badge } from "@/components/ui/badge";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
+import { Particles } from "./ui/shadcn-io/particles";
 
 export default function ShowReel() {
   const t = useTranslations("Showreel");
@@ -30,27 +31,23 @@ export default function ShowReel() {
 
   const videos = [
     {
-      title: "Company Showreel",
-      description:
-        "Our main company showcase featuring all our achievements and milestones.",
+      title: t("video1_title"),
+      description: t("video1_description"),
       embedUrl: "https://www.youtube.com/embed/s7KYcm6FM2s?si=AR62As_8yzdNOso3",
     },
     {
-      title: "Company Culture",
-      description:
-        "See how we work together to create amazing products and foster innovation.",
+      title: t("video2_title"),
+      description: t("video2_description"),
       embedUrl: "https://www.youtube.com/embed/WnVpIVK_3Sc?si=-itkEIYTU7RYJpAE",
     },
     {
-      title: "Product Demo",
-      description:
-        "Watch our latest product demonstrations and feature highlights.",
+      title: t("video3_title"),
+      description: t("video3_description"),
       embedUrl: "https://www.youtube.com/embed/q2hlBgGKDzM?si=pN3_FLcaMURW0I_M",
     },
     {
-      title: "Behind the Scenes",
-      description:
-        "Get an exclusive look at our development process and team collaboration.",
+      title: t("video4_title"),
+      description: t("video4_description"),
       embedUrl: "https://www.youtube.com/embed/Yw6aF_YGlFo?si=_J6AIxcyETZtMNI2",
     },
   ];
@@ -76,6 +73,15 @@ export default function ShowReel() {
       id="showreel"
       className="relative min-h-screen bg-background py-24 px-6 lg:px-20 overflow-hidden"
     >
+      <Particles
+        className="absolute inset-0"
+        quantity={100}
+        ease={80}
+        staticity={50}
+        color="#ffffff"
+        size={0.8}
+      />
+
       <div className="relative max-w-6xl mx-auto z-10">
         {/* Header */}
         <div className="text-center mb-16">

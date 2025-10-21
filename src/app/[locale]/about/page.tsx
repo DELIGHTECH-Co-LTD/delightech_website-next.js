@@ -4,10 +4,12 @@ import History from "@/components/History";
 import { useTranslations } from "next-intl";
 import MessageFrom from "@/components/MessageFrom";
 import { Metadata } from "next";
+import MissionAndValues from "@/components/MissionAndValues";
+import { Particles } from "@/components/ui/shadcn-io/particles";
 
-export const metadata:Metadata = {
-  title: "About Us"
-}
+export const metadata: Metadata = {
+  title: "About Us",
+};
 
 export default function AboutPage() {
   const t = useTranslations("AboutPage");
@@ -15,6 +17,14 @@ export default function AboutPage() {
     <>
       {/* Hero Section with Vision */}
       <section className="relative min-h-screen bg-blue-700 from-gray-900 via-black to-slate-900 dark:bg-gradient-to-br dark:from-gray-900 dark:via-black dark:to-slate-900 flex items-center justify-center lg:px-20 overflow-hidden transition-all duration-700">
+        <Particles
+          className="absolute inset-0"
+          quantity={100}
+          ease={80}
+          staticity={50}
+          color="#ffffff"
+          size={0.8}
+        />
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
@@ -49,6 +59,7 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+      <MissionAndValues />
       <MessageFrom />
       <History />
     </>

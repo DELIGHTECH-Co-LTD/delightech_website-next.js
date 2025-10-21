@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Linkedin } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { useTranslations } from "next-intl";
+import { Particles } from "./ui/shadcn-io/particles";
 
 export default function Team() {
   const t = useTranslations("Team");
@@ -67,6 +68,15 @@ export default function Team() {
   ];
   return (
     <section className="relative min-h-screen bg-background py-24 px-6 lg:px-20 overflow-hidden">
+      <Particles
+        className="absolute inset-0"
+        quantity={100}
+        ease={80}
+        staticity={50}
+        color="#ffffff"
+        size={0.8}
+      />
+
       <div className="relative max-w-7xl mx-auto z-10">
         {/* Header */}
         <div className="text-center mb-16">

@@ -2,12 +2,19 @@
 import { Badge } from "@/components/ui/badge";
 import ContactForm from "@/components/ContactForm";
 import { Metadata } from "next";
+import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 
-export const metadata:Metadata = {
-  title: "Contact"
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations("ContactPage");
+
+  return {
+    title: t("badge"),
+  };
 }
 
 export default function ContactPage() {
+  const t = useTranslations("ContactPage");
 
   return (
     <section className="relative min-h-screen bg-background pt-32 pb-24 px-6 lg:px-20 overflow-hidden">
@@ -18,15 +25,16 @@ export default function ContactPage() {
             variant="secondary"
             className="mb-4 text-sm uppercase tracking-wider"
           >
-            Contact Us
+            {t("badge")}
           </Badge>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 uppercase">
-            Get{" "}
-            <span className="text-blue-600 dark:text-blue-400">In Touch</span>
+            {t("title")}{" "}
+            <span className="text-blue-600 dark:text-blue-400">
+              {t("title_highlight")}
+            </span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-            We're here to help and answer any question you might have. We look
-            forward to hearing from you.
+            {t("description")}
           </p>
         </div>
         <ContactForm />

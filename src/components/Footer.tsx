@@ -1,5 +1,4 @@
 "use client";
-"use client";
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -60,18 +59,15 @@ const Footer: React.FC = () => {
             <Link href="/" className="flex items-center group">
               <div className="relative">
                 <Image
-                  src="/assets/DLT.png"
+                  src="/assets/tagline.png"
                   alt="Delightech Logo"
-                  width={50}
-                  height={50}
+                  width={200}
+                  height={200}
                   className="cursor-pointer transition-all duration-300 group-hover:scale-110"
                   priority
                 />
                 <div className="absolute inset-0 bg-blue-500/20 rounded-full scale-0 group-hover:scale-100 transition-transform duration-300 -z-10"></div>
               </div>
-              <span className="ml-3 text-xl font-bold transition-colors duration-300">
-                Delightech
-              </span>
             </Link>
 
             <p className="text-white/90 text-sm sm:text-base leading-relaxed">
@@ -82,20 +78,19 @@ const Footer: React.FC = () => {
             <div className="space-y-2">
               <div className="flex items-start gap-2 text-white/90 hover:text-white transition-all duration-300 group">
                 <MapPin className="w-4 h-4 flex-shrink-0 group-hover:scale-110 transition-transform mt-0.5" />
-                <span className="font-medium text-sm">
-                  Chamkar Mon Tonle Bassac, 206 D Preah Norodom Blvd, Phnom
-                  Penh, Cambodia
+                <span className="font-medium text-sm text-nowrap">
+                  {t("location")}
                 </span>
               </div>
               <div className="flex items-center gap-2 text-white/90 hover:text-white transition-all duration-300 group">
                 <Phone className="w-4 h-4 group-hover:scale-110 transition-transform" />
                 <span className="font-medium text-sm">
-                  +855 (0) 123 456 789
+                  {t("phone")}
                 </span>
               </div>
               <div className="flex items-center gap-2 text-white/90 hover:text-white transition-all duration-300 group">
                 <Mail className="w-4 h-4 group-hover:scale-110 transition-transform" />
-                <span className="font-medium text-sm">info@delightech.com</span>
+                <span className="font-medium text-sm">{t("email")}</span>
               </div>
             </div>
           </div>
