@@ -25,7 +25,9 @@ const nextConfig: NextConfig = {
     // Enable production optimizations
     reactStrictMode: true,
     experimental: {
-        optimizeCss: true
+        // Disable CSS optimization to avoid deprecated critters dependency
+        // We'll handle CSS optimization through PostCSS instead
+        // optimizeCss: true
     }
 };
 
