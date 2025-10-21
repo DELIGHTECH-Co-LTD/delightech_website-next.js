@@ -57,6 +57,7 @@ export default function Navbar() {
     { href: "/investors", label: t("investor") },
     { href: "/careers", label: t("careers") },
     { href: "/contact", label: t("contact") },
+    { href: "/calculator", label: t("calculator") },
   ];
 
   return (
@@ -127,7 +128,7 @@ export default function Navbar() {
                   "nav-button gap-2 rounded-full hover:scale-105 hover:bg-transparent focus:bg-transparent active:bg-transparent"
                 )}
               >
-                <a href="https://maps.app.goo.gl/2Rgf7xrg5aDfTzAR8">
+                <a href="https://maps.app.goo.gl/K943azyoiD3mJNxd7">
                   <MapPin className="h-4 w-4" aria-hidden="true" />
                   <span className="font-medium text-sm">{t("find_us")}</span>
                 </a>
@@ -208,7 +209,7 @@ export default function Navbar() {
                     <div className="mt-8 space-y-4">
                       <SheetClose asChild>
                         <a
-                          href="https://maps.app.goo.gl/2Rgf7xrg5aDfTzAR8"
+                          href="https://maps.app.goo.gl/K943azyoiD3mJNxd7"
                           className={cn(
                             "flex items-center justify-between w-full py-4 px-4 rounded-xl transition-colors",
                             "text-gray-700 dark:text-gray-300",

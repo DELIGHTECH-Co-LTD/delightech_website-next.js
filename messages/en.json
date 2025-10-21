@@ -480,5 +480,66 @@
     "title": "Get",
     "title_highlight": "In Touch",
     "description": "We're here to help and answer any question you might have. We look forward to hearing from you."
+  },
+  "Calculator": {
+    "title": "Financial Calculator",
+    "description": "Plan your financial future with our comprehensive calculators for loans, investments, and savings goals.",
+    "badge": "Financial Tools",
+    "calculate": "Calculate",
+    "results": "Results",
+    "enterValues": "Enter values above to see results",
+    "years": "years",
+    "months": "months",
+    "tabs": {
+      "loan": "Loan",
+      "investment": "Investment",
+      "savings": "Savings"
+    },
+    "loan": {
+      "title": "Loan Calculator",
+      "amount": "Loan Amount",
+      "interestRate": "Interest Rate",
+      "term": "Loan Term",
+      "selectTerm": "Select loan term",
+      "monthlyPayment": "Monthly Payment",
+      "totalPayment": "Total Payment",
+      "totalInterest": "Total Interest",
+      "amortizationSummary": "Amortization Summary",
+      "paymentSchedule": "Payment Schedule"
+    },
+    "investment": {
+      "title": "Investment Calculator",
+      "initialAmount": "Initial Investment",
+      "monthlyContribution": "Monthly Contribution",
+      "expectedReturn": "Expected Annual Return",
+      "timeHorizon": "Time Horizon",
+      "finalAmount": "Final Amount",
+      "totalContributions": "Total Contributions",
+      "totalEarnings": "Total Earnings"
+    },
+    "savings": {
+      "title": "Savings Goal Calculator",
+      "goal": "Savings Goal",
+      "currentAmount": "Current Savings",
+      "monthlyDeposit": "Monthly Deposit",
+      "interestRate": "Interest Rate",
+      "timeToGoal": "Time to Reach Goal",
+      "totalSaved": "Total Saved",
+      "interestEarned": "Interest Earned"
+    },
+    "features": {
+      "accurate": {
+        "title": "Accurate Calculations",
+        "description": "Precise financial calculations using industry-standard formulas"
+      },
+      "planning": {
+        "title": "Smart Planning",
+        "description": "Make informed decisions about your financial future"
+      },
+      "goals": {
+        "title": "Goal Tracking",
+        "description": "Track progress towards your savings and investment goals"
+      }
+    }
   }
 }
