@@ -22,9 +22,13 @@ const nextConfig: NextConfig = {
     compress: true,
     poweredByHeader: false,
     generateEtags: false,
-    // experimental: {
-    //     optimizeCss: true,
-    // }
+    // Enable production optimizations
+    reactStrictMode: true,
+    experimental: {
+        // Disable CSS optimization to avoid deprecated critters dependency
+        // We'll handle CSS optimization through PostCSS instead
+        // optimizeCss: true
+    }
 };
 
 const withNextIntl = createNextIntlPlugin();

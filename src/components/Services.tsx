@@ -130,7 +130,7 @@ export default function Services() {
                             Download LUYLEUN
                           </h4>
                           <p className="text-sm text-muted-foreground">
-                            Available on all platforms
+                            Available on both iOS and Android
                           </p>
                         </div>
 
@@ -188,26 +188,6 @@ export default function Services() {
                             </div>
                           </a>
                         </div>
-
-                        {/* Additional Info */}
-                        <div className="mt-6 p-4 bg-blue-50 dark:bg-blue-950/30 rounded-lg border border-blue-200 dark:border-blue-800">
-                          <div className="flex items-center gap-2 text-sm text-blue-700 dark:text-blue-300">
-                            <svg
-                              className="w-4 h-4"
-                              fill="currentColor"
-                              viewBox="0 0 20 20"
-                            >
-                              <path
-                                fillRule="evenodd"
-                                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
-                                clipRule="evenodd"
-                              />
-                            </svg>
-                            <span>
-                              Free to download • Available in Khmer & English
-                            </span>
-                          </div>
-                        </div>
                       </div>
                     ) : (
                       // Enhanced Subscribe Button for Bomnin
@@ -233,23 +213,6 @@ export default function Services() {
                             <span className="font-semibold">Subscribe Now</span>
                           </a>
                         </Button>
-
-                        {/* Additional Info */}
-                        <div className="mt-4 p-4 bg-green-50 dark:bg-green-950/30 rounded-lg border border-green-200 dark:border-green-800">
-                          <div className="flex items-center gap-2 text-sm text-green-700 dark:text-green-300">
-                            <svg
-                              className="w-4 h-4"
-                              fill="currentColor"
-                              viewBox="0 0 20 20"
-                            >
-                              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-                              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-                            </svg>
-                            <span>
-                              Join 10,000+ subscribers • Weekly updates
-                            </span>
-                          </div>
-                        </div>
                       </div>
                     )}
                   </div>

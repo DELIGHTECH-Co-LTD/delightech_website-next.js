@@ -61,8 +61,8 @@ const Footer: React.FC = () => {
                 <Image
                   src="/assets/tagline.png"
                   alt="Delightech Logo"
-                  width={50}
-                  height={50}
+                  width={200}
+                  height={200}
                   className="cursor-pointer transition-all duration-300 group-hover:scale-110"
                   priority
                 />
@@ -78,20 +78,19 @@ const Footer: React.FC = () => {
             <div className="space-y-2">
               <div className="flex items-start gap-2 text-white/90 hover:text-white transition-all duration-300 group">
                 <MapPin className="w-4 h-4 flex-shrink-0 group-hover:scale-110 transition-transform mt-0.5" />
-                <span className="font-medium text-sm">
-                  Chamkar Mon Tonle Bassac, 206 D Preah Norodom Blvd, Phnom
-                  Penh, Cambodia
+                <span className="font-medium text-sm text-nowrap">
+                  {t("location")}
                 </span>
               </div>
               <div className="flex items-center gap-2 text-white/90 hover:text-white transition-all duration-300 group">
                 <Phone className="w-4 h-4 group-hover:scale-110 transition-transform" />
                 <span className="font-medium text-sm">
-                  +855 (0) 123 456 789
+                  {t("phone")}
                 </span>
               </div>
               <div className="flex items-center gap-2 text-white/90 hover:text-white transition-all duration-300 group">
                 <Mail className="w-4 h-4 group-hover:scale-110 transition-transform" />
-                <span className="font-medium text-sm">info@delightech.com</span>
+                <span className="font-medium text-sm">{t("email")}</span>
               </div>
             </div>
           </div>

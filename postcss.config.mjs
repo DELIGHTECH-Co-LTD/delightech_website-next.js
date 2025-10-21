@@ -1,5 +1,14 @@
 const config = {
-  plugins: ["@tailwindcss/postcss"],
+  plugins: {
+    "@tailwindcss/postcss": {},
+    "autoprefixer": {},
+    "cssnano": {
+      preset: ["default", {
+        discardComments: { removeAll: true },
+        normalizeWhitespace: false
+      }]
+    }
+  }
 };
 
 export default config;
