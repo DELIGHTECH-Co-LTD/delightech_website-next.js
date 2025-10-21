@@ -27,6 +27,9 @@ const kantumruy = Kantumruy_Pro({
 export const metadata: Metadata = {
   title: { default: "Delightech", template: "%s - Delightech" },
   description: "Everyone can access finances.",
+  twitter: {
+    card: "summary_large_image"
+  }
 };
 
 export default async function RootLayout({
