@@ -28,7 +28,8 @@ export default function LanguageSwitcher() {
 
   const switchLanguage = (newLocale: string) => {
     if (newLocale !== locale) {
-      router.replace(pathname, { locale: newLocale });
+      // Use router.push instead of router.replace to ensure proper navigation
+      router.push(pathname, { locale: newLocale });
     }
   };
 
