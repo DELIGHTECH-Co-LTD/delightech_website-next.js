@@ -22,9 +22,12 @@ const nextConfig: NextConfig = {
     compress: true,
     poweredByHeader: false,
     generateEtags: false,
-    // experimental: {
-    //     optimizeCss: true,
-    // }
+    // Enable production optimizations
+    swcMinify: true,
+    reactStrictMode: true,
+    experimental: {
+        optimizeCss: true
+    }
 };
 
 const withNextIntl = createNextIntlPlugin();
