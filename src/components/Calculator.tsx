@@ -1,36 +1,19 @@
 "use client";
 
 import React, { useState } from "react";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { CreditCard, PiggyBank, TrendingUp } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Particles } from "@/components/ui/shadcn-io/particles";
 
 // Import separated components
 import CalculatorHeader from "./calculator/CalculatorHeader";
-import CalculatorFeatures from "./calculator/CalculatorFeatures";
 import LoanCalculatorInput from "./calculator/LoanCalculatorInput";
 import LoanCalculatorResults from "./calculator/LoanCalculatorResults";
-import SavingsCalculatorInput from "./calculator/SavingsCalculatorInput";
-import SavingsCalculatorResults from "./calculator/SavingsCalculatorResults";
-import InvestmentCalculatorInput from "./calculator/InvestmentCalculatorInput";
-import InvestmentCalculatorResults from "./calculator/InvestmentCalculatorResults";
 
 // Import types and utilities
-import {
-  RepaymentResult,
-  SavingsResult,
-  InvestmentResult,
-} from "./calculator/types";
-import {
-  calculateRepayment,
-  calculateSavings,
-  calculateInvestment,
-} from "./calculator/utils";
+import { RepaymentResult } from "./calculator/types";
+import { calculateRepayment } from "./calculator/utils";
 
 export default function Calculator() {
-  const t = useTranslations("Calculator");
-
   // Loan Calculator State
   const [loanPrincipal, setLoanPrincipal] = useState(0);
   const [loanMonths, setLoanMonths] = useState(0);
@@ -38,22 +21,6 @@ export default function Calculator() {
   const [repaymentData, setRepaymentData] = useState<RepaymentResult | null>(
     null
   );
-
-  // Savings Calculator State
-  const [savingsGoal, setSavingsGoal] = useState("");
-  const [currentSavings, setCurrentSavings] = useState("");
-  const [monthlySavings, setMonthlySavings] = useState("");
-  const [savingsResult, setSavingsResult] = useState<SavingsResult | null>(
-    null
-  );
-
-  // Investment Calculator State
-  const [initialAmount, setInitialAmount] = useState("");
-  const [monthlyContribution, setMonthlyContribution] = useState("");
-  const [investmentYears, setInvestmentYears] = useState("");
-  const [expectedReturn, setExpectedReturn] = useState("");
-  const [investmentResult, setInvestmentResult] =
-    useState<InvestmentResult | null>(null);
 
   // Loan Calculator Functions
   const handleLoanCalculate = () => {
@@ -66,27 +33,6 @@ export default function Calculator() {
       depositDate
     );
     setRepaymentData(result);
-  };
-
-  // Savings Calculator Functions
-  const handleSavingsCalculate = () => {
-    const result = calculateSavings(
-      savingsGoal,
-      currentSavings,
-      monthlySavings
-    );
-    setSavingsResult(result);
-  };
-
-  // Investment Calculator Functions
-  const handleInvestmentCalculate = () => {
-    const result = calculateInvestment(
-      initialAmount,
-      monthlyContribution,
-      investmentYears,
-      expectedReturn
-    );
-    setInvestmentResult(result);
   };
 
   return (
@@ -110,83 +56,24 @@ export default function Calculator() {
         {/* Header */}
         <CalculatorHeader />
 
-        {/* Calculator Tabs */}
-        <Tabs defaultValue="loan" className="w-full">
-          <TabsList className="grid w-full grid-cols-3 max-w-2xl mx-auto mb-12">
-            <TabsTrigger value="loan" className="flex items-center gap-2">
-              <CreditCard className="w-4 h-4" />
-              {t("tabs.loan")}
-            </TabsTrigger>
-            <TabsTrigger value="savings" className="flex items-center gap-2">
-              <PiggyBank className="w-4 h-4" />
-              {t("tabs.savings")}
-            </TabsTrigger>
-            <TabsTrigger value="investment" className="flex items-center gap-2">
-              <TrendingUp className="w-4 h-4" />
-              {t("tabs.investment")}
-            </TabsTrigger>
-          </TabsList>
-
-          {/* Loan Calculator */}
-          <TabsContent value="loan">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              <LoanCalculatorInput
-                loanPrincipal={loanPrincipal}
-                loanMonths={loanMonths}
-                loanRate={loanRate}
-                onPrincipalChange={setLoanPrincipal}
-                onMonthsChange={setLoanMonths}
-                onRateChange={setLoanRate}
-                onCalculate={handleLoanCalculate}
-              />
-              <LoanCalculatorResults
-                repaymentData={repaymentData}
-                loanPrincipal={loanPrincipal}
-                loanMonths={loanMonths}
-                loanRate={loanRate}
-              />
-            </div>
-          </TabsContent>
-
-          {/* Savings Calculator */}
-          <TabsContent value="savings">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              <SavingsCalculatorInput
-                savingsGoal={savingsGoal}
-                currentSavings={currentSavings}
-                monthlySavings={monthlySavings}
-                onGoalChange={setSavingsGoal}
-                onCurrentChange={setCurrentSavings}
-                onMonthlyChange={setMonthlySavings}
-                onCalculate={handleSavingsCalculate}
-              />
-              <SavingsCalculatorResults savingsResult={savingsResult} />
-            </div>
-          </TabsContent>
-
-          {/* Investment Calculator */}
-          <TabsContent value="investment">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              <InvestmentCalculatorInput
-                initialAmount={initialAmount}
-                monthlyContribution={monthlyContribution}
-                investmentYears={investmentYears}
-                expectedReturn={expectedReturn}
-                onInitialChange={setInitialAmount}
-                onMonthlyChange={setMonthlyContribution}
-                onYearsChange={setInvestmentYears}
-                onReturnChange={setExpectedReturn}
-                onCalculate={handleInvestmentCalculate}
-              />
-              <InvestmentCalculatorResults
-                investmentResult={investmentResult}
-              />
-            </div>
-          </TabsContent>
-        </Tabs>
-
-        {/* Features Section */}
-        <CalculatorFeatures />
+        {/* Loan Calculator */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <LoanCalculatorInput
+            loanPrincipal={loanPrincipal}
+            loanMonths={loanMonths}
+            loanRate={loanRate}
+            onPrincipalChange={setLoanPrincipal}
+            onMonthsChange={setLoanMonths}
+            onRateChange={setLoanRate}
+            onCalculate={handleLoanCalculate}
+          />
+          <LoanCalculatorResults
+            repaymentData={repaymentData}
+            loanPrincipal={loanPrincipal}
+            loanMonths={loanMonths}
+            loanRate={loanRate}
+          />
+        </div>
       </div>
     </section>
   );

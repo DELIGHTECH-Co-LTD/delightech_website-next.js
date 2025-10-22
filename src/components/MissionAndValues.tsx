@@ -119,7 +119,10 @@ export default function MissionAndValues() {
             {t("mission.badge")}
           </Badge>
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4 uppercase">
-            {t("mission.our_mission")}
+            {t("mission.title")}{" "}
+            <span className="text-blue-600 dark:text-blue-400">
+              {t("mission.title_highlight")}
+            </span>
           </h1>
           <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
             {t("mission.description")}
