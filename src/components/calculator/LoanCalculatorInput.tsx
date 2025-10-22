@@ -5,16 +5,18 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { CreditCard } from "lucide-react";
+import { CreditCard, Calendar } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 interface LoanCalculatorInputProps {
   loanPrincipal: number;
   loanMonths: number;
   loanRate: number;
+  disbursementDate: string;
   onPrincipalChange: (value: number) => void;
   onMonthsChange: (value: number) => void;
   onRateChange: (value: number) => void;
+  onDisbursementDateChange: (value: string) => void;
   onCalculate: () => void;
 }
 
@@ -22,9 +24,11 @@ export default function LoanCalculatorInput({
   loanPrincipal,
   loanMonths,
   loanRate,
+  disbursementDate,
   onPrincipalChange,
   onMonthsChange,
   onRateChange,
+  onDisbursementDateChange,
   onCalculate,
 }: LoanCalculatorInputProps) {
   const t = useTranslations("Calculator");
@@ -82,10 +86,30 @@ export default function LoanCalculatorInput({
             />
           </div>
 
+          <div className="space-y-2">
+            <Label
+              htmlFor="disbursementDate"
+              className="flex items-center gap-2"
+            >
+              <Calendar className="w-4 h-4 text-blue-600 dark:text-blue-400" />
+              Disbursement Date
+            </Label>
+            <Input
+              id="disbursementDate"
+              type="date"
+              value={disbursementDate}
+              onChange={(e) => onDisbursementDateChange(e.target.value)}
+              className="focus:ring-blue-500"
+              min={new Date().toISOString().split("T")[0]}
+            />
+          </div>
+
           <Button
             onClick={onCalculate}
             className="w-full bg-blue-600 hover:bg-blue-700 text-white"
-            disabled={!loanPrincipal || !loanMonths || !loanRate}
+            disabled={
+              !loanPrincipal || !loanMonths || !loanRate || !disbursementDate
+            }
           >
             Calculate Loan
           </Button>

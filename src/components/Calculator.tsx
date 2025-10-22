@@ -18,6 +18,9 @@ export default function Calculator() {
   const [loanPrincipal, setLoanPrincipal] = useState(0);
   const [loanMonths, setLoanMonths] = useState(0);
   const [loanRate, setLoanRate] = useState(0);
+  const [disbursementDate, setDisbursementDate] = useState(
+    new Date().toISOString().split("T")[0]
+  );
   const [repaymentData, setRepaymentData] = useState<RepaymentResult | null>(
     null
   );
@@ -25,12 +28,11 @@ export default function Calculator() {
   // Loan Calculator Functions
   const handleLoanCalculate = () => {
     const days = loanMonths * 30;
-    const depositDate = new Date().toISOString().split("T")[0];
     const result = calculateRepayment(
       loanPrincipal,
       days,
       loanRate,
-      depositDate
+      disbursementDate
     );
     setRepaymentData(result);
   };
@@ -62,9 +64,11 @@ export default function Calculator() {
             loanPrincipal={loanPrincipal}
             loanMonths={loanMonths}
             loanRate={loanRate}
+            disbursementDate={disbursementDate}
             onPrincipalChange={setLoanPrincipal}
             onMonthsChange={setLoanMonths}
             onRateChange={setLoanRate}
+            onDisbursementDateChange={setDisbursementDate}
             onCalculate={handleLoanCalculate}
           />
           <LoanCalculatorResults
