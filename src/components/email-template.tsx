@@ -1,3 +1,18 @@
+import {
+  Body,
+  Button,
+  Container,
+  Head,
+  Heading,
+  Html,
+  Img,
+  Link,
+  Preview,
+  Section,
+  Text,
+  Row,
+  Column,
+} from "@react-email/components";
 import * as React from "react";
 
 interface CompanyEmailTemplateProps {
@@ -7,721 +22,478 @@ interface CompanyEmailTemplateProps {
 export function CompanyEmailTemplate({
   recipientName = "Valued Customer",
 }: CompanyEmailTemplateProps) {
-  const emailContent = {
-    title: "Thank You for Contacting Us",
-    subtitle: "We've received your message",
-    body: "Our team will review your inquiry and get back to you within 24 hours. We appreciate your interest in Delightech.",
-    cta: {
-      text: "Visit Our Website",
-      link: "https://delightech.asia",
-    },
-  };
-
   return (
-    <table
-      cellPadding="0"
-      cellSpacing="0"
-      border={0}
-      style={{
-        fontFamily:
-          '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
-        maxWidth: "600px",
-        margin: "0 auto",
-        backgroundColor: "#ffffff",
-        width: "100%",
-      }}
-    >
-      <tbody>
-        {/* Email Header with Gradient Background */}
-        <tr>
-          <td
-            style={{
-              background: "linear-gradient(135deg, #2563eb 0%, #3b82f6 100%)",
-              backgroundColor: "#2563eb",
-              textAlign: "center",
-              padding: "48px 32px",
-            }}
-          >
-            <table
-              cellPadding="0"
-              cellSpacing="0"
-              border={0}
-              style={{ width: "100%" }}
-            >
-              <tbody>
-                {/* Logo Section */}
-                <tr>
-                  <td style={{ paddingBottom: "32px", textAlign: "center" }}>
-                    <table
-                      cellPadding="0"
-                      cellSpacing="0"
-                      border={0}
-                      style={{
-                        margin: "0 auto",
-                        backgroundColor: "#ffffff",
-                        borderRadius: "16px",
-                        padding: "16px",
-                      }}
-                    >
-                      <tbody>
-                        <tr>
-                          <td>
-                            <img
-                              src="https://via.placeholder.com/80x80?text=DLT"
-                              alt="Delightech Logo"
-                              style={{
-                                width: "80px",
-                                height: "80px",
-                                display: "block",
-                              }}
-                            />
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </td>
-                </tr>
+    <Html>
+      <Head />
+      <Preview>
+        Thank you for contacting Delightech - We'll respond within 24 hours
+      </Preview>
+      <Body style={main}>
+        <Container style={container}>
+          {/* Header with Gradient */}
+          <Section style={header}>
+            {/* Logo */}
+            <Section style={logoContainer}>
+              <Img
+                src="https://delightech2025.vercel.app/assets/DLT_2.png"
+                width="80"
+                height="80"
+                alt="Delightech Logo"
+                style={logo}
+              />
+            </Section>
 
-                {/* Header Content */}
-                <tr>
-                  <td style={{ textAlign: "center" }}>
-                    <table
-                      cellPadding="0"
-                      cellSpacing="0"
-                      border={0}
-                      style={{ margin: "0 auto" }}
-                    >
-                      <tbody>
-                        <tr>
-                          <td
-                            style={{
-                              backgroundColor: "rgba(255, 255, 255, 0.2)",
-                              color: "#ffffff",
-                              padding: "6px 16px",
-                              borderRadius: "20px",
-                              fontSize: "12px",
-                              fontWeight: "600",
-                              textTransform: "uppercase",
-                              letterSpacing: "0.5px",
-                              marginBottom: "16px",
-                              border: "1px solid rgba(255, 255, 255, 0.3)",
-                            }}
-                          >
-                            DELIGHTECH CO., LTD
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                    <h1
-                      style={{
-                        fontSize: "36px",
-                        fontWeight: "700",
-                        margin: "16px 0 8px 0",
-                        color: "#ffffff",
-                        lineHeight: "1.2",
-                      }}
-                    >
-                      {emailContent.title}
-                    </h1>
-                    <p
-                      style={{
-                        color: "#dbeafe",
-                        fontSize: "18px",
-                        fontWeight: "500",
-                        margin: "0",
-                      }}
-                    >
-                      {emailContent.subtitle}
-                    </p>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </td>
-        </tr>
+            {/* Header Content */}
+            <Section style={headerContent}>
+              <div style={badge}>DELIGHTECH CO., LTD</div>
+              <Heading style={headerTitle}>Thank You for Contacting Us</Heading>
+              <Text style={headerSubtitle}>We've received your message</Text>
+            </Section>
+          </Section>
 
-        {/* Main Content */}
-        <tr>
-          <td style={{ padding: "48px 32px", backgroundColor: "#ffffff" }}>
-            <table
-              cellPadding="0"
-              cellSpacing="0"
-              border={0}
-              style={{ width: "100%" }}
-            >
-              <tbody>
-                {/* Greeting */}
-                <tr>
-                  <td style={{ paddingBottom: "32px" }}>
-                    <p
-                      style={{
-                        fontSize: "18px",
-                        color: "#2563eb",
-                        marginBottom: "24px",
-                        fontWeight: "600",
-                        textTransform: "uppercase",
-                        letterSpacing: "0.5px",
-                      }}
-                    >
-                      Dear {recipientName},
-                    </p>
-                    <p
-                      style={{
-                        color: "#4b5563",
-                        lineHeight: "1.7",
-                        fontSize: "16px",
-                        margin: "0",
-                      }}
-                    >
-                      {emailContent.body}
-                    </p>
-                  </td>
-                </tr>
+          {/* Main Content */}
+          <Section style={mainContent}>
+            {/* Greeting */}
+            <Text style={greeting}>DEAR {recipientName.toUpperCase()},</Text>
+            <Text style={bodyText}>
+              Our team will review your inquiry and get back to you within 24
+              hours. We appreciate your interest in Delightech.
+            </Text>
 
-                {/* Why Choose Delightech Section */}
-                <tr>
-                  <td
-                    style={{
-                      background:
-                        "linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%)",
-                      backgroundColor: "#dbeafe",
-                      padding: "24px",
-                      marginBottom: "32px",
-                      borderRadius: "16px",
-                      border: "1px solid #93c5fd",
-                    }}
-                  >
-                    <h3
-                      style={{
-                        fontSize: "20px",
-                        fontWeight: "700",
-                        color: "#1e40af",
-                        marginBottom: "16px",
-                        textAlign: "center",
-                      }}
-                    >
-                      🛡️ Why Choose Delightech?
-                    </h3>
-                    <table
-                      cellPadding="0"
-                      cellSpacing="0"
-                      border={0}
-                      style={{ width: "100%" }}
-                    >
-                      <tbody>
-                        <tr>
-                          <td style={{ padding: "8px", width: "50%" }}>
-                            <table cellPadding="0" cellSpacing="0" border={0}>
-                              <tbody>
-                                <tr>
-                                  <td
-                                    style={{
-                                      width: "40px",
-                                      paddingRight: "12px",
-                                    }}
-                                  >
-                                    <img
-                                      src="https://via.placeholder.com/40x40?text=LL"
-                                      alt="LUYLEUN"
-                                      style={{
-                                        width: "40px",
-                                        height: "40px",
-                                        borderRadius: "8px",
-                                        display: "block",
-                                      }}
-                                    />
-                                  </td>
-                                  <td>
-                                    <p
-                                      style={{
-                                        fontWeight: "600",
-                                        color: "#1e40af",
-                                        margin: "0 0 4px 0",
-                                        fontSize: "14px",
-                                      }}
-                                    >
-                                      LUYLEUN App
-                                    </p>
-                                    <p
-                                      style={{
-                                        fontSize: "12px",
-                                        color: "#3730a3",
-                                        margin: "0",
-                                      }}
-                                    >
-                                      Digital Financial Platform
-                                    </p>
-                                  </td>
-                                </tr>
-                              </tbody>
-                            </table>
-                          </td>
-                          <td style={{ padding: "8px", width: "50%" }}>
-                            <table cellPadding="0" cellSpacing="0" border={0}>
-                              <tbody>
-                                <tr>
-                                  <td
-                                    style={{
-                                      width: "40px",
-                                      paddingRight: "12px",
-                                    }}
-                                  >
-                                    <div
-                                      style={{
-                                        width: "40px",
-                                        height: "40px",
-                                        backgroundColor: "#059669",
-                                        borderRadius: "8px",
-                                        textAlign: "center",
-                                        lineHeight: "40px",
-                                        fontSize: "20px",
-                                      }}
-                                    >
-                                      👥
-                                    </div>
-                                  </td>
-                                  <td>
-                                    <p
-                                      style={{
-                                        fontWeight: "600",
-                                        color: "#1e40af",
-                                        margin: "0 0 4px 0",
-                                        fontSize: "14px",
-                                      }}
-                                    >
-                                      500K+ Users
-                                    </p>
-                                    <p
-                                      style={{
-                                        fontSize: "12px",
-                                        color: "#3730a3",
-                                        margin: "0",
-                                      }}
-                                    >
-                                      Trusted Community
-                                    </p>
-                                  </td>
-                                </tr>
-                              </tbody>
-                            </table>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td style={{ padding: "8px", width: "50%" }}>
-                            <table cellPadding="0" cellSpacing="0" border={0}>
-                              <tbody>
-                                <tr>
-                                  <td
-                                    style={{
-                                      width: "40px",
-                                      paddingRight: "12px",
-                                    }}
-                                  >
-                                    <div
-                                      style={{
-                                        width: "40px",
-                                        height: "40px",
-                                        backgroundColor: "#d97706",
-                                        borderRadius: "8px",
-                                        textAlign: "center",
-                                        lineHeight: "40px",
-                                        fontSize: "20px",
-                                      }}
-                                    >
-                                      📈
-                                    </div>
-                                  </td>
-                                  <td>
-                                    <p
-                                      style={{
-                                        fontWeight: "600",
-                                        color: "#1e40af",
-                                        margin: "0 0 4px 0",
-                                        fontSize: "14px",
-                                      }}
-                                    >
-                                      150% Growth
-                                    </p>
-                                    <p
-                                      style={{
-                                        fontSize: "12px",
-                                        color: "#3730a3",
-                                        margin: "0",
-                                      }}
-                                    >
-                                      Year-over-Year
-                                    </p>
-                                  </td>
-                                </tr>
-                              </tbody>
-                            </table>
-                          </td>
-                          <td style={{ padding: "8px", width: "50%" }}>
-                            <table cellPadding="0" cellSpacing="0" border={0}>
-                              <tbody>
-                                <tr>
-                                  <td
-                                    style={{
-                                      width: "40px",
-                                      paddingRight: "12px",
-                                    }}
-                                  >
-                                    <div
-                                      style={{
-                                        width: "40px",
-                                        height: "40px",
-                                        backgroundColor: "#7c3aed",
-                                        borderRadius: "8px",
-                                        textAlign: "center",
-                                        lineHeight: "40px",
-                                        fontSize: "20px",
-                                      }}
-                                    >
-                                      🔒
-                                    </div>
-                                  </td>
-                                  <td>
-                                    <p
-                                      style={{
-                                        fontWeight: "600",
-                                        color: "#1e40af",
-                                        margin: "0 0 4px 0",
-                                        fontSize: "14px",
-                                      }}
-                                    >
-                                      Bank-Grade Security
-                                    </p>
-                                    <p
-                                      style={{
-                                        fontSize: "12px",
-                                        color: "#3730a3",
-                                        margin: "0",
-                                      }}
-                                    >
-                                      99.9% Uptime
-                                    </p>
-                                  </td>
-                                </tr>
-                              </tbody>
-                            </table>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </td>
-                </tr>
+            {/* Why Choose Delightech */}
+            <Section style={featuresBox}>
+              <Heading as="h3" style={featuresTitle}>
+                🛡️ Why Choose Delightech?
+              </Heading>
 
-                {/* Call to Action */}
-                <tr>
-                  <td style={{ textAlign: "center", padding: "32px 0" }}>
-                    <a
-                      href={emailContent.cta.link}
-                      style={{
-                        display: "inline-block",
-                        background:
-                          "linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%)",
-                        backgroundColor: "#2563eb",
-                        color: "#ffffff",
-                        padding: "16px 32px",
-                        fontSize: "16px",
-                        fontWeight: "600",
-                        borderRadius: "12px",
-                        textDecoration: "none",
-                      }}
-                    >
-                      🔗 {emailContent.cta.text}
-                    </a>
-                  </td>
-                </tr>
-
-                {/* Download Section */}
-                <tr>
-                  <td
-                    style={{
-                      backgroundColor: "#f9fafb",
-                      borderRadius: "16px",
-                      padding: "24px",
-                      textAlign: "center",
-                    }}
-                  >
-                    <h3
-                      style={{
-                        fontSize: "18px",
-                        fontWeight: "700",
-                        color: "#1f2937",
-                        marginBottom: "16px",
-                      }}
-                    >
-                      Download LUYLEUN Today
-                    </h3>
-                    <table
-                      cellPadding="0"
-                      cellSpacing="0"
-                      border={0}
-                      style={{ margin: "0 auto" }}
-                    >
-                      <tbody>
-                        <tr>
-                          <td style={{ padding: "0 8px" }}>
-                            <a
-                              href="https://apps.apple.com/kh/app/luyleun/id1570756469LuyLeun"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                            >
-                              <img
-                                src="https://via.placeholder.com/135x45?text=App+Store"
-                                alt="Download on the App Store"
-                                style={{ height: "45px", display: "block" }}
+              <table style={featuresTable}>
+                <tbody>
+                  <tr>
+                    <td style={featureCell}>
+                      <table>
+                        <tbody>
+                          <tr>
+                            <td style={featureIconCell}>
+                              <Img
+                                src="https://delightech2025.vercel.app/assets/LUYLEUN_logo.png"
+                                width="40"
+                                height="40"
+                                alt="LUYLEUN"
+                                style={featureIcon}
                               />
-                            </a>
-                          </td>
-                          <td style={{ padding: "0 8px" }}>
-                            <a
-                              href="https://play.google.com/store/apps/details?id=com.delightech.luyleun"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                            >
-                              <img
-                                src="https://via.placeholder.com/135x45?text=Google+Play"
-                                alt="Get it on Google Play"
-                                style={{ height: "45px", display: "block" }}
-                              />
-                            </a>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </td>
-        </tr>
+                            </td>
+                            <td>
+                              <Text style={featureName}>LUYLEUN App</Text>
+                              <Text style={featureDesc}>
+                                Digital Financial Platform
+                              </Text>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                    <td style={featureCell}>
+                      <table>
+                        <tbody>
+                          <tr>
+                            <td style={featureIconCell}>
+                              <div style={featureIconEmoji}>👥</div>
+                            </td>
+                            <td>
+                              <Text style={featureName}>500K+ Users</Text>
+                              <Text style={featureDesc}>Trusted Community</Text>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style={featureCell}>
+                      <table>
+                        <tbody>
+                          <tr>
+                            <td style={featureIconCell}>
+                              <div
+                                style={{
+                                  ...featureIconEmoji,
+                                  backgroundColor: "#d97706",
+                                }}
+                              >
+                                📈
+                              </div>
+                            </td>
+                            <td>
+                              <Text style={featureName}>150% Growth</Text>
+                              <Text style={featureDesc}>Year-over-Year</Text>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                    <td style={featureCell}>
+                      <table>
+                        <tbody>
+                          <tr>
+                            <td style={featureIconCell}>
+                              <div
+                                style={{
+                                  ...featureIconEmoji,
+                                  backgroundColor: "#7c3aed",
+                                }}
+                              >
+                                🔒
+                              </div>
+                            </td>
+                            <td>
+                              <Text style={featureName}>
+                                Bank-Grade Security
+                              </Text>
+                              <Text style={featureDesc}>99.9% Uptime</Text>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </Section>
 
-        {/* Footer */}
-        <tr>
-          <td style={{ backgroundColor: "#f3f4f6", padding: "32px" }}>
-            <table
-              cellPadding="0"
-              cellSpacing="0"
-              border={0}
-              style={{ width: "100%" }}
-            >
-              <tbody>
-                {/* Company Info */}
-                <tr>
-                  <td style={{ textAlign: "center", paddingBottom: "24px" }}>
-                    <img
-                      src="https://via.placeholder.com/200x50?text=Delightech"
-                      alt="Delightech Tagline"
-                      style={{
-                        width: "200px",
-                        height: "auto",
-                        marginBottom: "16px",
-                        display: "block",
-                        margin: "0 auto 16px auto",
-                      }}
+            {/* CTA Button */}
+            <Section style={ctaSection}>
+              <Button style={button} href="https://delightech.asia">
+                🔗 Visit Our Website
+              </Button>
+            </Section>
+
+            {/* Download Section */}
+            <Section style={downloadSection}>
+              <Heading as="h3" style={downloadTitle}>
+                Download LUYLEUN Today
+              </Heading>
+              <Row>
+                <Column align="center">
+                  <Link href="https://apps.apple.com/kh/app/luyleun/id1570756469LuyLeun">
+                    <Img
+                      src="https://delightech2025.vercel.app/assets/APPSTORE.png"
+                      width="135"
+                      height="45"
+                      alt="Download on the App Store"
+                      style={storeButton}
                     />
-                    <p
-                      style={{
-                        color: "#6b7280",
-                        fontSize: "14px",
-                        lineHeight: "1.6",
-                        maxWidth: "400px",
-                        margin: "0 auto",
-                      }}
-                    >
-                      Building sustainable growth through innovation,
-                      leadership, and excellence across industries. Transforming
-                      lives through technology.
-                    </p>
-                  </td>
-                </tr>
-
-                {/* Divider */}
-                <tr>
-                  <td style={{ padding: "24px 0" }}>
-                    <div
-                      style={{
-                        height: "1px",
-                        backgroundColor: "#d1d5db",
-                      }}
+                  </Link>
+                </Column>
+                <Column align="center">
+                  <Link href="https://play.google.com/store/apps/details?id=com.delightech.luyleun">
+                    <Img
+                      src="https://delightech2025.vercel.app/assets/PLAYSTORE.png"
+                      width="135"
+                      height="45"
+                      alt="Get it on Google Play"
+                      style={storeButton}
                     />
-                  </td>
-                </tr>
+                  </Link>
+                </Column>
+              </Row>
+            </Section>
+          </Section>
 
-                {/* Contact Information */}
-                <tr>
-                  <td style={{ paddingBottom: "24px" }}>
-                    <table
-                      cellPadding="0"
-                      cellSpacing="0"
-                      border={0}
-                      style={{ width: "100%" }}
-                    >
-                      <tbody>
-                        <tr>
-                          <td
-                            style={{
-                              fontSize: "14px",
-                              color: "#6b7280",
-                              textAlign: "center",
-                              padding: "8px",
-                            }}
-                          >
-                            📍 Chamkar Mon Tonle Bassac, 206 D Preah Norodom
-                            Blvd, Phnom Penh, Cambodia
-                          </td>
-                        </tr>
-                        <tr>
-                          <td
-                            style={{
-                              fontSize: "14px",
-                              color: "#6b7280",
-                              textAlign: "center",
-                              padding: "8px",
-                            }}
-                          >
-                            📞 +855 (0) 123 456 789
-                          </td>
-                        </tr>
-                        <tr>
-                          <td
-                            style={{
-                              fontSize: "14px",
-                              color: "#6b7280",
-                              textAlign: "center",
-                              padding: "8px",
-                            }}
-                          >
-                            ✉️ info@delightech.com
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </td>
-                </tr>
+          {/* Footer */}
+          <Section style={footer}>
+            {/* Company Info */}
+            <Img
+              src="https://delightech2025.vercel.app/assets/tagline2.png"
+              width="200"
+              height="50"
+              alt="Delightech"
+              style={footerLogo}
+            />
+            <Text style={footerDescription}>
+              Building sustainable growth through innovation, leadership, and
+              excellence across industries. Transforming lives through
+              technology.
+            </Text>
 
-                {/* Divider */}
-                <tr>
-                  <td style={{ padding: "24px 0" }}>
-                    <div
-                      style={{
-                        height: "1px",
-                        backgroundColor: "#d1d5db",
-                      }}
-                    />
-                  </td>
-                </tr>
+            <hr style={divider} />
 
-                {/* Social Links & Legal */}
-                <tr>
-                  <td style={{ textAlign: "center" }}>
-                    <table
-                      cellPadding="0"
-                      cellSpacing="0"
-                      border={0}
-                      style={{ margin: "0 auto 16px auto" }}
-                    >
-                      <tbody>
-                        <tr>
-                          <td style={{ padding: "0 12px" }}>
-                            <a
-                              href="https://delightech.asia"
-                              style={{
-                                color: "#2563eb",
-                                textDecoration: "none",
-                                fontSize: "20px",
-                              }}
-                            >
-                              🌐
-                            </a>
-                          </td>
-                          <td style={{ padding: "0 12px" }}>
-                            <a
-                              href="mailto:info@delightech.com"
-                              style={{
-                                color: "#2563eb",
-                                textDecoration: "none",
-                                fontSize: "20px",
-                              }}
-                            >
-                              ✉️
-                            </a>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
+            {/* Contact Info */}
+            <Text style={contactInfo}>
+              📍 Chamkar Mon Tonle Bassac, 206 D Preah Norodom Blvd, Phnom Penh,
+              Cambodia
+            </Text>
+            <Text style={contactInfo}>📞 +855 (0) 123 456 789</Text>
+            <Text style={contactInfo}>✉️ info@delightech.com</Text>
 
-                    <p
-                      style={{
-                        fontSize: "12px",
-                        color: "#9ca3af",
-                        margin: "0 0 8px 0",
-                      }}
-                    >
-                      &copy; 2025 Delightech Co., Ltd. All rights reserved.
-                    </p>
-                    <table
-                      cellPadding="0"
-                      cellSpacing="0"
-                      border={0}
-                      style={{ margin: "0 auto" }}
-                    >
-                      <tbody>
-                        <tr>
-                          <td style={{ padding: "0 8px" }}>
-                            <a
-                              href="#"
-                              style={{
-                                color: "#9ca3af",
-                                textDecoration: "none",
-                                fontSize: "12px",
-                              }}
-                            >
-                              Privacy Policy
-                            </a>
-                          </td>
-                          <td style={{ color: "#9ca3af", fontSize: "12px" }}>
-                            •
-                          </td>
-                          <td style={{ padding: "0 8px" }}>
-                            <a
-                              href="#"
-                              style={{
-                                color: "#9ca3af",
-                                textDecoration: "none",
-                                fontSize: "12px",
-                              }}
-                            >
-                              Terms of Service
-                            </a>
-                          </td>
-                          <td style={{ color: "#9ca3af", fontSize: "12px" }}>
-                            •
-                          </td>
-                          <td style={{ padding: "0 8px" }}>
-                            <a
-                              href="#"
-                              style={{
-                                color: "#9ca3af",
-                                textDecoration: "none",
-                                fontSize: "12px",
-                              }}
-                            >
-                              Unsubscribe
-                            </a>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+            <hr style={divider} />
+
+            {/* Social & Legal */}
+            <Section style={socialSection}>
+              <Link href="https://delightech.asia" style={socialLink}>
+                🌐
+              </Link>
+              <Link href="mailto:info@delightech.com" style={socialLink}>
+                ✉️
+              </Link>
+            </Section>
+
+            <Text style={copyright}>
+              © 2025 Delightech Co., Ltd. All rights reserved.
+            </Text>
+            <Text style={legalLinks}>
+              <Link href="#" style={legalLink}>
+                Privacy Policy
+              </Link>
+              {" • "}
+              <Link href="#" style={legalLink}>
+                Terms of Service
+              </Link>
+              {" • "}
+              <Link href="#" style={legalLink}>
+                Unsubscribe
+              </Link>
+            </Text>
+          </Section>
+        </Container>
+      </Body>
+    </Html>
   );
 }
+
+// Styles
+const main = {
+  backgroundColor: "#f3f4f6",
+  fontFamily:
+    '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
+};
+
+const container = {
+  margin: "0 auto",
+  backgroundColor: "#ffffff",
+  maxWidth: "600px",
+};
+
+const header = {
+  background: "linear-gradient(135deg, #2563eb 0%, #3b82f6 100%)",
+  backgroundColor: "#2563eb",
+  padding: "48px 32px",
+  textAlign: "center" as const,
+};
+
+const logoContainer = {
+  marginBottom: "32px",
+};
+
+const logo = {
+  margin: "0 auto",
+  backgroundColor: "#ffffff",
+  borderRadius: "16px",
+  padding: "16px",
+};
+
+const headerContent = {
+  textAlign: "center" as const,
+};
+
+const badge = {
+  backgroundColor: "rgba(255, 255, 255, 0.2)",
+  color: "#ffffff",
+  padding: "6px 16px",
+  borderRadius: "20px",
+  fontSize: "12px",
+  fontWeight: "600",
+  textTransform: "uppercase" as const,
+  letterSpacing: "0.5px",
+  border: "1px solid rgba(255, 255, 255, 0.3)",
+  display: "inline-block",
+  marginBottom: "16px",
+};
+
+const headerTitle = {
+  fontSize: "36px",
+  fontWeight: "700",
+  margin: "16px 0 8px 0",
+  color: "#ffffff",
+  lineHeight: "1.2",
+};
+
+const headerSubtitle = {
+  color: "#dbeafe",
+  fontSize: "18px",
+  fontWeight: "500",
+  margin: "0",
+};
+
+const mainContent = {
+  padding: "48px 32px",
+};
+
+const greeting = {
+  fontSize: "18px",
+  color: "#2563eb",
+  marginBottom: "24px",
+  fontWeight: "600",
+  textTransform: "uppercase" as const,
+  letterSpacing: "0.5px",
+};
+
+const bodyText = {
+  color: "#4b5563",
+  lineHeight: "1.7",
+  fontSize: "16px",
+  margin: "0 0 32px 0",
+};
+
+const featuresBox = {
+  background: "linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%)",
+  backgroundColor: "#dbeafe",
+  padding: "24px",
+  marginBottom: "32px",
+  borderRadius: "16px",
+  border: "1px solid #93c5fd",
+};
+
+const featuresTitle = {
+  fontSize: "20px",
+  fontWeight: "700",
+  color: "#1e40af",
+  marginBottom: "16px",
+  textAlign: "center" as const,
+};
+
+const featuresTable = {
+  width: "100%",
+};
+
+const featureCell = {
+  padding: "8px",
+  width: "50%",
+};
+
+const featureIconCell = {
+  width: "40px",
+  paddingRight: "12px",
+  verticalAlign: "top" as const,
+};
+
+const featureIcon = {
+  borderRadius: "8px",
+};
+
+const featureIconEmoji = {
+  width: "40px",
+  height: "40px",
+  backgroundColor: "#059669",
+  borderRadius: "8px",
+  textAlign: "center" as const,
+  lineHeight: "40px",
+  fontSize: "20px",
+};
+
+const featureName = {
+  fontWeight: "600",
+  color: "#1e40af",
+  margin: "0 0 4px 0",
+  fontSize: "14px",
+};
+
+const featureDesc = {
+  fontSize: "12px",
+  color: "#3730a3",
+  margin: "0",
+};
+
+const ctaSection = {
+  textAlign: "center" as const,
+  padding: "32px 0",
+};
+
+const button = {
+  background: "linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%)",
+  backgroundColor: "#2563eb",
+  color: "#ffffff",
+  padding: "16px 32px",
+  fontSize: "16px",
+  fontWeight: "600",
+  borderRadius: "12px",
+  textDecoration: "none",
+  display: "inline-block",
+};
+
+const downloadSection = {
+  backgroundColor: "#f9fafb",
+  borderRadius: "16px",
+  padding: "24px",
+  textAlign: "center" as const,
+};
+
+const downloadTitle = {
+  fontSize: "18px",
+  fontWeight: "700",
+  color: "#1f2937",
+  marginBottom: "16px",
+};
+
+const storeButton = {
+  margin: "0 8px",
+};
+
+const footer = {
+  backgroundColor: "#f3f4f6",
+  padding: "32px",
+  textAlign: "center" as const,
+};
+
+const footerLogo = {
+  margin: "0 auto 16px",
+};
+
+const footerDescription = {
+  color: "#6b7280",
+  fontSize: "14px",
+  lineHeight: "1.6",
+  maxWidth: "400px",
+  margin: "0 auto",
+};
+
+const divider = {
+  border: "none",
+  borderTop: "1px solid #d1d5db",
+  margin: "24px 0",
+};
+
+const contactInfo = {
+  color: "#6b7280",
+  fontSize: "14px",
+  margin: "8px 0",
+};
+
+const socialSection = {
+  margin: "16px 0",
+};
+
+const socialLink = {
+  color: "#2563eb",
+  textDecoration: "none",
+  fontSize: "20px",
+  margin: "0 12px",
+};
+
+const copyright = {
+  fontSize: "12px",
+  color: "#9ca3af",
+  margin: "0 0 8px 0",
+};
+
+const legalLinks = {
+  fontSize: "12px",
+  color: "#9ca3af",
+  margin: "0",
+};
+
+const legalLink = {
+  color: "#9ca3af",
+  textDecoration: "none",
+};
+
+export default CompanyEmailTemplate;

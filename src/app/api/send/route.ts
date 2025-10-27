@@ -11,9 +11,9 @@ export async function POST(request: NextRequest) {
         const body = await request.json();
 
         const { data, error } = await resend.emails.send({
-            from: 'Delightech <onboarding@resend.dev>', // Changed from 'Acme'
-            to: ['vathanak110@gmail.com'], // Your actual email
-            subject: `New Contact: ${body.subject || 'Website Inquiry'}`, // Dynamic subject
+            from: 'Delightech <onboarding@resend.dev>', 
+            to: ['vathanak110@gmail.com'], 
+            subject: `New Contact: ${body.subject || 'Website Inquiry'}`, 
             react: CompanyEmailTemplate({
                 recipientName: body.name
             }),
