@@ -63,8 +63,8 @@ export default function MissionAndValues() {
       to: "to-blue-600",
       darkFrom: "dark:from-blue-400",
       darkTo: "dark:to-blue-500",
-      textColor: "text-blue-600",
-      darkTextColor: "dark:text-blue-400",
+      textColor: "text-blue-700",
+      darkTextColor: "dark:text-blue-700",
       bgColor: "bg-blue-500/10",
       darkBgColor: "dark:bg-blue-400/10",
     },
@@ -120,7 +120,7 @@ export default function MissionAndValues() {
           </Badge>
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4 uppercase">
             {t("mission.title")}{" "}
-            <span className="text-blue-600 dark:text-blue-400">
+            <span className="text-blue-700 dark:text-blue-700">
               {t("mission.title_highlight")}
             </span>
           </h1>
@@ -153,9 +153,9 @@ export default function MissionAndValues() {
               <div className="bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-blue-100 dark:border-blue-900 shadow-lg hover:shadow-blue-500/30 dark:hover:shadow-blue-600/50 transition-all duration-300">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="p-3 bg-blue-100 dark:bg-blue-900 rounded-xl">
-                    <Target className="w-6 h-6 text-blue-600 dark:text-blue-400" />
+                    <Target className="w-6 h-6 text-blue-700 dark:text-blue-700" />
                   </div>
-                  <h2 className="text-2xl font-bold text-blue-600 dark:text-blue-400">
+                  <h2 className="text-2xl font-bold text-blue-700 dark:text-blue-700">
                     {t("mission.our_vision")}
                   </h2>
                 </div>
@@ -168,9 +168,9 @@ export default function MissionAndValues() {
               <div className="bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-blue-100 dark:border-blue-900 shadow-lg hover:shadow-blue-500/30 dark:hover:shadow-blue-600/50 transition-all duration-300">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="p-3 bg-blue-100 dark:bg-blue-900 rounded-xl">
-                    <Diamond className="w-6 h-6 text-blue-600 dark:text-blue-400" />
+                    <Diamond className="w-6 h-6 text-blue-700 dark:text-blue-700" />
                   </div>
-                  <h3 className="text-2xl font-bold text-blue-600 dark:text-blue-400">
+                  <h3 className="text-2xl font-bold text-blue-700 dark:text-blue-700">
                     {t("mission.our_approach")}
                   </h3>
                 </div>

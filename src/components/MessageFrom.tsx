@@ -33,7 +33,7 @@ export default function MessageFrom() {
             <div className="space-y-6">
               <div className="flex items-center gap-3">
                 <div className="p-2 bg-blue-50 dark:bg-blue-950/50 rounded-xl">
-                  <MessageCircle className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                  <MessageCircle className="w-5 h-5 text-blue-700 dark:text-blue-700" />
                 </div>
                 <Badge
                   variant="outline"
@@ -56,7 +56,7 @@ export default function MessageFrom() {
             {/* Clean Content */}
             <div className="space-y-8">
               <div className="space-y-6 text-slate-700 dark:text-slate-300 text-lg leading-relaxed font-light">
-                <p className="first-letter:text-5xl first-letter:font-light first-letter:text-blue-600 dark:first-letter:text-blue-400 first-letter:mr-3 first-letter:float-left first-letter:leading-none">
+                <p className="first-letter:text-5xl first-letter:font-light first-letter:text-blue-700 dark:first-letter:text-blue-700 first-letter:mr-3 first-letter:float-left first-letter:leading-none">
                   {t("founder_message.paragraph1")}
                 </p>
                 <p>{t("founder_message.paragraph2")}</p>

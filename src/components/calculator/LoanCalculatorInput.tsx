@@ -38,7 +38,7 @@ export default function LoanCalculatorInput({
       <Card className="group bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border border-blue-200/30 dark:border-blue-800/30 shadow-xl hover:shadow-2xl transition-all duration-500">
         <CardHeader>
           <CardTitle className="flex items-center gap-3">
-            <CreditCard className="w-6 h-6 text-blue-600 dark:text-blue-400" />
+            <CreditCard className="w-6 h-6 text-blue-700 dark:text-blue-700" />
             {t("loan.title")}
           </CardTitle>
         </CardHeader>
@@ -91,7 +91,7 @@ export default function LoanCalculatorInput({
               htmlFor="disbursementDate"
               className="flex items-center gap-2"
             >
-              <Calendar className="w-4 h-4 text-blue-600 dark:text-blue-400" />
+              <Calendar className="w-4 h-4 text-blue-700 dark:text-blue-700" />
               Disbursement Date
             </Label>
             <Input

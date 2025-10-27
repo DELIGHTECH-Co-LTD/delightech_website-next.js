@@ -18,7 +18,7 @@ export default function MarketPosition() {
           </Badge>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 uppercase">
             {t("market_position.title")}{" "}
-            <span className="text-blue-600 dark:text-blue-400">
+            <span className="text-blue-700 dark:text-blue-700">
               {t("market_position.title_highlight")}
             </span>
           </h2>

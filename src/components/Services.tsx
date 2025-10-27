@@ -57,7 +57,7 @@ export default function Services() {
           </Badge>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 uppercase">
             {t("title")}{" "}
-            <span className="text-blue-600 dark:text-blue-400">
+            <span className="text-blue-700 dark:text-blue-700">
               {t("title_highlight")}
             </span>
           </h2>
@@ -99,7 +99,7 @@ export default function Services() {
                     className={`text-2xl sm:text-3xl lg:text-4xl font-bold ${
                       unit.type === "subscription"
                         ? "text-green-600 dark:text-green-400"
-                        : "text-blue-600 dark:text-blue-400"
+                        : "text-blue-700 dark:text-blue-700"
                     }`}
                   >
                     {unit.name}
@@ -126,7 +126,7 @@ export default function Services() {
                       <div className="space-y-4">
                         {/* Download Header */}
                         <div className="mb-6">
-                          <h4 className="text-lg font-semibold text-blue-600 dark:text-blue-400 mb-2">
+                          <h4 className="text-lg font-semibold text-blue-700 dark:text-blue-700 mb-2">
                             Download LUYLEUN
                           </h4>
                           <p className="text-sm text-muted-foreground">
