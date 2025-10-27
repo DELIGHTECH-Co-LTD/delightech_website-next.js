@@ -143,7 +143,7 @@ export default function Team() {
                     <h3 className="text-2xl font-bold text-white mb-1">
                       {member.name}
                     </h3>
-                    <p className="text-sm text-blue-700 uppercase tracking-wider font-medium">
+                    <p className="text-sm text-white/80 uppercase tracking-wider font-medium">
                       {member.position}
                     </p>
                   </div>
@@ -185,22 +185,11 @@ export default function Team() {
                             aria-label={`${member.name}'s LinkedIn`}
                             style={{ position: "relative" }}
                           >
-                            <span className="inline-block transition-transform duration-300 group-hover:animate-bounce">
-                              <Linkedin size={22} />
+                            <span className="inline-block transition-transform duration-500 group-hover:scale-150 group-hover:rotate-12 group-hover:text-blue-700 group-hover:drop-shadow-lg">
+                              <Linkedin size={18} />
                             </span>
                           </a>
                         )}
-                        <a
-                          href={`mailto:${member.name
-                            .toLowerCase()
-                            .replace(" ", ".")}@company.com`}
-                          className="text-white hover:text-blue-700 transition-all duration-300 mx-2"
-                          aria-label={`Email ${member.name}`}
-                        >
-                          <span className="inline-block transition-transform duration-300 group-hover:animate-bounce">
-                            <Mail size={22} />
-                          </span>
-                        </a>
                       </div>
                     </div>
                   </div>

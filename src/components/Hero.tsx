@@ -156,7 +156,7 @@ export default function Hero() {
             {/* Main Logo with Enhanced Animations */}
             <div className="relative z-10 animate-fadeInUp delay-700">
               <Image
-                src="/assets/DLT_B.png"
+                src="/assets/DLTGlass.png"
                 alt="Delightech Logo"
                 width={1000}
                 height={700}

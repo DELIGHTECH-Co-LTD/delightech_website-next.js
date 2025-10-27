@@ -13,9 +13,9 @@ import { ArrowRight, Send } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Metadata } from "next";
 
-export const metadata:Metadata = {
-  title: "Careers"
-}
+export const metadata: Metadata = {
+  title: "Careers",
+};
 
 const jobs = [
   {
@@ -51,7 +51,7 @@ export default function CareerPage() {
           </Badge>
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4 uppercase">
             {t("title")}{" "}
-            <span className="text-blue-600 dark:text-blue-400">
+            <span className="text-blue-600 dark:text-blue-700">
               {t("title_highlight")}
             </span>
           </h1>
@@ -92,7 +92,7 @@ export default function CareerPage() {
         <div className="text-center pt-12 border-t border-border">
           <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-4 uppercase">
             {t("cta.title")}{" "}
-            <span className="text-blue-600 dark:text-blue-400">
+            <span className="text-blue-600 dark:text-blue-700">
               {t("cta.title_highlight")}
             </span>
           </h3>
