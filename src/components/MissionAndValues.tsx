@@ -135,10 +135,8 @@ export default function MissionAndValues() {
             {/* Logo Section - Now on the left */}
             <div className="w-full lg:w-1/2 relative transform hover:scale-105 transition-transform duration-500">
               <div className="relative aspect-square max-w-[500px] mx-auto">
-                <div className="absolute inset-0 bg-blue-500/10 dark:bg-blue-400/10 rounded-full animate-pulse"></div>
-                <div className="absolute inset-4 bg-gradient-to-br from-blue-500/20 to-blue-700/20 dark:from-blue-400/20 dark:to-blue-600/20 rounded-full blur-xl"></div>
                 <Image
-                  src="/assets/DLT.png"
+                  src="/assets/DLTGlass.png"
                   alt="Delightech Mission"
                   fill
                   className="object-contain p-8"
