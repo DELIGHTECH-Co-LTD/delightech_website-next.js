@@ -14,7 +14,7 @@ export default function Services() {
       id: 1,
       name: t("luyleun.name"),
       description: t("luyleun.description"),
-      image: "/assets/luyleun2.png",
+      image: "/assets/LL glass.png",
       badge: t("luyleun.badge"),
       type: "app",
       playStoreUrl:
@@ -25,7 +25,7 @@ export default function Services() {
       id: 2,
       name: t("bomnin.name"),
       description: t("bomnin.description"),
-      image: "/assets/bomnin_1.png",
+      image: "/assets/Bomnin glass.png",
       badge: t("bomnin.badge"),
       type: "subscription",
       subscribeUrl: "https://t.me/learnthinking",

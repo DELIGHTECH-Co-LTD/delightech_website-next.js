@@ -12,21 +12,21 @@ export default function History() {
       title: t("timeline.2025.title"),
       desc: t("timeline.2025.desc"),
       details: t("timeline.2025.details"),
-      logo: "/assets/bomnin_1.png",
+      logo: "/assets/Bomnin glass.png",
     },
     {
       year: t("timeline.2019.year"),
       title: t("timeline.2019.title"),
       desc: t("timeline.2019.desc"),
       details: t("timeline.2019.details"),
-      logo: "/assets/luyleun2.png",
+      logo: "/assets/LL glass.png",
     },
     {
       year: t("timeline.2016.year"),
       title: t("timeline.2016.title"),
       desc: t("timeline.2016.desc"),
       details: t("timeline.2016.details"),
-      logo: "/assets/DLT.png",
+      logo: "/assets/DLTGlass.png",
     },
   ];
   return (
