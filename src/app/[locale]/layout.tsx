@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import { FixedModeToggle } from "@/components/FixedModeToggle";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
+import { Toaster } from "sonner";
 
 const roboto = Roboto({
   weight: ["100", "300", "400", "500", "700", "900"],
@@ -75,6 +76,7 @@ export default async function RootLayout({
           <NextIntlClientProvider locale={locale} messages={messages}>
             <Navbar />
             {children}
+            <Toaster />
             <Footer />
             <FixedModeToggle />
           </NextIntlClientProvider>

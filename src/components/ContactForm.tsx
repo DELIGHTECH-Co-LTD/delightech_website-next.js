@@ -14,6 +14,7 @@ import { Button } from "./ui/button";
 import { Mail, Phone, MapPin, Clock, CheckCircle } from "lucide-react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import { toast } from "sonner";
 
 export default function ContactForm() {
   const t = useTranslations("ContactForm");
@@ -42,13 +43,32 @@ export default function ContactForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
-    await new Promise((resolve) => setTimeout(resolve, 2000));
-    setIsSubmitted(true);
-    setIsLoading(false);
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({ name: "", email: "", subject: "", message: "" });
-    }, 3000);
+
+    try {
+      const response = await fetch("/api/send", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        toast.error("Form Submission unsuccessful");
+        setIsLoading(false);
+        return; 
+      }
+      toast.success("Form Submission successful.");
+      setIsSubmitted(true);
+
+      setTimeout(() => {
+        setIsSubmitted(false);
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      }, 3000);
+    } catch (error) {
+      console.error("Submission error:", error);
+      toast.error("An error occurred. Please try again.");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const subjectOptions = [

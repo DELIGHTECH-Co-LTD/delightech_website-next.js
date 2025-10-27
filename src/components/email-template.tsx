@@ -16,7 +16,10 @@ import {
 import * as React from "react";
 
 interface CompanyEmailTemplateProps {
-  recipientName?: string;
+  recipientName: string;
+  recipientEmail?: string; 
+  subject: string;
+  message: string; 
 }
 
 export function CompanyEmailTemplate({
@@ -177,8 +180,7 @@ export function CompanyEmailTemplate({
                   <Link href="https://apps.apple.com/kh/app/luyleun/id1570756469LuyLeun">
                     <Img
                       src="https://delightech2025.vercel.app/assets/APPSTORE.png"
-                      width="135"
-                      height="45"
+                      height="50"
                       alt="Download on the App Store"
                       style={storeButton}
                     />
@@ -188,8 +190,7 @@ export function CompanyEmailTemplate({
                   <Link href="https://play.google.com/store/apps/details?id=com.delightech.luyleun">
                     <Img
                       src="https://delightech2025.vercel.app/assets/PLAYSTORE.png"
-                      width="135"
-                      height="45"
+                      height="50"
                       alt="Get it on Google Play"
                       style={storeButton}
                     />
@@ -204,7 +205,6 @@ export function CompanyEmailTemplate({
             {/* Company Info */}
             <Img
               src="https://delightech2025.vercel.app/assets/tagline2.png"
-              width="200"
               height="50"
               alt="Delightech"
               style={footerLogo}
