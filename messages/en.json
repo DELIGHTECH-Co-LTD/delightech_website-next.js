@@ -273,9 +273,7 @@
     "cookie_policy": "Cookie Policy",
     "status": "Proudly serving customers across Southeast Asia",
     "links": {
-      "store": "Find a Store",
-      "signin": "Sign In",
-      "join": "Join Now",
+      "store": "Find Us",
       "contact": "Contact Support"
     },
     "Navbar": {
