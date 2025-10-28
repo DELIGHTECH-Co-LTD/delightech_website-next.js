@@ -53,7 +53,7 @@ export function Blog({ posts = [] }: BlogProps) {
           </Badge>
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4 uppercase">
             {t("title")}{" "}
-            <span className="text-blue-600 dark:text-blue-400">
+            <span className="text-blue-600 dark:text-blue-600">
               {t("title_highlight")}
             </span>
           </h1>
@@ -74,7 +74,7 @@ export function Blog({ posts = [] }: BlogProps) {
                 }}
               >
                 {/* Image Placeholder */}
-                <div className="relative h-48 bg-gradient-to-br from-blue-500 to-purple-600 overflow-hidden">
+                <div className="relative h-48 bg-linear-to-br from-blue-500 to-blue-700 overflow-hidden">
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="text-white/90 text-6xl font-bold opacity-20">

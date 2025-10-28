@@ -30,8 +30,6 @@ const Footer: React.FC = () => {
 
   const supportLinks = [
     { href: "/store", label: t("links.store") },
-    { href: "/signin", label: t("links.signin") },
-    { href: "/join", label: t("links.join") },
     { href: "/contact", label: t("links.contact") },
   ];
 
@@ -84,9 +82,7 @@ const Footer: React.FC = () => {
               </div>
               <div className="flex items-center gap-2 text-white/90 hover:text-white transition-all duration-300 group">
                 <Phone className="w-4 h-4 group-hover:scale-110 transition-transform" />
-                <span className="font-medium text-sm">
-                  {t("phone")}
-                </span>
+                <span className="font-medium text-sm">{t("phone")}</span>
               </div>
               <div className="flex items-center gap-2 text-white/90 hover:text-white transition-all duration-300 group">
                 <Mail className="w-4 h-4 group-hover:scale-110 transition-transform" />
@@ -135,36 +131,36 @@ const Footer: React.FC = () => {
 
           {/* Newsletter & Social */}
           <div className="space-y-4">
-            <h3 className="font-medium text-sm uppercase tracking-wide text-white">
+            {/* <h3 className="font-medium text-sm uppercase tracking-wide text-white">
               {t("stay_connected")}
-            </h3>
+            </h3> */}
 
-            <p className="text-white/90 text-sm leading-relaxed">
+            {/* <p className="text-white/90 text-sm leading-relaxed">
               {t("subscribe_description")}
-            </p>
+            </p> */}
 
             {/* Newsletter Form */}
-            <form onSubmit={handleSubscribe} className="space-y-3">
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder={t("email_placeholder")}
-                className="w-full px-4 py-2 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50 transition-all duration-300"
-                required
-              />
-              <button
-                type="submit"
-                disabled={isSubscribed}
-                className={`w-full px-6 py-2 rounded-full font-bold text-sm transition-all duration-300 transform hover:scale-105 hover:shadow-lg ${
-                  isSubscribed
-                    ? "bg-green-600 text-white"
-                    : "bg-gradient-to-r from-green-600 to-blue-600 hover:from-blue-700 hover:to-blue-700 text-white"
-                }`}
-              >
-                {isSubscribed ? t("subscribed") : t("subscribe")}
-              </button>
-            </form>
+            {/* <form onSubmit={handleSubscribe} className="space-y-3">
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder={t("email_placeholder")}
+                  className="w-full px-4 py-2 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50 transition-all duration-300"
+                  required
+                />
+                <button
+                  type="submit"
+                  disabled={isSubscribed}
+                  className={`w-full px-6 py-2 rounded-full font-bold text-sm transition-all duration-300 transform hover:scale-105 hover:shadow-lg ${
+                    isSubscribed
+                      ? "bg-green-600 text-white"
+                      : "bg-gradient-to-r from-green-600 to-blue-600 hover:from-blue-700 hover:to-blue-700 text-white"
+                  }`}
+                >
+                  {isSubscribed ? t("subscribed") : t("subscribe")}
+                </button>
+              </form> */}
 
             {/* Social Links */}
             <div className="space-y-3">

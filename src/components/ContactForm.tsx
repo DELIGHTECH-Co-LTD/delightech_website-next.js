@@ -85,7 +85,7 @@ export default function ContactForm() {
       icon: MapPin,
       title: t("address"),
       details: [t("contactInfo.address")],
-      color: "text-blue-600",
+      color: "text-blue-700",
     },
     {
       icon: Phone,
@@ -116,7 +116,7 @@ export default function ContactForm() {
             {/* <Badge variant="secondary" className="mb-4">
               Contact Form
             </Badge> */}
-            <h3 className="text-2xl md:text-3xl font-bold text-blue-600 dark:text-blue-400 mb-6 uppercase">
+            <h3 className="text-2xl md:text-3xl font-bold text-blue-700 dark:text-blue-700 mb-6 uppercase">
               {t("title")}
             </h3>
 
@@ -221,7 +221,7 @@ export default function ContactForm() {
 
             {/* Hover Indicator */}
             <div className="mt-6 opacity-100 group-hover:opacity-100 transition-opacity duration-500">
-              <div className="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 text-sm font-medium">
+              <div className="inline-flex items-center gap-2 text-blue-700 dark:text-blue-700 text-sm font-medium">
                 <span>{t("support24")}</span>
                 <svg
                   className="w-4 h-4 animate-bounce"
@@ -241,7 +241,7 @@ export default function ContactForm() {
           </div>
 
           {/* Contact Information Side Panel */}
-          <div className="w-full lg:w-1/3 bg-linear-to-br from-blue-600 to-blue-500 dark:from-blue-700 dark:to-blue-900 p-8 lg:p-12 text-white flex flex-col">
+          <div className="w-full lg:w-1/3 bg-linear-to-br from-blue-600 to-blue-700 dark:from-blue-700 dark:to-blue-900 p-8 lg:p-12 text-white flex flex-col">
             <h4 className="text-xl font-bold mb-6 uppercase">
               {t("contactInformation")}
             </h4>

@@ -15,7 +15,7 @@ export default function Hero() {
       {/* Professional Background Animations */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Animated Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-700/15 via-blue-800/12 to-blue-900/15 dark:from-blue-500/15 dark:via-purple-600/12 dark:to-indigo-600/15 animate-gradientFlow opacity-60"></div>
+        <div className="absolute inset-0 bg-linear-to-br from-blue-700/15 via-blue-800/12 to-blue-900/15 dark:from-blue-500/15 dark:via-purple-600/12 dark:to-indigo-600/15 animate-gradientFlow opacity-60"></div>
 
         {/* Secondary Animated Gradient */}
         <div className="absolute inset-0 bg-gradient-to-tl from-blue-800/10 via-blue-700/15 to-blue-950/12 dark:from-purple-600/10 dark:via-blue-500/15 dark:to-slate-700/12 animate-gradientFlowReverse opacity-50"></div>
@@ -156,7 +156,7 @@ export default function Hero() {
             {/* Main Logo with Enhanced Animations */}
             <div className="relative z-10 animate-fadeInUp delay-700">
               <Image
-                src="/assets/DLT_B.png"
+                src="/assets/DLTGlass.png"
                 alt="Delightech Logo"
                 width={1000}
                 height={700}
@@ -170,15 +170,15 @@ export default function Hero() {
               className="absolute inset-0 w-full h-full animate-spin"
               style={{ animationDuration: "30s" }}
             >
-              <div className="absolute top-10 left-1/2 w-2 h-2 bg-blue-400/60 dark:bg-purple-400/60 rounded-full animate-pulse"></div>
-              <div className="absolute bottom-10 left-1/2 w-1.5 h-1.5 bg-cyan-400/50 dark:bg-indigo-400/50 rounded-full animate-pulse delay-500"></div>
-              <div className="absolute top-1/2 left-10 w-1 h-1 bg-blue-300/40 dark:bg-violet-300/40 rounded-full animate-pulse delay-1000"></div>
-              <div className="absolute top-1/2 right-10 w-1 h-1 bg-indigo-400/40 dark:bg-blue-400/40 rounded-full animate-pulse delay-1500"></div>
+              <div className="absolute top-10 left-1/2 w-2 h-2 bg-blue-400/60 dark:bg-blue-400/60 rounded-full animate-pulse"></div>
+              <div className="absolute bottom-10 left-1/2 w-1.5 h-1.5 bg-cyan-400/50 dark:bg-blue-400/50 rounded-full animate-pulse delay-500"></div>
+              <div className="absolute top-1/2 left-10 w-1 h-1 bg-blue-300/40 dark:bg-blue-300/40 rounded-full animate-pulse delay-1000"></div>
+              <div className="absolute top-1/2 right-10 w-1 h-1 bg-blue-400/40 dark:bg-blue-400/40 rounded-full animate-pulse delay-1500"></div>
             </div>
 
             {/* Gradient Border Animation */}
             <div
-              className="absolute inset-0 rounded-full bg-linear-to-r from-blue-500 via-purple-500 to-cyan-500 dark:from-purple-500 dark:via-blue-500 dark:to-indigo-500 opacity-0 group-hover:opacity-20 transition-opacity duration-500 animate-gradientSpin blur-sm"
+              className="absolute inset-0 rounded-full bg-linear-to-r from-blue-500 via-blue-500 to-cyan-500 dark:from-blue-500 dark:via-blue-500 dark:to-indigo-500 opacity-0 group-hover:opacity-20 transition-opacity duration-500 animate-gradientSpin blur-sm"
               style={{ padding: "2px" }}
             ></div>
           </div>

@@ -28,6 +28,9 @@ const nextConfig: NextConfig = {
         // Disable CSS optimization to avoid deprecated critters dependency
         // We'll handle CSS optimization through PostCSS instead
         // optimizeCss: true
+    },
+    turbopack: {
+        root: __dirname,
     }
 };
 

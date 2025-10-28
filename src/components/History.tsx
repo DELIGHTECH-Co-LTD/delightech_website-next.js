@@ -12,14 +12,21 @@ export default function History() {
       title: t("timeline.2025.title"),
       desc: t("timeline.2025.desc"),
       details: t("timeline.2025.details"),
-      logo: "/assets/bomnin_1.png",
+      logo: "/assets/Bomnin glass.png",
     },
     {
       year: t("timeline.2019.year"),
       title: t("timeline.2019.title"),
       desc: t("timeline.2019.desc"),
       details: t("timeline.2019.details"),
-      logo: "/assets/luyleun2.png",
+      logo: "/assets/LL glass.png",
+    },
+    {
+      year: t("timeline.2016.year"),
+      title: t("timeline.2016.title"),
+      desc: t("timeline.2016.desc"),
+      details: t("timeline.2016.details"),
+      logo: "/assets/DLTGlass.png",
     },
   ];
   return (
@@ -45,7 +52,7 @@ export default function History() {
           </Badge>
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4 uppercase">
             {t("title")}{" "}
-            <span className="text-blue-600 dark:text-blue-400">
+            <span className="text-blue-600 dark:text-blue-700">
               {t("title_highlight")}
             </span>
           </h1>
