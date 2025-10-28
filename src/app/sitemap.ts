@@ -7,6 +7,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         '',
         '/about',
         '/services',
+        '/calculator',
         '/careers',
         '/contact',
         '/investors'
@@ -17,18 +18,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Generate URLs for each locale and route
     locales.forEach(locale => {
         routes.forEach(route => {
+            const priority = route === '' ? 1 :
+                route === '/calculator' ? 0.9 :
+                    route === '/services' ? 0.9 : 0.8
+
+            const changeFreq = route === '' ? 'weekly' :
+                route === '/calculator' ? 'monthly' :
+                    route === '/services' ? 'monthly' : 'yearly'
+
             sitemap.push({
                 url: `${baseUrl}/${locale}${route}`,
-                lastModified: new Date(),
-                changeFrequency: 'monthly',
-                priority: route === '' ? 1 : 0.8,
+                lastModified: new Date('2024-10-22'),
+                changeFrequency: changeFreq,
+                priority: priority,
             })
         })
     })
     sitemap.push({
         url: baseUrl,
-        lastModified: new Date(),
-        changeFrequency: 'monthly',
+        lastModified: new Date('2024-10-22'),
+        changeFrequency: 'weekly',
         priority: 1,
     })
 
