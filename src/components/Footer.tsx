@@ -44,8 +44,21 @@ const Footer: React.FC = () => {
       href: "https://www.linkedin.com/company/delightech-asia/",
       label: "LinkedIn",
     },
-    { icon: "fa7-brands:instagram", href: "#", label: "Instagram" },
-    { icon: "fa7-brands:x-twitter", href: "#", label: "Twitter" },
+    {
+      icon: "fa7-brands:instagram",
+      href: "https://www.instagram.com/luyleun?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+      label: "Instagram",
+    },
+    {
+      icon: "fa7-brands:youtube",
+      href: "https://www.youtube.com/@-luyleun",
+      label: "YouTube",
+    },
+    {
+      icon: "fa7-brands:tiktok",
+      href: "https://www.tiktok.com/@luyleun",
+      label: "TikTok",
+    },
   ];
 
   return (
