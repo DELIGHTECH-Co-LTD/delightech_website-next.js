@@ -12,7 +12,9 @@
   "MissionAndValues": {
     "mission": {
       "badge": "Our Mission",
-      "description": "Our mission is to revolutionize financial services through innovative technology, making them accessible, secure, and efficient for everyone. We strive to create positive impact in people's lives by providing smart financial solutions that empower economic growth and financial inclusion.",
+      "title": "Our",
+      "title_highlight": "Mission",
+      "description": "To leverage innovative technology to create accessible, efficient, and secure financial products and services that address and solve financial challenges to promote economic growth and enhance the financial well-being of both banked and underbanked populations.",
       "vision": "To transform financial solutions through technology and make individuals and businesses worldwide financially free and stable.",
       "keyPoint1": "Creating innovative solutions that meet real needs",
       "keyPoint2": "Building trust through transparency and security",
@@ -29,7 +31,7 @@
         "description": "We take responsibility for our resources, decisions, and actions, ensuring sustainable growth and positive impact for our stakeholders and community."
       },
       "collaboration": {
-        "title": "Transparentcy",
+        "title": "Transparency",
         "description": "We provide clear terms, fair policies, and honest communication—so our users always know exactly what they’re getting."
       },
       "innovation": {
@@ -70,7 +72,7 @@
   },
   "About": {
     "title": "ABOUT US",
-    "quote": "AS WE LOOK TO THE YEARS AHEAD, WE MUST REMAIN COMMITTED TO EXCELLENCE, KEEP ABREAST OF CHANGES AND INNOVATIONS, ADOPT BETTER MANAGEMENT PRACTICES AND SUCCESSFULLY OVERCOME ALL CHALLENGES BEFORE US.",
+    "quote": "We leverage advanced and secure technology to develop an alternative credit scoring system using AI and blockchain technology. The system offers efficient and convenient access to financial products for underserved populations without complicated requirements.",
     "find_more": "FIND OUT MORE ABOUT US"
   },
   "Services": {
@@ -80,13 +82,13 @@
     "description": "Our diversified business units work together to deliver sustainable growth, innovation, and value across multiple industries.",
     "luyleun": {
       "name": "LUYLEUN Mobile App",
-      "description": "Our manufacturing unit is a cornerstone of our success, producing top-quality products with modern technology and sustainability at the core. From cement and building materials to beverages, we ensure the highest production standards.",
+      "description": "Luyleun is a digital platform that helps banks and financial institutions seamlessly support their customers daily needs with efficiency and ease. We believe that innovative technology combined with active engagement can create opportunities and improve everyday lives across the country.",
       "badge": "Fintech"
     },
     "bomnin": {
       "name": "BOM NIN",
-      "description": "Delivering high-value infrastructure and engineering projects that meet international standards. Our construction unit focuses on innovation, precision, and long-term structural integrity for every development.",
-      "badge": "E-commerce"
+      "description": "Bamnin is an educational platform focused on financial literacy and life education. It aims to empower individuals with practical knowledge about money management, financial planning, saving, investing, and living a better life.",
+      "badge": "Education Hub"
     },
     "learn_more": "Learn More",
     "innovation_driven": "Innovation Driven"
@@ -244,7 +246,7 @@
     }
   },
   "Footer": {
-    "description": "Building sustainable growth through innovation, leadership, and excellence across industries. Transforming lives through technology.",
+    "description": "We are a team of dynamic Cambodians with many years of experience in Financial Technology and Core Banking Systems.",
     "location": "Chamkar Mon Tonle Bassac, 206 D Preah Norodom Blvd, Phnom Penh, Cambodia",
     "phone": "+855 (0) 123 456 789",
     "email": "info@delightech.com",
@@ -261,9 +263,9 @@
     "privacy_policy": "Privacy Policy",
     "terms_of_service": "Terms of Service",
     "cookie_policy": "Cookie Policy",
-    "status": "Proudly serving customers across Southeast Asia",
+    "status": "Proudly serving customers across Cambodia",
     "links": {
-      "store": "Find a Store",
+      "store": "Find our Location",
       "signin": "Sign In",
       "join": "Join Now",
       "contact": "Contact Support"
@@ -285,13 +287,13 @@
         "year": "2025",
         "title": "Bomnin",
         "desc": "Bomnin",
-        "details": "Our diversified business units work together to deliver sustainable growth, innovation, and value across multiple industries."
+        "details": "Bomnin is an educational platform focused on financial literacy and life education. It aims to empower individuals with practical knowledge about money management, financial planning, saving, investing, and living a better life"
       },
       "2019": {
         "year": "2019",
         "title": "LUYLEUN",
         "desc": "Mobile app",
-        "details": "Capacity: 260 hectares of land featuring residential areas, golf course and water park"
+        "details": "Luyleun is a digital platform that helps banks and financial institutions seamlessly support their customers daily needs with efficiency and ease. We believe that innovative technology combined with active engagement can create opportunities and improve everyday lives across the country."
       }
     }
   },
@@ -315,10 +317,10 @@
     "founder_message": {
       "title": "Message from Founder",
       "subtitle": "Mr. Lay Vila, Founder of Delightech",
-      "paragraph1": "When I started Delightech, I had one clear belief — that technology should serve people, not the other way around. Our goal has always been to build digital products that don't just work, but truly make life better, simpler, and smarter.",
-      "paragraph2": "With our flagship project LUYLEUN, we're redefining how Cambodians experience finance — offering fast, transparent, and reliable access to opportunities that help them grow. We believe financial technology should be empowering, inclusive, and built for everyone.",
-      "paragraph3": "At Delightech, we are driven by passion and purpose. Every idea, every line of code, and every user experience is guided by our vision to create meaningful impact through innovation.",
-      "paragraph4": "This great success is owed to our visionary leadership and We're not just building apps — we're building the future of how people connect with technology. Thank you for being part of this journey. Together, we'll continue to dream bigger, innovate smarter, and grow stronger."
+      "paragraph1": "At Delightech, our mission has always been to leverage technology to create financial solutions that are accessible, secure, and efficient for everyone. Since our founding in 2018, we have dedicated ourselves to empowering individuals and businesses to achieve financial stability and freedom.",
+      "paragraph2": "We believe that innovation in financial technology is not just about tools and systems—it is about creating opportunities, building trust, and improving the everyday lives of people. Our team of passionate Cambodians is committed to driving meaningful change in the financial landscape, bridging the gap for those underserved, and helping everyone access the services they need seamlessly.",
+      "paragraph3": "We are proud of how far we have come, and even more excited about the future we are building—one where financial inclusion and economic growth go hand in hand.....",
+      "paragraph4": "This great success is owed to our visionary leadership and We're not just building apps we're building the future of how people connect with technology. Thank you for being part of this journey. Together, we'll continue to dream bigger, innovate smarter, and grow stronger."
     }
   },
   "InvestorPage": {
@@ -483,7 +485,8 @@
     "description": "We're here to help and answer any question you might have. We look forward to hearing from you."
   },
   "Calculator": {
-    "title": "Financial Calculator",
+    "title": "Financial",
+    "title_highlight": "Calculator",
     "description": "Plan your financial future with our comprehensive calculators for loans, investments, and savings goals.",
     "badge": "Financial Tools",
     "calculate": "Calculate",
@@ -536,10 +539,6 @@
       "planning": {
         "title": "Smart Planning",
         "description": "Make informed decisions about your financial future"
-      },
-      "goals": {
-        "title": "Goal Tracking",
-        "description": "Track progress towards your savings and investment goals"
       }
     }
   }
