@@ -10,7 +10,7 @@ export default function TeamLeadership() {
   return (
     <section className="py-24 px-6 lg:px-20 bg-background">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground uppercase mb-12">
+        <h2 className="text-4xl md:text-5xl font-bold text-center text-foreground uppercase mb-12">
           {t("leadership.title")}
         </h2>
 

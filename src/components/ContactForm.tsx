@@ -65,7 +65,7 @@ export default function ContactForm() {
       icon: MapPin,
       title: t("address"),
       details: [t("contactInfo.address")],
-      color: "text-blue-600",
+      color: "text-blue-700",
     },
     {
       icon: Phone,
@@ -96,7 +96,7 @@ export default function ContactForm() {
             {/* <Badge variant="secondary" className="mb-4">
               Contact Form
             </Badge> */}
-            <h3 className="text-2xl md:text-3xl font-bold text-blue-600 dark:text-blue-400 mb-6 uppercase">
+            <h3 className="text-2xl md:text-3xl font-bold text-blue-700 dark:text-blue-700 mb-6 uppercase">
               {t("title")}
             </h3>
 
@@ -193,7 +193,7 @@ export default function ContactForm() {
 
             {/* Decorative Line */}
             <div className="mt-8 flex items-center gap-4">
-              <div className="flex-1 h-1 bg-gradient-to-r from-blue-600 to-blue-500 dark:from-blue-400 dark:to-blue-300 rounded-full group-hover:from-blue-500 group-hover:to-blue-700 transition-all duration-500"></div>
+              <div className="flex-1 h-1 bg-linear-to-r from-blue-600 to-blue-500 dark:from-blue-400 dark:to-blue-300 rounded-full group-hover:from-blue-500 group-hover:to-blue-700 transition-all duration-500"></div>
               <span className="text-xs uppercase tracking-wider text-muted-foreground font-medium">
                 {t("quickResponse")}
               </span>
@@ -201,7 +201,7 @@ export default function ContactForm() {
 
             {/* Hover Indicator */}
             <div className="mt-6 opacity-100 group-hover:opacity-100 transition-opacity duration-500">
-              <div className="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 text-sm font-medium">
+              <div className="inline-flex items-center gap-2 text-blue-700 dark:text-blue-700 text-sm font-medium">
                 <span>{t("support24")}</span>
                 <svg
                   className="w-4 h-4 animate-bounce"
@@ -221,11 +221,11 @@ export default function ContactForm() {
           </div>
 
           {/* Contact Information Side Panel */}
-          <div className="w-full lg:w-1/3 bg-gradient-to-br from-blue-600 to-blue-500 dark:from-blue-700 dark:to-blue-900 p-8 lg:p-12 text-white flex flex-col">
+          <div className="w-full lg:w-1/3 bg-linear-to-br from-blue-600 to-blue-700 dark:from-blue-700 dark:to-blue-900 p-8 lg:p-12 text-white flex flex-col">
             <h4 className="text-xl font-bold mb-6 uppercase">
               {t("contactInformation")}
             </h4>
-            <div className="space-y-6 flex-grow">
+            <div className="space-y-6 grow">
               {contactInfo.map((info, index) => {
                 const IconComponent = info.icon;
                 return (
@@ -269,7 +269,7 @@ export default function ContactForm() {
       </div>
 
       {/* Hover Glow Effect */}
-      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-r from-blue-500/5 via-blue-600/5 to-blue-700/5 pointer-events-none transition-opacity duration-500"></div>
+      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-linear-to-r from-blue-500/5 via-blue-600/5 to-blue-700/5 pointer-events-none transition-opacity duration-500"></div>
     </div>
   );
 }

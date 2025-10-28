@@ -19,7 +19,7 @@ export default function InvestorContact() {
           </Badge>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 uppercase">
             {t("contact.title")}{" "}
-            <span className="text-blue-600 dark:text-blue-400">
+            <span className="text-blue-700 dark:text-blue-700">
               {t("contact.title_highlight")}
             </span>
           </h2>

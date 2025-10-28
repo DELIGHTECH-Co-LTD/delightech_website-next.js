@@ -32,6 +32,7 @@
       },
       "collaboration": {
         "title": "Transparency",
+        "title": "Transparency",
         "description": "We provide clear terms, fair policies, and honest communication—so our users always know exactly what they’re getting."
       },
       "innovation": {
@@ -147,35 +148,43 @@
     "members": {
       "vila": {
         "name": "Lay Vila",
-        "position": "CEO & Founder"
+        "position": "CEO & Founder",
+        "bio": "Visionary leader with over 10 years of experience in fintech and technology innovation. Under his leadership, Delightech has grown from a startup to Cambodia's leading fintech company. His strategic vision and deep understanding of the Southeast Asian market make him uniquely positioned to drive the company's continued growth and expansion."
       },
       "krisna": {
         "name": "Ke Chankrisna",
-        "position": "CTO"
+        "position": "CTO",
+        "bio": "Expert in software engineering and digital transformation, Krisna leads the technology team to deliver innovative financial solutions. He is passionate about building scalable platforms and driving technical excellence."
       },
       "reaksa": {
         "name": "Pheng Reaksa",
-        "position": "Business Advisor"
+        "position": "Business Advisor",
+        "bio": "Reaksa brings a wealth of business strategy and advisory experience, helping Delightech navigate complex markets and partnerships. His insights are key to our sustainable growth."
       },
       "chenda": {
         "name": "Ly Chenda",
-        "position": "Credit Assessment Supervisor"
+        "position": "Credit Assessment Supervisor",
+        "bio": "Chenda oversees credit risk and assessment, ensuring responsible lending and financial stability for our customers. Her analytical skills and attention to detail are vital to our operations."
       },
       "pengsea": {
         "name": "Ly Pengsea",
-        "position": "Account Supervisor"
+        "position": "Account Supervisor",
+        "bio": "Pengsea manages financial accounts and reporting, maintaining transparency and accuracy in all company transactions. Her dedication supports our commitment to integrity."
       },
       "kimsrun": {
         "name": "Chun Kimsrun",
-        "position": "Marketing Supervisor"
+        "position": "Marketing Supervisor",
+        "bio": "Kimsrun leads marketing initiatives, driving brand awareness and customer engagement. His creativity and strategic thinking help us reach new audiences."
       },
       "leabheng": {
         "name": "Meth Leabheng",
-        "position": "Human Resource"
+        "position": "Human Resource",
+        "bio": "Leabheng manages HR and talent development, fostering a culture of collaboration and growth. Her people-first approach ensures a supportive workplace."
       },
       "kimsrorng": {
         "name": "Taing Kimsrorng",
-        "position": "Collection Supervisor"
+        "position": "Collection Supervisor",
+        "bio": "Kimsrorng oversees collections and customer relations, ensuring timely payments and positive client experiences. Her professionalism strengthens our reputation."
       }
     }
   },
@@ -485,6 +494,8 @@
     "description": "We're here to help and answer any question you might have. We look forward to hearing from you."
   },
   "Calculator": {
+    "title": "Financial",
+    "title_highlight": "Calculator",
     "title": "Financial",
     "title_highlight": "Calculator",
     "description": "Plan your financial future with our comprehensive calculators for loans, investments, and savings goals.",

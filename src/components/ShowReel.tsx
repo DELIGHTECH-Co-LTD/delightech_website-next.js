@@ -93,7 +93,7 @@ export default function ShowReel() {
           </Badge>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 uppercase">
             {t("title")}{" "}
-            <span className="text-blue-600 dark:text-blue-400">
+            <span className="text-blue-700 dark:text-blue-700">
               {t("title_highlight")}
             </span>
           </h2>

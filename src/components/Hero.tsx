@@ -15,7 +15,7 @@ export default function Hero() {
       {/* Professional Background Animations */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Animated Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-700/15 via-blue-800/12 to-blue-900/15 dark:from-blue-500/15 dark:via-purple-600/12 dark:to-indigo-600/15 animate-gradientFlow opacity-60"></div>
+        <div className="absolute inset-0 bg-linear-to-br from-blue-700/15 via-blue-800/12 to-blue-900/15 dark:from-blue-500/15 dark:via-purple-600/12 dark:to-indigo-600/15 animate-gradientFlow opacity-60"></div>
 
         {/* Secondary Animated Gradient */}
         <div className="absolute inset-0 bg-gradient-to-tl from-blue-800/10 via-blue-700/15 to-blue-950/12 dark:from-purple-600/10 dark:via-blue-500/15 dark:to-slate-700/12 animate-gradientFlowReverse opacity-50"></div>
@@ -72,17 +72,17 @@ export default function Hero() {
         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:50px_50px] opacity-30"></div>
 
         {/* Floating Gradient Orbs - Mode Responsive */}
-        <div className="absolute top-20 left-20 w-96 h-96 bg-gradient-to-r from-blue-600/12 to-blue-700/15 dark:from-purple-600/12 dark:to-blue-600/15 rounded-full blur-3xl animate-pulse opacity-40"></div>
-        <div className="absolute bottom-20 right-20 w-80 h-80 bg-gradient-to-r from-blue-700/14 to-blue-800/12 dark:from-indigo-600/14 dark:to-purple-600/12 rounded-full blur-3xl animate-pulse delay-1000 opacity-35"></div>
-        <div className="absolute top-1/2 right-10 w-64 h-64 bg-gradient-to-r from-blue-500/16 to-blue-800/14 dark:from-violet-600/16 dark:to-blue-600/14 rounded-full blur-2xl animate-pulse delay-500 opacity-30"></div>
+        <div className="absolute top-20 left-20 w-96 h-96 bg-linear-to-r from-blue-600/12 to-blue-700/15 dark:from-purple-600/12 dark:to-blue-600/15 rounded-full blur-3xl animate-pulse opacity-40"></div>
+        <div className="absolute bottom-20 right-20 w-80 h-80 bg-linear-to-r from-blue-700/14 to-blue-800/12 dark:from-indigo-600/14 dark:to-purple-600/12 rounded-full blur-3xl animate-pulse delay-1000 opacity-35"></div>
+        <div className="absolute top-1/2 right-10 w-64 h-64 bg-linear-to-r from-blue-500/16 to-blue-800/14 dark:from-violet-600/16 dark:to-blue-600/14 rounded-full blur-2xl animate-pulse delay-500 opacity-30"></div>
 
         {/* Elegant Lines - Mode Responsive */}
-        <div className="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-400/25 dark:via-purple-400/25 to-transparent animate-pulse opacity-25"></div>
-        <div className="absolute bottom-1/3 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-300/20 dark:via-blue-400/20 to-transparent animate-pulse delay-1000 opacity-20"></div>
+        <div className="absolute top-1/4 left-0 w-full h-px bg-linear-to-r from-transparent via-blue-400/25 dark:via-purple-400/25 to-transparent animate-pulse opacity-25"></div>
+        <div className="absolute bottom-1/3 left-0 w-full h-px bg-lineard-to-r from-transparent via-blue-300/20 dark:via-blue-400/20 to-transparent animate-pulse delay-1000 opacity-20"></div>
 
         {/* Professional Geometric Elements - Mode Responsive */}
-        <div className="absolute top-1/6 right-1/4 w-2 h-32 bg-gradient-to-b from-blue-400/25 dark:from-purple-400/25 to-transparent animate-pulse delay-300 opacity-30"></div>
-        <div className="absolute bottom-1/5 left-1/3 w-2 h-24 bg-gradient-to-t from-blue-300/22 dark:from-indigo-400/22 to-transparent animate-pulse delay-800 opacity-25"></div>
+        <div className="absolute top-1/6 right-1/4 w-2 h-32 bg-linear-to-b from-blue-400/25 dark:from-purple-400/25 to-transparent animate-pulse delay-300 opacity-30"></div>
+        <div className="absolute bottom-1/5 left-1/3 w-2 h-24 bg-linear-to-t from-blue-300/22 dark:from-indigo-400/22 to-transparent animate-pulse delay-800 opacity-25"></div>
 
         {/* Subtle Corner Accents - Mode Responsive */}
         <div className="absolute top-0 left-0 w-32 h-32 border-l border-t border-blue-300/30 dark:border-purple-400/30 opacity-25"></div>
@@ -104,7 +104,7 @@ export default function Hero() {
             <span className="text-yellow-400 dark:text-blue-400">
               {t("title_highlight")}
             </span>
-            <span className="inline-block animate-bounce bg-gradient-to-r from-red-200 via-green-500 to-red-400 dark:from-blue-400 dark:via-red-400 dark:to-blue-400 bg-clip-text text-transparent">
+            <span className="inline-block animate-bounce bg-linear-to-r from-red-200 via-green-500 to-red-400 dark:from-blue-400 dark:via-red-400 dark:to-blue-400 bg-clip-text text-transparent">
               .
             </span>
           </h1>
@@ -136,7 +136,7 @@ export default function Hero() {
           {/* Animated Logo Container */}
           <div className="relative flex items-center justify-center group">
             {/* Logo Glow Effect */}
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 via-purple-500/10 to-cyan-500/20 dark:from-purple-500/20 dark:via-blue-500/10 dark:to-indigo-500/20 rounded-full blur-3xl animate-pulse opacity-0 group-hover:opacity-60 transition-opacity duration-700"></div>
+            <div className="absolute inset-0 bg-linear-to-r from-blue-500/20 via-purple-500/10 to-cyan-500/20 dark:from-purple-500/20 dark:via-blue-500/10 dark:to-indigo-500/20 rounded-full blur-3xl animate-pulse opacity-0 group-hover:opacity-60 transition-opacity duration-700"></div>
 
             {/* Floating Ring Animation */}
             <div className="absolute inset-0 w-full h-full">
@@ -156,7 +156,7 @@ export default function Hero() {
             {/* Main Logo with Enhanced Animations */}
             <div className="relative z-10 animate-fadeInUp delay-700">
               <Image
-                src="/assets/DLT_B.png"
+                src="/assets/DLTGlass.png"
                 alt="Delightech Logo"
                 width={1000}
                 height={700}
@@ -170,15 +170,15 @@ export default function Hero() {
               className="absolute inset-0 w-full h-full animate-spin"
               style={{ animationDuration: "30s" }}
             >
-              <div className="absolute top-10 left-1/2 w-2 h-2 bg-blue-400/60 dark:bg-purple-400/60 rounded-full animate-pulse"></div>
-              <div className="absolute bottom-10 left-1/2 w-1.5 h-1.5 bg-cyan-400/50 dark:bg-indigo-400/50 rounded-full animate-pulse delay-500"></div>
-              <div className="absolute top-1/2 left-10 w-1 h-1 bg-blue-300/40 dark:bg-violet-300/40 rounded-full animate-pulse delay-1000"></div>
-              <div className="absolute top-1/2 right-10 w-1 h-1 bg-indigo-400/40 dark:bg-blue-400/40 rounded-full animate-pulse delay-1500"></div>
+              <div className="absolute top-10 left-1/2 w-2 h-2 bg-blue-400/60 dark:bg-blue-400/60 rounded-full animate-pulse"></div>
+              <div className="absolute bottom-10 left-1/2 w-1.5 h-1.5 bg-cyan-400/50 dark:bg-blue-400/50 rounded-full animate-pulse delay-500"></div>
+              <div className="absolute top-1/2 left-10 w-1 h-1 bg-blue-300/40 dark:bg-blue-300/40 rounded-full animate-pulse delay-1000"></div>
+              <div className="absolute top-1/2 right-10 w-1 h-1 bg-blue-400/40 dark:bg-blue-400/40 rounded-full animate-pulse delay-1500"></div>
             </div>
 
             {/* Gradient Border Animation */}
             <div
-              className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-500 dark:from-purple-500 dark:via-blue-500 dark:to-indigo-500 opacity-0 group-hover:opacity-20 transition-opacity duration-500 animate-gradientSpin blur-sm"
+              className="absolute inset-0 rounded-full bg-linear-to-r from-blue-500 via-blue-500 to-cyan-500 dark:from-blue-500 dark:via-blue-500 dark:to-indigo-500 opacity-0 group-hover:opacity-20 transition-opacity duration-500 animate-gradientSpin blur-sm"
               style={{ padding: "2px" }}
             ></div>
           </div>
