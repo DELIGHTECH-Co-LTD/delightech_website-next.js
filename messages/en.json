@@ -273,13 +273,9 @@
     "cookie_policy": "Cookie Policy",
     "status": "Proudly serving customers across Cambodia",
     "links": {
-<<<<<<< HEAD
-      "store": "Find Us",
-=======
       "store": "Find our Location",
       "signin": "Sign In",
       "join": "Join Now",
->>>>>>> sunly
       "contact": "Contact Support"
     },
     "Navbar": {
