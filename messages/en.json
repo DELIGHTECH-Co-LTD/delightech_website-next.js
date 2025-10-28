@@ -32,7 +32,6 @@
       },
       "collaboration": {
         "title": "Transparency",
-        "title": "Transparency",
         "description": "We provide clear terms, fair policies, and honest communication—so our users always know exactly what they’re getting."
       },
       "innovation": {
@@ -159,7 +158,7 @@
       "reaksa": {
         "name": "Pheng Reaksa",
         "position": "Business Advisor",
-        "bio": "Reaksa brings a wealth of business strategy and advisory experience, helping Delightech navigate complex markets and partnerships. His insights are key to our sustainable growth."
+        "bio": "Mr. Reaksa brings a wealth of business strategy and advisory experience, helping Delightech navigate complex markets and partnerships. His insights are key to our sustainable growth."
       },
       "chenda": {
         "name": "Ly Chenda",
@@ -299,10 +298,16 @@
         "details": "Bomnin is an educational platform focused on financial literacy and life education. It aims to empower individuals with practical knowledge about money management, financial planning, saving, investing, and living a better life"
       },
       "2019": {
-        "year": "2019",
+        "year": "2021",
         "title": "LUYLEUN",
         "desc": "Mobile app",
         "details": "Luyleun is a digital platform that helps banks and financial institutions seamlessly support their customers daily needs with efficiency and ease. We believe that innovative technology combined with active engagement can create opportunities and improve everyday lives across the country."
+      },
+      "2016": {
+        "year": "2018",
+        "title": "Delightech Milestone",
+        "desc": "Delightech launches new AI-powered financial platform",
+        "details": "In 2018, Delightech introduced its next generation financial platform, leveraging technology to deliver smarter, faster, and more secure financial services for Cambodians."
       }
     }
   },
@@ -334,21 +339,21 @@
   },
   "InvestorPage": {
     "hero": {
-      "badge": "Investment Opportunity",
-      "title": "INVESTOR",
-      "title_highlight": "RELATIONS",
+      "badge": "Opportunity",
+      "title": "INVESTMENT",
+      "title_highlight": "OPPORTUNITY",
       "description": "Join us in building the future of financial technology in Southeast Asia. Discover investment opportunities with Delightech's innovative solutions."
     },
     "opportunity": {
       "badge": "Investment",
       "title": "Investment",
       "title_highlight": "Opportunity",
-      "description": "Discover why Delightech represents a compelling investment opportunity in Southeast Asia's rapidly growing fintech sector.",
+      "description": "Discover why Delightech represents a compelling investment opportunity in Southeast Asia's for you...",
       "why_invest": {
         "title": "Why Invest in Delightech?",
         "points": {
           "point1": "Leading fintech innovation in Cambodia and Southeast Asia",
-          "point2": "LUYLEUN app with growing user base and market penetration",
+          "point2": "LUYLEUN Mobile App with growing user base and market penetration",
           "point3": "High-growth industry with strong demand",
           "point4": "Experienced leadership team with proven track record",
           "point5": "Strong partnerships and regulatory compliance",
@@ -436,7 +441,7 @@
       "investor_relations": {
         "title": "Investor Relations",
         "email": "investors@Delightech.com",
-        "phone": "+855 (0) 23 123 456",
+        "phone": "+855 (0) 10 269 769",
         "address": "Phnom Penh, Cambodia"
       },
       "investment_range": {
@@ -482,9 +487,9 @@
     },
     "contactInfo": {
       "address": "Chamkar Mon Tonle Bassac, 206 D Preah Norodom Blvd, Phnom Penh, Cambodia",
-      "phone": "+855 (0) 123 456 789",
+      "phone": "+855 (0) 10 269 769",
       "email": "info@delightech.com",
-      "hours": "Mon - Sun: 8AM - 6PM"
+      "hours": "Mon - Fri: 8AM - 5PM"
     }
   },
   "ContactPage": {
@@ -494,8 +499,6 @@
     "description": "We're here to help and answer any question you might have. We look forward to hearing from you."
   },
   "Calculator": {
-    "title": "Financial",
-    "title_highlight": "Calculator",
     "title": "Financial",
     "title_highlight": "Calculator",
     "description": "Plan your financial future with our comprehensive calculators for loans, investments, and savings goals.",
