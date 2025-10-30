@@ -10,7 +10,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen bg-blue-700 from-gray-900 via-black to-slate-900 dark:bg-gradient-to-br dark:from-gray-900 dark:via-black dark:to-slate-900 flex flex-col lg:flex-row items-center justify-center lg:px-20 overflow-hidden gap-20 transition-all duration-700"
+      className="relative min-h-screen bg-blue-700 from-gray-900 via-black to-slate-900 dark:bg-linear-to-br dark:from-gray-900 dark:via-black dark:to-slate-900 flex flex-col lg:flex-row items-center justify-center lg:px-20 overflow-hidden gap-20 transition-all duration-700"
     >
       {/* Professional Background Animations */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -18,10 +18,10 @@ export default function Hero() {
         <div className="absolute inset-0 bg-linear-to-br from-blue-700/15 via-blue-800/12 to-blue-900/15 dark:from-blue-500/15 dark:via-purple-600/12 dark:to-indigo-600/15 animate-gradientFlow opacity-60"></div>
 
         {/* Secondary Animated Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-tl from-blue-800/10 via-blue-700/15 to-blue-950/12 dark:from-purple-600/10 dark:via-blue-500/15 dark:to-slate-700/12 animate-gradientFlowReverse opacity-50"></div>
+        <div className="absolute inset-0 bg-linear-to-tl from-blue-800/10 via-blue-700/15 to-blue-950/12 dark:from-purple-600/10 dark:via-blue-500/15 dark:to-slate-700/12 animate-gradientFlowReverse opacity-50"></div>
 
         {/* Dynamic Background Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-blue-950/70 via-blue-900/30 to-blue-800/50 dark:from-black/70 dark:via-gray-900/30 dark:to-slate-800/50 transition-all duration-700"></div>
+        <div className="absolute inset-0 bg-linear-to-t from-blue-950/70 via-blue-900/30 to-blue-800/50 dark:from-black/70 dark:via-gray-900/30 dark:to-slate-800/50 transition-all duration-700"></div>
 
         {/* Animated Background Clouds for Light Mode */}
         <div className="absolute inset-0 block dark:hidden">
@@ -69,7 +69,7 @@ export default function Hero() {
         </div>
 
         {/* Professional Grid Pattern */}
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:50px_50px] opacity-30"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-size:50px_50px opacity-30"></div>
 
         {/* Floating Gradient Orbs - Mode Responsive */}
         <div className="absolute top-20 left-20 w-96 h-96 bg-linear-to-r from-blue-600/12 to-blue-700/15 dark:from-purple-600/12 dark:to-blue-600/15 rounded-full blur-3xl animate-pulse opacity-40"></div>

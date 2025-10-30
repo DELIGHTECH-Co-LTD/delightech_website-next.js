@@ -217,12 +217,12 @@ export default function MissionAndValues() {
               >
                 {/* Background Gradient */}
                 <div
-                  className={`absolute inset-0 bg-gradient-to-br ${value.from}/5 via-transparent ${value.to}/5 ${value.darkFrom}/10 dark:via-transparent ${value.darkTo}/10 transition-opacity duration-500 group-hover:opacity-100`}
+                  className={`absolute inset-0 bg-linear-to-br ${value.from}/5 via-transparent ${value.to}/5 ${value.darkFrom}/10 dark:via-transparent ${value.darkTo}/10 transition-opacity duration-500 group-hover:opacity-100`}
                 />
 
                 {/* Glowing Effect */}
                 <div
-                  className={`absolute -inset-1 bg-gradient-to-r ${value.from} ${value.to} rounded-xl opacity-0 group-hover:opacity-20 blur-xl transition-all duration-500`}
+                  className={`absolute -inset-1 bg-linear-to-r ${value.from} ${value.to} rounded-xl opacity-0 group-hover:opacity-20 blur-xl transition-all duration-500`}
                 />
 
                 {/* Content Container */}
@@ -234,7 +234,7 @@ export default function MissionAndValues() {
                         className={`absolute -inset-4 ${value.bgColor} ${value.darkBgColor} rounded-full blur-lg group-hover:animate-pulse transition-opacity duration-500`}
                       />
                       <div
-                        className={`relative flex items-center justify-center w-16 h-16 bg-gradient-to-br ${value.from} ${value.to} ${value.darkFrom} ${value.darkTo} rounded-2xl transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-6`}
+                        className={`relative flex items-center justify-center w-16 h-16 bg-linear-to-br ${value.from} ${value.to} ${value.darkFrom} ${value.darkTo} rounded-2xl transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-6`}
                       >
                         <value.icon className="w-8 h-8 text-white transform transition-transform duration-500 group-hover:scale-110" />
                       </div>
@@ -255,7 +255,7 @@ export default function MissionAndValues() {
 
                   {/* Bottom Accent */}
                   <div
-                    className={`mt-6 h-1 bg-gradient-to-r ${value.from} ${value.to} ${value.darkFrom} ${value.darkTo} rounded-full transform origin-left transition-all duration-500 scale-x-0 group-hover:scale-x-100`}
+                    className={`mt-6 h-1 bg-linear-to-r ${value.from} ${value.to} ${value.darkFrom} ${value.darkTo} rounded-full transform origin-left transition-all duration-500 scale-x-0 group-hover:scale-x-100`}
                   />
                 </div>
               </div>
