@@ -96,7 +96,7 @@ export default function OurCorporate() {
                   <p className="text-muted-foreground text-sm leading-relaxed">
                     {feature.description}
                   </p>
-                  <div className="mt-4 w-12 h-[2px] bg-blue-600 dark:bg-blue-400 mx-auto group-hover:w-20 transition-all duration-300"></div>
+                  <div className="mt-4 w-12 h-2px bg-blue-600 dark:bg-blue-400 mx-auto group-hover:w-20 transition-all duration-300"></div>
                 </div>
               </div>
             );

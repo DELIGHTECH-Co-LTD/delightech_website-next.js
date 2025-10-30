@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -11,11 +13,6 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Send } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Careers",
-};
 
 const jobs = [
   {
@@ -34,6 +31,32 @@ const jobs = [
 
 export default function CareerPage() {
   const t = useTranslations("Careers");
+  const observerRef = useRef<IntersectionObserver | null>(null);
+
+  useEffect(() => {
+    observerRef.current = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("fade-in-visible");
+          }
+        });
+      },
+      {
+        threshold: 0.15,
+        rootMargin: "0px 0px -80px 0px",
+      }
+    );
+
+    const elements = document.querySelectorAll(".fade-in-section");
+    elements.forEach((el) => observerRef.current?.observe(el));
+
+    return () => {
+      if (observerRef.current) {
+        observerRef.current.disconnect();
+      }
+    };
+  }, []);
 
   return (
     <section
@@ -42,7 +65,7 @@ export default function CareerPage() {
     >
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 fade-in-section">
           <Badge
             variant="secondary"
             className="mb-4 text-sm uppercase tracking-wider"
@@ -84,7 +107,7 @@ export default function CareerPage() {
               <CardHeader>
                 <CardTitle className="text-2xl">{job.title}</CardTitle>
               </CardHeader>
-              <CardContent className="flex-grow">
+              <CardContent className="grow">
                 <CardDescription className="text-base">
                   {job.desc}
                 </CardDescription>
@@ -127,6 +150,21 @@ export default function CareerPage() {
           </div>
         </div>
       </div>
+
+      <style jsx global>{`
+        .fade-in-section {
+          opacity: 0;
+          transform: translateY(50px);
+          transition:
+            opacity 0.8s ease-out,
+            transform 0.8s ease-out;
+        }
+
+        .fade-in-visible {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      `}</style>
     </section>
   );
 }

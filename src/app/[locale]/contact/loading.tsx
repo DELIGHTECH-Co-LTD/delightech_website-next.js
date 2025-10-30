@@ -65,7 +65,7 @@ export default function Loading() {
                     key={i}
                     className="flex items-start space-x-4 p-6 bg-muted/50 rounded-lg"
                   >
-                    <Skeleton className="h-10 w-10 rounded-full flex-shrink-0" />
+                    <Skeleton className="h-10 w-10 rounded-full shrink-0" />
                     <div className="space-y-2 flex-1">
                       <Skeleton className="h-5 w-24" />
                       <Skeleton className="h-4 w-48" />

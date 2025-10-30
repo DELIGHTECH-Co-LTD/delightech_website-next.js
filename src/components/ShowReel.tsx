@@ -128,7 +128,7 @@ export default function ShowReel() {
             {!isPlaying && (
               <>
                 {/* Video Overlay - Team style gradient */}
-                <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/40 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500 pointer-events-none"></div>
+                <div className="absolute inset-0 bg-linear-to-t from-background/80 via-background/40 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500 pointer-events-none"></div>
 
                 {/* Play Button */}
                 <button
@@ -148,7 +148,7 @@ export default function ShowReel() {
                 </button>
 
                 {/* Team-style Hover Glow Effect */}
-                <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 bg-gradient-to-r from-blue-600/5 via-purple-600/5 to-blue-600/5 pointer-events-none transition-opacity duration-500"></div>
+                <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 bg-linear-to-r from-blue-600/5 via-purple-600/5 to-blue-600/5 pointer-events-none transition-opacity duration-500"></div>
               </>
             )}
           </div>
@@ -164,7 +164,7 @@ export default function ShowReel() {
             <p className="text-muted-foreground text-sm mb-4">
               {videos[activeVideoIndex].description}
             </p>
-            <div className="w-16 h-[2px] bg-blue-600 dark:bg-blue-400 mx-auto group-hover:w-32 transition-all duration-300"></div>
+            <div className="w-16 h-2px bg-blue-600 dark:bg-blue-400 mx-auto group-hover:w-32 transition-all duration-300"></div>
           </div>
 
           {/* Decorative Elements */}
@@ -208,7 +208,7 @@ export default function ShowReel() {
                       }}
                     />
                   ) : (
-                    <div className="w-full h-full bg-gradient-to-br from-blue-400 to-purple-500" />
+                    <div className="w-full h-full bg-linear-to-br from-blue-400 to-blue-600" />
                   )}
 
                   {/* Play Icon */}

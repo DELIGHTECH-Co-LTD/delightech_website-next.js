@@ -121,8 +121,8 @@ export default function Services() {
                     <div
                       className={`absolute -top-3 left-0 w-16 h-1 rounded-full ${
                         unit.type === "subscription"
-                          ? "bg-gradient-to-r from-green-500 to-emerald-500"
-                          : "bg-gradient-to-r from-blue-500 to-blue-600"
+                          ? "bg-linear-to-r from-green-500 to-emerald-500"
+                          : "bg-linear-to-r from-blue-500 to-blue-600"
                       }`}
                     ></div>
 
@@ -144,10 +144,10 @@ export default function Services() {
                             href={unit.playStoreUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="group relative overflow-hidden inline-flex items-center justify-center gap-3 px-6 py-4 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white rounded-xl transition-all duration-300 active:scale-95 min-h-[64px] shadow-lg hover:shadow-xl hover:shadow-blue-500/25"
+                            className="group relative overflow-hidden inline-flex items-center justify-center gap-3 px-6 py-4 bg-linear-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white rounded-xl transition-all duration-300 active:scale-95 min-h-64px shadow-lg hover:shadow-xl hover:shadow-blue-500/25"
                           >
                             {/* Shine Effect */}
-                            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 group-hover:animate-pulse transition-opacity duration-300"></div>
+                            <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 group-hover:animate-pulse transition-opacity duration-300"></div>
 
                             <svg
                               className="w-7 h-7 sm:w-8 sm:h-8 relative z-10"
@@ -170,10 +170,10 @@ export default function Services() {
                             href={unit.appStoreUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="group relative overflow-hidden inline-flex items-center justify-center gap-3 px-6 py-4 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white rounded-xl transition-all duration-300 active:scale-95 min-h-[64px] shadow-lg hover:shadow-xl hover:shadow-blue-500/25"
+                            className="group relative overflow-hidden inline-flex items-center justify-center gap-3 px-6 py-4 bg-linear-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white rounded-xl transition-all duration-300 active:scale-95 min-h-64px shadow-lg hover:shadow-xl hover:shadow-blue-500/25"
                           >
                             {/* Shine Effect */}
-                            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 group-hover:animate-pulse transition-opacity duration-300"></div>
+                            <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 group-hover:animate-pulse transition-opacity duration-300"></div>
 
                             <svg
                               className="w-7 h-7 sm:w-8 sm:h-8 relative z-10"
@@ -208,11 +208,11 @@ export default function Services() {
                         <Button
                           asChild
                           size="lg"
-                          className="group relative overflow-hidden w-full sm:w-auto min-h-[64px] text-base sm:text-lg gap-3 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 shadow-lg hover:shadow-xl hover:shadow-green-500/25 transition-all duration-300"
+                          className="group relative overflow-hidden w-full sm:w-auto min-h-64px text-base sm:text-lg gap-3 bg-linear-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 shadow-lg hover:shadow-xl hover:shadow-green-500/25 transition-all duration-300"
                         >
                           <a href={unit.subscribeUrl} className="relative z-10">
                             {/* Shine Effect */}
-                            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 group-hover:animate-pulse transition-opacity duration-300"></div>
+                            <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 group-hover:animate-pulse transition-opacity duration-300"></div>
                             <Bell className="w-6 h-6 sm:w-7 sm:h-7 group-hover:animate-bounce" />
                             <span className="font-semibold">Subscribe Now</span>
                           </a>
