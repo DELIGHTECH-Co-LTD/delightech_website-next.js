@@ -1,7 +1,7 @@
 "use client";
 
 import { Play, Pause } from "lucide-react";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Badge } from "@/components/ui/badge";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
@@ -83,27 +83,36 @@ export default function ShowReel() {
       />
 
       <div className="relative max-w-6xl mx-auto z-10">
-        {/* Header */}
-        <div className="text-center mb-16">
+        {/* Header with USAL fade-up animation */}
+        <div className="text-center mb-16" data-usal="fade-u duration-1000">
           <Badge
             variant="secondary"
             className="mb-4 text-sm uppercase tracking-wider"
           >
             {t("badge")}
           </Badge>
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 uppercase">
+          <h2
+            className="text-4xl md:text-5xl font-bold text-foreground mb-4 uppercase"
+            data-usal="fade-u duration-1000 delay-200"
+          >
             {t("title")}{" "}
             <span className="text-blue-700 dark:text-blue-700">
               {t("title_highlight")}
             </span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
+          <p
+            className="text-muted-foreground text-lg max-w-3xl mx-auto"
+            data-usal="fade-u duration-1000 delay-400"
+          >
             {t("description")}
           </p>
         </div>
 
-        {/* Video Container */}
-        <div className="relative mx-auto group">
+        {/* Video Container with zoom-in animation */}
+        <div
+          className="relative mx-auto group"
+          data-usal="zoomin duration-1200 delay-600"
+        >
           <div className="relative w-full aspect-video overflow-hidden rounded-2xl shadow-2xl shadow-blue-500/25 bg-card border border-border">
             <iframe
               ref={iframeRef}
@@ -145,7 +154,10 @@ export default function ShowReel() {
           </div>
 
           {/* Caption with Team-style decorative line */}
-          <div className="mt-6 text-center">
+          <div
+            className="mt-6 text-center"
+            data-usal="fade-u duration-800 delay-800"
+          >
             <h3 className="text-xl font-semibold text-foreground mb-2">
               {videos[activeVideoIndex].title}
             </h3>
@@ -160,7 +172,7 @@ export default function ShowReel() {
           <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-purple-600/10 dark:bg-purple-400/10 rounded-full filter blur-2xl pointer-events-none"></div>
         </div>
 
-        {/* Video Playlist */}
+        {/* Video Playlist with staggered animations */}
         <div className="mt-16">
           {/* Video Thumbnails Grid */}
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -168,10 +180,11 @@ export default function ShowReel() {
               <button
                 key={index}
                 onClick={() => handleVideoSelect(index)}
+                data-usal={`fade-u duration-800 delay-${1000 + index * 150}`}
                 className={`group relative rounded-xl overflow-hidden transition-all duration-500 ${
                   activeVideoIndex === index
                     ? "ring-2 ring-blue-600 dark:ring-blue-400 scale-105"
-                    : "hover:scale-102"
+                    : "hover:scale-105 hover:-translate-y-1"
                 }`}
               >
                 {/* Thumbnail Container */}
@@ -181,7 +194,7 @@ export default function ShowReel() {
                       src={getYouTubeThumbnail(video.embedUrl)!}
                       alt={`${video.title} thumbnail`}
                       fill
-                      className="object-cover"
+                      className="object-cover transition-transform duration-500 group-hover:scale-110"
                       sizes="(max-width: 768px) 50vw, 25vw"
                       onError={(e) => {
                         // Fallback to lower quality thumbnail

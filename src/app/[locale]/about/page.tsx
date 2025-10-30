@@ -13,6 +13,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   const t = useTranslations("AboutPage");
+
   return (
     <>
       {/* Hero Section with Vision */}
@@ -25,6 +26,7 @@ export default function AboutPage() {
           color="#ffffff"
           size={0.8}
         />
+
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
@@ -50,18 +52,33 @@ export default function AboutPage() {
 
         <div className="relative z-10 flex flex-col items-center justify-center px-8 md:px-24">
           <div className="text-center max-w-4xl">
-            <h2 className="text-white text-4xl md:text-6xl font-bold mb-6">
+            <h2
+              className="text-white text-4xl md:text-6xl font-bold mb-6"
+              data-usal="zoomin blur duration-1500"
+            >
               {t("vision_title")}
             </h2>
-            <p className="text-blue-100 text-xl md:text-2xl leading-relaxed">
+            <p
+              className="text-blue-100 text-xl md:text-2xl leading-relaxed"
+              data-usal="fade-u duration-1200 delay-400"
+            >
               {t("vision_description")}
             </p>
           </div>
         </div>
       </section>
-      <MissionAndValues />
-      <MessageFrom />
-      <History />
+
+      <div data-usal="fade-u duration-1000">
+        <MissionAndValues />
+      </div>
+
+      <div data-usal="fade-u duration-1000">
+        <MessageFrom />
+      </div>
+
+      <div data-usal="fade-u duration-1000">
+        <History />
+      </div>
     </>
   );
 }

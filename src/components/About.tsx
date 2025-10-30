@@ -19,7 +19,7 @@ export default function About() {
           {t("title")}
         </h2>
 
-        <h3 className="text-white text-2xl md:text-4xl font-bold leading-relaxed">
+        <h3 data-usal="fade-u split-word split-delay-200" className="text-white text-2xl md:text-4xl font-bold leading-relaxed">
           "{t("quote")}"
         </h3>
 

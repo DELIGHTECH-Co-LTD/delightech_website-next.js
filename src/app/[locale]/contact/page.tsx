@@ -7,7 +7,6 @@ import { getTranslations } from "next-intl/server";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("ContactPage");
-
   return {
     title: t("badge"),
   };
@@ -24,20 +23,30 @@ export default function ContactPage() {
           <Badge
             variant="secondary"
             className="mb-4 text-sm uppercase tracking-wider"
+            data-usal="zoomin duration-500"
           >
             {t("badge")}
           </Badge>
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 uppercase">
+          <h2
+            className="text-4xl md:text-5xl font-bold text-foreground mb-4 uppercase"
+            data-usal="fade-u split-letter split-delay-50 duration-750 delay-200"
+          >
             {t("title")}{" "}
             <span className="text-blue-600 dark:text-blue-700">
               {t("title_highlight")}
             </span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
+          <p
+            className="text-muted-foreground text-lg max-w-3xl mx-auto"
+            data-usal="fade-u duration-500 delay-400"
+          >
             {t("description")}
           </p>
         </div>
-        <ContactForm />
+
+        <div data-usal="zoomin-u blur duration-600 delay-600">
+          <ContactForm />
+        </div>
       </div>
     </section>
   );
