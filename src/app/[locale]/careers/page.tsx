@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -11,11 +13,6 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Send } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Careers",
-};
 
 const jobs = [
   {
@@ -34,6 +31,32 @@ const jobs = [
 
 export default function CareerPage() {
   const t = useTranslations("Careers");
+  const observerRef = useRef<IntersectionObserver | null>(null);
+
+  useEffect(() => {
+    observerRef.current = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("fade-in-visible");
+          }
+        });
+      },
+      {
+        threshold: 0.15,
+        rootMargin: "0px 0px -80px 0px",
+      }
+    );
+
+    const elements = document.querySelectorAll(".fade-in-section");
+    elements.forEach((el) => observerRef.current?.observe(el));
+
+    return () => {
+      if (observerRef.current) {
+        observerRef.current.disconnect();
+      }
+    };
+  }, []);
 
   return (
     <section
@@ -42,7 +65,7 @@ export default function CareerPage() {
     >
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 fade-in-section">
           <Badge
             variant="secondary"
             className="mb-4 text-sm uppercase tracking-wider"
@@ -69,7 +92,8 @@ export default function CareerPage() {
           {jobs.map((job, i) => (
             <Card
               key={i}
-              className="hover:border-blue-600 dark:hover:border-blue-500 transition-all duration-300 hover:shadow-lg flex flex-col"
+              className="hover:border-blue-600 dark:hover:border-blue-500 transition-all duration-300 hover:shadow-lg flex flex-col fade-in-section"
+              style={{ transitionDelay: `${i * 100}ms` }}
             >
               <CardHeader>
                 <CardTitle className="text-2xl">{job.title}</CardTitle>
@@ -89,7 +113,7 @@ export default function CareerPage() {
         </div>
 
         {/* CTA Section */}
-        <div className="text-center pt-12 border-t border-border">
+        <div className="text-center pt-12 border-t border-border fade-in-section">
           <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-4 uppercase">
             {t("cta.title")}{" "}
             <span className="text-blue-600 dark:text-blue-700">
@@ -109,6 +133,21 @@ export default function CareerPage() {
           </Button>
         </div>
       </div>
+
+      <style jsx global>{`
+        .fade-in-section {
+          opacity: 0;
+          transform: translateY(50px);
+          transition:
+            opacity 0.8s ease-out,
+            transform 0.8s ease-out;
+        }
+
+        .fade-in-visible {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      `}</style>
     </section>
   );
 }

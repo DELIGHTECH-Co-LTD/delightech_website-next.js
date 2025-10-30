@@ -1,18 +1,42 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import History from "@/components/History";
 import { useTranslations } from "next-intl";
 import MessageFrom from "@/components/MessageFrom";
-import { Metadata } from "next";
 import MissionAndValues from "@/components/MissionAndValues";
 import { Particles } from "@/components/ui/shadcn-io/particles";
 
-export const metadata: Metadata = {
-  title: "About Us",
-};
-
 export default function AboutPage() {
   const t = useTranslations("AboutPage");
+  const observerRef = useRef<IntersectionObserver | null>(null);
+
+  useEffect(() => {
+    observerRef.current = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("fade-in-visible");
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+        rootMargin: "0px 0px -100px 0px",
+      }
+    );
+
+    const elements = document.querySelectorAll(".fade-in-section");
+    elements.forEach((el) => observerRef.current?.observe(el));
+
+    return () => {
+      if (observerRef.current) {
+        observerRef.current.disconnect();
+      }
+    };
+  }, []);
+
   return (
     <>
       {/* Hero Section with Vision */}
@@ -59,9 +83,33 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-      <MissionAndValues />
-      <MessageFrom />
-      <History />
+
+      <div className="fade-in-section">
+        <MissionAndValues />
+      </div>
+
+      <div className="fade-in-section">
+        <MessageFrom />
+      </div>
+
+      <div className="fade-in-section">
+        <History />
+      </div>
+
+      <style jsx global>{`
+        .fade-in-section {
+          opacity: 0;
+          transform: translateY(50px);
+          transition:
+            opacity 0.8s ease-out,
+            transform 0.8s ease-out;
+        }
+
+        .fade-in-visible {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      `}</style>
     </>
   );
 }
