@@ -1,8 +1,9 @@
 "use client";
-import React, { useEffect, useRef } from "react";
-import Calculator from "@/components/Calculator";
 
-export default function CalculatorPage() {
+import React, { useEffect, useRef } from "react";
+import Services from "@/components/Services";
+
+export default function ServicesPage() {
   const observerRef = useRef<IntersectionObserver | null>(null);
 
   useEffect(() => {
@@ -31,9 +32,9 @@ export default function CalculatorPage() {
   }, []);
 
   return (
-    <main className="min-h-screen bg-background">
+    <div>
       <div className="fade-in-section">
-        <Calculator />
+        <Services />
       </div>
 
       <style jsx global>{`
@@ -50,6 +51,6 @@ export default function CalculatorPage() {
           transform: translateY(0);
         }
       `}</style>
-    </main>
+    </div>
   );
 }

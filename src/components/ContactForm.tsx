@@ -54,7 +54,7 @@ export default function ContactForm() {
       if (!response.ok) {
         toast.error("Form Submission unsuccessful");
         setIsLoading(false);
-        return; 
+        return;
       }
       toast.success("Form Submission successful.");
       setIsSubmitted(true);
