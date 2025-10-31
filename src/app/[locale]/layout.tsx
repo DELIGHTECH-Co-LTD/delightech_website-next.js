@@ -27,10 +27,32 @@ const kantumruy = Kantumruy_Pro({
 });
 
 export const metadata: Metadata = {
-  title: { default: "Delightech", template: "%s - Delightech" },
+  title: {
+    default: "Delightech",
+    template: "%s - Delightech",
+  },
   description: "Everyone can access finances.",
+  openGraph: {
+    title: "Delightech",
+    description: "Everyone can access finances.",
+    url: "https://delightech.asia",
+    siteName: "Delightech",
+    images: [
+      {
+        url: "https://delightech.asia/opengraph-image.png", // Must be absolute URL
+        width: 1200,
+        height: 630,
+        alt: "Delightech Cover",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
   twitter: {
     card: "summary_large_image",
+    title: "Delightech",
+    description: "Everyone can access finances.",
+    images: ["https://delightech.asia/opengraph-image.png"],
   },
 };
 
