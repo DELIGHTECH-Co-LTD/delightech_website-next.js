@@ -65,7 +65,7 @@
   "Hero": {
     "subtitle": "At Delightech Co., Ltd., we specialize in creating technology-driven financial solutions that make life easier, faster, and more secure. Our flagship product, LUYLEUN, is redefining access to instant loans in Cambodia.",
     "description": "Transforming ideas into digital reality with cutting-edge technology and innovative solutions.",
-    "title": "Everyone can Access",
+    "title": "Everyone CAN Access",
     "title_highlight": "Finances",
     "contact_us": "Contact Us",
     "trusted_customers": "Trusted of Customer 10000000+"
@@ -83,11 +83,11 @@
     "luyleun": {
       "name": "LUYLEUN Mobile App",
       "description": "Luyleun is a digital platform that helps banks and financial institutions seamlessly support their customers daily needs with efficiency and ease. We believe that innovative technology combined with active engagement can create opportunities and improve everyday lives across the country.",
-      "badge": "Fintech"
+      "badge": "FinTech"
     },
     "bomnin": {
-      "name": "BOM NIN",
-      "description": "Bamnin is an educational platform focused on financial literacy and life education. It aims to empower individuals with practical knowledge about money management, financial planning, saving, investing, and living a better life.",
+      "name": "BOMNIN",
+      "description": "Bomnin is an educational platform focused on financial literacy and life education. It aims to empower individuals with practical knowledge about money management, financial planning, saving, investing, and living a better life.",
       "badge": "Education Hub"
     },
     "learn_more": "Learn More",
@@ -146,42 +146,42 @@
     "description": "Our team of visionary leaders brings together decades of experience, innovation, and passion — driving our company to new heights.",
     "members": {
       "vila": {
-        "name": "Lay Vila",
-        "position": "CEO & Founder",
+        "name": "LAY Vila",
+        "position": "Founder & CEO",
         "bio": "Visionary leader with over 10 years of experience in fintech and technology innovation. Under his leadership, Delightech has grown from a startup to Cambodia's leading fintech company. His strategic vision and deep understanding of the Southeast Asian market make him uniquely positioned to drive the company's continued growth and expansion."
       },
       "krisna": {
-        "name": "Ke Chankrisna",
+        "name": "KE Chankrisna",
         "position": "CTO",
         "bio": "Expert in software engineering and digital transformation, Krisna leads the technology team to deliver innovative financial solutions. He is passionate about building scalable platforms and driving technical excellence."
       },
       "reaksa": {
-        "name": "Pheng Reaksa",
+        "name": "PHENG Reaksa",
         "position": "Business Advisor",
         "bio": "Mr. Reaksa brings a wealth of business strategy and advisory experience, helping Delightech navigate complex markets and partnerships. His insights are key to our sustainable growth."
       },
       "chenda": {
-        "name": "Ly Chenda",
+        "name": "LY Chenda",
         "position": "Credit Assessment Supervisor",
         "bio": "Chenda oversees credit risk and assessment, ensuring responsible lending and financial stability for our customers. Her analytical skills and attention to detail are vital to our operations."
       },
       "pengsea": {
-        "name": "Ly Pengsea",
-        "position": "Account Supervisor",
+        "name": "LY Pengsea",
+        "position": "Finance Supervisor",
         "bio": "Pengsea manages financial accounts and reporting, maintaining transparency and accuracy in all company transactions. Her dedication supports our commitment to integrity."
       },
       "kimsrun": {
-        "name": "Chun Kimsrun",
+        "name": "CHUM Kimsrun",
         "position": "Marketing Supervisor",
         "bio": "Kimsrun leads marketing initiatives, driving brand awareness and customer engagement. His creativity and strategic thinking help us reach new audiences."
       },
       "leabheng": {
-        "name": "Meth Leapheng",
+        "name": "METH Leapheng",
         "position": "Human Resource",
         "bio": "Leapheng manages HR and talent development, fostering a culture of collaboration and growth. Her people-first approach ensures a supportive workplace."
       },
       "kimsrorng": {
-        "name": "Taing Kimsrorng",
+        "name": "TAING Kimsrorng",
         "position": "Collection Supervisor",
         "bio": "Kimsrorng oversees collections and customer relations, ensuring timely payments and positive client experiences. Her professionalism strengthens our reputation."
       }
@@ -255,9 +255,9 @@
   },
   "Footer": {
     "description": "We are a team of dynamic Cambodians with many years of experience in Financial Technology and Core Banking Systems.",
-    "location": "Chamkar Mon Tonle Bassac, 206 D Preah Norodom Blvd, Phnom Penh, Cambodia",
-    "phone": "+855 (0) 10 269 769",
-    "email": "info@delightech.com",
+    "location": "#0841 The Kampus Building Unit 2B, 2nd Floor, Preah Monivong Boulevard (93), Village 11, Sangkat Tonle Bassac, Khan Chamkarmon, Phnom Penh, Cambodia",
+    "phone": "+855 (0) 89 269 769",
+    "email": "info@delightech.asia",
     "company": "Company",
     "support": "Support",
     "stay_connected": "Stay Connected",
@@ -330,7 +330,7 @@
     "vision_description": "To revolutionize financial solutions through technology and to empower individuals and businesses worldwide to achieve financial freedom and stability.",
     "founder_message": {
       "title": "Message from Founder",
-      "subtitle": "Mr. Lay Vila, Founder of Delightech",
+      "subtitle": "Mr. LAY Vila, Founder of Delightech",
       "paragraph1": "At Delightech, our mission has always been to leverage technology to create financial solutions that are accessible, secure, and efficient for everyone. Since our founding in 2018, we have dedicated ourselves to empowering individuals and businesses to achieve financial stability and freedom.",
       "paragraph2": "We believe that innovation in financial technology is not just about tools and systems—it is about creating opportunities, building trust, and improving the everyday lives of people. Our team of passionate Cambodians is committed to driving meaningful change in the financial landscape, bridging the gap for those underserved, and helping everyone access the services they need seamlessly.",
       "paragraph3": "We are proud of how far we have come, and even more excited about the future we are building—one where financial inclusion and economic growth go hand in hand.....",
@@ -441,7 +441,7 @@
       "investor_relations": {
         "title": "Investor Relations",
         "email": "investors@Delightech.com",
-        "phone": "+855 (0) 10 269 769",
+        "phone": "+855 (0) 89 269 769",
         "address": "Phnom Penh, Cambodia"
       },
       "investment_range": {
@@ -486,9 +486,9 @@
       "other": "Other"
     },
     "contactInfo": {
-      "address": "Chamkar Mon Tonle Bassac, 206 D Preah Norodom Blvd, Phnom Penh, Cambodia",
-      "phone": "+855 (0) 10 269 769",
-      "email": "info@delightech.com",
+      "address": "#0841 The Kampus Building Unit 2B, 2nd Floor, Preah Monivong Boulevard (93), Village 11, Sangkat Tonle Bassac, Khan Chamkarmon, Phnom Penh, Cambodia",
+      "phone": "+855 (0) 89 269 769",
+      "email": "info@delightech.asia",
       "hours": "Mon - Sun​ : 8AM - 5PM"
     }
   },

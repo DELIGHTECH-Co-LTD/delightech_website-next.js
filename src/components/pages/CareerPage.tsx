@@ -106,7 +106,7 @@ export default function CareerPage() {
               <CardHeader>
                 <CardTitle className="text-2xl">{job.title}</CardTitle>
               </CardHeader>
-              <CardContent className="flex-grow">
+              <CardContent className="grow">
                 <CardDescription className="text-base">
                   {job.desc}
                 </CardDescription>

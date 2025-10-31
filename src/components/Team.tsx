@@ -14,6 +14,15 @@ export default function Team() {
   const teamMembers = [
     {
       id: 1,
+      name: t("members.reaksa.name"),
+      position: t("members.reaksa.position"),
+      image: "/assets/teams/reaksa.png",
+      linkedin:
+        "https://www.linkedin.com/in/raksapheng/?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
+      bio: t("members.reaksa.bio"),
+    },
+    {
+      id: 2,
       name: t("members.vila.name"),
       position: t("members.vila.position"),
       image: "/assets/teams/vila.png",
@@ -21,7 +30,7 @@ export default function Team() {
       bio: t("members.vila.bio"),
     },
     {
-      id: 2,
+      id: 3,
       name: t("members.krisna.name"),
       position: t("members.krisna.position"),
       image: "/assets/teams/krisna.png",
@@ -29,15 +38,15 @@ export default function Team() {
       bio: t("members.krisna.bio"),
     },
     {
-      id: 3,
-      name: t("members.reaksa.name"),
-      position: t("members.reaksa.position"),
-      image: "/assets/teams/reaksa.png",
-      linkedin: "https://www.linkedin.com/in/kosal-vathanak-446230283/",
-      bio: t("members.reaksa.bio"),
+      id: 4,
+      name: t("members.kimsrun.name"),
+      position: t("members.kimsrun.position"),
+      image: "/assets/teams/kimsrun.png",
+      linkedin: "https://www.linkedin.com/in/kimsrun-chum-3b86821b0/",
+      bio: t("members.kimsrun.bio"),
     },
     {
-      id: 4,
+      id: 5,
       name: t("members.chenda.name"),
       position: t("members.chenda.position"),
       image: "/assets/teams/chenda.png",
@@ -45,20 +54,13 @@ export default function Team() {
       bio: t("members.chenda.bio"),
     },
     {
-      id: 5,
+      id: 6,
       name: t("members.pengsea.name"),
       position: t("members.pengsea.position"),
       image: "/assets/teams/pengsea.png",
-      linkedin: "https://www.linkedin.com/in/ly-pengsea/",
+      linkedin:
+        "https://www.linkedin.com/in/pengsealii7778?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
       bio: t("members.pengsea.bio"),
-    },
-    {
-      id: 6,
-      name: t("members.kimsrun.name"),
-      position: t("members.kimsrun.position"),
-      image: "/assets/teams/kimsrun.png",
-      linkedin: "https://www.linkedin.com/in/kimsrun-chum-3b86821b0/",
-      bio: t("members.kimsrun.bio"),
     },
     {
       id: 7,

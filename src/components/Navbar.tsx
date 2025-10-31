@@ -54,10 +54,10 @@ export default function Navbar() {
   const navigationLinks = [
     { href: "/about", label: t("about") },
     { href: "/services", label: t("service") },
-    { href: "/investors", label: t("investor") },
-    { href: "/careers", label: t("careers") },
-    { href: "/contact", label: t("contact") },
     { href: "/calculator", label: t("calculator") },
+    { href: "/careers", label: t("careers") },
+    { href: "/investors", label: t("investor") },
+    { href: "/contact", label: t("contact") },
   ];
 
   return (

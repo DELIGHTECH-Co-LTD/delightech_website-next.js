@@ -16,6 +16,7 @@ export default function InvestorPage() {
           title={t("hero.title")}
           description={t("hero.description")}
           variant="senary"
+          className="max-w-lg sm:max-w-xl md:max-w-2xl text-center mx-auto px-4 text-sm sm:text-base"
         />
       </div>
 

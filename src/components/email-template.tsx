@@ -223,7 +223,7 @@ export function CompanyEmailTemplate({
               Cambodia
             </Text>
             <Text style={contactInfo}>📞 +855 (0) 123 456 789</Text>
-            <Text style={contactInfo}>✉️ info@delightech.com</Text>
+            <Text style={contactInfo}>✉️ info@delightech.asia</Text>
 
             <hr style={divider} />
 
@@ -232,7 +232,7 @@ export function CompanyEmailTemplate({
               <Link href="https://delightech.asia" style={socialLink}>
                 🌐
               </Link>
-              <Link href="mailto:info@delightech.com" style={socialLink}>
+              <Link href="mailto:info@delightech.asia" style={socialLink}>
                 ✉️
               </Link>
             </Section>
