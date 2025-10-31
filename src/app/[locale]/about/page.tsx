@@ -10,32 +10,6 @@ import { Particles } from "@/components/ui/shadcn-io/particles";
 
 export default function AboutPage() {
   const t = useTranslations("AboutPage");
-  const observerRef = useRef<IntersectionObserver | null>(null);
-
-  useEffect(() => {
-    observerRef.current = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("fade-in-visible");
-          }
-        });
-      },
-      {
-        threshold: 0.1,
-        rootMargin: "0px 0px -100px 0px",
-      }
-    );
-
-    const elements = document.querySelectorAll(".fade-in-section");
-    elements.forEach((el) => observerRef.current?.observe(el));
-
-    return () => {
-      if (observerRef.current) {
-        observerRef.current.disconnect();
-      }
-    };
-  }, []);
 
   return (
     <>
@@ -49,6 +23,7 @@ export default function AboutPage() {
           color="#ffffff"
           size={0.8}
         />
+
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
@@ -74,42 +49,33 @@ export default function AboutPage() {
 
         <div className="relative z-10 flex flex-col items-center justify-center px-8 md:px-24">
           <div className="text-center max-w-4xl">
-            <h2 className="text-white text-4xl md:text-6xl font-bold mb-6">
+            <h2
+              className="text-white text-4xl md:text-6xl font-bold mb-6"
+              data-usal="zoomin blur duration-1500"
+            >
               {t("vision_title")}
             </h2>
-            <p className="text-blue-100 text-xl md:text-2xl leading-relaxed">
+            <p
+              className="text-blue-100 text-xl md:text-2xl leading-relaxed"
+              data-usal="fade-u duration-1200 delay-400"
+            >
               {t("vision_description")}
             </p>
           </div>
         </div>
       </section>
 
-      <div className="fade-in-section">
+      <div data-usal="fade-u duration-1000">
         <MissionAndValues />
       </div>
 
-      <div className="fade-in-section">
+      <div data-usal="fade-u duration-1000">
         <MessageFrom />
       </div>
 
-      <div className="fade-in-section">
+      <div data-usal="fade-u duration-1000">
         <History />
       </div>
-
-      <style jsx global>{`
-        .fade-in-section {
-          opacity: 0;
-          transform: translateY(50px);
-          transition:
-            opacity 0.8s ease-out,
-            transform 0.8s ease-out;
-        }
-
-        .fade-in-visible {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      `}</style>
     </>
   );
 }

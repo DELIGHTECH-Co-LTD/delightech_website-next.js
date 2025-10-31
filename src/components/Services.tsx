@@ -71,6 +71,10 @@ export default function Services() {
           {businessUnits.map((unit, index) => (
             <div
               key={unit.id}
+              data-usal="fade-in"
+              data-usal-translate-x={index % 2 === 0 ? "-100" : "100"}
+              data-usal-duration="1000"
+              data-usal-delay="200"
               className={`flex flex-col md:flex-row items-center gap-8 sm:gap-10 lg:gap-12 ${
                 index % 2 === 1 ? "md:flex-row-reverse" : ""
               }`}

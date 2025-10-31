@@ -8,6 +8,7 @@ import { FixedModeToggle } from "@/components/FixedModeToggle";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { Toaster } from "sonner";
+import { USALProvider } from "@usal/react";
 
 const roboto = Roboto({
   weight: ["100", "300", "400", "500", "700", "900"],
@@ -29,8 +30,8 @@ export const metadata: Metadata = {
   title: { default: "Delightech", template: "%s - Delightech" },
   description: "Everyone can access finances.",
   twitter: {
-    card: "summary_large_image"
-  }
+    card: "summary_large_image",
+  },
 };
 
 export default async function RootLayout({
@@ -75,7 +76,7 @@ export default async function RootLayout({
         >
           <NextIntlClientProvider locale={locale} messages={messages}>
             <Navbar />
-            {children}
+            <USALProvider>{children}</USALProvider>
             <Toaster />
             <Footer />
             <FixedModeToggle />
