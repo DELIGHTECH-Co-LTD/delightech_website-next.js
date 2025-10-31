@@ -167,7 +167,10 @@ export default function MessageFrom() {
         <div className="mt-20 pt-16 border-t border-slate-200 dark:border-slate-800">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center space-y-2">
-              <div className="text-3xl font-light text-slate-900 dark:text-white">
+              <div
+                className="text-3xl font-light text-slate-900 dark:text-white"
+                data-usal="count-[10] duration-2000"
+              >
                 10+
               </div>
               <p className="text-slate-600 dark:text-slate-400 font-light">
@@ -175,7 +178,10 @@ export default function MessageFrom() {
               </p>
             </div>
             <div className="text-center space-y-2">
-              <div className="text-3xl font-light text-slate-900 dark:text-white">
+              <div
+                className="text-3xl font-light text-slate-900 dark:text-white"
+                data-usal="count-[50] duration-2000"
+              >
                 50K+
               </div>
               <p className="text-slate-600 dark:text-slate-400 font-light">
@@ -183,7 +189,10 @@ export default function MessageFrom() {
               </p>
             </div>
             <div className="text-center space-y-2">
-              <div className="text-3xl font-light text-slate-900 dark:text-white">
+              <div
+                className="text-3xl font-light text-slate-900 dark:text-white"
+                data-usal="count-[100] duration-2000"
+              >
                 100%
               </div>
               <p className="text-slate-600 dark:text-slate-400 font-light">
