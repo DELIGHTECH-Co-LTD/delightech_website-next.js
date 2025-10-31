@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import InvestorPage from "@/components/InvestorPage";
+import InvestorPage from "@/components/pages/InvestorPage";
 
 export const metadata: Metadata = {
   title: "Invest with us",

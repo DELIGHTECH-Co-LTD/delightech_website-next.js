@@ -83,8 +83,8 @@ export default function ShowReel() {
       />
 
       <div className="relative max-w-6xl mx-auto z-10">
-        {/* Header with USAL fade-up animation */}
-        <div className="text-center mb-16" data-usal="fade-u duration-1000">
+        {/* Header with faster USAL animations */}
+        <div className="text-center mb-16" data-usal="fade-u duration-600">
           <Badge
             variant="secondary"
             className="mb-4 text-sm uppercase tracking-wider"
@@ -93,7 +93,7 @@ export default function ShowReel() {
           </Badge>
           <h2
             className="text-4xl md:text-5xl font-bold text-foreground mb-4 uppercase"
-            data-usal="fade-u duration-1000 delay-200"
+            data-usal="fade-u duration-600 delay-100"
           >
             {t("title")}{" "}
             <span className="text-blue-700 dark:text-blue-700">
@@ -102,16 +102,16 @@ export default function ShowReel() {
           </h2>
           <p
             className="text-muted-foreground text-lg max-w-3xl mx-auto"
-            data-usal="fade-u duration-1000 delay-400"
+            data-usal="fade-u duration-600 delay-200"
           >
             {t("description")}
           </p>
         </div>
 
-        {/* Video Container with zoom-in animation */}
+        {/* Video Container with faster zoom-in animation */}
         <div
           className="relative mx-auto group"
-          data-usal="zoomin duration-1200 delay-600"
+          data-usal="zoomin duration-700 delay-300"
         >
           <div className="relative w-full aspect-video overflow-hidden rounded-2xl shadow-2xl shadow-blue-500/25 bg-card border border-border">
             <iframe
@@ -153,10 +153,10 @@ export default function ShowReel() {
             )}
           </div>
 
-          {/* Caption with Team-style decorative line */}
+          {/* Caption with faster animation */}
           <div
             className="mt-6 text-center"
-            data-usal="fade-u duration-800 delay-800"
+            data-usal="fade-u duration-500 delay-400"
           >
             <h3 className="text-xl font-semibold text-foreground mb-2">
               {videos[activeVideoIndex].title}
@@ -172,7 +172,7 @@ export default function ShowReel() {
           <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-purple-600/10 dark:bg-purple-400/10 rounded-full filter blur-2xl pointer-events-none"></div>
         </div>
 
-        {/* Video Playlist with staggered animations */}
+        {/* Video Playlist with faster staggered animations */}
         <div className="mt-16">
           {/* Video Thumbnails Grid */}
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -180,7 +180,7 @@ export default function ShowReel() {
               <button
                 key={index}
                 onClick={() => handleVideoSelect(index)}
-                data-usal={`fade-u duration-800 delay-${1000 + index * 150}`}
+                data-usal={`fade-u duration-500 delay-${500 + index * 80}`}
                 className={`group relative rounded-xl overflow-hidden transition-all duration-500 ${
                   activeVideoIndex === index
                     ? "ring-2 ring-blue-600 dark:ring-blue-400 scale-105"
