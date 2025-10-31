@@ -169,7 +169,7 @@ export default function MessageFrom() {
             <div className="text-center space-y-2">
               <div
                 className="text-3xl font-light text-slate-900 dark:text-white"
-                data-usal="count-[10] duration-2000"
+                data-usal-md="count-[10] duration-2000"
               >
                 10+
               </div>
@@ -180,7 +180,7 @@ export default function MessageFrom() {
             <div className="text-center space-y-2">
               <div
                 className="text-3xl font-light text-slate-900 dark:text-white"
-                data-usal="count-[50] duration-2000"
+                data-usal-md="count-[50] duration-2000"
               >
                 50K+
               </div>
@@ -191,7 +191,7 @@ export default function MessageFrom() {
             <div className="text-center space-y-2">
               <div
                 className="text-3xl font-light text-slate-900 dark:text-white"
-                data-usal="count-[100] duration-2000"
+                data-usal-md="count-[100] duration-2000"
               >
                 100%
               </div>

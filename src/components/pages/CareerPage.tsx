@@ -68,13 +68,13 @@ export default function CareerPage() {
           <Badge
             variant="secondary"
             className="mb-4 text-sm uppercase tracking-wider"
-            data-usal="fade-d duration-1000"
+            data-usal-md="fade-d duration-1000"
           >
             {t("badge")}
           </Badge>
           <h1
             className="text-4xl md:text-5xl font-bold text-foreground mb-4 uppercase"
-            data-usal="fade-u split-word split-delay-80 duration-1000 delay-200"
+            data-usal-md="fade-u split-word split-delay-80 duration-1000 delay-200"
           >
             {t("title")}{" "}
             <span className="text-blue-600 dark:text-blue-700">
@@ -83,11 +83,11 @@ export default function CareerPage() {
           </h1>
           <p
             className="text-muted-foreground text-lg max-w-3xl mx-auto mb-8"
-            data-usal="fade-u duration-1000 delay-400"
+            data-usal-md="fade-u duration-1000 delay-400"
           >
             {t("description")}
           </p>
-          <div data-usal="zoomin duration-800 delay-600">
+          <div data-usal-md="zoomin duration-800 delay-600">
             <Button size="lg" className="rounded-full text-base">
               {t("view_positions")}
               <ArrowRight className="ml-2 h-4 w-4" />
@@ -101,7 +101,7 @@ export default function CareerPage() {
             <Card
               key={i}
               className="hover:border-blue-600 dark:hover:border-blue-500 transition-all duration-300 hover:shadow-lg flex flex-col"
-              data-usal={`flip-u duration-1000 delay-${800 + i * 150}`}
+              data-usal-md={`flip-u duration-1000 delay-${800 + i * 150}`}
             >
               <CardHeader>
                 <CardTitle className="text-2xl">{job.title}</CardTitle>
@@ -124,7 +124,7 @@ export default function CareerPage() {
         <div className="text-center pt-12 border-t border-border">
           <h3
             className="text-3xl md:text-4xl font-bold text-foreground mb-4 uppercase"
-            data-usal="fade-r duration-500"
+            data-usal-md="fade-r duration-500"
           >
             {t("cta.title")}{" "}
             <span className="text-blue-600 dark:text-blue-700">
@@ -133,11 +133,11 @@ export default function CareerPage() {
           </h3>
           <p
             className="text-muted-foreground mb-6 max-w-3xl mx-auto text-lg"
-            data-usal="fade-l duration-800 delay-200"
+            data-usal-md="fade-l duration-800 delay-200"
           >
             {t("cta.description")}
           </p>
-          <div data-usal="zoomin-u blur duration-500 delay-400">
+          <div data-usal-md="zoomin-u blur duration-500 delay-400">
             <Button
               size="lg"
               variant="outline"
