@@ -91,18 +91,18 @@ export default function Team() {
       />
 
       <div className="relative max-w-7xl mx-auto z-10">
-        {/* Header with fade and split animations */}
+        {/* Header with faster fade and split animations */}
         <div className="text-center mb-16">
           <Badge
             variant="secondary"
             className="mb-4 text-sm uppercase tracking-wider"
-            data-usal="fade-d duration-1000"
+            data-usal="fade-d duration-600"
           >
             {t("badge")}
           </Badge>
           <h2
             className="text-4xl md:text-5xl font-bold text-foreground mb-4 uppercase"
-            data-usal="fade-u split-word split-delay-100 duration-1000 delay-200"
+            data-usal="fade-u split-word split-delay-50 duration-600 delay-100"
           >
             {t("title")}{" "}
             <span className="text-blue-700 dark:text-blue-700">
@@ -111,27 +111,27 @@ export default function Team() {
           </h2>
           <p
             className="text-muted-foreground text-lg max-w-3xl mx-auto"
-            data-usal="fade-u duration-1000 delay-400"
+            data-usal="fade-u duration-600 delay-200"
           >
             {t("description")}
           </p>
         </div>
 
-        {/* Team Grid with staggered zoom-in animations */}
+        {/* Team Grid with faster staggered animations */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {teamMembers.map((member, index) => {
             const isHovered = hoveredMember === member.id;
 
             // Different animation patterns for visual interest
             const animations = [
-              "zoomin-u blur duration-800",
-              "zoomin-l blur duration-800",
-              "zoomin-r blur duration-800",
-              "zoomin-d blur duration-800",
-              "fade-ul duration-800",
-              "fade-ur duration-800",
-              "fade-dl duration-800",
-              "fade-dr duration-800",
+              "zoomin-u blur duration-500",
+              "zoomin-l blur duration-500",
+              "zoomin-r blur duration-500",
+              "zoomin-d blur duration-500",
+              "fade-ul duration-500",
+              "fade-ur duration-500",
+              "fade-dl duration-500",
+              "fade-dr duration-500",
             ];
 
             return (
@@ -140,7 +140,7 @@ export default function Team() {
                 className="group relative rounded-xl overflow-hidden cursor-pointer"
                 onMouseEnter={() => setHoveredMember(member.id)}
                 onMouseLeave={() => setHoveredMember(null)}
-                data-usal={`${animations[index]} delay-${600 + index * 100}`}
+                data-usal={`${animations[index]} delay-${300 + index * 60}`}
               >
                 {/* Image Container */}
                 <div className="relative w-full aspect-3/4 overflow-hidden">

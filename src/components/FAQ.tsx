@@ -10,15 +10,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { useTranslations } from "next-intl";
 import { Badge } from "@/components/ui/badge";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import { Particles } from "./ui/shadcn-io/particles";
-import Link from "next/link";
 
 export default function FAQ() {
   const t = useTranslations("FAQ");

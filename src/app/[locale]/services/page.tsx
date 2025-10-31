@@ -1,6 +1,6 @@
 import { Metadata } from "next";
-import ContactPage from "@/components/ContactPage";
-import ServicesPage from "@/components/ServicePage";
+import ContactPage from "@/components/pages/ContactPage";
+import ServicesPage from "@/components/pages/ServicePage";
 
 export const metadata: Metadata = {
   title: "Our Services",
