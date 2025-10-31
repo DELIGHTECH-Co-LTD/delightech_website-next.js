@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useRef } from "react";
 import InvestmentOpportunity from "@/components/InvestmentOpportunity";
 import MarketPosition from "@/components/MarketPosition";
 import { BackgroundCircles } from "@/components/ui/shadcn-io/background-circles";

@@ -1,15 +1,12 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import History from "@/components/History";
 import { useTranslations } from "next-intl";
 import MessageFrom from "@/components/MessageFrom";
-import { Metadata } from "next";
 import MissionAndValues from "@/components/MissionAndValues";
 import { Particles } from "@/components/ui/shadcn-io/particles";
-
-export const metadata: Metadata = {
-  title: "About Us",
-};
 
 export default function AboutPage() {
   const t = useTranslations("AboutPage");

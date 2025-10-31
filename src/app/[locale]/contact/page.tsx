@@ -1,7 +1,8 @@
-﻿import React from "react";
+﻿"use client";
+
+import React, { useEffect, useRef } from "react";
 import { Badge } from "@/components/ui/badge";
 import ContactForm from "@/components/ContactForm";
-import { Metadata } from "next";
 import { useTranslations } from "next-intl";
 import { getTranslations } from "next-intl/server";
 
@@ -14,12 +15,38 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default function ContactPage() {
   const t = useTranslations("ContactPage");
+  const observerRef = useRef<IntersectionObserver | null>(null);
+
+  useEffect(() => {
+    observerRef.current = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("fade-in-visible");
+          }
+        });
+      },
+      {
+        threshold: 0.2,
+        rootMargin: "0px 0px -50px 0px",
+      }
+    );
+
+    const elements = document.querySelectorAll(".fade-in-section");
+    elements.forEach((el) => observerRef.current?.observe(el));
+
+    return () => {
+      if (observerRef.current) {
+        observerRef.current.disconnect();
+      }
+    };
+  }, []);
 
   return (
     <section className="relative min-h-screen bg-background pt-32 pb-24 px-6 lg:px-20 overflow-hidden">
       <div className="relative max-w-7xl mx-auto z-10">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 fade-in-section">
           <Badge
             variant="secondary"
             className="mb-4 text-sm uppercase tracking-wider"
@@ -48,6 +75,21 @@ export default function ContactPage() {
           <ContactForm />
         </div>
       </div>
+
+      <style jsx global>{`
+        .fade-in-section {
+          opacity: 0;
+          transform: translateY(50px);
+          transition:
+            opacity 0.8s ease-out,
+            transform 0.8s ease-out;
+        }
+
+        .fade-in-visible {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      `}</style>
     </section>
   );
 }
