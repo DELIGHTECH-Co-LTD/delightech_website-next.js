@@ -67,7 +67,7 @@ export default function InvestmentOpportunity() {
 
           <div className="flex justify-center">
             <Image
-              src="/assets/luyleun2.png"
+              src="/assets/LL_glass.png"
               alt="LUYLEUN App"
               width={400}
               height={400}

@@ -12,14 +12,14 @@ export default function History() {
       title: t("timeline.2025.title"),
       desc: t("timeline.2025.desc"),
       details: t("timeline.2025.details"),
-      logo: "/assets/Bomnin glass.png",
+      logo: "/assets/Bomnin_glass.png",
     },
     {
       year: t("timeline.2019.year"),
       title: t("timeline.2019.title"),
       desc: t("timeline.2019.desc"),
       details: t("timeline.2019.details"),
-      logo: "/assets/LL glass.png",
+      logo: "/assets/LL_glass.png",
     },
     {
       year: t("timeline.2016.year"),
