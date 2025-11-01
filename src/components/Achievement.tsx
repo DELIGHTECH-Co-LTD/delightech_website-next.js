@@ -123,7 +123,7 @@ export default function Achievement() {
         {/* Professional Statistics Grid */}
         <div className="border-t border-border pt-16 bg-background">
           <div
-            className="grid grid-cols-5  md:grid-cols-5 gap-10"
+            className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto"
             data-usal-md="fade-u duration-400 delay-300"
           >
             <div className="text-center group cursor-default">
