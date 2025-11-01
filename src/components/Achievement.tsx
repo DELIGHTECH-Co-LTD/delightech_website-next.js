@@ -85,24 +85,6 @@ export default function Achievement() {
       label: t("system_reliability.label"),
       description: t("system_reliability.description"),
     },
-    {
-      icon: "heroicons:academic-cap-solid",
-      value: t("security_certification.value"),
-      label: t("security_certification.label"),
-      description: t("security_certification.description"),
-    },
-    {
-      icon: "heroicons:building-office-2-solid",
-      value: t("financial_partners.value"),
-      label: t("financial_partners.label"),
-      description: t("financial_partners.description"),
-    },
-    {
-      icon: "heroicons:clock-solid",
-      value: t("processing_time.value"),
-      label: t("processing_time.label"),
-      description: t("processing_time.description"),
-    },
   ];
 
   return (
@@ -125,7 +107,7 @@ export default function Achievement() {
         </div>
 
         {/* Achievement Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 mb-16">
           {achievements.map((achievement, index) => (
             <AchievementCard
               key={index}
@@ -141,12 +123,12 @@ export default function Achievement() {
         {/* Professional Statistics Grid */}
         <div className="border-t border-border pt-16 bg-background">
           <div
-            className="grid grid-cols-2 md:grid-cols-4 gap-8"
+            className="grid grid-cols-5  md:grid-cols-5 gap-10"
             data-usal-md="fade-u duration-400 delay-300"
           >
             <div className="text-center group cursor-default">
               <div className="text-2xl font-light text-foreground mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
-                2019
+                2016
               </div>
               <div className="text-xs font-medium text-muted-foreground uppercase tracking-wider group-hover:text-muted-foreground/80 transition-colors duration-300">
                 Established
@@ -154,7 +136,7 @@ export default function Achievement() {
             </div>
             <div className="text-center group cursor-default">
               <div className="text-2xl font-light text-foreground mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
-                5+
+                10+
               </div>
               <div className="text-xs font-medium text-muted-foreground uppercase tracking-wider group-hover:text-muted-foreground/80 transition-colors duration-300">
                 Years Operating

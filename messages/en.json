@@ -364,12 +364,12 @@
     "financial_highlights": {
       "title": "Financial Highlights",
       "active_users": {
-        "value": "500K+",
+        "value": "250K+",
         "label": "Active Users",
         "description": "Growing monthly user base"
       },
       "transaction_volume": {
-        "value": "$50M+",
+        "value": "$1.2M",
         "label": "Transaction Volume",
         "description": "Annual processed amount"
       },
@@ -406,7 +406,26 @@
     },
     "achievements": {
       "title": "Key Performance Indicators",
-      "subtitle": "Measurable outcomes that demonstrate our market position, operational excellence, and sustained growth trajectory in the financial technology sector."
+      "subtitle": "Measurable outcomes that demonstrate our market position, operational excellence, and sustained growth trajectory in the financial technology sector.",
+      "badge": "Performance Metrics",
+      "statistics": {
+        "established": {
+          "value": "2016",
+          "label": "Established"
+        },
+        "years_operating": {
+          "value": "10+",
+          "label": "Years Operating"
+        },
+        "compliance_rate": {
+          "value": "100%",
+          "label": "Compliance Rate"
+        },
+        "support_available": {
+          "value": "24/7",
+          "label": "Support Available"
+        }
+      }
     },
     "market_position": {
       "badge": "Market Analysis",
