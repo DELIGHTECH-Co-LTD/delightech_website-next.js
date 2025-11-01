@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { useTranslations } from "next-intl";
 import { Icon } from "@iconify/react";
+import { Particles } from "./ui/shadcn-io/particles";
 
 export default function InvestmentOpportunity() {
   const t = useTranslations("InvestorPage");
@@ -37,6 +38,14 @@ export default function InvestmentOpportunity() {
 
   return (
     <section className="py-24 bg-background transition-all duration-500">
+      <Particles
+        className="absolute inset-0"
+        quantity={100}
+        ease={80}
+        staticity={50}
+        color="#ffffff"
+        size={0.8}
+      />
       <div className="max-w-7xl mx-auto px-8">
         {/* Professional Section Header */}
         <div className="mb-16" data-usal-md="fade-d duration-400">

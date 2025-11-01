@@ -3,6 +3,7 @@
 import React from "react";
 import { useTranslations } from "next-intl";
 import { Icon } from "@iconify/react";
+import { Particles } from "./ui/shadcn-io/particles";
 
 interface AchievementCardProps {
   icon: string;
@@ -73,12 +74,7 @@ export default function Achievement() {
       label: t("growth.label"),
       description: t("growth.description"),
     },
-    {
-      icon: "heroicons:globe-asia-australia-solid",
-      value: t("markets_served.value"),
-      label: t("markets_served.label"),
-      description: t("markets_served.description"),
-    },
+
     {
       icon: "heroicons:shield-check-solid",
       value: t("system_reliability.value"),
@@ -107,7 +103,7 @@ export default function Achievement() {
         </div>
 
         {/* Achievement Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {achievements.map((achievement, index) => (
             <AchievementCard
               key={index}

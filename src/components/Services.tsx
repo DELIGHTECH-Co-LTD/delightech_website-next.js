@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import { useTranslations } from "next-intl";
-import { Bell } from "lucide-react";
+import { Bell, Send } from "lucide-react";
 import { Button } from "./ui/button";
 import { Particles } from "./ui/shadcn-io/particles";
 
@@ -213,8 +213,8 @@ export default function Services() {
                           <a href={unit.subscribeUrl} className="relative z-10">
                             {/* Shine Effect */}
                             <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 group-hover:animate-pulse transition-opacity duration-300"></div>
-                            <Bell className="w-6 h-6 sm:w-7 sm:h-7 group-hover:animate-bounce" />
-                            <span className="font-semibold">Subscribe Now</span>
+                            <Send className="w-6 h-6 sm:w-7 sm:h-7 group-hover:animate-bounce" />
+                            <span className="font-semibold">Join Telegram</span>
                           </a>
                         </Button>
                       </div>
