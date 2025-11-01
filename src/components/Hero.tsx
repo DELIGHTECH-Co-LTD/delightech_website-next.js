@@ -10,7 +10,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen bg-blue-700 from-gray-900 via-black to-slate-900 dark:bg-gradient-to-br dark:from-gray-900 dark:via-black dark:to-slate-900 flex flex-col lg:flex-row items-center justify-center lg:px-20 overflow-hidden gap-20 transition-all duration-700"
+      className="relative min-h-screen lg:h-screen bg-linear-to-br from-blue-900 via-blue-800 to-cyan-900 dark:from-slate-900 dark:via-blue-900 dark:to-indigo-900 overflow-hidden flex items-center py-12 lg:py-0"
     >
       {/* Professional Background Animations */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -18,10 +18,10 @@ export default function Hero() {
         <div className="absolute inset-0 bg-linear-to-br from-blue-700/15 via-blue-800/12 to-blue-900/15 dark:from-blue-500/15 dark:via-purple-600/12 dark:to-indigo-600/15 animate-gradientFlow opacity-60"></div>
 
         {/* Secondary Animated Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-tl from-blue-800/10 via-blue-700/15 to-blue-950/12 dark:from-purple-600/10 dark:via-blue-500/15 dark:to-slate-700/12 animate-gradientFlowReverse opacity-50"></div>
+        <div className="absolute inset-0 bg-linear-to-tl from-blue-800/10 via-blue-700/15 to-blue-950/12 dark:from-purple-600/10 dark:via-blue-500/15 dark:to-slate-700/12 animate-gradientFlowReverse opacity-50"></div>
 
         {/* Dynamic Background Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-blue-950/70 via-blue-900/30 to-blue-800/50 dark:from-black/70 dark:via-gray-900/30 dark:to-slate-800/50 transition-all duration-700"></div>
+        <div className="absolute inset-0 bg-linear-to-t from-blue-950/70 via-blue-900/30 to-blue-800/50 dark:from-black/70 dark:via-gray-900/30 dark:to-slate-800/50 transition-all duration-700"></div>
 
         {/* Animated Background Clouds for Light Mode */}
         <div className="absolute inset-0 block dark:hidden">
@@ -69,7 +69,7 @@ export default function Hero() {
         </div>
 
         {/* Professional Grid Pattern */}
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:50px_50px] opacity-30"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-size-[50px_50px] opacity-30"></div>
 
         {/* Floating Gradient Orbs - Mode Responsive */}
         <div className="absolute top-20 left-20 w-96 h-96 bg-linear-to-r from-blue-600/12 to-blue-700/15 dark:from-purple-600/12 dark:to-blue-600/15 rounded-full blur-3xl animate-pulse opacity-40"></div>
@@ -94,14 +94,14 @@ export default function Hero() {
         <div className="absolute top-2/3 left-2/3 w-1 h-1 bg-blue-400/38 dark:bg-indigo-400/38 rounded-full animate-pulse delay-900"></div>
       </div>
 
-      <div className="max-w-6xl mx-auto px-6 flex items-center gap-12 relative z-10">
-        <div className="w-1/2 space-y-8">
-          {/* Enhanced Title with Gradient Text */}
-          <h1 className="text-5xl md:text-7xl text-white dark:text-slate-100 h1 leading-tight animate-fadeInUp transition-colors duration-700">
-            <span className="inline-block transform hover:scale-105 transition-transform duration-300">
+      <div className="max-w-6xl mx-auto px-6 flex flex-col lg:flex-row items-center gap-8 lg:gap-12 relative z-10">
+        <div className="w-full lg:w-1/2 space-y-6 lg:space-y-8 text-center lg:text-left">
+          {/* Enhanced Title with Gradient Text - Responsive for different languages */}
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white dark:text-slate-100 h1 leading-tight animate-fadeInUp transition-colors duration-700">
+            <span className="inline-block transform hover:scale-105 transition-transform duration-300 wrap-break-word">
               {t("title")}
             </span>{" "}
-            <span className="text-yellow-400 dark:text-blue-400">
+            <span className="text-yellow-400 dark:text-blue-400 wrap-break-word">
               {t("title_highlight")}
             </span>
             <span className="inline-block animate-bounce bg-linear-to-r from-red-200 via-green-500 to-red-400 dark:from-blue-400 dark:via-red-400 dark:to-blue-400 bg-clip-text text-transparent">
@@ -109,19 +109,19 @@ export default function Hero() {
             </span>
           </h1>
 
-          {/* Enhanced Description */}
-          <p className="text-lg text-blue-100 dark:text-slate-300 leading-relaxed max-w-lg animate-fadeInUp delay-300 transition-colors duration-700">
+          {/* Enhanced Description - Responsive text sizing */}
+          <p className="text-sm sm:text-base lg:text-lg text-blue-100 dark:text-slate-300 leading-relaxed max-w-full lg:max-w-lg animate-fadeInUp delay-300 transition-colors duration-700">
             {t("description")}
           </p>
 
           {/* Enhanced Button Group */}
-          <div className="flex items-center gap-6 animate-fadeInUp delay-500">
+          <div className="flex justify-center lg:justify-start items-center gap-6 animate-fadeInUp delay-500">
             <Link href="/contact">
               <Button
                 size={"lg"}
-                className="group relative overflow-hidden rounded-full bg-blue-600 hover:bg-blue-700 text-white border-none px-8 py-4 font-semibold shadow-2xl hover:shadow-blue-500/25 transition-all duration-500"
+                className="group relative overflow-hidden rounded-full bg-blue-600 hover:bg-blue-700 text-white border-none px-6 sm:px-8 py-3 sm:py-4 font-semibold shadow-2xl hover:shadow-blue-500/25 transition-all duration-500"
               >
-                <span className="relative z-10 flex items-center gap-2">
+                <span className="relative z-10 flex items-center gap-2 text-sm sm:text-base">
                   {t("contact_us")}
                   <span className="group-hover:translate-x-1 transition-transform duration-300">
                     →
@@ -132,9 +132,9 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="w-1/2 relative">
-          {/* Animated Logo Container */}
-          <div className="relative flex items-center justify-center group">
+        <div className="w-full lg:w-1/2 relative order-first lg:order-last">
+          {/* Animated Logo Container - Responsive sizing */}
+          <div className="relative flex items-center justify-center group max-w-md mx-auto lg:max-w-none">
             {/* Logo Glow Effect */}
             <div className="absolute inset-0 bg-linear-to-r from-blue-500/20 via-purple-500/10 to-cyan-500/20 dark:from-purple-500/20 dark:via-blue-500/10 dark:to-indigo-500/20 rounded-full blur-3xl animate-pulse opacity-0 group-hover:opacity-60 transition-opacity duration-700"></div>
 
@@ -153,14 +153,14 @@ export default function Hero() {
               ></div>
             </div>
 
-            {/* Main Logo with Enhanced Animations */}
+            {/* Main Logo with Enhanced Animations - Responsive sizing */}
             <div className="relative z-10 animate-fadeInUp delay-700">
               <Image
                 src="/assets/DLTGlass.png"
                 alt="Delightech Logo"
                 width={1000}
                 height={700}
-                className="object-contain transition-all duration-700 hover:scale-110 hover:rotate-2 drop-shadow-2xl hover:drop-shadow-[0_20px_35px_rgba(59,130,246,0.3)] dark:hover:drop-shadow-[0_20px_35px_rgba(147,51,234,0.3)] animate-float"
+                className="object-contain transition-all duration-700 hover:scale-110 hover:rotate-2 drop-shadow-2xl hover:drop-shadow-[0_20px_35px_rgba(59,130,246,0.3)] dark:hover:drop-shadow-[0_20px_35px_rgba(147,51,234,0.3)] animate-float w-full h-auto max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl"
                 priority
               />
             </div>

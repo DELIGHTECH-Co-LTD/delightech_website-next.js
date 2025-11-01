@@ -3,6 +3,7 @@
 import React, { useEffect, useRef } from "react";
 import InvestmentOpportunity from "@/components/InvestmentOpportunity";
 import MarketPosition from "@/components/MarketPosition";
+import Achievement from "@/components/Achievement";
 import { BackgroundCircles } from "@/components/ui/shadcn-io/background-circles";
 import { useTranslations } from "next-intl";
 
@@ -24,7 +25,11 @@ export default function InvestorPage() {
         <InvestmentOpportunity />
       </div>
 
-      <div data-usal-md="fade-l duration-600 delay-300">
+      <div data-usal-md="slide-r duration-700 delay-300">
+        <Achievement />
+      </div>
+
+      <div data-usal-md="fade-l duration-600 delay-400">
         <MarketPosition />
       </div>
     </div>

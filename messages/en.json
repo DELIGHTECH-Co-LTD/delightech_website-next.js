@@ -65,7 +65,7 @@
   "Hero": {
     "subtitle": "At Delightech Co., Ltd., we specialize in creating technology-driven financial solutions that make life easier, faster, and more secure. Our flagship product, LUYLEUN, is redefining access to instant loans in Cambodia.",
     "description": "Transforming ideas into digital reality with cutting-edge technology and innovative solutions.",
-    "title": "Everyone CAN Access",
+    "title": "Everyone Can Access",
     "title_highlight": "Finances",
     "contact_us": "Contact Us",
     "trusted_customers": "Trusted of Customer 10000000+"
@@ -377,7 +377,36 @@
         "value": "150%",
         "label": "Year-over-Year Growth",
         "description": "Revenue increase"
+      },
+      "markets_served": {
+        "value": "3",
+        "label": "Markets Served",
+        "description": "Active operations across Cambodia, Vietnam, and regional expansion into Singapore financial corridors."
+      },
+      "system_reliability": {
+        "value": "99.98%",
+        "label": "System Reliability",
+        "description": "Platform uptime maintained through enterprise-grade infrastructure and redundant security protocols."
+      },
+      "security_certification": {
+        "value": "ISO 27001",
+        "label": "Security Certification",
+        "description": "International standard compliance for information security management systems and data protection."
+      },
+      "financial_partners": {
+        "value": "150+",
+        "label": "Financial Partners",
+        "description": "Strategic partnerships with regional banks, microfinance institutions, and fintech ecosystem players."
+      },
+      "processing_time": {
+        "value": "< 60s",
+        "label": "Average Processing",
+        "description": "Mean transaction processing time from application submission to decision delivery via AI algorithms."
       }
+    },
+    "achievements": {
+      "title": "Key Performance Indicators",
+      "subtitle": "Measurable outcomes that demonstrate our market position, operational excellence, and sustained growth trajectory in the financial technology sector."
     },
     "market_position": {
       "badge": "Market Analysis",

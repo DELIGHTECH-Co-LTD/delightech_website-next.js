@@ -119,7 +119,7 @@ export default function Navbar() {
             {/* Desktop Actions */}
             <div className="hidden lg:flex items-center space-x-2">
               <ModeToggle />
-
+              <LanguageSwitcher />
               <Button
                 variant="ghost"
                 size="sm"
@@ -133,13 +133,12 @@ export default function Navbar() {
                   <span className="font-medium text-sm">{t("find_us")}</span>
                 </a>
               </Button>
-
-              <LanguageSwitcher />
             </div>
 
             {/* Mobile Menu */}
             <div className="lg:hidden flex items-center space-x-2">
               <ModeToggle />
+              <LanguageSwitcher />
 
               <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
                 <SheetTrigger asChild>
@@ -223,10 +222,6 @@ export default function Navbar() {
                           <MapPin className="w-5 h-5" aria-hidden="true" />
                         </a>
                       </SheetClose>
-
-                      <div className="flex items-center justify-center w-full py-4 px-4 rounded-xl">
-                        <LanguageSwitcher />
-                      </div>
                     </div>
                   </nav>
 
