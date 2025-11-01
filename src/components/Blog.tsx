@@ -48,13 +48,13 @@ export function Blog({ posts = [] }: BlogProps) {
           <Badge
             variant="secondary"
             className="mb-4 text-sm uppercase tracking-wider"
-            data-usal="fade-d duration-600"
+            data-usal-md="fade-d duration-600"
           >
             {t("badge")}
           </Badge>
           <h1
             className="text-4xl md:text-5xl font-bold text-foreground mb-4 uppercase"
-            data-usal="fade-u split-word split-delay-50 duration-600 delay-100"
+            data-usal-md="fade-u duration-600 delay-100"
           >
             {t("title")}{" "}
             <span className="text-blue-600 dark:text-blue-600">
@@ -63,7 +63,7 @@ export function Blog({ posts = [] }: BlogProps) {
           </h1>
           <p
             className="text-muted-foreground text-lg max-w-3xl mx-auto"
-            data-usal="fade-u duration-600 delay-200"
+            data-usal-md="fade-u duration-600 delay-200"
           >
             {t("description")}
           </p>
@@ -76,7 +76,7 @@ export function Blog({ posts = [] }: BlogProps) {
               <Card
                 key={post.id}
                 className="group overflow-hidden border rounded-lg bg-card hover:bg-accent/50 transition-all duration-300"
-                data-usal={`zoomin-u blur duration-500 delay-${300 + index * 80}`}
+                data-usal-md={`zoomin-u blur duration-500 delay-${300 + index * 80}`}
               >
                 {/* Image Placeholder */}
                 <div className="relative h-48 bg-linear-to-br from-blue-500 to-blue-700 overflow-hidden">
@@ -132,7 +132,7 @@ export function Blog({ posts = [] }: BlogProps) {
         ) : (
           <Card
             className="text-center py-16 bg-card border rounded-lg"
-            data-usal="fade-u duration-600 delay-300"
+            data-usal-md="fade-u duration-600 delay-300"
           >
             <CardContent className="space-y-4">
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-muted mb-4">
@@ -162,7 +162,7 @@ export function Blog({ posts = [] }: BlogProps) {
         {posts.length > 0 && (
           <div
             className="text-center mt-12"
-            data-usal="fade-u duration-600 delay-500"
+            data-usal-md="fade-u duration-600 delay-500"
           >
             <Button asChild size="lg" className="text-base">
               <Link href="/blog" className="group/all inline-flex items-center">

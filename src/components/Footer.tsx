@@ -8,18 +8,7 @@ import { Icon } from "@iconify-icon/react";
 
 const Footer: React.FC = () => {
   const t = useTranslations("Footer");
-  const [email, setEmail] = useState("");
-  const [isSubscribed, setIsSubscribed] = useState(false);
   const currentYear = new Date().getFullYear();
-
-  const handleSubscribe = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (email) {
-      setIsSubscribed(true);
-      setEmail("");
-      setTimeout(() => setIsSubscribed(false), 3000);
-    }
-  };
 
   const navigationLinks = [
     { href: "/about", label: t("Navbar.about") },
@@ -29,7 +18,7 @@ const Footer: React.FC = () => {
   ];
 
   const supportLinks = [
-    { href: "/store", label: t("links.store") },
+    { href: "https://maps.app.goo.gl/ZHaDyybFkNU6tzJ2A", label: t("links.store") },
     { href: "/contact", label: t("links.contact") },
   ];
 
@@ -88,8 +77,8 @@ const Footer: React.FC = () => {
             {/* Contact Info */}
             <div className="space-y-2">
               <div className="flex items-start gap-2 text-white/90 hover:text-white transition-all duration-300 group">
-                <MapPin className="w-4 h-4 flex-shrink-0 group-hover:scale-110 transition-transform mt-0.5" />
-                <span className="font-medium text-sm text-nowrap">
+                <MapPin className="w-4 h-4 shrink-0 group-hover:scale-110 transition-transform mt-0.5" />
+                <span className="font-medium text-sm">
                   {t("location")}
                 </span>
               </div>
@@ -106,7 +95,7 @@ const Footer: React.FC = () => {
 
           {/* Company Links */}
           <div className="space-y-4">
-            <h3 className="font-medium text-sm uppercase tracking-wide text-white">
+            <h3 className="font-extrabold text-sm uppercase tracking-wide text-white">
               {t("company")}
             </h3>
             <div className="space-y-2">
@@ -125,7 +114,7 @@ const Footer: React.FC = () => {
 
           {/* Support Links */}
           <div className="space-y-4">
-            <h3 className="font-medium text-sm uppercase tracking-wide text-white">
+            <h3 className="font-extrabold text-sm uppercase tracking-wide text-white">
               {t("support")}
             </h3>
             <div className="space-y-2">
@@ -177,7 +166,7 @@ const Footer: React.FC = () => {
 
             {/* Social Links */}
             <div className="space-y-3">
-              <h4 className="font-medium text-sm uppercase tracking-wide text-white">
+              <h4 className="font-extrabold text-sm uppercase tracking-wide text-white">
                 Follow Us
               </h4>
               <div className="flex gap-2">

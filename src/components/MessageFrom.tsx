@@ -89,7 +89,7 @@ export default function MessageFrom() {
               {/* Modern Image Container */}
               <div className="relative">
                 {/* Animated background elements */}
-                <div className="absolute -inset-6 bg-gradient-to-r from-blue-100 via-indigo-50 to-purple-100 dark:from-blue-900/20 dark:via-indigo-900/20 dark:to-purple-900/20 rounded-[2rem] opacity-0 group-hover:opacity-100 transition-all duration-700 blur-xl"></div>
+                <div className="absolute -inset-6 bg-linear-to-r from-blue-100 via-indigo-50 to-purple-100 dark:from-blue-900/20 dark:via-indigo-900/20 dark:to-purple-900/20 rounded-4xl opacity-0 group-hover:opacity-100 transition-all duration-700 blur-xl"></div>
 
                 {/* Floating decorative elements */}
                 <div className="absolute -top-4 -left-4 w-8 h-8 bg-glass backdrop-blur-sm border border-blue-300/30 rounded-2xl rotate-45 opacity-80 animate-pulse shadow-lg"></div>
@@ -97,21 +97,19 @@ export default function MessageFrom() {
                 <div className="absolute top-1/4 -right-2 w-6 h-6 bg-blue-300/20 backdrop-blur-sm border border-blue-200/30 rounded-lg rotate-12 opacity-70 animate-bounce delay-1000 shadow-lg"></div>
 
                 {/* Main image frame with modern styling */}
-                <div className="relative p-1 bg-gradient-to-br from-blue-200 via-indigo-200 to-purple-200 dark:from-blue-800 dark:via-green-800 dark:to-blue-800 rounded-[1.5rem] shadow-2xl group-hover:shadow-blue-500/25 transition-shadow duration-500">
+                <div className="relative p-1 bg-linear-to-br from-blue-200 via-indigo-200 to-purple-200 dark:from-blue-800 dark:via-green-800 dark:to-blue-800 rounded-3xl shadow-2xl group-hover:shadow-blue-500/25 transition-shadow duration-500">
                   <div className="relative p-3 bg-white dark:bg-slate-900 rounded-[1.25rem]">
-                    <div className="relative overflow-hidden rounded-[1rem]">
+                    <div className="relative overflow-hidden rounded-2xl aspect-2/3">
                       <Image
-                        src="/assets/bVila.png"
+                        src="/assets/bVila3.png"
                         alt={t("founder_message.subtitle") + " - Founder & CEO"}
-                        width={800}
-                        height={500}
-                        className="w-full h-auto object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-105"
+                        fill
+                        className="object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-105"
                         priority
                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 80vw, 40vw"
                       />
-
                       {/* Modern overlay effects */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-slate-900/10 via-transparent to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                      <div className="absolute inset-0 bg-linear-to-t from-slate-900/10 via-transparent to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     </div>
                   </div>
                 </div>
@@ -120,15 +118,15 @@ export default function MessageFrom() {
                 <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 group-hover:scale-105 transition-transform duration-300">
                   <div className="relative">
                     {/* Badge glow */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-2xl blur opacity-50"></div>
-                    <div className="relative bg-gradient-to-r from-blue-600 to-green-600 px-6 py-3 rounded-2xl shadow-xl border border-blue-400/30">
+                    <div className="absolute inset-0 bg-linear-to-r from-blue-500 to-indigo-500 rounded-2xl blur opacity-50"></div>
+                    <div className="relative bg-linear-to-r from-blue-600 to-green-600 px-6 py-3 rounded-2xl shadow-xl border border-blue-400/30">
                       <div className="flex items-center gap-3">
                         <div className="relative">
                           <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
                           <div className="absolute inset-0 w-3 h-3 bg-green-400 rounded-full animate-ping opacity-75"></div>
                         </div>
                         <span className="text-white font-semibold text-sm tracking-wide">
-                          CEO & FOUNDER
+                          FOUNDER & CEO
                         </span>
                       </div>
                     </div>
@@ -136,8 +134,8 @@ export default function MessageFrom() {
                 </div>
 
                 {/* Geometric accent lines */}
-                <div className="absolute top-8 left-0 w-16 h-0.5 bg-gradient-to-r from-blue-500 to-transparent opacity-60"></div>
-                <div className="absolute bottom-8 right-0 w-16 h-0.5 bg-gradient-to-l from-indigo-500 to-transparent opacity-60"></div>
+                <div className="absolute top-8 left-0 w-16 h-0.5 bg-linear-to-r from-blue-500 to-transparent opacity-60"></div>
+                <div className="absolute bottom-8 right-0 w-16 h-0.5 bg-linear-to-l from-indigo-500 to-transparent opacity-60"></div>
 
                 {/* Corner accents */}
                 <div className="absolute top-4 left-4 w-4 h-4 border-l-2 border-t-2 border-blue-400 opacity-60"></div>
@@ -169,7 +167,7 @@ export default function MessageFrom() {
             <div className="text-center space-y-2">
               <div
                 className="text-3xl font-light text-slate-900 dark:text-white"
-                data-usal="count-[10] duration-2000"
+                data-usal-md="count-[10] duration-2000"
               >
                 10+
               </div>
@@ -180,7 +178,7 @@ export default function MessageFrom() {
             <div className="text-center space-y-2">
               <div
                 className="text-3xl font-light text-slate-900 dark:text-white"
-                data-usal="count-[50] duration-2000"
+                data-usal-md="count-[50] duration-2000"
               >
                 50K+
               </div>
@@ -191,7 +189,7 @@ export default function MessageFrom() {
             <div className="text-center space-y-2">
               <div
                 className="text-3xl font-light text-slate-900 dark:text-white"
-                data-usal="count-[100] duration-2000"
+                data-usal-md="count-[100] duration-2000"
               >
                 100%
               </div>

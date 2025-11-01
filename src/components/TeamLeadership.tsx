@@ -31,7 +31,7 @@ export default function TeamLeadership() {
           </Card>
           <div className="flex justify-center">
             <Image
-              src="/assets/bVila.png"
+              src="/assets/bVila3.png"
               alt={
                 t("leadership.vila.name") +
                 " - " +

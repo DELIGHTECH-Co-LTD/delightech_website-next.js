@@ -11,19 +11,20 @@ export default function InvestorPage() {
 
   return (
     <div>
-      <div data-usal="fade-d blur duration-750">
+      <div data-usal-md="fade-d blur duration-750">
         <BackgroundCircles
           title={t("hero.title")}
           description={t("hero.description")}
           variant="senary"
+          className="max-w-lg sm:max-w-xl md:max-w-2xl text-center mx-auto px-4 text-sm sm:text-base"
         />
       </div>
 
-      <div data-usal="zoomin-u blur duration-800 delay-200">
+      <div data-usal-md="zoomin-u blur duration-800 delay-200">
         <InvestmentOpportunity />
       </div>
 
-      <div data-usal="fade-l duration-600 delay-300">
+      <div data-usal-md="fade-l duration-600 delay-300">
         <MarketPosition />
       </div>
     </div>
